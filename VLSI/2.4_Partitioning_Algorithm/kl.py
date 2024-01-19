@@ -168,7 +168,7 @@
 # def main():
 #     graph = load_data("data.txt")
 #     kl = KL(graph)
-#     kl.partion()
+#     kl.partition()
     
 # if __name__ == "__main__":
 #     main()
@@ -290,7 +290,7 @@ class KernighanLin():
                 group_b.remove(b)
                 gains.append([[a, b], max_gain])
         
-                # update D_values of other unvisited nodes connected to a and b, as if a and b are swapped
+                # update D_values of other Unvisited nodes connected to a and b, as if a and b are swapped
                 for x in group_a:
                     c_xa = len(set(x.edges).intersection(a.edges))
                     c_xb = len(set(x.edges).intersection(b.edges))
@@ -363,4 +363,3 @@ inf = 10000
     
 if __name__ == "__main__":
     main()
-
