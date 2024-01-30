@@ -3,7 +3,7 @@
 
 ## Period
 
-- From feb, 2024 to Current
+- From Jan, 2024 to Current
 
 ## Contents
 
