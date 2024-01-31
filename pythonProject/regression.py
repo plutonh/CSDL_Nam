@@ -315,13 +315,13 @@ def main():
     # testNumpy()
     # testTensor()
     # linearRegression()
-    nnLinearRegression()
+    # nnLinearRegression()
     # multiRegression()
     # nnmultiRegression()
     # logisticRegression()
     # nnlogisticRegression()
     # softmax()
-    # nnsoftmax()
+    nnsoftmax()
 
 if __name__ == "__main__":
     main()
