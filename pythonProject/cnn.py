@@ -4,8 +4,7 @@ import torchvision.datasets as dsets
 import torchvision.transforms as transforms
 import sys
 
-device = 'cuda' if torch.cuda.is_available() else 'cpu'
-sys.setrecursionlimit(5000)
+sys.setrecursionlimit(10**6)
 
 class CNN(torch.nn.Module):
     def __init__(self):
@@ -30,26 +29,29 @@ class CNN(torch.nn.Module):
         out = self.fc(out)
         return out
 
-class deepCNN(torch.nn.Module):
+class DeepCNN(torch.nn.Module):
     def __init__(self):
-        super(deepCNN, self).__init__()
+        super(DeepCNN, self).__init__()
         self.keep_prob = 0.5
-
         self.layer1 = torch.nn.Sequential( # first: Conv2d, second: ReLU, thrid: MaxPool2d
             torch.nn.Conv2d(1, 32, kernel_size=3, stride=1, padding=1),
             torch.nn.ReLU(),
             torch.nn.MaxPool2d(kernel_size=2, stride=2))
-        self.layer2 = torch.nn.Sequential(
-            torch.nn.Conv2d(32, 64, kernel_size=3, stride=1, padding=1),
+        self.layer2 = torch.nn.Sequential(  # first: Conv2d, second: ReLU, thrid: MaxPool2d
+            torch.nn.Conv2d(32, 128, kernel_size=3, stride=1, padding=1),
             torch.nn.ReLU(),
             torch.nn.MaxPool2d(kernel_size=2, stride=2))
         self.layer3 = torch.nn.Sequential(
-            torch.nn.Conv2d(64, 64, kernel_size=3, stride=1, padding=1),
+            torch.nn.Conv2d(128, 512, kernel_size=3, stride=1, padding=1),
+            torch.nn.ReLU(),
+            torch.nn.MaxPool2d(kernel_size=2, stride=2))
+        self.layer4 = torch.nn.Sequential(
+            torch.nn.Conv2d(512, 2048, kernel_size=3, stride=1, padding=1),
             torch.nn.ReLU(),
             torch.nn.MaxPool2d(kernel_size=2, stride=2, padding=1))
-        self.fc1 = torch.nn.Linear(4 * 4 * 64, 625, bias = True)
+        self.fc1 = torch.nn.Linear(2 * 2 * 2048, 625, bias = True)
         torch.nn.init.xavier_uniform_(self.fc1.weight)
-        self.layer4 = torch.nn.Sequential(
+        self.layer5 = torch.nn.Sequential(
             self.fc1,
             torch.nn.ReLU(),
             torch.nn.Dropout(p = 1 - self.keep_prob))
@@ -60,8 +62,9 @@ class deepCNN(torch.nn.Module):
         out = self.layer1(x)
         out = self.layer2(out)
         out = self.layer3(out)
-        out = out.view(out.size(0), -1)
         out = self.layer4(out)
+        out = out.view(out.size(0), -1)
+        out = self.layer5(out)
         out = self.fc2(out)
         return out
 
@@ -104,7 +107,9 @@ def testMaxPool2d():
 
     print(output.size())
 
-def simpleCNN():
+def TestCNN():
+    device = 'cuda' if torch.cuda.is_available() else 'cpu'
+
     torch.manual_seed(777)
 
     if device == 'cuda':
@@ -152,7 +157,9 @@ def simpleCNN():
         accuracy = correct_prediction.float().mean()
         print('Accuracy:', accuracy.item())
 
-def deepCNN():
+def TestDeepCNN():
+    device = 'cuda' if torch.cuda.is_available() else 'cpu'
+
     torch.manual_seed(777)
 
     if device == 'cuda':
@@ -169,7 +176,7 @@ def deepCNN():
     data_loader = torch.utils.data.DataLoader(dataset=mnist_train, batch_size=batch_size,
                                               shuffle=True, drop_last=True)
 
-    model = deepCNN().to(device)
+    model = DeepCNN().to(device)
     criterion = torch.nn.CrossEntropyLoss().to(device) # Softmax function is included in Cost function
     optimizer = torch.optim.Adam(model.parameters(), lr = learning_rate)
     total_batch = len(data_loader)
@@ -203,8 +210,8 @@ def deepCNN():
 def main():
     # testConv2d()
     # testMaxPool2d()
-    # simpleCNN()
-    deepCNN()
+    # TestCNN()
+    TestDeepCNN()
 
 if __name__ == "__main__":
     main()
