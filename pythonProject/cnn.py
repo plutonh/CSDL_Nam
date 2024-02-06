@@ -158,12 +158,20 @@ def TestCNN():
         print('Accuracy:', accuracy.item())
 
 def TestDeepCNN():
-    device = 'cuda' if torch.cuda.is_available() else 'cpu'
+    # device = 'cuda' if torch.cuda.is_available() else 'cpu'
 
-    torch.manual_seed(777)
+    # torch.manual_seed(777)
 
-    if device == 'cuda':
-        torch.cuda.manual_seed_all(777)
+    # if device == 'cuda':
+    #     torch.cuda.manual_seed_all(777)
+        
+    torch.autograd.set_detect_anomaly(True)
+    
+    if torch.cuda.is_available():
+        print("GPU is available")
+        device = torch.device("cuda:1")
+    else:
+        device = torch.device("cpu")
 
     learning_rate = 0.001
     training_epochs = 15
