@@ -30,8 +30,8 @@ if __name__ == "__main__":
             self.final_state = 1
             self.trans_mat, self.r_mat = self._build_trans_mat()
 
-        def _build_trans_mat(self):
-            trans_mat = np.zeros((2,2,2))
+        def _build_trans_mat(self): # trans_mat: base map? -> go to OneStateMDPWithModel()
+            trans_mat = np.zeros((2,2,2)) # 2, 2, 2 -> currnet state, current action, next state
 
             trans_mat[0,0,0] = 0.9
             trans_mat[0,0,1] = 0.1
@@ -40,7 +40,7 @@ if __name__ == "__main__":
             trans_mat[1,:,1] = 1.
 
             r_mat = np.zeros((2,2,2))
-            r_mat[0,0,1] = 1.
+            r_mat[0,0,1] = 1. # initial value
 
             return trans_mat, r_mat
 
@@ -72,7 +72,7 @@ if __name__ == "__main__":
 
     env = OneStateMDP()
     env_with_model = OneStateMDPWithModel()
-
+    
     # Test Value Iteration
     V_star, pi_star = value_iteration(env_with_model,np.zeros(env_with_model.spec.nS),1e-4)
 

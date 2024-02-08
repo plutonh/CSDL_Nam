@@ -36,6 +36,9 @@ class Env(object):
             initial state
         """
         raise NotImplementedError()
+        
+        # self._state = 0
+        # return self._state
 
     def step(self,action:int) -> (int, int, bool):
         """
@@ -44,6 +47,16 @@ class Env(object):
             next state, reward, done (whether it reached to a terminal state)
         """
         raise NotImplementedError()
+        
+        # prev_state = self._state
+        # # self._state: next state
+        # self._state = np.random.choice(self.spec.nS, p = self.trans_mat[self._state, action])
+        # r = self.r_mat[prev_state, action, self._state]
+        
+        # if self._state == self.final_state:
+        #     return self._state, r, True
+        # else:
+        #     return self._state, r, False
 
 class EnvWithModel(Env):
     @property
@@ -53,7 +66,10 @@ class EnvWithModel(Env):
         return: a numpy array shape of [nS,nA,nS]
             TD[s,a,s'] := the probability it will resulted in s' when it execute action a given state s
         """
+        # s': next state
         raise NotImplementedError()
+        
+        # return self.trans_mat
 
     @property
     def R(self) -> np.array:
@@ -63,4 +79,5 @@ class EnvWithModel(Env):
             R[s,a,s'] := reward the agent will get it experiences (s,a,s') transition.
         """
         raise NotImplementedError()
-
+        
+        # return self.r_mat
