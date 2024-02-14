@@ -34,7 +34,7 @@ def value_prediction(env:EnvWithModel, pi:Policy, initV:np.array, theta:float) -
     action_length = env.spec.nA
     
     V = initV
-    Q = np.zeros([state_length, action_length])
+    Q = np.zeros((state_length, action_length))
     next_delta = float('inf')
     
     # State value function
@@ -60,23 +60,23 @@ def value_prediction(env:EnvWithModel, pi:Policy, initV:np.array, theta:float) -
         if next_delta < theta:
             break
         
-    next_delta = float('inf')
-        
     # State - action value function
+    next_delta = float('inf')
+    
     while True:
-        delta = 0
+        delta = 0.0
         
         for s in range(state_length):
             for a in range(action_length):
-                q = Q[s, a]
+                q = Q[s][a]
                 next_value = 0
             
                 for sprime in range(state_length):
                     r = env.R[s, a, sprime]
                     next_value += env.TD[s, a, sprime] * (r + env.spec.gamma * V[sprime])
                 
-                Q[s, a] = next_value
-                delta = max(delta, abs(q - Q[s, a]))
+                Q[s][a] = next_value
+                delta = max(delta, abs(q - Q[s][a]))
         
         next_delta = delta
         
@@ -108,7 +108,7 @@ def value_iteration(env:EnvWithModel, initV:np.array, theta:float) -> Tuple[np.a
     V = initV
     
     while True:
-        delta = 0
+        delta = 0.0
         
         for s in range(state_length):
             v = V[s]
@@ -140,13 +140,8 @@ def value_iteration(env:EnvWithModel, initV:np.array, theta:float) -> Tuple[np.a
                 next_pi += env.TD[s, a, sprime] * (r + env.spec.gamma * V[sprime])
 
             index.append(next_pi)
-        
-        for a in range(action_length):
-            if a == np.argmax(index):
-                pi.p[s][a] = True
-            else:
-                pi.p[s][a] = False
-                
+            
+        pi.p[s][np.argmax(index)] = 1.0
         index.clear()
 
     return V, pi

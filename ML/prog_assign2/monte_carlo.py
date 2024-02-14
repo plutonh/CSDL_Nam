@@ -48,8 +48,8 @@ def off_policy_mc_prediction_ordinary_importance_sampling(
             
             G = gamma * G + r
             C[s][a] += 1
-            Q[s][a] = Q[s][a] + ((W * G) - Q[s][a]) / C[s][a]
-            W = W * (pi.action_prob[s][a] / bpi.action_prob[s][a])
+            Q[s][a] = Q[s][a] + (((W * G) - Q[s][a]) / C[s][a])
+            W = W * (pi.action_prob(s, a) / bpi.action_prob(s, a))
 
     return Q
 
@@ -98,6 +98,9 @@ def off_policy_mc_prediction_weighted_importance_sampling(
             G = gamma * G + r
             C[s][a] += W
             Q[s][a] = Q[s][a] + (W / C[s][a]) * (G - Q[s][a])
-            W = W * (pi.action_prob[s][a] / bpi.action_prob[s][a])
+            W = W * (pi.action_prob(s, a) / bpi.action_prob(s, a))
+            
+            if W == 0:
+                break
 
     return Q
