@@ -1,0 +1,477 @@
+
+
+================================================================
+== Vitis HLS Report for 'gemm_Pipeline_VITIS_LOOP_45_1_VITIS_LOOP_46_2'
+================================================================
+* Date:           Thu Nov 30 17:26:22 2023
+
+* Version:        2022.2 (Build 3670227 on Oct 13 2022)
+* Project:        6_outer_zcu104
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynquplus
+* Target device:  xczu7ev-ffvc1156-2-e
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  2.336 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |       66|       66|  0.660 us|  0.660 us|   66|   66|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-----------------------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                                   |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |             Loop Name             |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +-----------------------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- VITIS_LOOP_45_1_VITIS_LOOP_46_2  |       64|       64|         1|          1|          1|    64|       yes|
+        +-----------------------------------+---------+---------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 2
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 1
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 1
+* Pipeline : 1
+  Pipeline-0 : II = 1, D = 1, States = { 1 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 2.33>
+ST_1 : Operation 4 [1/1] (0.00ns)   --->   "%o = alloca i32 1"   --->   Operation 4 'alloca' 'o' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%m = alloca i32 1"   --->   Operation 5 'alloca' 'm' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%indvar_flatten = alloca i32 1"   --->   Operation 6 'alloca' 'indvar_flatten' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%c_buff = alloca i32 1"   --->   Operation 7 'alloca' 'c_buff' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%c_buff_1 = alloca i32 1"   --->   Operation 8 'alloca' 'c_buff_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%c_buff_2 = alloca i32 1"   --->   Operation 9 'alloca' 'c_buff_2' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%c_buff_3 = alloca i32 1"   --->   Operation 10 'alloca' 'c_buff_3' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%c_buff_4 = alloca i32 1"   --->   Operation 11 'alloca' 'c_buff_4' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%c_buff_5 = alloca i32 1"   --->   Operation 12 'alloca' 'c_buff_5' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%c_buff_6 = alloca i32 1"   --->   Operation 13 'alloca' 'c_buff_6' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%c_buff_7 = alloca i32 1"   --->   Operation 14 'alloca' 'c_buff_7' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%c_buff_8 = alloca i32 1"   --->   Operation 15 'alloca' 'c_buff_8' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%c_buff_9 = alloca i32 1"   --->   Operation 16 'alloca' 'c_buff_9' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 17 [1/1] (0.00ns)   --->   "%c_buff_10 = alloca i32 1"   --->   Operation 17 'alloca' 'c_buff_10' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 18 [1/1] (0.00ns)   --->   "%c_buff_11 = alloca i32 1"   --->   Operation 18 'alloca' 'c_buff_11' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 19 [1/1] (0.00ns)   --->   "%c_buff_12 = alloca i32 1"   --->   Operation 19 'alloca' 'c_buff_12' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 20 [1/1] (0.00ns)   --->   "%c_buff_13 = alloca i32 1"   --->   Operation 20 'alloca' 'c_buff_13' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 21 [1/1] (0.00ns)   --->   "%c_buff_14 = alloca i32 1"   --->   Operation 21 'alloca' 'c_buff_14' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 22 [1/1] (0.00ns)   --->   "%c_buff_15 = alloca i32 1"   --->   Operation 22 'alloca' 'c_buff_15' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 23 [1/1] (0.00ns)   --->   "%c_buff_16 = alloca i32 1"   --->   Operation 23 'alloca' 'c_buff_16' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 24 [1/1] (0.00ns)   --->   "%c_buff_17 = alloca i32 1"   --->   Operation 24 'alloca' 'c_buff_17' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 25 [1/1] (0.00ns)   --->   "%c_buff_18 = alloca i32 1"   --->   Operation 25 'alloca' 'c_buff_18' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 26 [1/1] (0.00ns)   --->   "%c_buff_19 = alloca i32 1"   --->   Operation 26 'alloca' 'c_buff_19' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 27 [1/1] (0.00ns)   --->   "%c_buff_20 = alloca i32 1"   --->   Operation 27 'alloca' 'c_buff_20' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 28 [1/1] (0.00ns)   --->   "%c_buff_21 = alloca i32 1"   --->   Operation 28 'alloca' 'c_buff_21' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 29 [1/1] (0.00ns)   --->   "%c_buff_22 = alloca i32 1"   --->   Operation 29 'alloca' 'c_buff_22' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 30 [1/1] (0.00ns)   --->   "%c_buff_23 = alloca i32 1"   --->   Operation 30 'alloca' 'c_buff_23' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 31 [1/1] (0.00ns)   --->   "%c_buff_24 = alloca i32 1"   --->   Operation 31 'alloca' 'c_buff_24' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 32 [1/1] (0.00ns)   --->   "%c_buff_25 = alloca i32 1"   --->   Operation 32 'alloca' 'c_buff_25' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 33 [1/1] (0.00ns)   --->   "%c_buff_26 = alloca i32 1"   --->   Operation 33 'alloca' 'c_buff_26' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 34 [1/1] (0.00ns)   --->   "%c_buff_27 = alloca i32 1"   --->   Operation 34 'alloca' 'c_buff_27' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 35 [1/1] (0.00ns)   --->   "%c_buff_28 = alloca i32 1"   --->   Operation 35 'alloca' 'c_buff_28' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 36 [1/1] (0.00ns)   --->   "%c_buff_29 = alloca i32 1"   --->   Operation 36 'alloca' 'c_buff_29' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 37 [1/1] (0.00ns)   --->   "%c_buff_30 = alloca i32 1"   --->   Operation 37 'alloca' 'c_buff_30' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 38 [1/1] (0.00ns)   --->   "%c_buff_31 = alloca i32 1"   --->   Operation 38 'alloca' 'c_buff_31' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 39 [1/1] (0.00ns)   --->   "%c_buff_32 = alloca i32 1"   --->   Operation 39 'alloca' 'c_buff_32' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 40 [1/1] (0.00ns)   --->   "%c_buff_33 = alloca i32 1"   --->   Operation 40 'alloca' 'c_buff_33' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 41 [1/1] (0.00ns)   --->   "%c_buff_34 = alloca i32 1"   --->   Operation 41 'alloca' 'c_buff_34' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 42 [1/1] (0.00ns)   --->   "%c_buff_35 = alloca i32 1"   --->   Operation 42 'alloca' 'c_buff_35' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 43 [1/1] (0.00ns)   --->   "%c_buff_36 = alloca i32 1"   --->   Operation 43 'alloca' 'c_buff_36' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 44 [1/1] (0.00ns)   --->   "%c_buff_37 = alloca i32 1"   --->   Operation 44 'alloca' 'c_buff_37' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 45 [1/1] (0.00ns)   --->   "%c_buff_38 = alloca i32 1"   --->   Operation 45 'alloca' 'c_buff_38' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 46 [1/1] (0.00ns)   --->   "%c_buff_39 = alloca i32 1"   --->   Operation 46 'alloca' 'c_buff_39' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 47 [1/1] (0.00ns)   --->   "%c_buff_40 = alloca i32 1"   --->   Operation 47 'alloca' 'c_buff_40' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 48 [1/1] (0.00ns)   --->   "%c_buff_41 = alloca i32 1"   --->   Operation 48 'alloca' 'c_buff_41' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 49 [1/1] (0.00ns)   --->   "%c_buff_42 = alloca i32 1"   --->   Operation 49 'alloca' 'c_buff_42' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 50 [1/1] (0.00ns)   --->   "%c_buff_43 = alloca i32 1"   --->   Operation 50 'alloca' 'c_buff_43' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 51 [1/1] (0.00ns)   --->   "%c_buff_44 = alloca i32 1"   --->   Operation 51 'alloca' 'c_buff_44' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 52 [1/1] (0.00ns)   --->   "%c_buff_45 = alloca i32 1"   --->   Operation 52 'alloca' 'c_buff_45' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 53 [1/1] (0.00ns)   --->   "%c_buff_46 = alloca i32 1"   --->   Operation 53 'alloca' 'c_buff_46' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 54 [1/1] (0.00ns)   --->   "%c_buff_47 = alloca i32 1"   --->   Operation 54 'alloca' 'c_buff_47' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 55 [1/1] (0.00ns)   --->   "%c_buff_48 = alloca i32 1"   --->   Operation 55 'alloca' 'c_buff_48' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 56 [1/1] (0.00ns)   --->   "%c_buff_49 = alloca i32 1"   --->   Operation 56 'alloca' 'c_buff_49' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 57 [1/1] (0.00ns)   --->   "%c_buff_50 = alloca i32 1"   --->   Operation 57 'alloca' 'c_buff_50' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 58 [1/1] (0.00ns)   --->   "%c_buff_51 = alloca i32 1"   --->   Operation 58 'alloca' 'c_buff_51' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 59 [1/1] (0.00ns)   --->   "%c_buff_52 = alloca i32 1"   --->   Operation 59 'alloca' 'c_buff_52' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 60 [1/1] (0.00ns)   --->   "%c_buff_53 = alloca i32 1"   --->   Operation 60 'alloca' 'c_buff_53' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 61 [1/1] (0.00ns)   --->   "%c_buff_54 = alloca i32 1"   --->   Operation 61 'alloca' 'c_buff_54' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 62 [1/1] (0.00ns)   --->   "%c_buff_55 = alloca i32 1"   --->   Operation 62 'alloca' 'c_buff_55' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 63 [1/1] (0.00ns)   --->   "%c_buff_56 = alloca i32 1"   --->   Operation 63 'alloca' 'c_buff_56' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 64 [1/1] (0.00ns)   --->   "%c_buff_57 = alloca i32 1"   --->   Operation 64 'alloca' 'c_buff_57' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 65 [1/1] (0.00ns)   --->   "%c_buff_58 = alloca i32 1"   --->   Operation 65 'alloca' 'c_buff_58' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 66 [1/1] (0.00ns)   --->   "%c_buff_59 = alloca i32 1"   --->   Operation 66 'alloca' 'c_buff_59' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 67 [1/1] (0.00ns)   --->   "%c_buff_60 = alloca i32 1"   --->   Operation 67 'alloca' 'c_buff_60' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 68 [1/1] (0.00ns)   --->   "%c_buff_61 = alloca i32 1"   --->   Operation 68 'alloca' 'c_buff_61' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 69 [1/1] (0.00ns)   --->   "%c_buff_62 = alloca i32 1"   --->   Operation 69 'alloca' 'c_buff_62' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 70 [1/1] (0.00ns)   --->   "%c_buff_63 = alloca i32 1"   --->   Operation 70 'alloca' 'c_buff_63' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 71 [1/1] (0.42ns)   --->   "%store_ln0 = store i7 0, i7 %indvar_flatten"   --->   Operation 71 'store' 'store_ln0' <Predicate = true> <Delay = 0.42>
+ST_1 : Operation 72 [1/1] (0.42ns)   --->   "%store_ln0 = store i4 0, i4 %m"   --->   Operation 72 'store' 'store_ln0' <Predicate = true> <Delay = 0.42>
+ST_1 : Operation 73 [1/1] (0.42ns)   --->   "%store_ln0 = store i4 0, i4 %o"   --->   Operation 73 'store' 'store_ln0' <Predicate = true> <Delay = 0.42>
+ST_1 : Operation 74 [1/1] (0.00ns)   --->   "%br_ln0 = br void %for.inc"   --->   Operation 74 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 75 [1/1] (0.00ns)   --->   "%indvar_flatten_load = load i7 %indvar_flatten" [gemm_outer.cc:45]   --->   Operation 75 'load' 'indvar_flatten_load' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 76 [1/1] (0.00ns)   --->   "%specpipeline_ln0 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 1, i32 0, void @p_str"   --->   Operation 76 'specpipeline' 'specpipeline_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 77 [1/1] (0.81ns)   --->   "%icmp_ln45 = icmp_eq  i7 %indvar_flatten_load, i7 64" [gemm_outer.cc:45]   --->   Operation 77 'icmp' 'icmp_ln45' <Predicate = true> <Delay = 0.81> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.81> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 78 [1/1] (0.77ns)   --->   "%add_ln45 = add i7 %indvar_flatten_load, i7 1" [gemm_outer.cc:45]   --->   Operation 78 'add' 'add_ln45' <Predicate = true> <Delay = 0.77> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.77> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 79 [1/1] (0.00ns)   --->   "%br_ln45 = br i1 %icmp_ln45, void %for.inc11, void %VITIS_LOOP_51_3.exitStub" [gemm_outer.cc:45]   --->   Operation 79 'br' 'br_ln45' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 80 [1/1] (0.00ns)   --->   "%o_load = load i4 %o" [gemm_outer.cc:46]   --->   Operation 80 'load' 'o_load' <Predicate = (!icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 81 [1/1] (0.00ns)   --->   "%m_load = load i4 %m" [gemm_outer.cc:45]   --->   Operation 81 'load' 'm_load' <Predicate = (!icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 82 [1/1] (0.00ns)   --->   "%specloopname_ln0 = specloopname void @_ssdm_op_SpecLoopName, void @VITIS_LOOP_45_1_VITIS_LOOP_46_2_str"   --->   Operation 82 'specloopname' 'specloopname_ln0' <Predicate = (!icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 83 [1/1] (0.00ns)   --->   "%empty = speclooptripcount i32 @_ssdm_op_SpecLoopTripCount, i64 64, i64 64, i64 64"   --->   Operation 83 'speclooptripcount' 'empty' <Predicate = (!icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 84 [1/1] (0.72ns)   --->   "%icmp_ln46 = icmp_eq  i4 %o_load, i4 8" [gemm_outer.cc:46]   --->   Operation 84 'icmp' 'icmp_ln46' <Predicate = (!icmp_ln45)> <Delay = 0.72> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.72> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 85 [1/1] (0.39ns)   --->   "%select_ln30 = select i1 %icmp_ln46, i4 0, i4 %o_load" [gemm_outer.cc:30]   --->   Operation 85 'select' 'select_ln30' <Predicate = (!icmp_ln45)> <Delay = 0.39> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.39> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 86 [1/1] (0.79ns)   --->   "%add_ln45_1 = add i4 %m_load, i4 1" [gemm_outer.cc:45]   --->   Operation 86 'add' 'add_ln45_1' <Predicate = (!icmp_ln45)> <Delay = 0.79> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.79> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 87 [1/1] (0.39ns)   --->   "%select_ln30_1 = select i1 %icmp_ln46, i4 %add_ln45_1, i4 %m_load" [gemm_outer.cc:30]   --->   Operation 87 'select' 'select_ln30_1' <Predicate = (!icmp_ln45)> <Delay = 0.39> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.39> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 88 [1/1] (0.00ns)   --->   "%trunc_ln30 = trunc i4 %select_ln30_1" [gemm_outer.cc:30]   --->   Operation 88 'trunc' 'trunc_ln30' <Predicate = (!icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 89 [1/1] (0.00ns)   --->   "%specpipeline_ln0 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 1, i32 0, void @p_str"   --->   Operation 89 'specpipeline' 'specpipeline_ln0' <Predicate = (!icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 90 [1/1] (0.00ns)   --->   "%specloopname_ln30 = specloopname void @_ssdm_op_SpecLoopName, void @empty_14" [gemm_outer.cc:30]   --->   Operation 90 'specloopname' 'specloopname_ln30' <Predicate = (!icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 91 [1/1] (0.00ns)   --->   "%trunc_ln47 = trunc i4 %select_ln30" [gemm_outer.cc:47]   --->   Operation 91 'trunc' 'trunc_ln47' <Predicate = (!icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 92 [1/1] (0.44ns)   --->   "%switch_ln47 = switch i3 %trunc_ln30, void %arrayidx107.case.7, i3 0, void %arrayidx107.case.0, i3 1, void %arrayidx107.case.1, i3 2, void %arrayidx107.case.2, i3 3, void %arrayidx107.case.3, i3 4, void %arrayidx107.case.4, i3 5, void %arrayidx107.case.5, i3 6, void %arrayidx107.case.6" [gemm_outer.cc:47]   --->   Operation 92 'switch' 'switch_ln47' <Predicate = (!icmp_ln45)> <Delay = 0.44>
+ST_1 : Operation 93 [1/1] (0.44ns)   --->   "%switch_ln47 = switch i3 %trunc_ln47, void %arrayidx107.case.7212, i3 0, void %arrayidx107.case.6.arrayidx107.exit_crit_edge2, i3 1, void %arrayidx107.case.1206, i3 2, void %arrayidx107.case.2207, i3 3, void %arrayidx107.case.3208, i3 4, void %arrayidx107.case.4209, i3 5, void %arrayidx107.case.5210, i3 6, void %arrayidx107.case.6.arrayidx107.exit_crit_edge" [gemm_outer.cc:47]   --->   Operation 93 'switch' 'switch_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 6)> <Delay = 0.44>
+ST_1 : Operation 94 [1/1] (0.00ns)   --->   "%store_ln47 = store i32 0, i32 %c_buff_54" [gemm_outer.cc:47]   --->   Operation 94 'store' 'store_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 6 & trunc_ln47 == 6)> <Delay = 0.00>
+ST_1 : Operation 95 [1/1] (0.00ns)   --->   "%br_ln47 = br void %arrayidx107.exit" [gemm_outer.cc:47]   --->   Operation 95 'br' 'br_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 6 & trunc_ln47 == 6)> <Delay = 0.00>
+ST_1 : Operation 96 [1/1] (0.00ns)   --->   "%store_ln47 = store i32 0, i32 %c_buff_53" [gemm_outer.cc:47]   --->   Operation 96 'store' 'store_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 6 & trunc_ln47 == 5)> <Delay = 0.00>
+ST_1 : Operation 97 [1/1] (0.00ns)   --->   "%br_ln47 = br void %arrayidx107.exit" [gemm_outer.cc:47]   --->   Operation 97 'br' 'br_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 6 & trunc_ln47 == 5)> <Delay = 0.00>
+ST_1 : Operation 98 [1/1] (0.00ns)   --->   "%store_ln47 = store i32 0, i32 %c_buff_52" [gemm_outer.cc:47]   --->   Operation 98 'store' 'store_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 6 & trunc_ln47 == 4)> <Delay = 0.00>
+ST_1 : Operation 99 [1/1] (0.00ns)   --->   "%br_ln47 = br void %arrayidx107.exit" [gemm_outer.cc:47]   --->   Operation 99 'br' 'br_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 6 & trunc_ln47 == 4)> <Delay = 0.00>
+ST_1 : Operation 100 [1/1] (0.00ns)   --->   "%store_ln47 = store i32 0, i32 %c_buff_51" [gemm_outer.cc:47]   --->   Operation 100 'store' 'store_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 6 & trunc_ln47 == 3)> <Delay = 0.00>
+ST_1 : Operation 101 [1/1] (0.00ns)   --->   "%br_ln47 = br void %arrayidx107.exit" [gemm_outer.cc:47]   --->   Operation 101 'br' 'br_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 6 & trunc_ln47 == 3)> <Delay = 0.00>
+ST_1 : Operation 102 [1/1] (0.00ns)   --->   "%store_ln47 = store i32 0, i32 %c_buff_50" [gemm_outer.cc:47]   --->   Operation 102 'store' 'store_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 6 & trunc_ln47 == 2)> <Delay = 0.00>
+ST_1 : Operation 103 [1/1] (0.00ns)   --->   "%br_ln47 = br void %arrayidx107.exit" [gemm_outer.cc:47]   --->   Operation 103 'br' 'br_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 6 & trunc_ln47 == 2)> <Delay = 0.00>
+ST_1 : Operation 104 [1/1] (0.00ns)   --->   "%store_ln47 = store i32 0, i32 %c_buff_49" [gemm_outer.cc:47]   --->   Operation 104 'store' 'store_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 6 & trunc_ln47 == 1)> <Delay = 0.00>
+ST_1 : Operation 105 [1/1] (0.00ns)   --->   "%br_ln47 = br void %arrayidx107.exit" [gemm_outer.cc:47]   --->   Operation 105 'br' 'br_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 6 & trunc_ln47 == 1)> <Delay = 0.00>
+ST_1 : Operation 106 [1/1] (0.00ns)   --->   "%store_ln47 = store i32 0, i32 %c_buff_48" [gemm_outer.cc:47]   --->   Operation 106 'store' 'store_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 6 & trunc_ln47 == 0)> <Delay = 0.00>
+ST_1 : Operation 107 [1/1] (0.00ns)   --->   "%br_ln47 = br void %arrayidx107.exit" [gemm_outer.cc:47]   --->   Operation 107 'br' 'br_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 6 & trunc_ln47 == 0)> <Delay = 0.00>
+ST_1 : Operation 108 [1/1] (0.00ns)   --->   "%store_ln47 = store i32 0, i32 %c_buff_55" [gemm_outer.cc:47]   --->   Operation 108 'store' 'store_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 6 & trunc_ln47 == 7)> <Delay = 0.00>
+ST_1 : Operation 109 [1/1] (0.00ns)   --->   "%br_ln47 = br void %arrayidx107.exit" [gemm_outer.cc:47]   --->   Operation 109 'br' 'br_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 6 & trunc_ln47 == 7)> <Delay = 0.00>
+ST_1 : Operation 110 [1/1] (0.44ns)   --->   "%switch_ln47 = switch i3 %trunc_ln47, void %arrayidx107.case.7202, i3 0, void %arrayidx107.case.5.arrayidx107.exit_crit_edge3, i3 1, void %arrayidx107.case.1196, i3 2, void %arrayidx107.case.2197, i3 3, void %arrayidx107.case.3198, i3 4, void %arrayidx107.case.4199, i3 5, void %arrayidx107.case.5200, i3 6, void %arrayidx107.case.5.arrayidx107.exit_crit_edge" [gemm_outer.cc:47]   --->   Operation 110 'switch' 'switch_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 5)> <Delay = 0.44>
+ST_1 : Operation 111 [1/1] (0.00ns)   --->   "%store_ln47 = store i32 0, i32 %c_buff_46" [gemm_outer.cc:47]   --->   Operation 111 'store' 'store_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 5 & trunc_ln47 == 6)> <Delay = 0.00>
+ST_1 : Operation 112 [1/1] (0.00ns)   --->   "%br_ln47 = br void %arrayidx107.exit" [gemm_outer.cc:47]   --->   Operation 112 'br' 'br_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 5 & trunc_ln47 == 6)> <Delay = 0.00>
+ST_1 : Operation 113 [1/1] (0.00ns)   --->   "%store_ln47 = store i32 0, i32 %c_buff_45" [gemm_outer.cc:47]   --->   Operation 113 'store' 'store_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 5 & trunc_ln47 == 5)> <Delay = 0.00>
+ST_1 : Operation 114 [1/1] (0.00ns)   --->   "%br_ln47 = br void %arrayidx107.exit" [gemm_outer.cc:47]   --->   Operation 114 'br' 'br_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 5 & trunc_ln47 == 5)> <Delay = 0.00>
+ST_1 : Operation 115 [1/1] (0.00ns)   --->   "%store_ln47 = store i32 0, i32 %c_buff_44" [gemm_outer.cc:47]   --->   Operation 115 'store' 'store_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 5 & trunc_ln47 == 4)> <Delay = 0.00>
+ST_1 : Operation 116 [1/1] (0.00ns)   --->   "%br_ln47 = br void %arrayidx107.exit" [gemm_outer.cc:47]   --->   Operation 116 'br' 'br_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 5 & trunc_ln47 == 4)> <Delay = 0.00>
+ST_1 : Operation 117 [1/1] (0.00ns)   --->   "%store_ln47 = store i32 0, i32 %c_buff_43" [gemm_outer.cc:47]   --->   Operation 117 'store' 'store_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 5 & trunc_ln47 == 3)> <Delay = 0.00>
+ST_1 : Operation 118 [1/1] (0.00ns)   --->   "%br_ln47 = br void %arrayidx107.exit" [gemm_outer.cc:47]   --->   Operation 118 'br' 'br_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 5 & trunc_ln47 == 3)> <Delay = 0.00>
+ST_1 : Operation 119 [1/1] (0.00ns)   --->   "%store_ln47 = store i32 0, i32 %c_buff_42" [gemm_outer.cc:47]   --->   Operation 119 'store' 'store_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 5 & trunc_ln47 == 2)> <Delay = 0.00>
+ST_1 : Operation 120 [1/1] (0.00ns)   --->   "%br_ln47 = br void %arrayidx107.exit" [gemm_outer.cc:47]   --->   Operation 120 'br' 'br_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 5 & trunc_ln47 == 2)> <Delay = 0.00>
+ST_1 : Operation 121 [1/1] (0.00ns)   --->   "%store_ln47 = store i32 0, i32 %c_buff_41" [gemm_outer.cc:47]   --->   Operation 121 'store' 'store_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 5 & trunc_ln47 == 1)> <Delay = 0.00>
+ST_1 : Operation 122 [1/1] (0.00ns)   --->   "%br_ln47 = br void %arrayidx107.exit" [gemm_outer.cc:47]   --->   Operation 122 'br' 'br_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 5 & trunc_ln47 == 1)> <Delay = 0.00>
+ST_1 : Operation 123 [1/1] (0.00ns)   --->   "%store_ln47 = store i32 0, i32 %c_buff_40" [gemm_outer.cc:47]   --->   Operation 123 'store' 'store_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 5 & trunc_ln47 == 0)> <Delay = 0.00>
+ST_1 : Operation 124 [1/1] (0.00ns)   --->   "%br_ln47 = br void %arrayidx107.exit" [gemm_outer.cc:47]   --->   Operation 124 'br' 'br_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 5 & trunc_ln47 == 0)> <Delay = 0.00>
+ST_1 : Operation 125 [1/1] (0.00ns)   --->   "%store_ln47 = store i32 0, i32 %c_buff_47" [gemm_outer.cc:47]   --->   Operation 125 'store' 'store_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 5 & trunc_ln47 == 7)> <Delay = 0.00>
+ST_1 : Operation 126 [1/1] (0.00ns)   --->   "%br_ln47 = br void %arrayidx107.exit" [gemm_outer.cc:47]   --->   Operation 126 'br' 'br_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 5 & trunc_ln47 == 7)> <Delay = 0.00>
+ST_1 : Operation 127 [1/1] (0.44ns)   --->   "%switch_ln47 = switch i3 %trunc_ln47, void %arrayidx107.case.7192, i3 0, void %arrayidx107.case.4.arrayidx107.exit_crit_edge4, i3 1, void %arrayidx107.case.1186, i3 2, void %arrayidx107.case.2187, i3 3, void %arrayidx107.case.3188, i3 4, void %arrayidx107.case.4189, i3 5, void %arrayidx107.case.5190, i3 6, void %arrayidx107.case.4.arrayidx107.exit_crit_edge" [gemm_outer.cc:47]   --->   Operation 127 'switch' 'switch_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 4)> <Delay = 0.44>
+ST_1 : Operation 128 [1/1] (0.00ns)   --->   "%store_ln47 = store i32 0, i32 %c_buff_38" [gemm_outer.cc:47]   --->   Operation 128 'store' 'store_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 4 & trunc_ln47 == 6)> <Delay = 0.00>
+ST_1 : Operation 129 [1/1] (0.00ns)   --->   "%br_ln47 = br void %arrayidx107.exit" [gemm_outer.cc:47]   --->   Operation 129 'br' 'br_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 4 & trunc_ln47 == 6)> <Delay = 0.00>
+ST_1 : Operation 130 [1/1] (0.00ns)   --->   "%store_ln47 = store i32 0, i32 %c_buff_37" [gemm_outer.cc:47]   --->   Operation 130 'store' 'store_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 4 & trunc_ln47 == 5)> <Delay = 0.00>
+ST_1 : Operation 131 [1/1] (0.00ns)   --->   "%br_ln47 = br void %arrayidx107.exit" [gemm_outer.cc:47]   --->   Operation 131 'br' 'br_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 4 & trunc_ln47 == 5)> <Delay = 0.00>
+ST_1 : Operation 132 [1/1] (0.00ns)   --->   "%store_ln47 = store i32 0, i32 %c_buff_36" [gemm_outer.cc:47]   --->   Operation 132 'store' 'store_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 4 & trunc_ln47 == 4)> <Delay = 0.00>
+ST_1 : Operation 133 [1/1] (0.00ns)   --->   "%br_ln47 = br void %arrayidx107.exit" [gemm_outer.cc:47]   --->   Operation 133 'br' 'br_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 4 & trunc_ln47 == 4)> <Delay = 0.00>
+ST_1 : Operation 134 [1/1] (0.00ns)   --->   "%store_ln47 = store i32 0, i32 %c_buff_35" [gemm_outer.cc:47]   --->   Operation 134 'store' 'store_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 4 & trunc_ln47 == 3)> <Delay = 0.00>
+ST_1 : Operation 135 [1/1] (0.00ns)   --->   "%br_ln47 = br void %arrayidx107.exit" [gemm_outer.cc:47]   --->   Operation 135 'br' 'br_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 4 & trunc_ln47 == 3)> <Delay = 0.00>
+ST_1 : Operation 136 [1/1] (0.00ns)   --->   "%store_ln47 = store i32 0, i32 %c_buff_34" [gemm_outer.cc:47]   --->   Operation 136 'store' 'store_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 4 & trunc_ln47 == 2)> <Delay = 0.00>
+ST_1 : Operation 137 [1/1] (0.00ns)   --->   "%br_ln47 = br void %arrayidx107.exit" [gemm_outer.cc:47]   --->   Operation 137 'br' 'br_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 4 & trunc_ln47 == 2)> <Delay = 0.00>
+ST_1 : Operation 138 [1/1] (0.00ns)   --->   "%store_ln47 = store i32 0, i32 %c_buff_33" [gemm_outer.cc:47]   --->   Operation 138 'store' 'store_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 4 & trunc_ln47 == 1)> <Delay = 0.00>
+ST_1 : Operation 139 [1/1] (0.00ns)   --->   "%br_ln47 = br void %arrayidx107.exit" [gemm_outer.cc:47]   --->   Operation 139 'br' 'br_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 4 & trunc_ln47 == 1)> <Delay = 0.00>
+ST_1 : Operation 140 [1/1] (0.00ns)   --->   "%store_ln47 = store i32 0, i32 %c_buff_32" [gemm_outer.cc:47]   --->   Operation 140 'store' 'store_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 4 & trunc_ln47 == 0)> <Delay = 0.00>
+ST_1 : Operation 141 [1/1] (0.00ns)   --->   "%br_ln47 = br void %arrayidx107.exit" [gemm_outer.cc:47]   --->   Operation 141 'br' 'br_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 4 & trunc_ln47 == 0)> <Delay = 0.00>
+ST_1 : Operation 142 [1/1] (0.00ns)   --->   "%store_ln47 = store i32 0, i32 %c_buff_39" [gemm_outer.cc:47]   --->   Operation 142 'store' 'store_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 4 & trunc_ln47 == 7)> <Delay = 0.00>
+ST_1 : Operation 143 [1/1] (0.00ns)   --->   "%br_ln47 = br void %arrayidx107.exit" [gemm_outer.cc:47]   --->   Operation 143 'br' 'br_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 4 & trunc_ln47 == 7)> <Delay = 0.00>
+ST_1 : Operation 144 [1/1] (0.44ns)   --->   "%switch_ln47 = switch i3 %trunc_ln47, void %arrayidx107.case.7182, i3 0, void %arrayidx107.case.3.arrayidx107.exit_crit_edge5, i3 1, void %arrayidx107.case.1176, i3 2, void %arrayidx107.case.2177, i3 3, void %arrayidx107.case.3178, i3 4, void %arrayidx107.case.4179, i3 5, void %arrayidx107.case.5180, i3 6, void %arrayidx107.case.3.arrayidx107.exit_crit_edge" [gemm_outer.cc:47]   --->   Operation 144 'switch' 'switch_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 3)> <Delay = 0.44>
+ST_1 : Operation 145 [1/1] (0.00ns)   --->   "%store_ln47 = store i32 0, i32 %c_buff_30" [gemm_outer.cc:47]   --->   Operation 145 'store' 'store_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 3 & trunc_ln47 == 6)> <Delay = 0.00>
+ST_1 : Operation 146 [1/1] (0.00ns)   --->   "%br_ln47 = br void %arrayidx107.exit" [gemm_outer.cc:47]   --->   Operation 146 'br' 'br_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 3 & trunc_ln47 == 6)> <Delay = 0.00>
+ST_1 : Operation 147 [1/1] (0.00ns)   --->   "%store_ln47 = store i32 0, i32 %c_buff_29" [gemm_outer.cc:47]   --->   Operation 147 'store' 'store_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 3 & trunc_ln47 == 5)> <Delay = 0.00>
+ST_1 : Operation 148 [1/1] (0.00ns)   --->   "%br_ln47 = br void %arrayidx107.exit" [gemm_outer.cc:47]   --->   Operation 148 'br' 'br_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 3 & trunc_ln47 == 5)> <Delay = 0.00>
+ST_1 : Operation 149 [1/1] (0.00ns)   --->   "%store_ln47 = store i32 0, i32 %c_buff_28" [gemm_outer.cc:47]   --->   Operation 149 'store' 'store_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 3 & trunc_ln47 == 4)> <Delay = 0.00>
+ST_1 : Operation 150 [1/1] (0.00ns)   --->   "%br_ln47 = br void %arrayidx107.exit" [gemm_outer.cc:47]   --->   Operation 150 'br' 'br_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 3 & trunc_ln47 == 4)> <Delay = 0.00>
+ST_1 : Operation 151 [1/1] (0.00ns)   --->   "%store_ln47 = store i32 0, i32 %c_buff_27" [gemm_outer.cc:47]   --->   Operation 151 'store' 'store_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 3 & trunc_ln47 == 3)> <Delay = 0.00>
+ST_1 : Operation 152 [1/1] (0.00ns)   --->   "%br_ln47 = br void %arrayidx107.exit" [gemm_outer.cc:47]   --->   Operation 152 'br' 'br_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 3 & trunc_ln47 == 3)> <Delay = 0.00>
+ST_1 : Operation 153 [1/1] (0.00ns)   --->   "%store_ln47 = store i32 0, i32 %c_buff_26" [gemm_outer.cc:47]   --->   Operation 153 'store' 'store_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 3 & trunc_ln47 == 2)> <Delay = 0.00>
+ST_1 : Operation 154 [1/1] (0.00ns)   --->   "%br_ln47 = br void %arrayidx107.exit" [gemm_outer.cc:47]   --->   Operation 154 'br' 'br_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 3 & trunc_ln47 == 2)> <Delay = 0.00>
+ST_1 : Operation 155 [1/1] (0.00ns)   --->   "%store_ln47 = store i32 0, i32 %c_buff_25" [gemm_outer.cc:47]   --->   Operation 155 'store' 'store_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 3 & trunc_ln47 == 1)> <Delay = 0.00>
+ST_1 : Operation 156 [1/1] (0.00ns)   --->   "%br_ln47 = br void %arrayidx107.exit" [gemm_outer.cc:47]   --->   Operation 156 'br' 'br_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 3 & trunc_ln47 == 1)> <Delay = 0.00>
+ST_1 : Operation 157 [1/1] (0.00ns)   --->   "%store_ln47 = store i32 0, i32 %c_buff_24" [gemm_outer.cc:47]   --->   Operation 157 'store' 'store_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 3 & trunc_ln47 == 0)> <Delay = 0.00>
+ST_1 : Operation 158 [1/1] (0.00ns)   --->   "%br_ln47 = br void %arrayidx107.exit" [gemm_outer.cc:47]   --->   Operation 158 'br' 'br_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 3 & trunc_ln47 == 0)> <Delay = 0.00>
+ST_1 : Operation 159 [1/1] (0.00ns)   --->   "%store_ln47 = store i32 0, i32 %c_buff_31" [gemm_outer.cc:47]   --->   Operation 159 'store' 'store_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 3 & trunc_ln47 == 7)> <Delay = 0.00>
+ST_1 : Operation 160 [1/1] (0.00ns)   --->   "%br_ln47 = br void %arrayidx107.exit" [gemm_outer.cc:47]   --->   Operation 160 'br' 'br_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 3 & trunc_ln47 == 7)> <Delay = 0.00>
+ST_1 : Operation 161 [1/1] (0.44ns)   --->   "%switch_ln47 = switch i3 %trunc_ln47, void %arrayidx107.case.7172, i3 0, void %arrayidx107.case.2.arrayidx107.exit_crit_edge6, i3 1, void %arrayidx107.case.1166, i3 2, void %arrayidx107.case.2167, i3 3, void %arrayidx107.case.3168, i3 4, void %arrayidx107.case.4169, i3 5, void %arrayidx107.case.5170, i3 6, void %arrayidx107.case.2.arrayidx107.exit_crit_edge" [gemm_outer.cc:47]   --->   Operation 161 'switch' 'switch_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 2)> <Delay = 0.44>
+ST_1 : Operation 162 [1/1] (0.00ns)   --->   "%store_ln47 = store i32 0, i32 %c_buff_22" [gemm_outer.cc:47]   --->   Operation 162 'store' 'store_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 2 & trunc_ln47 == 6)> <Delay = 0.00>
+ST_1 : Operation 163 [1/1] (0.00ns)   --->   "%br_ln47 = br void %arrayidx107.exit" [gemm_outer.cc:47]   --->   Operation 163 'br' 'br_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 2 & trunc_ln47 == 6)> <Delay = 0.00>
+ST_1 : Operation 164 [1/1] (0.00ns)   --->   "%store_ln47 = store i32 0, i32 %c_buff_21" [gemm_outer.cc:47]   --->   Operation 164 'store' 'store_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 2 & trunc_ln47 == 5)> <Delay = 0.00>
+ST_1 : Operation 165 [1/1] (0.00ns)   --->   "%br_ln47 = br void %arrayidx107.exit" [gemm_outer.cc:47]   --->   Operation 165 'br' 'br_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 2 & trunc_ln47 == 5)> <Delay = 0.00>
+ST_1 : Operation 166 [1/1] (0.00ns)   --->   "%store_ln47 = store i32 0, i32 %c_buff_20" [gemm_outer.cc:47]   --->   Operation 166 'store' 'store_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 2 & trunc_ln47 == 4)> <Delay = 0.00>
+ST_1 : Operation 167 [1/1] (0.00ns)   --->   "%br_ln47 = br void %arrayidx107.exit" [gemm_outer.cc:47]   --->   Operation 167 'br' 'br_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 2 & trunc_ln47 == 4)> <Delay = 0.00>
+ST_1 : Operation 168 [1/1] (0.00ns)   --->   "%store_ln47 = store i32 0, i32 %c_buff_19" [gemm_outer.cc:47]   --->   Operation 168 'store' 'store_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 2 & trunc_ln47 == 3)> <Delay = 0.00>
+ST_1 : Operation 169 [1/1] (0.00ns)   --->   "%br_ln47 = br void %arrayidx107.exit" [gemm_outer.cc:47]   --->   Operation 169 'br' 'br_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 2 & trunc_ln47 == 3)> <Delay = 0.00>
+ST_1 : Operation 170 [1/1] (0.00ns)   --->   "%store_ln47 = store i32 0, i32 %c_buff_18" [gemm_outer.cc:47]   --->   Operation 170 'store' 'store_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 2 & trunc_ln47 == 2)> <Delay = 0.00>
+ST_1 : Operation 171 [1/1] (0.00ns)   --->   "%br_ln47 = br void %arrayidx107.exit" [gemm_outer.cc:47]   --->   Operation 171 'br' 'br_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 2 & trunc_ln47 == 2)> <Delay = 0.00>
+ST_1 : Operation 172 [1/1] (0.00ns)   --->   "%store_ln47 = store i32 0, i32 %c_buff_17" [gemm_outer.cc:47]   --->   Operation 172 'store' 'store_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 2 & trunc_ln47 == 1)> <Delay = 0.00>
+ST_1 : Operation 173 [1/1] (0.00ns)   --->   "%br_ln47 = br void %arrayidx107.exit" [gemm_outer.cc:47]   --->   Operation 173 'br' 'br_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 2 & trunc_ln47 == 1)> <Delay = 0.00>
+ST_1 : Operation 174 [1/1] (0.00ns)   --->   "%store_ln47 = store i32 0, i32 %c_buff_16" [gemm_outer.cc:47]   --->   Operation 174 'store' 'store_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 2 & trunc_ln47 == 0)> <Delay = 0.00>
+ST_1 : Operation 175 [1/1] (0.00ns)   --->   "%br_ln47 = br void %arrayidx107.exit" [gemm_outer.cc:47]   --->   Operation 175 'br' 'br_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 2 & trunc_ln47 == 0)> <Delay = 0.00>
+ST_1 : Operation 176 [1/1] (0.00ns)   --->   "%store_ln47 = store i32 0, i32 %c_buff_23" [gemm_outer.cc:47]   --->   Operation 176 'store' 'store_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 2 & trunc_ln47 == 7)> <Delay = 0.00>
+ST_1 : Operation 177 [1/1] (0.00ns)   --->   "%br_ln47 = br void %arrayidx107.exit" [gemm_outer.cc:47]   --->   Operation 177 'br' 'br_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 2 & trunc_ln47 == 7)> <Delay = 0.00>
+ST_1 : Operation 178 [1/1] (0.44ns)   --->   "%switch_ln47 = switch i3 %trunc_ln47, void %arrayidx107.case.7162, i3 0, void %arrayidx107.case.1.arrayidx107.exit_crit_edge7, i3 1, void %arrayidx107.case.1156, i3 2, void %arrayidx107.case.2157, i3 3, void %arrayidx107.case.3158, i3 4, void %arrayidx107.case.4159, i3 5, void %arrayidx107.case.5160, i3 6, void %arrayidx107.case.1.arrayidx107.exit_crit_edge" [gemm_outer.cc:47]   --->   Operation 178 'switch' 'switch_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 1)> <Delay = 0.44>
+ST_1 : Operation 179 [1/1] (0.00ns)   --->   "%store_ln47 = store i32 0, i32 %c_buff_14" [gemm_outer.cc:47]   --->   Operation 179 'store' 'store_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 1 & trunc_ln47 == 6)> <Delay = 0.00>
+ST_1 : Operation 180 [1/1] (0.00ns)   --->   "%br_ln47 = br void %arrayidx107.exit" [gemm_outer.cc:47]   --->   Operation 180 'br' 'br_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 1 & trunc_ln47 == 6)> <Delay = 0.00>
+ST_1 : Operation 181 [1/1] (0.00ns)   --->   "%store_ln47 = store i32 0, i32 %c_buff_13" [gemm_outer.cc:47]   --->   Operation 181 'store' 'store_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 1 & trunc_ln47 == 5)> <Delay = 0.00>
+ST_1 : Operation 182 [1/1] (0.00ns)   --->   "%br_ln47 = br void %arrayidx107.exit" [gemm_outer.cc:47]   --->   Operation 182 'br' 'br_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 1 & trunc_ln47 == 5)> <Delay = 0.00>
+ST_1 : Operation 183 [1/1] (0.00ns)   --->   "%store_ln47 = store i32 0, i32 %c_buff_12" [gemm_outer.cc:47]   --->   Operation 183 'store' 'store_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 1 & trunc_ln47 == 4)> <Delay = 0.00>
+ST_1 : Operation 184 [1/1] (0.00ns)   --->   "%br_ln47 = br void %arrayidx107.exit" [gemm_outer.cc:47]   --->   Operation 184 'br' 'br_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 1 & trunc_ln47 == 4)> <Delay = 0.00>
+ST_1 : Operation 185 [1/1] (0.00ns)   --->   "%store_ln47 = store i32 0, i32 %c_buff_11" [gemm_outer.cc:47]   --->   Operation 185 'store' 'store_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 1 & trunc_ln47 == 3)> <Delay = 0.00>
+ST_1 : Operation 186 [1/1] (0.00ns)   --->   "%br_ln47 = br void %arrayidx107.exit" [gemm_outer.cc:47]   --->   Operation 186 'br' 'br_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 1 & trunc_ln47 == 3)> <Delay = 0.00>
+ST_1 : Operation 187 [1/1] (0.00ns)   --->   "%store_ln47 = store i32 0, i32 %c_buff_10" [gemm_outer.cc:47]   --->   Operation 187 'store' 'store_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 1 & trunc_ln47 == 2)> <Delay = 0.00>
+ST_1 : Operation 188 [1/1] (0.00ns)   --->   "%br_ln47 = br void %arrayidx107.exit" [gemm_outer.cc:47]   --->   Operation 188 'br' 'br_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 1 & trunc_ln47 == 2)> <Delay = 0.00>
+ST_1 : Operation 189 [1/1] (0.00ns)   --->   "%store_ln47 = store i32 0, i32 %c_buff_9" [gemm_outer.cc:47]   --->   Operation 189 'store' 'store_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 1 & trunc_ln47 == 1)> <Delay = 0.00>
+ST_1 : Operation 190 [1/1] (0.00ns)   --->   "%br_ln47 = br void %arrayidx107.exit" [gemm_outer.cc:47]   --->   Operation 190 'br' 'br_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 1 & trunc_ln47 == 1)> <Delay = 0.00>
+ST_1 : Operation 191 [1/1] (0.00ns)   --->   "%store_ln47 = store i32 0, i32 %c_buff_8" [gemm_outer.cc:47]   --->   Operation 191 'store' 'store_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 1 & trunc_ln47 == 0)> <Delay = 0.00>
+ST_1 : Operation 192 [1/1] (0.00ns)   --->   "%br_ln47 = br void %arrayidx107.exit" [gemm_outer.cc:47]   --->   Operation 192 'br' 'br_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 1 & trunc_ln47 == 0)> <Delay = 0.00>
+ST_1 : Operation 193 [1/1] (0.00ns)   --->   "%store_ln47 = store i32 0, i32 %c_buff_15" [gemm_outer.cc:47]   --->   Operation 193 'store' 'store_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 1 & trunc_ln47 == 7)> <Delay = 0.00>
+ST_1 : Operation 194 [1/1] (0.00ns)   --->   "%br_ln47 = br void %arrayidx107.exit" [gemm_outer.cc:47]   --->   Operation 194 'br' 'br_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 1 & trunc_ln47 == 7)> <Delay = 0.00>
+ST_1 : Operation 195 [1/1] (0.44ns)   --->   "%switch_ln47 = switch i3 %trunc_ln47, void %arrayidx107.case.7152, i3 0, void %arrayidx107.case.0.arrayidx107.exit_crit_edge8, i3 1, void %arrayidx107.case.1146, i3 2, void %arrayidx107.case.2147, i3 3, void %arrayidx107.case.3148, i3 4, void %arrayidx107.case.4149, i3 5, void %arrayidx107.case.5150, i3 6, void %arrayidx107.case.0.arrayidx107.exit_crit_edge" [gemm_outer.cc:47]   --->   Operation 195 'switch' 'switch_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 0)> <Delay = 0.44>
+ST_1 : Operation 196 [1/1] (0.00ns)   --->   "%store_ln47 = store i32 0, i32 %c_buff_6" [gemm_outer.cc:47]   --->   Operation 196 'store' 'store_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 0 & trunc_ln47 == 6)> <Delay = 0.00>
+ST_1 : Operation 197 [1/1] (0.00ns)   --->   "%br_ln47 = br void %arrayidx107.exit" [gemm_outer.cc:47]   --->   Operation 197 'br' 'br_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 0 & trunc_ln47 == 6)> <Delay = 0.00>
+ST_1 : Operation 198 [1/1] (0.00ns)   --->   "%store_ln47 = store i32 0, i32 %c_buff_5" [gemm_outer.cc:47]   --->   Operation 198 'store' 'store_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 0 & trunc_ln47 == 5)> <Delay = 0.00>
+ST_1 : Operation 199 [1/1] (0.00ns)   --->   "%br_ln47 = br void %arrayidx107.exit" [gemm_outer.cc:47]   --->   Operation 199 'br' 'br_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 0 & trunc_ln47 == 5)> <Delay = 0.00>
+ST_1 : Operation 200 [1/1] (0.00ns)   --->   "%store_ln47 = store i32 0, i32 %c_buff_4" [gemm_outer.cc:47]   --->   Operation 200 'store' 'store_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 0 & trunc_ln47 == 4)> <Delay = 0.00>
+ST_1 : Operation 201 [1/1] (0.00ns)   --->   "%br_ln47 = br void %arrayidx107.exit" [gemm_outer.cc:47]   --->   Operation 201 'br' 'br_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 0 & trunc_ln47 == 4)> <Delay = 0.00>
+ST_1 : Operation 202 [1/1] (0.00ns)   --->   "%store_ln47 = store i32 0, i32 %c_buff_3" [gemm_outer.cc:47]   --->   Operation 202 'store' 'store_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 0 & trunc_ln47 == 3)> <Delay = 0.00>
+ST_1 : Operation 203 [1/1] (0.00ns)   --->   "%br_ln47 = br void %arrayidx107.exit" [gemm_outer.cc:47]   --->   Operation 203 'br' 'br_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 0 & trunc_ln47 == 3)> <Delay = 0.00>
+ST_1 : Operation 204 [1/1] (0.00ns)   --->   "%store_ln47 = store i32 0, i32 %c_buff_2" [gemm_outer.cc:47]   --->   Operation 204 'store' 'store_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 0 & trunc_ln47 == 2)> <Delay = 0.00>
+ST_1 : Operation 205 [1/1] (0.00ns)   --->   "%br_ln47 = br void %arrayidx107.exit" [gemm_outer.cc:47]   --->   Operation 205 'br' 'br_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 0 & trunc_ln47 == 2)> <Delay = 0.00>
+ST_1 : Operation 206 [1/1] (0.00ns)   --->   "%store_ln47 = store i32 0, i32 %c_buff_1" [gemm_outer.cc:47]   --->   Operation 206 'store' 'store_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 0 & trunc_ln47 == 1)> <Delay = 0.00>
+ST_1 : Operation 207 [1/1] (0.00ns)   --->   "%br_ln47 = br void %arrayidx107.exit" [gemm_outer.cc:47]   --->   Operation 207 'br' 'br_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 0 & trunc_ln47 == 1)> <Delay = 0.00>
+ST_1 : Operation 208 [1/1] (0.00ns)   --->   "%store_ln47 = store i32 0, i32 %c_buff" [gemm_outer.cc:47]   --->   Operation 208 'store' 'store_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 0 & trunc_ln47 == 0)> <Delay = 0.00>
+ST_1 : Operation 209 [1/1] (0.00ns)   --->   "%br_ln47 = br void %arrayidx107.exit" [gemm_outer.cc:47]   --->   Operation 209 'br' 'br_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 0 & trunc_ln47 == 0)> <Delay = 0.00>
+ST_1 : Operation 210 [1/1] (0.00ns)   --->   "%store_ln47 = store i32 0, i32 %c_buff_7" [gemm_outer.cc:47]   --->   Operation 210 'store' 'store_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 0 & trunc_ln47 == 7)> <Delay = 0.00>
+ST_1 : Operation 211 [1/1] (0.00ns)   --->   "%br_ln47 = br void %arrayidx107.exit" [gemm_outer.cc:47]   --->   Operation 211 'br' 'br_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 0 & trunc_ln47 == 7)> <Delay = 0.00>
+ST_1 : Operation 212 [1/1] (0.44ns)   --->   "%switch_ln47 = switch i3 %trunc_ln47, void %arrayidx107.case.7222, i3 0, void %arrayidx107.case.7.arrayidx107.exit_crit_edge1, i3 1, void %arrayidx107.case.1216, i3 2, void %arrayidx107.case.2217, i3 3, void %arrayidx107.case.3218, i3 4, void %arrayidx107.case.4219, i3 5, void %arrayidx107.case.5220, i3 6, void %arrayidx107.case.7.arrayidx107.exit_crit_edge" [gemm_outer.cc:47]   --->   Operation 212 'switch' 'switch_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 7)> <Delay = 0.44>
+ST_1 : Operation 213 [1/1] (0.00ns)   --->   "%store_ln47 = store i32 0, i32 %c_buff_62" [gemm_outer.cc:47]   --->   Operation 213 'store' 'store_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 7 & trunc_ln47 == 6)> <Delay = 0.00>
+ST_1 : Operation 214 [1/1] (0.00ns)   --->   "%br_ln47 = br void %arrayidx107.exit" [gemm_outer.cc:47]   --->   Operation 214 'br' 'br_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 7 & trunc_ln47 == 6)> <Delay = 0.00>
+ST_1 : Operation 215 [1/1] (0.00ns)   --->   "%store_ln47 = store i32 0, i32 %c_buff_61" [gemm_outer.cc:47]   --->   Operation 215 'store' 'store_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 7 & trunc_ln47 == 5)> <Delay = 0.00>
+ST_1 : Operation 216 [1/1] (0.00ns)   --->   "%br_ln47 = br void %arrayidx107.exit" [gemm_outer.cc:47]   --->   Operation 216 'br' 'br_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 7 & trunc_ln47 == 5)> <Delay = 0.00>
+ST_1 : Operation 217 [1/1] (0.00ns)   --->   "%store_ln47 = store i32 0, i32 %c_buff_60" [gemm_outer.cc:47]   --->   Operation 217 'store' 'store_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 7 & trunc_ln47 == 4)> <Delay = 0.00>
+ST_1 : Operation 218 [1/1] (0.00ns)   --->   "%br_ln47 = br void %arrayidx107.exit" [gemm_outer.cc:47]   --->   Operation 218 'br' 'br_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 7 & trunc_ln47 == 4)> <Delay = 0.00>
+ST_1 : Operation 219 [1/1] (0.00ns)   --->   "%store_ln47 = store i32 0, i32 %c_buff_59" [gemm_outer.cc:47]   --->   Operation 219 'store' 'store_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 7 & trunc_ln47 == 3)> <Delay = 0.00>
+ST_1 : Operation 220 [1/1] (0.00ns)   --->   "%br_ln47 = br void %arrayidx107.exit" [gemm_outer.cc:47]   --->   Operation 220 'br' 'br_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 7 & trunc_ln47 == 3)> <Delay = 0.00>
+ST_1 : Operation 221 [1/1] (0.00ns)   --->   "%store_ln47 = store i32 0, i32 %c_buff_58" [gemm_outer.cc:47]   --->   Operation 221 'store' 'store_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 7 & trunc_ln47 == 2)> <Delay = 0.00>
+ST_1 : Operation 222 [1/1] (0.00ns)   --->   "%br_ln47 = br void %arrayidx107.exit" [gemm_outer.cc:47]   --->   Operation 222 'br' 'br_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 7 & trunc_ln47 == 2)> <Delay = 0.00>
+ST_1 : Operation 223 [1/1] (0.00ns)   --->   "%store_ln47 = store i32 0, i32 %c_buff_57" [gemm_outer.cc:47]   --->   Operation 223 'store' 'store_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 7 & trunc_ln47 == 1)> <Delay = 0.00>
+ST_1 : Operation 224 [1/1] (0.00ns)   --->   "%br_ln47 = br void %arrayidx107.exit" [gemm_outer.cc:47]   --->   Operation 224 'br' 'br_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 7 & trunc_ln47 == 1)> <Delay = 0.00>
+ST_1 : Operation 225 [1/1] (0.00ns)   --->   "%store_ln47 = store i32 0, i32 %c_buff_56" [gemm_outer.cc:47]   --->   Operation 225 'store' 'store_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 7 & trunc_ln47 == 0)> <Delay = 0.00>
+ST_1 : Operation 226 [1/1] (0.00ns)   --->   "%br_ln47 = br void %arrayidx107.exit" [gemm_outer.cc:47]   --->   Operation 226 'br' 'br_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 7 & trunc_ln47 == 0)> <Delay = 0.00>
+ST_1 : Operation 227 [1/1] (0.00ns)   --->   "%store_ln47 = store i32 0, i32 %c_buff_63" [gemm_outer.cc:47]   --->   Operation 227 'store' 'store_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 7 & trunc_ln47 == 7)> <Delay = 0.00>
+ST_1 : Operation 228 [1/1] (0.00ns)   --->   "%br_ln47 = br void %arrayidx107.exit" [gemm_outer.cc:47]   --->   Operation 228 'br' 'br_ln47' <Predicate = (!icmp_ln45 & trunc_ln30 == 7 & trunc_ln47 == 7)> <Delay = 0.00>
+ST_1 : Operation 229 [1/1] (0.79ns)   --->   "%add_ln46 = add i4 %select_ln30, i4 1" [gemm_outer.cc:46]   --->   Operation 229 'add' 'add_ln46' <Predicate = (!icmp_ln45)> <Delay = 0.79> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.79> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 230 [1/1] (0.42ns)   --->   "%store_ln46 = store i7 %add_ln45, i7 %indvar_flatten" [gemm_outer.cc:46]   --->   Operation 230 'store' 'store_ln46' <Predicate = (!icmp_ln45)> <Delay = 0.42>
+ST_1 : Operation 231 [1/1] (0.42ns)   --->   "%store_ln46 = store i4 %select_ln30_1, i4 %m" [gemm_outer.cc:46]   --->   Operation 231 'store' 'store_ln46' <Predicate = (!icmp_ln45)> <Delay = 0.42>
+ST_1 : Operation 232 [1/1] (0.42ns)   --->   "%store_ln46 = store i4 %add_ln46, i4 %o" [gemm_outer.cc:46]   --->   Operation 232 'store' 'store_ln46' <Predicate = (!icmp_ln45)> <Delay = 0.42>
+ST_1 : Operation 233 [1/1] (0.00ns)   --->   "%br_ln46 = br void %for.inc" [gemm_outer.cc:46]   --->   Operation 233 'br' 'br_ln46' <Predicate = (!icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 234 [1/1] (0.00ns)   --->   "%c_buff_load = load i32 %c_buff"   --->   Operation 234 'load' 'c_buff_load' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 235 [1/1] (0.00ns)   --->   "%c_buff_1_load = load i32 %c_buff_1"   --->   Operation 235 'load' 'c_buff_1_load' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 236 [1/1] (0.00ns)   --->   "%c_buff_2_load = load i32 %c_buff_2"   --->   Operation 236 'load' 'c_buff_2_load' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 237 [1/1] (0.00ns)   --->   "%c_buff_3_load = load i32 %c_buff_3"   --->   Operation 237 'load' 'c_buff_3_load' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 238 [1/1] (0.00ns)   --->   "%c_buff_4_load = load i32 %c_buff_4"   --->   Operation 238 'load' 'c_buff_4_load' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 239 [1/1] (0.00ns)   --->   "%c_buff_5_load = load i32 %c_buff_5"   --->   Operation 239 'load' 'c_buff_5_load' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 240 [1/1] (0.00ns)   --->   "%c_buff_6_load = load i32 %c_buff_6"   --->   Operation 240 'load' 'c_buff_6_load' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 241 [1/1] (0.00ns)   --->   "%c_buff_7_load = load i32 %c_buff_7"   --->   Operation 241 'load' 'c_buff_7_load' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 242 [1/1] (0.00ns)   --->   "%c_buff_8_load = load i32 %c_buff_8"   --->   Operation 242 'load' 'c_buff_8_load' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 243 [1/1] (0.00ns)   --->   "%c_buff_9_load = load i32 %c_buff_9"   --->   Operation 243 'load' 'c_buff_9_load' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 244 [1/1] (0.00ns)   --->   "%c_buff_10_load = load i32 %c_buff_10"   --->   Operation 244 'load' 'c_buff_10_load' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 245 [1/1] (0.00ns)   --->   "%c_buff_11_load = load i32 %c_buff_11"   --->   Operation 245 'load' 'c_buff_11_load' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 246 [1/1] (0.00ns)   --->   "%c_buff_12_load = load i32 %c_buff_12"   --->   Operation 246 'load' 'c_buff_12_load' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 247 [1/1] (0.00ns)   --->   "%c_buff_13_load = load i32 %c_buff_13"   --->   Operation 247 'load' 'c_buff_13_load' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 248 [1/1] (0.00ns)   --->   "%c_buff_14_load = load i32 %c_buff_14"   --->   Operation 248 'load' 'c_buff_14_load' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 249 [1/1] (0.00ns)   --->   "%c_buff_15_load = load i32 %c_buff_15"   --->   Operation 249 'load' 'c_buff_15_load' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 250 [1/1] (0.00ns)   --->   "%c_buff_16_load = load i32 %c_buff_16"   --->   Operation 250 'load' 'c_buff_16_load' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 251 [1/1] (0.00ns)   --->   "%c_buff_17_load = load i32 %c_buff_17"   --->   Operation 251 'load' 'c_buff_17_load' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 252 [1/1] (0.00ns)   --->   "%c_buff_18_load = load i32 %c_buff_18"   --->   Operation 252 'load' 'c_buff_18_load' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 253 [1/1] (0.00ns)   --->   "%c_buff_19_load = load i32 %c_buff_19"   --->   Operation 253 'load' 'c_buff_19_load' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 254 [1/1] (0.00ns)   --->   "%c_buff_20_load = load i32 %c_buff_20"   --->   Operation 254 'load' 'c_buff_20_load' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 255 [1/1] (0.00ns)   --->   "%c_buff_21_load = load i32 %c_buff_21"   --->   Operation 255 'load' 'c_buff_21_load' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 256 [1/1] (0.00ns)   --->   "%c_buff_22_load = load i32 %c_buff_22"   --->   Operation 256 'load' 'c_buff_22_load' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 257 [1/1] (0.00ns)   --->   "%c_buff_23_load = load i32 %c_buff_23"   --->   Operation 257 'load' 'c_buff_23_load' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 258 [1/1] (0.00ns)   --->   "%c_buff_24_load = load i32 %c_buff_24"   --->   Operation 258 'load' 'c_buff_24_load' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 259 [1/1] (0.00ns)   --->   "%c_buff_25_load = load i32 %c_buff_25"   --->   Operation 259 'load' 'c_buff_25_load' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 260 [1/1] (0.00ns)   --->   "%c_buff_26_load = load i32 %c_buff_26"   --->   Operation 260 'load' 'c_buff_26_load' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 261 [1/1] (0.00ns)   --->   "%c_buff_27_load = load i32 %c_buff_27"   --->   Operation 261 'load' 'c_buff_27_load' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 262 [1/1] (0.00ns)   --->   "%c_buff_28_load = load i32 %c_buff_28"   --->   Operation 262 'load' 'c_buff_28_load' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 263 [1/1] (0.00ns)   --->   "%c_buff_29_load = load i32 %c_buff_29"   --->   Operation 263 'load' 'c_buff_29_load' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 264 [1/1] (0.00ns)   --->   "%c_buff_30_load = load i32 %c_buff_30"   --->   Operation 264 'load' 'c_buff_30_load' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 265 [1/1] (0.00ns)   --->   "%c_buff_31_load = load i32 %c_buff_31"   --->   Operation 265 'load' 'c_buff_31_load' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 266 [1/1] (0.00ns)   --->   "%c_buff_32_load = load i32 %c_buff_32"   --->   Operation 266 'load' 'c_buff_32_load' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 267 [1/1] (0.00ns)   --->   "%c_buff_33_load = load i32 %c_buff_33"   --->   Operation 267 'load' 'c_buff_33_load' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 268 [1/1] (0.00ns)   --->   "%c_buff_34_load = load i32 %c_buff_34"   --->   Operation 268 'load' 'c_buff_34_load' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 269 [1/1] (0.00ns)   --->   "%c_buff_35_load = load i32 %c_buff_35"   --->   Operation 269 'load' 'c_buff_35_load' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 270 [1/1] (0.00ns)   --->   "%c_buff_36_load = load i32 %c_buff_36"   --->   Operation 270 'load' 'c_buff_36_load' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 271 [1/1] (0.00ns)   --->   "%c_buff_37_load = load i32 %c_buff_37"   --->   Operation 271 'load' 'c_buff_37_load' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 272 [1/1] (0.00ns)   --->   "%c_buff_38_load = load i32 %c_buff_38"   --->   Operation 272 'load' 'c_buff_38_load' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 273 [1/1] (0.00ns)   --->   "%c_buff_39_load = load i32 %c_buff_39"   --->   Operation 273 'load' 'c_buff_39_load' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 274 [1/1] (0.00ns)   --->   "%c_buff_40_load = load i32 %c_buff_40"   --->   Operation 274 'load' 'c_buff_40_load' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 275 [1/1] (0.00ns)   --->   "%c_buff_41_load = load i32 %c_buff_41"   --->   Operation 275 'load' 'c_buff_41_load' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 276 [1/1] (0.00ns)   --->   "%c_buff_42_load = load i32 %c_buff_42"   --->   Operation 276 'load' 'c_buff_42_load' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 277 [1/1] (0.00ns)   --->   "%c_buff_43_load = load i32 %c_buff_43"   --->   Operation 277 'load' 'c_buff_43_load' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 278 [1/1] (0.00ns)   --->   "%c_buff_44_load = load i32 %c_buff_44"   --->   Operation 278 'load' 'c_buff_44_load' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 279 [1/1] (0.00ns)   --->   "%c_buff_45_load = load i32 %c_buff_45"   --->   Operation 279 'load' 'c_buff_45_load' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 280 [1/1] (0.00ns)   --->   "%c_buff_46_load = load i32 %c_buff_46"   --->   Operation 280 'load' 'c_buff_46_load' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 281 [1/1] (0.00ns)   --->   "%c_buff_47_load = load i32 %c_buff_47"   --->   Operation 281 'load' 'c_buff_47_load' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 282 [1/1] (0.00ns)   --->   "%c_buff_48_load = load i32 %c_buff_48"   --->   Operation 282 'load' 'c_buff_48_load' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 283 [1/1] (0.00ns)   --->   "%c_buff_49_load = load i32 %c_buff_49"   --->   Operation 283 'load' 'c_buff_49_load' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 284 [1/1] (0.00ns)   --->   "%c_buff_50_load = load i32 %c_buff_50"   --->   Operation 284 'load' 'c_buff_50_load' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 285 [1/1] (0.00ns)   --->   "%c_buff_51_load = load i32 %c_buff_51"   --->   Operation 285 'load' 'c_buff_51_load' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 286 [1/1] (0.00ns)   --->   "%c_buff_52_load = load i32 %c_buff_52"   --->   Operation 286 'load' 'c_buff_52_load' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 287 [1/1] (0.00ns)   --->   "%c_buff_53_load = load i32 %c_buff_53"   --->   Operation 287 'load' 'c_buff_53_load' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 288 [1/1] (0.00ns)   --->   "%c_buff_54_load = load i32 %c_buff_54"   --->   Operation 288 'load' 'c_buff_54_load' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 289 [1/1] (0.00ns)   --->   "%c_buff_55_load = load i32 %c_buff_55"   --->   Operation 289 'load' 'c_buff_55_load' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 290 [1/1] (0.00ns)   --->   "%c_buff_56_load = load i32 %c_buff_56"   --->   Operation 290 'load' 'c_buff_56_load' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 291 [1/1] (0.00ns)   --->   "%c_buff_57_load = load i32 %c_buff_57"   --->   Operation 291 'load' 'c_buff_57_load' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 292 [1/1] (0.00ns)   --->   "%c_buff_58_load = load i32 %c_buff_58"   --->   Operation 292 'load' 'c_buff_58_load' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 293 [1/1] (0.00ns)   --->   "%c_buff_59_load = load i32 %c_buff_59"   --->   Operation 293 'load' 'c_buff_59_load' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 294 [1/1] (0.00ns)   --->   "%c_buff_60_load = load i32 %c_buff_60"   --->   Operation 294 'load' 'c_buff_60_load' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 295 [1/1] (0.00ns)   --->   "%c_buff_61_load = load i32 %c_buff_61"   --->   Operation 295 'load' 'c_buff_61_load' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 296 [1/1] (0.00ns)   --->   "%c_buff_62_load = load i32 %c_buff_62"   --->   Operation 296 'load' 'c_buff_62_load' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 297 [1/1] (0.00ns)   --->   "%c_buff_63_load = load i32 %c_buff_63"   --->   Operation 297 'load' 'c_buff_63_load' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 298 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.floatP0A, i32 %c_buff_63_out, i32 %c_buff_63_load"   --->   Operation 298 'write' 'write_ln0' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 299 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.floatP0A, i32 %c_buff_62_out, i32 %c_buff_62_load"   --->   Operation 299 'write' 'write_ln0' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 300 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.floatP0A, i32 %c_buff_61_out, i32 %c_buff_61_load"   --->   Operation 300 'write' 'write_ln0' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 301 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.floatP0A, i32 %c_buff_60_out, i32 %c_buff_60_load"   --->   Operation 301 'write' 'write_ln0' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 302 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.floatP0A, i32 %c_buff_59_out, i32 %c_buff_59_load"   --->   Operation 302 'write' 'write_ln0' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 303 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.floatP0A, i32 %c_buff_58_out, i32 %c_buff_58_load"   --->   Operation 303 'write' 'write_ln0' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 304 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.floatP0A, i32 %c_buff_57_out, i32 %c_buff_57_load"   --->   Operation 304 'write' 'write_ln0' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 305 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.floatP0A, i32 %c_buff_56_out, i32 %c_buff_56_load"   --->   Operation 305 'write' 'write_ln0' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 306 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.floatP0A, i32 %c_buff_55_out, i32 %c_buff_55_load"   --->   Operation 306 'write' 'write_ln0' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 307 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.floatP0A, i32 %c_buff_54_out, i32 %c_buff_54_load"   --->   Operation 307 'write' 'write_ln0' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 308 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.floatP0A, i32 %c_buff_53_out, i32 %c_buff_53_load"   --->   Operation 308 'write' 'write_ln0' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 309 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.floatP0A, i32 %c_buff_52_out, i32 %c_buff_52_load"   --->   Operation 309 'write' 'write_ln0' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 310 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.floatP0A, i32 %c_buff_51_out, i32 %c_buff_51_load"   --->   Operation 310 'write' 'write_ln0' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 311 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.floatP0A, i32 %c_buff_50_out, i32 %c_buff_50_load"   --->   Operation 311 'write' 'write_ln0' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 312 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.floatP0A, i32 %c_buff_49_out, i32 %c_buff_49_load"   --->   Operation 312 'write' 'write_ln0' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 313 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.floatP0A, i32 %c_buff_48_out, i32 %c_buff_48_load"   --->   Operation 313 'write' 'write_ln0' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 314 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.floatP0A, i32 %c_buff_47_out, i32 %c_buff_47_load"   --->   Operation 314 'write' 'write_ln0' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 315 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.floatP0A, i32 %c_buff_46_out, i32 %c_buff_46_load"   --->   Operation 315 'write' 'write_ln0' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 316 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.floatP0A, i32 %c_buff_45_out, i32 %c_buff_45_load"   --->   Operation 316 'write' 'write_ln0' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 317 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.floatP0A, i32 %c_buff_44_out, i32 %c_buff_44_load"   --->   Operation 317 'write' 'write_ln0' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 318 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.floatP0A, i32 %c_buff_43_out, i32 %c_buff_43_load"   --->   Operation 318 'write' 'write_ln0' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 319 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.floatP0A, i32 %c_buff_42_out, i32 %c_buff_42_load"   --->   Operation 319 'write' 'write_ln0' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 320 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.floatP0A, i32 %c_buff_41_out, i32 %c_buff_41_load"   --->   Operation 320 'write' 'write_ln0' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 321 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.floatP0A, i32 %c_buff_40_out, i32 %c_buff_40_load"   --->   Operation 321 'write' 'write_ln0' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 322 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.floatP0A, i32 %c_buff_39_out, i32 %c_buff_39_load"   --->   Operation 322 'write' 'write_ln0' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 323 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.floatP0A, i32 %c_buff_38_out, i32 %c_buff_38_load"   --->   Operation 323 'write' 'write_ln0' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 324 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.floatP0A, i32 %c_buff_37_out, i32 %c_buff_37_load"   --->   Operation 324 'write' 'write_ln0' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 325 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.floatP0A, i32 %c_buff_36_out, i32 %c_buff_36_load"   --->   Operation 325 'write' 'write_ln0' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 326 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.floatP0A, i32 %c_buff_35_out, i32 %c_buff_35_load"   --->   Operation 326 'write' 'write_ln0' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 327 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.floatP0A, i32 %c_buff_34_out, i32 %c_buff_34_load"   --->   Operation 327 'write' 'write_ln0' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 328 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.floatP0A, i32 %c_buff_33_out, i32 %c_buff_33_load"   --->   Operation 328 'write' 'write_ln0' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 329 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.floatP0A, i32 %c_buff_32_out, i32 %c_buff_32_load"   --->   Operation 329 'write' 'write_ln0' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 330 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.floatP0A, i32 %c_buff_31_out, i32 %c_buff_31_load"   --->   Operation 330 'write' 'write_ln0' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 331 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.floatP0A, i32 %c_buff_30_out, i32 %c_buff_30_load"   --->   Operation 331 'write' 'write_ln0' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 332 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.floatP0A, i32 %c_buff_29_out, i32 %c_buff_29_load"   --->   Operation 332 'write' 'write_ln0' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 333 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.floatP0A, i32 %c_buff_28_out, i32 %c_buff_28_load"   --->   Operation 333 'write' 'write_ln0' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 334 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.floatP0A, i32 %c_buff_27_out, i32 %c_buff_27_load"   --->   Operation 334 'write' 'write_ln0' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 335 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.floatP0A, i32 %c_buff_26_out, i32 %c_buff_26_load"   --->   Operation 335 'write' 'write_ln0' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 336 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.floatP0A, i32 %c_buff_25_out, i32 %c_buff_25_load"   --->   Operation 336 'write' 'write_ln0' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 337 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.floatP0A, i32 %c_buff_24_out, i32 %c_buff_24_load"   --->   Operation 337 'write' 'write_ln0' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 338 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.floatP0A, i32 %c_buff_23_out, i32 %c_buff_23_load"   --->   Operation 338 'write' 'write_ln0' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 339 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.floatP0A, i32 %c_buff_22_out, i32 %c_buff_22_load"   --->   Operation 339 'write' 'write_ln0' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 340 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.floatP0A, i32 %c_buff_21_out, i32 %c_buff_21_load"   --->   Operation 340 'write' 'write_ln0' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 341 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.floatP0A, i32 %c_buff_20_out, i32 %c_buff_20_load"   --->   Operation 341 'write' 'write_ln0' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 342 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.floatP0A, i32 %c_buff_19_out, i32 %c_buff_19_load"   --->   Operation 342 'write' 'write_ln0' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 343 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.floatP0A, i32 %c_buff_18_out, i32 %c_buff_18_load"   --->   Operation 343 'write' 'write_ln0' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 344 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.floatP0A, i32 %c_buff_17_out, i32 %c_buff_17_load"   --->   Operation 344 'write' 'write_ln0' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 345 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.floatP0A, i32 %c_buff_16_out, i32 %c_buff_16_load"   --->   Operation 345 'write' 'write_ln0' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 346 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.floatP0A, i32 %c_buff_15_out, i32 %c_buff_15_load"   --->   Operation 346 'write' 'write_ln0' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 347 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.floatP0A, i32 %c_buff_14_out, i32 %c_buff_14_load"   --->   Operation 347 'write' 'write_ln0' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 348 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.floatP0A, i32 %c_buff_13_out, i32 %c_buff_13_load"   --->   Operation 348 'write' 'write_ln0' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 349 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.floatP0A, i32 %c_buff_12_out, i32 %c_buff_12_load"   --->   Operation 349 'write' 'write_ln0' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 350 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.floatP0A, i32 %c_buff_11_out, i32 %c_buff_11_load"   --->   Operation 350 'write' 'write_ln0' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 351 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.floatP0A, i32 %c_buff_10_out, i32 %c_buff_10_load"   --->   Operation 351 'write' 'write_ln0' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 352 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.floatP0A, i32 %c_buff_9_out, i32 %c_buff_9_load"   --->   Operation 352 'write' 'write_ln0' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 353 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.floatP0A, i32 %c_buff_8_out, i32 %c_buff_8_load"   --->   Operation 353 'write' 'write_ln0' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 354 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.floatP0A, i32 %c_buff_7_out, i32 %c_buff_7_load"   --->   Operation 354 'write' 'write_ln0' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 355 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.floatP0A, i32 %c_buff_6_out, i32 %c_buff_6_load"   --->   Operation 355 'write' 'write_ln0' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 356 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.floatP0A, i32 %c_buff_5_out, i32 %c_buff_5_load"   --->   Operation 356 'write' 'write_ln0' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 357 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.floatP0A, i32 %c_buff_4_out, i32 %c_buff_4_load"   --->   Operation 357 'write' 'write_ln0' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 358 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.floatP0A, i32 %c_buff_3_out, i32 %c_buff_3_load"   --->   Operation 358 'write' 'write_ln0' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 359 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.floatP0A, i32 %c_buff_2_out, i32 %c_buff_2_load"   --->   Operation 359 'write' 'write_ln0' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 360 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.floatP0A, i32 %c_buff_1_out, i32 %c_buff_1_load"   --->   Operation 360 'write' 'write_ln0' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 361 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.floatP0A, i32 %c_buff_out, i32 %c_buff_load"   --->   Operation 361 'write' 'write_ln0' <Predicate = (icmp_ln45)> <Delay = 0.00>
+ST_1 : Operation 362 [1/1] (0.00ns)   --->   "%ret_ln0 = ret"   --->   Operation 362 'ret' 'ret_ln0' <Predicate = (icmp_ln45)> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 2.7ns.
+
+ <State 1>: 2.34ns
+The critical path consists of the following:
+	'alloca' operation ('o') [65]  (0 ns)
+	'load' operation ('o_load', gemm_outer.cc:46) on local variable 'o' [143]  (0 ns)
+	'icmp' operation ('icmp_ln46', gemm_outer.cc:46) [147]  (0.721 ns)
+	'select' operation ('select_ln30', gemm_outer.cc:30) [148]  (0.391 ns)
+	'add' operation ('add_ln46', gemm_outer.cc:46) [365]  (0.797 ns)
+	'store' operation ('store_ln46', gemm_outer.cc:46) of variable 'add_ln46', gemm_outer.cc:46 on local variable 'o' [368]  (0.427 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

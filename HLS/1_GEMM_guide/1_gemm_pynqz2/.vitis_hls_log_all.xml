@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <synLog/>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <synLog>
+        <logs message="WARNING: [HLS 207-910] 'O' macro redefined (gemm.cc:10:9)" projectName="1_gemm" solutionName="solution1" date="2023-11-30T15:30:33.327+0900" type="Warning"/>
+        <logs message="WARNING: [HLS 207-910] 'N' macro redefined (gemm.cc:9:9)" projectName="1_gemm" solutionName="solution1" date="2023-11-30T15:30:33.298+0900" type="Warning"/>
+        <logs message="WARNING: [HLS 207-910] 'M' macro redefined (gemm.cc:8:9)" projectName="1_gemm" solutionName="solution1" date="2023-11-30T15:30:33.283+0900" type="Warning"/>
+      </synLog>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>

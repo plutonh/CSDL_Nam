@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<BindInfo>
+	<BindNode BINDTYPE="op" DISPLAY="bind_op icmp" ID="" IMPL="auto" LATENCY="0" OPTYPE="icmp" PRAGMA="" RTLNAME="icmp_ln14_fu_145_p2" SOURCE="gemm.cc:14" VARIABLE="icmp_ln14" MODULE="mm" LOOP="row" BUNDLEDNAME="" DSP="0" BRAM="0" URAM="0"/>
+	<BindNode BINDTYPE="op" DISPLAY="bind_op add" ID="" IMPL="fabric" LATENCY="0" OPTYPE="add" PRAGMA="" RTLNAME="add_ln14_fu_151_p2" SOURCE="gemm.cc:14" VARIABLE="add_ln14" MODULE="mm" LOOP="row" BUNDLEDNAME="" DSP="0" BRAM="0" URAM="0"/>
+	<BindNode BINDTYPE="op" DISPLAY="bind_op add" ID="" IMPL="fabric" LATENCY="0" OPTYPE="add" PRAGMA="" RTLNAME="add_ln20_fu_161_p2" SOURCE="gemm.cc:20" VARIABLE="add_ln20" MODULE="mm" LOOP="col" BUNDLEDNAME="" DSP="0" BRAM="0" URAM="0"/>
+	<BindNode BINDTYPE="op" DISPLAY="bind_op icmp" ID="" IMPL="auto" LATENCY="0" OPTYPE="icmp" PRAGMA="" RTLNAME="icmp_ln15_fu_171_p2" SOURCE="gemm.cc:15" VARIABLE="icmp_ln15" MODULE="mm" LOOP="col" BUNDLEDNAME="" DSP="0" BRAM="0" URAM="0"/>
+	<BindNode BINDTYPE="op" DISPLAY="bind_op add" ID="" IMPL="fabric" LATENCY="0" OPTYPE="add" PRAGMA="" RTLNAME="add_ln15_fu_177_p2" SOURCE="gemm.cc:15" VARIABLE="add_ln15" MODULE="mm" LOOP="col" BUNDLEDNAME="" DSP="0" BRAM="0" URAM="0"/>
+	<BindNode BINDTYPE="op" DISPLAY="bind_op add" ID="" IMPL="fabric" LATENCY="0" OPTYPE="add" PRAGMA="" RTLNAME="add_ln18_fu_195_p2" SOURCE="gemm.cc:18" VARIABLE="add_ln18" MODULE="mm" LOOP="product" BUNDLEDNAME="" DSP="0" BRAM="0" URAM="0"/>
+	<BindNode BINDTYPE="op" DISPLAY="bind_op add" ID="" IMPL="fabric" LATENCY="0" OPTYPE="add" PRAGMA="" RTLNAME="add_ln18_1_fu_213_p2" SOURCE="gemm.cc:18" VARIABLE="add_ln18_1" MODULE="mm" LOOP="product" BUNDLEDNAME="" DSP="0" BRAM="0" URAM="0"/>
+	<BindNode BINDTYPE="op" DISPLAY="bind_op icmp" ID="" IMPL="auto" LATENCY="0" OPTYPE="icmp" PRAGMA="" RTLNAME="icmp_ln17_fu_223_p2" SOURCE="gemm.cc:17" VARIABLE="icmp_ln17" MODULE="mm" LOOP="product" BUNDLEDNAME="" DSP="0" BRAM="0" URAM="0"/>
+	<BindNode BINDTYPE="op" DISPLAY="bind_op add" ID="" IMPL="fabric" LATENCY="0" OPTYPE="add" PRAGMA="" RTLNAME="add_ln17_fu_229_p2" SOURCE="gemm.cc:17" VARIABLE="add_ln17" MODULE="mm" LOOP="product" BUNDLEDNAME="" DSP="0" BRAM="0" URAM="0"/>
+	<BindNode BINDTYPE="op" DISPLAY="bind_op mul" ID="" IMPL="auto" LATENCY="1" OPTYPE="mul" PRAGMA="" RTLNAME="mul_32s_32s_32_2_1_U1" SOURCE="gemm.cc:18" VARIABLE="mul_ln18" MODULE="mm" LOOP="product" BUNDLEDNAME="" DSP="3" BRAM="0" URAM="0"/>
+	<BindNode BINDTYPE="op" DISPLAY="bind_op add" ID="" IMPL="fabric" LATENCY="0" OPTYPE="add" PRAGMA="" RTLNAME="ABij_1_fu_239_p2" SOURCE="gemm.cc:18" VARIABLE="ABij_1" MODULE="mm" LOOP="product" BUNDLEDNAME="" DSP="0" BRAM="0" URAM="0"/>
+</BindInfo>

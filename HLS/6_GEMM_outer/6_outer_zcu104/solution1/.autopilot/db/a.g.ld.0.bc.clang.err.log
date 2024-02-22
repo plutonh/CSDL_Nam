@@ -1,0 +1,26 @@
+remark: gemm_outer.cc:53:19: Loop 'VITIS_LOOP_53_4' is marked as complete unroll implied by the pipeline pragma
+remark: gemm_outer.cc:55:19: Loop 'VITIS_LOOP_55_5' is marked as complete unroll implied by the pipeline pragma
+remark: gemm_outer.cc:18:0: Unrolling loop 'VITIS_LOOP_53_4' (gemm_outer.cc:53:19) in function 'gemm' completely with a factor of 8
+remark: gemm_outer.cc:18:0: Unrolling loop 'VITIS_LOOP_55_5' (gemm_outer.cc:55:19) in function 'gemm' completely with a factor of 8
+remark: gemm_outer.cc:18:0: Unrolling loop 'VITIS_LOOP_55_5' (gemm_outer.cc:55:19) in function 'gemm' completely with a factor of 8
+remark: gemm_outer.cc:18:0: Unrolling loop 'VITIS_LOOP_55_5' (gemm_outer.cc:55:19) in function 'gemm' completely with a factor of 8
+remark: gemm_outer.cc:18:0: Unrolling loop 'VITIS_LOOP_55_5' (gemm_outer.cc:55:19) in function 'gemm' completely with a factor of 8
+remark: gemm_outer.cc:18:0: Unrolling loop 'VITIS_LOOP_55_5' (gemm_outer.cc:55:19) in function 'gemm' completely with a factor of 8
+remark: gemm_outer.cc:18:0: Unrolling loop 'VITIS_LOOP_55_5' (gemm_outer.cc:55:19) in function 'gemm' completely with a factor of 8
+remark: gemm_outer.cc:18:0: Unrolling loop 'VITIS_LOOP_55_5' (gemm_outer.cc:55:19) in function 'gemm' completely with a factor of 8
+remark: gemm_outer.cc:18:0: Unrolling loop 'VITIS_LOOP_55_5' (gemm_outer.cc:55:19) in function 'gemm' completely with a factor of 8
+remark: gemm_outer.cc:28:8: Applying array_partition to 'a_buff': Complete partitioning on dimension 2.
+remark: gemm_outer.cc:29:9: Applying array_partition to 'b_buff': Complete partitioning on dimension 1.
+remark: gemm_outer.cc:30:9: Applying array_partition to 'c_buff': Complete partitioning on dimension 1. Complete partitioning on dimension 2.
+remark: gemm_outer.cc:40:2: Sequential read of length 64 has been inferred _XLX_SEP_ OldID=load-store-loop12.load.3,  _XLX_SEP_ aseq a a_port anonymous gemm_outer.cc:40:2 gemm(float volatile*, float volatile*, float volatile*) 
+remark: gemm_outer.cc:41:3: Sequential read of length 64 has been inferred _XLX_SEP_ OldID=load-store-loop9.load.3,  _XLX_SEP_ bseq b b_port anonymous gemm_outer.cc:41:3 gemm(float volatile*, float volatile*, float volatile*) 
+remark: gemm_outer.cc:62:3: Sequential write of length 64 has been inferred _XLX_SEP_ OldID=load-store-loop.store.16,  _XLX_SEP_ cseq c c_port anonymous gemm_outer.cc:62:3 gemm(float volatile*, float volatile*, float volatile*) 
+remark: gemm_outer.cc:62:3: Could not widen since type float size is greater than or equal to the max_widen_bitwidth threshold of 0 _XLX_SEP_ cseq c c_port anonymous gemm_outer.cc:62:3 gemm(float volatile*, float volatile*, float volatile*) 
+remark: gemm_outer.cc:41:3: Could not widen since type float size is greater than or equal to the max_widen_bitwidth threshold of 0 _XLX_SEP_ bseq b b_port anonymous gemm_outer.cc:41:3 gemm(float volatile*, float volatile*, float volatile*) 
+remark: gemm_outer.cc:40:2: Could not widen since type float size is greater than or equal to the max_widen_bitwidth threshold of 0 _XLX_SEP_ aseq a a_port anonymous gemm_outer.cc:40:2 gemm(float volatile*, float volatile*, float volatile*) 
+remark: gemm_outer.cc:40:2: Multiple burst reads of length 64 and bit width 32 has been inferred. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. _XLX_SEP_ seq  a_port anonymous gemm_outer.cc:40:2 gemm(float volatile*, float volatile*, float volatile*) 
+remark: gemm_outer.cc:40:2: Multiple burst reads of length 64 and bit width 32 in loop 'anonymous'(gemm_outer.cc:40:2) has been inferred on bundle 'a_port'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+remark: gemm_outer.cc:41:3: Multiple burst reads of length 64 and bit width 32 has been inferred. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. _XLX_SEP_ seq1  b_port anonymous gemm_outer.cc:41:3 gemm(float volatile*, float volatile*, float volatile*) 
+remark: gemm_outer.cc:41:3: Multiple burst reads of length 64 and bit width 32 in loop 'anonymous'(gemm_outer.cc:41:3) has been inferred on bundle 'b_port'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+remark: gemm_outer.cc:62:3: Multiple burst writes of length 64 and bit width 32 has been inferred. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. _XLX_SEP_ seq2  c_port anonymous gemm_outer.cc:62:3 gemm(float volatile*, float volatile*, float volatile*) 
+remark: gemm_outer.cc:62:3: Multiple burst writes of length 64 and bit width 32 in loop 'anonymous'(gemm_outer.cc:62:3) has been inferred on bundle 'c_port'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.

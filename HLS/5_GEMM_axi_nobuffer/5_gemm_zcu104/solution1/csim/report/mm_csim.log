@@ -1,0 +1,72 @@
+INFO: [SIM 2] *************** CSIM start ***************
+INFO: [SIM 4] CSIM will launch GCC as the compiler.
+   Compiling ../../../../gemm_tb.cc in debug mode
+   Compiling ../../../../gemm.cc in debug mode
+   Generating csim.exe
+Element row 0 column 0 : SW output - 52 HW output - 52
+Element row 0 column 1 : SW output - 71 HW output - 71
+Element row 0 column 2 : SW output - 67 HW output - 67
+Element row 0 column 3 : SW output - 81 HW output - 81
+Element row 0 column 4 : SW output - 63 HW output - 63
+Element row 0 column 5 : SW output - 72 HW output - 72
+Element row 0 column 6 : SW output - 86 HW output - 86
+Element row 0 column 7 : SW output - 69 HW output - 69
+Element row 1 column 0 : SW output - 68 HW output - 68
+Element row 1 column 1 : SW output - 71 HW output - 71
+Element row 1 column 2 : SW output - 61 HW output - 61
+Element row 1 column 3 : SW output - 61 HW output - 61
+Element row 1 column 4 : SW output - 74 HW output - 74
+Element row 1 column 5 : SW output - 70 HW output - 70
+Element row 1 column 6 : SW output - 93 HW output - 93
+Element row 1 column 7 : SW output - 81 HW output - 81
+Element row 2 column 0 : SW output - 35 HW output - 35
+Element row 2 column 1 : SW output - 33 HW output - 33
+Element row 2 column 2 : SW output - 36 HW output - 36
+Element row 2 column 3 : SW output - 39 HW output - 39
+Element row 2 column 4 : SW output - 38 HW output - 38
+Element row 2 column 5 : SW output - 52 HW output - 52
+Element row 2 column 6 : SW output - 38 HW output - 38
+Element row 2 column 7 : SW output - 25 HW output - 25
+Element row 3 column 0 : SW output - 41 HW output - 41
+Element row 3 column 1 : SW output - 71 HW output - 71
+Element row 3 column 2 : SW output - 53 HW output - 53
+Element row 3 column 3 : SW output - 69 HW output - 69
+Element row 3 column 4 : SW output - 76 HW output - 76
+Element row 3 column 5 : SW output - 61 HW output - 61
+Element row 3 column 6 : SW output - 84 HW output - 84
+Element row 3 column 7 : SW output - 59 HW output - 59
+Element row 4 column 0 : SW output - 41 HW output - 41
+Element row 4 column 1 : SW output - 55 HW output - 55
+Element row 4 column 2 : SW output - 38 HW output - 38
+Element row 4 column 3 : SW output - 64 HW output - 64
+Element row 4 column 4 : SW output - 53 HW output - 53
+Element row 4 column 5 : SW output - 58 HW output - 58
+Element row 4 column 6 : SW output - 55 HW output - 55
+Element row 4 column 7 : SW output - 42 HW output - 42
+Element row 5 column 0 : SW output - 43 HW output - 43
+Element row 5 column 1 : SW output - 63 HW output - 63
+Element row 5 column 2 : SW output - 52 HW output - 52
+Element row 5 column 3 : SW output - 61 HW output - 61
+Element row 5 column 4 : SW output - 65 HW output - 65
+Element row 5 column 5 : SW output - 65 HW output - 65
+Element row 5 column 6 : SW output - 67 HW output - 67
+Element row 5 column 7 : SW output - 51 HW output - 51
+Element row 6 column 0 : SW output - 51 HW output - 51
+Element row 6 column 1 : SW output - 77 HW output - 77
+Element row 6 column 2 : SW output - 62 HW output - 62
+Element row 6 column 3 : SW output - 79 HW output - 79
+Element row 6 column 4 : SW output - 71 HW output - 71
+Element row 6 column 5 : SW output - 78 HW output - 78
+Element row 6 column 6 : SW output - 83 HW output - 83
+Element row 6 column 7 : SW output - 60 HW output - 60
+Element row 7 column 0 : SW output - 41 HW output - 41
+Element row 7 column 1 : SW output - 58 HW output - 58
+Element row 7 column 2 : SW output - 59 HW output - 59
+Element row 7 column 3 : SW output - 68 HW output - 68
+Element row 7 column 4 : SW output - 75 HW output - 75
+Element row 7 column 5 : SW output - 61 HW output - 61
+Element row 7 column 6 : SW output - 78 HW output - 78
+Element row 7 column 7 : SW output - 64 HW output - 64
+pass
+INFO: [SIM 1] CSim done with 0 errors.
+INFO: [SIM 3] *************** CSIM finish ***************

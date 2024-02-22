@@ -1,0 +1,180 @@
+
+
+================================================================
+== Synthesis Summary Report of 'mm'
+================================================================
++ General Information: 
+    * Date:           Thu Nov 30 16:39:03 2023
+    * Version:        2022.2 (Build 3670227 on Oct 13 2022)
+    * Project:        5_gemm_zcu104
+    * Solution:       solution1 (Vivado IP Flow Target)
+    * Product family: zynquplus
+    * Target device:  xczu7ev-ffvc1156-2-e
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +------------+------+------+---------+-----------+----------+---------+------+----------+------+---------+------------+-----------+-----+
+    |   Modules  | Issue|      | Latency |  Latency  | Iteration|         | Trip |          |      |         |            |           |     |
+    |   & Loops  | Type | Slack| (cycles)|    (ns)   |  Latency | Interval| Count| Pipelined| BRAM |   DSP   |     FF     |    LUT    | URAM|
+    +------------+------+------+---------+-----------+----------+---------+------+----------+------+---------+------------+-----------+-----+
+    |+ mm        |     -|  0.00|      528|  5.280e+03|         -|      529|     -|        no|     -|  24 (1%)|  4474 (~0%)|  6251 (2%)|    -|
+    | o row_col  |    II|  7.30|      526|  5.260e+03|        23|        8|    64|       yes|     -|        -|           -|          -|    -|
+    +------------+------+------+---------+-----------+----------+---------+------+----------+------+---------+------------+-----------+-----+
+
+
+================================================================
+== HW Interfaces
+================================================================
+* M_AXI
++---------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+
+| Interface     | Data Width | Address Width | Latency | Offset | Register | Max Widen | Max Read     | Max Write    | Num Read    | Num Write   |
+|               | (SW->HW)   |               |         |        |          | Bitwidth  | Burst Length | Burst Length | Outstanding | Outstanding |
++---------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+
+| m_axi_AB_port | 32 -> 32   | 64            | 0       | slave  | 0        | 0         | 16           | 16           | 16          | 16          |
+| m_axi_A_port  | 32 -> 32   | 64            | 0       | slave  | 0        | 0         | 16           | 16           | 16          | 16          |
+| m_axi_B_port  | 32 -> 32   | 64            | 0       | slave  | 0        | 0         | 16           | 16           | 16          | 16          |
++---------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+
+
+* S_AXILITE Interfaces
++-------------------+------------+---------------+--------+----------+
+| Interface         | Data Width | Address Width | Offset | Register |
++-------------------+------------+---------------+--------+----------+
+| s_axi_CONTROL_BUS | 32         | 6             | 16     | 0        |
++-------------------+------------+---------------+--------+----------+
+
+* S_AXILITE Registers
++-------------------+----------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+| Interface         | Register | Offset | Width | Access | Description                      | Bit Fields                                                           |
++-------------------+----------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+| s_axi_CONTROL_BUS | CTRL     | 0x00   | 32    | RW     | Control signals                  | 0=AP_START 1=AP_DONE 2=AP_IDLE 3=AP_READY 7=AUTO_RESTART 9=INTERRUPT |
+| s_axi_CONTROL_BUS | GIER     | 0x04   | 32    | RW     | Global Interrupt Enable Register | 0=Enable                                                             |
+| s_axi_CONTROL_BUS | IP_IER   | 0x08   | 32    | RW     | IP Interrupt Enable Register     | 0=CHAN0_INT_EN 1=CHAN1_INT_EN                                        |
+| s_axi_CONTROL_BUS | IP_ISR   | 0x0c   | 32    | RW     | IP Interrupt Status Register     | 0=CHAN0_INT_ST 1=CHAN1_INT_ST                                        |
+| s_axi_CONTROL_BUS | A_1      | 0x10   | 32    | W      | Data signal of A                 |                                                                      |
+| s_axi_CONTROL_BUS | A_2      | 0x14   | 32    | W      | Data signal of A                 |                                                                      |
+| s_axi_CONTROL_BUS | B_1      | 0x1c   | 32    | W      | Data signal of B                 |                                                                      |
+| s_axi_CONTROL_BUS | B_2      | 0x20   | 32    | W      | Data signal of B                 |                                                                      |
+| s_axi_CONTROL_BUS | AB_1     | 0x28   | 32    | W      | Data signal of AB                |                                                                      |
+| s_axi_CONTROL_BUS | AB_2     | 0x2c   | 32    | W      | Data signal of AB                |                                                                      |
++-------------------+----------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+
+* TOP LEVEL CONTROL
++-----------+------------+-----------+
+| Interface | Type       | Ports     |
++-----------+------------+-----------+
+| ap_clk    | clock      | ap_clk    |
+| ap_rst_n  | reset      | ap_rst_n  |
+| interrupt | interrupt  | interrupt |
+| ap_ctrl   | ap_ctrl_hs |           |
++-----------+------------+-----------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++----------+-----------+----------+
+| Argument | Direction | Datatype |
++----------+-----------+----------+
+| A        | in        | pointer  |
+| B        | in        | pointer  |
+| AB       | out       | pointer  |
++----------+-----------+----------+
+
+* SW-to-HW Mapping
++----------+-------------------+-----------+----------+--------------------------------+
+| Argument | HW Interface      | HW Type   | HW Usage | HW Info                        |
++----------+-------------------+-----------+----------+--------------------------------+
+| A        | m_axi_A_port      | interface |          |                                |
+| A        | s_axi_CONTROL_BUS | register  | offset   | name=A_1 offset=0x10 range=32  |
+| A        | s_axi_CONTROL_BUS | register  | offset   | name=A_2 offset=0x14 range=32  |
+| B        | m_axi_B_port      | interface |          |                                |
+| B        | s_axi_CONTROL_BUS | register  | offset   | name=B_1 offset=0x1c range=32  |
+| B        | s_axi_CONTROL_BUS | register  | offset   | name=B_2 offset=0x20 range=32  |
+| AB       | m_axi_AB_port     | interface |          |                                |
+| AB       | s_axi_CONTROL_BUS | register  | offset   | name=AB_1 offset=0x28 range=32 |
+| AB       | s_axi_CONTROL_BUS | register  | offset   | name=AB_2 offset=0x2c range=32 |
++----------+-------------------+-----------+----------+--------------------------------+
+
+
+================================================================
+== M_AXI Burst Information
+================================================================
+ Note: All burst requests might be further partitioned into multiple requests during RTL generation based on max_read_burst_length or max_write_burst_length settings.
+
+* Inferred Bursts and Widening Missed
++---------------+----------+-------------------------------------------------+------------+---------------+
+| HW Interface  | Variable | Problem                                         | Resolution | Location      |
++---------------+----------+-------------------------------------------------+------------+---------------+
+| m_axi_AB_port | AB       | Volatile or Atomic access cannot be transformed | 214-227    | gemm.cc:32:15 |
+| m_axi_A_port  | A        | Volatile or Atomic access cannot be transformed | 214-227    | gemm.cc:30:13 |
+| m_axi_B_port  | B        | Volatile or Atomic access cannot be transformed | 214-227    | gemm.cc:30:25 |
++---------------+----------+-------------------------------------------------+------------+---------------+
+
+    * Resolution URL: www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=XXX-YYY.html (replace XXX-YYY with column value)
+
+================================================================
+== Bind Op Report
+================================================================
++--------------------------+-----+--------+-------------+-----+--------+---------+
+| Name                     | DSP | Pragma | Variable    | Op  | Impl   | Latency |
++--------------------------+-----+--------+-------------+-----+--------+---------+
+| + mm                     | 24  |        |             |     |        |         |
+|   add_ln26_fu_406_p2     | -   |        | add_ln26    | add | fabric | 0       |
+|   add_ln26_9_fu_432_p2   | -   |        | add_ln26_9  | add | fabric | 0       |
+|   add_ln26_1_fu_466_p2   | -   |        | add_ln26_1  | add | fabric | 0       |
+|   add_ln26_2_fu_586_p2   | -   |        | add_ln26_2  | add | fabric | 0       |
+|   add_ln26_3_fu_666_p2   | -   |        | add_ln26_3  | add | fabric | 0       |
+|   add_ln26_4_fu_746_p2   | -   |        | add_ln26_4  | add | fabric | 0       |
+|   add_ln26_5_fu_820_p2   | -   |        | add_ln26_5  | add | fabric | 0       |
+|   add_ln26_6_fu_900_p2   | -   |        | add_ln26_6  | add | fabric | 0       |
+|   add_ln26_7_fu_980_p2   | -   |        | add_ln26_7  | add | fabric | 0       |
+|   add_ln26_8_fu_1054_p2  | -   |        | add_ln26_8  | add | fabric | 0       |
+|   add_ln30_fu_515_p2     | -   |        | add_ln30    | add | fabric | 0       |
+|   mul_32s_32s_32_1_1_U1  | 3   |        | mul_ln30    | mul | auto   | 0       |
+|   add_ln30_1_fu_624_p2   | -   |        | add_ln30_1  | add | fabric | 0       |
+|   mul_32s_32s_32_1_1_U2  | 3   |        | mul_ln30_1  | mul | auto   | 0       |
+|   add_ln30_2_fu_704_p2   | -   |        | add_ln30_2  | add | fabric | 0       |
+|   mul_32s_32s_32_1_1_U3  | 3   |        | mul_ln30_2  | mul | auto   | 0       |
+|   add_ln30_3_fu_778_p2   | -   |        | add_ln30_3  | add | fabric | 0       |
+|   mul_32s_32s_32_1_1_U4  | 3   |        | mul_ln30_3  | mul | auto   | 0       |
+|   add_ln30_4_fu_858_p2   | -   |        | add_ln30_4  | add | fabric | 0       |
+|   mul_32s_32s_32_1_1_U5  | 3   |        | mul_ln30_4  | mul | auto   | 0       |
+|   add_ln30_5_fu_938_p2   | -   |        | add_ln30_5  | add | fabric | 0       |
+|   mul_32s_32s_32_1_1_U6  | 3   |        | mul_ln30_5  | mul | auto   | 0       |
+|   add_ln30_6_fu_1012_p2  | -   |        | add_ln30_6  | add | fabric | 0       |
+|   mul_32s_32s_32_1_1_U7  | 3   |        | mul_ln30_6  | mul | auto   | 0       |
+|   add_ln30_7_fu_1086_p2  | -   |        | add_ln30_7  | add | fabric | 0       |
+|   mul_32s_32s_32_1_1_U8  | 3   |        | mul_ln30_7  | mul | auto   | 0       |
+|   add_ln30_8_fu_1119_p2  | -   |        | add_ln30_8  | add | fabric | 0       |
+|   add_ln30_9_fu_1132_p2  | -   |        | add_ln30_9  | add | fabric | 0       |
+|   add_ln30_12_fu_1198_p2 | -   |        | add_ln30_12 | add | fabric | 0       |
+|   add_ln32_fu_1161_p2    | -   |        | add_ln32    | add | fabric | 0       |
+|   add_ln27_fu_540_p2     | -   |        | add_ln27    | add | fabric | 0       |
++--------------------------+-----+--------+-------------+-----+--------+---------+
+
+
+================================================================
+== Bind Storage Report
+================================================================
+  No bind storage info in design
+
+================================================================
+== Pragma Report
+================================================================
+* Valid Pragma Syntax
++-----------+-------------------------------------------------------------+------------------+
+| Type      | Options                                                     | Location         |
++-----------+-------------------------------------------------------------+------------------+
+| interface | m_axi port = A depth = 8*8 offset = slave bundle = A_port   | gemm.cc:16 in mm |
+| interface | m_axi port = B depth = 8*8 offset = slave bundle = B_port   | gemm.cc:17 in mm |
+| interface | m_axi port = AB depth = 8*8 offset = slave bundle = AB_port | gemm.cc:18 in mm |
+| interface | s_axilite port = A bundle = CONTROL_BUS                     | gemm.cc:20 in mm |
+| interface | s_axilite port = B bundle = CONTROL_BUS                     | gemm.cc:21 in mm |
+| interface | s_axilite port = AB bundle = CONTROL_BUS                    | gemm.cc:22 in mm |
+| interface | s_axilite port = return bundle = CONTROL_BUS                | gemm.cc:23 in mm |
++-----------+-------------------------------------------------------------+------------------+
+
+

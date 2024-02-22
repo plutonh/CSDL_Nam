@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="gemm.h" path="C:\Users\CSDL_GUEST.DESKTOP-HHKUDFN\Desktop\06_LIG\23-02\HLS\6_GEMM_outer\gemm.h"/>
+    <originFiles name="gemm_outer.cc" path="C:\Users\CSDL_GUEST.DESKTOP-HHKUDFN\Desktop\06_LIG\23-02\HLS\6_GEMM_outer\gemm_outer.cc"/>
+  </source>
+  <testbench>
+    <originFiles name="gemm_test.cc" path="C:\Users\CSDL_GUEST.DESKTOP-HHKUDFN\Desktop\06_LIG\23-02\HLS\6_GEMM_outer\gemm_test.cc"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

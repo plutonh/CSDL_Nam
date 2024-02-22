@@ -1,0 +1,461 @@
+
+
+================================================================
+== Vitis HLS Report for 'gemm'
+================================================================
+* Date:           Thu Nov 30 17:26:34 2023
+
+* Version:        2022.2 (Build 3670227 on Oct 13 2022)
+* Project:        6_outer_zcu104
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynquplus
+* Target device:  xczu7ev-ffvc1156-2-e
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  7.300 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |      188|      188|  1.880 us|  1.880 us|  189|  189|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        +-----------------------------------------------------------+-----------------------------------------------+---------+---------+----------+----------+-----+-----+---------+
+        |                                                           |                                               |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+        |                          Instance                         |                     Module                    |   min   |   max   |    min   |    max   | min | max |   Type  |
+        +-----------------------------------------------------------+-----------------------------------------------+---------+---------+----------+----------+-----+-----+---------+
+        |grp_gemm_Pipeline_1_fu_1294                                |gemm_Pipeline_1                                |       67|       67|  0.670 us|  0.670 us|   67|   67|       no|
+        |grp_gemm_Pipeline_2_fu_1309                                |gemm_Pipeline_2                                |       67|       67|  0.670 us|  0.670 us|   67|   67|       no|
+        |grp_gemm_Pipeline_VITIS_LOOP_45_1_VITIS_LOOP_46_2_fu_1324  |gemm_Pipeline_VITIS_LOOP_45_1_VITIS_LOOP_46_2  |       66|       66|  0.660 us|  0.660 us|   66|   66|       no|
+        |grp_gemm_Pipeline_VITIS_LOOP_51_3_fu_1392                  |gemm_Pipeline_VITIS_LOOP_51_3                  |       33|       33|  0.330 us|  0.330 us|   33|   33|       no|
+        |grp_gemm_Pipeline_5_fu_1612                                |gemm_Pipeline_5                                |       66|       66|  0.660 us|  0.660 us|   66|   66|       no|
+        +-----------------------------------------------------------+-----------------------------------------------+---------+---------+----------+----------+-----+-----+---------+
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+------+--------+--------+-----+
+|       Name      | BRAM_18K|  DSP |   FF   |   LUT  | URAM|
++-----------------+---------+------+--------+--------+-----+
+|DSP              |        -|     -|       -|       -|    -|
+|Expression       |        -|     -|       0|       4|    -|
+|FIFO             |        -|     -|       -|       -|    -|
+|Instance         |        0|   108|   15083|   16225|    0|
+|Memory           |        0|     -|     768|      64|    0|
+|Multiplexer      |        -|     -|       -|    1260|    -|
+|Register         |        -|     -|    2262|       -|    -|
++-----------------+---------+------+--------+--------+-----+
+|Total            |        0|   108|   18113|   17553|    0|
++-----------------+---------+------+--------+--------+-----+
+|Available        |      624|  1728|  460800|  230400|   96|
++-----------------+---------+------+--------+--------+-----+
+|Utilization (%)  |        0|     6|       3|       7|    0|
++-----------------+---------+------+--------+--------+-----+
+
++ Detail: 
+    * Instance: 
+    +-----------------------------------------------------------+-----------------------------------------------+---------+-----+-------+-------+-----+
+    |                          Instance                         |                     Module                    | BRAM_18K| DSP |   FF  |  LUT  | URAM|
+    +-----------------------------------------------------------+-----------------------------------------------+---------+-----+-------+-------+-----+
+    |CONTROL_BUS_s_axi_U                                        |CONTROL_BUS_s_axi                              |        0|    0|    246|    424|    0|
+    |a_port_m_axi_U                                             |a_port_m_axi                                   |        0|    0|    710|   1274|    0|
+    |b_port_m_axi_U                                             |b_port_m_axi                                   |        0|    0|    710|   1274|    0|
+    |c_port_m_axi_U                                             |c_port_m_axi                                   |        0|    0|    710|   1274|    0|
+    |grp_gemm_Pipeline_1_fu_1294                                |gemm_Pipeline_1                                |        0|    0|     57|     76|    0|
+    |grp_gemm_Pipeline_2_fu_1309                                |gemm_Pipeline_2                                |        0|    0|     57|     76|    0|
+    |grp_gemm_Pipeline_5_fu_1612                                |gemm_Pipeline_5                                |        0|    0|     42|    461|    0|
+    |grp_gemm_Pipeline_VITIS_LOOP_45_1_VITIS_LOOP_46_2_fu_1324  |gemm_Pipeline_VITIS_LOOP_45_1_VITIS_LOOP_46_2  |        0|    0|     17|    129|    0|
+    |grp_gemm_Pipeline_VITIS_LOOP_51_3_fu_1392                  |gemm_Pipeline_VITIS_LOOP_51_3                  |        0|  108|  12534|  11237|    0|
+    +-----------------------------------------------------------+-----------------------------------------------+---------+-----+-------+-------+-----+
+    |Total                                                      |                                               |        0|  108|  15083|  16225|    0|
+    +-----------------------------------------------------------+-----------------------------------------------+---------+-----+-------+-------+-----+
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    +------------+----------------------+---------+----+----+-----+------+-----+------+-------------+
+    |   Memory   |        Module        | BRAM_18K| FF | LUT| URAM| Words| Bits| Banks| W*Bits*Banks|
+    +------------+----------------------+---------+----+----+-----+------+-----+------+-------------+
+    |a_buff_U    |a_buff_RAM_AUTO_1R1W  |        0|  64|   4|    0|     8|   32|     1|          256|
+    |a_buff_1_U  |a_buff_RAM_AUTO_1R1W  |        0|  64|   4|    0|     8|   32|     1|          256|
+    |a_buff_2_U  |a_buff_RAM_AUTO_1R1W  |        0|  64|   4|    0|     8|   32|     1|          256|
+    |a_buff_3_U  |a_buff_RAM_AUTO_1R1W  |        0|  64|   4|    0|     8|   32|     1|          256|
+    |a_buff_4_U  |a_buff_RAM_AUTO_1R1W  |        0|  64|   4|    0|     8|   32|     1|          256|
+    |a_buff_5_U  |a_buff_RAM_AUTO_1R1W  |        0|  64|   4|    0|     8|   32|     1|          256|
+    |a_buff_6_U  |a_buff_RAM_AUTO_1R1W  |        0|  64|   4|    0|     8|   32|     1|          256|
+    |a_buff_7_U  |a_buff_RAM_AUTO_1R1W  |        0|  64|   4|    0|     8|   32|     1|          256|
+    |b_buff_U    |b_buff_RAM_AUTO_1R1W  |        0|  32|   4|    0|     8|   32|     1|          256|
+    |b_buff_1_U  |b_buff_RAM_AUTO_1R1W  |        0|  32|   4|    0|     8|   32|     1|          256|
+    |b_buff_2_U  |b_buff_RAM_AUTO_1R1W  |        0|  32|   4|    0|     8|   32|     1|          256|
+    |b_buff_3_U  |b_buff_RAM_AUTO_1R1W  |        0|  32|   4|    0|     8|   32|     1|          256|
+    |b_buff_4_U  |b_buff_RAM_AUTO_1R1W  |        0|  32|   4|    0|     8|   32|     1|          256|
+    |b_buff_5_U  |b_buff_RAM_AUTO_1R1W  |        0|  32|   4|    0|     8|   32|     1|          256|
+    |b_buff_6_U  |b_buff_RAM_AUTO_1R1W  |        0|  32|   4|    0|     8|   32|     1|          256|
+    |b_buff_7_U  |b_buff_RAM_AUTO_1R1W  |        0|  32|   4|    0|     8|   32|     1|          256|
+    +------------+----------------------+---------+----+----+-----+------+-----+------+-------------+
+    |Total       |                      |        0| 768|  64|    0|   128|  512|    16|         4096|
+    +------------+----------------------+---------+----+----+-----+------+-----+------+-------------+
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +----------------------------------+----------+----+---+----+------------+------------+
+    |           Variable Name          | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +----------------------------------+----------+----+---+----+------------+------------+
+    |ap_block_state10_on_subcall_done  |        or|   0|  0|   2|           1|           1|
+    |ap_block_state2_io                |        or|   0|  0|   2|           1|           1|
+    +----------------------------------+----------+----+---+----+------------+------------+
+    |Total                             |          |   0|  0|   4|           2|           2|
+    +----------------------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +-------------------+-----+-----------+-----+-----------+
+    |        Name       | LUT | Input Size| Bits| Total Bits|
+    +-------------------+-----+-----------+-----+-----------+
+    |a_buff_1_address0  |   31|          6|    3|         18|
+    |a_buff_1_address1  |   26|          5|    3|         15|
+    |a_buff_1_ce0       |   14|          3|    1|          3|
+    |a_buff_1_we0       |    9|          2|    1|          2|
+    |a_buff_2_address0  |   31|          6|    3|         18|
+    |a_buff_2_address1  |   26|          5|    3|         15|
+    |a_buff_2_ce0       |   14|          3|    1|          3|
+    |a_buff_2_we0       |    9|          2|    1|          2|
+    |a_buff_3_address0  |   31|          6|    3|         18|
+    |a_buff_3_address1  |   26|          5|    3|         15|
+    |a_buff_3_ce0       |   14|          3|    1|          3|
+    |a_buff_3_we0       |    9|          2|    1|          2|
+    |a_buff_4_address0  |   31|          6|    3|         18|
+    |a_buff_4_address1  |   26|          5|    3|         15|
+    |a_buff_4_ce0       |   14|          3|    1|          3|
+    |a_buff_4_we0       |    9|          2|    1|          2|
+    |a_buff_5_address0  |   31|          6|    3|         18|
+    |a_buff_5_address1  |   26|          5|    3|         15|
+    |a_buff_5_ce0       |   14|          3|    1|          3|
+    |a_buff_5_we0       |    9|          2|    1|          2|
+    |a_buff_6_address0  |   31|          6|    3|         18|
+    |a_buff_6_address1  |   26|          5|    3|         15|
+    |a_buff_6_ce0       |   14|          3|    1|          3|
+    |a_buff_6_we0       |    9|          2|    1|          2|
+    |a_buff_7_address0  |   31|          6|    3|         18|
+    |a_buff_7_address1  |   26|          5|    3|         15|
+    |a_buff_7_ce0       |   14|          3|    1|          3|
+    |a_buff_7_we0       |    9|          2|    1|          2|
+    |a_buff_address0    |   31|          6|    3|         18|
+    |a_buff_address1    |   26|          5|    3|         15|
+    |a_buff_ce0         |   14|          3|    1|          3|
+    |a_buff_we0         |    9|          2|    1|          2|
+    |a_port_ARADDR      |   14|          3|   64|        192|
+    |a_port_ARLEN       |   14|          3|   32|         96|
+    |a_port_ARVALID     |   14|          3|    1|          3|
+    |a_port_RREADY      |    9|          2|    1|          2|
+    |a_port_blk_n_AR    |    9|          2|    1|          2|
+    |ap_NS_fsm          |  121|         24|    1|         24|
+    |b_buff_1_address0  |   14|          3|    3|          9|
+    |b_buff_1_ce0       |   14|          3|    1|          3|
+    |b_buff_1_we0       |    9|          2|    1|          2|
+    |b_buff_2_address0  |   14|          3|    3|          9|
+    |b_buff_2_ce0       |   14|          3|    1|          3|
+    |b_buff_2_we0       |    9|          2|    1|          2|
+    |b_buff_3_address0  |   14|          3|    3|          9|
+    |b_buff_3_ce0       |   14|          3|    1|          3|
+    |b_buff_3_we0       |    9|          2|    1|          2|
+    |b_buff_4_address0  |   14|          3|    3|          9|
+    |b_buff_4_ce0       |   14|          3|    1|          3|
+    |b_buff_4_we0       |    9|          2|    1|          2|
+    |b_buff_5_address0  |   14|          3|    3|          9|
+    |b_buff_5_ce0       |   14|          3|    1|          3|
+    |b_buff_5_we0       |    9|          2|    1|          2|
+    |b_buff_6_address0  |   14|          3|    3|          9|
+    |b_buff_6_ce0       |   14|          3|    1|          3|
+    |b_buff_6_we0       |    9|          2|    1|          2|
+    |b_buff_7_address0  |   14|          3|    3|          9|
+    |b_buff_7_ce0       |   14|          3|    1|          3|
+    |b_buff_7_we0       |    9|          2|    1|          2|
+    |b_buff_address0    |   14|          3|    3|          9|
+    |b_buff_ce0         |   14|          3|    1|          3|
+    |b_buff_we0         |    9|          2|    1|          2|
+    |b_port_ARADDR      |   14|          3|   64|        192|
+    |b_port_ARLEN       |   14|          3|   32|         96|
+    |b_port_ARVALID     |   14|          3|    1|          3|
+    |b_port_RREADY      |    9|          2|    1|          2|
+    |b_port_blk_n_AR    |    9|          2|    1|          2|
+    |c_port_AWADDR      |   14|          3|   64|        192|
+    |c_port_AWLEN       |   14|          3|   32|         96|
+    |c_port_AWVALID     |   14|          3|    1|          3|
+    |c_port_BREADY      |   14|          3|    1|          3|
+    |c_port_WVALID      |    9|          2|    1|          2|
+    |c_port_blk_n_AW    |    9|          2|    1|          2|
+    |c_port_blk_n_B     |    9|          2|    1|          2|
+    +-------------------+-----+-----------+-----+-----------+
+    |Total              | 1260|        260|  404|       1330|
+    +-------------------+-----+-----------+-----+-----------+
+
+    * Register: 
+    +------------------------------------------------------------------------+----+----+-----+-----------+
+    |                                  Name                                  | FF | LUT| Bits| Const Bits|
+    +------------------------------------------------------------------------+----+----+-----+-----------+
+    |a_buff_1_load_1_reg_3176                                                |  32|   0|   32|          0|
+    |a_buff_1_load_2_reg_3296                                                |  32|   0|   32|          0|
+    |a_buff_1_load_3_reg_3336                                                |  32|   0|   32|          0|
+    |a_buff_1_load_4_reg_3456                                                |  32|   0|   32|          0|
+    |a_buff_1_load_5_reg_3496                                                |  32|   0|   32|          0|
+    |a_buff_1_load_6_reg_3808                                                |  32|   0|   32|          0|
+    |a_buff_1_load_7_reg_3848                                                |  32|   0|   32|          0|
+    |a_buff_1_load_reg_3136                                                  |  32|   0|   32|          0|
+    |a_buff_2_load_1_reg_3181                                                |  32|   0|   32|          0|
+    |a_buff_2_load_2_reg_3301                                                |  32|   0|   32|          0|
+    |a_buff_2_load_3_reg_3341                                                |  32|   0|   32|          0|
+    |a_buff_2_load_4_reg_3461                                                |  32|   0|   32|          0|
+    |a_buff_2_load_5_reg_3501                                                |  32|   0|   32|          0|
+    |a_buff_2_load_6_reg_3813                                                |  32|   0|   32|          0|
+    |a_buff_2_load_7_reg_3853                                                |  32|   0|   32|          0|
+    |a_buff_2_load_reg_3141                                                  |  32|   0|   32|          0|
+    |a_buff_3_load_1_reg_3186                                                |  32|   0|   32|          0|
+    |a_buff_3_load_2_reg_3306                                                |  32|   0|   32|          0|
+    |a_buff_3_load_3_reg_3346                                                |  32|   0|   32|          0|
+    |a_buff_3_load_4_reg_3466                                                |  32|   0|   32|          0|
+    |a_buff_3_load_5_reg_3506                                                |  32|   0|   32|          0|
+    |a_buff_3_load_6_reg_3818                                                |  32|   0|   32|          0|
+    |a_buff_3_load_7_reg_3858                                                |  32|   0|   32|          0|
+    |a_buff_3_load_reg_3146                                                  |  32|   0|   32|          0|
+    |a_buff_4_load_1_reg_3191                                                |  32|   0|   32|          0|
+    |a_buff_4_load_2_reg_3311                                                |  32|   0|   32|          0|
+    |a_buff_4_load_3_reg_3351                                                |  32|   0|   32|          0|
+    |a_buff_4_load_4_reg_3471                                                |  32|   0|   32|          0|
+    |a_buff_4_load_5_reg_3511                                                |  32|   0|   32|          0|
+    |a_buff_4_load_6_reg_3823                                                |  32|   0|   32|          0|
+    |a_buff_4_load_7_reg_3863                                                |  32|   0|   32|          0|
+    |a_buff_4_load_reg_3151                                                  |  32|   0|   32|          0|
+    |a_buff_5_load_1_reg_3196                                                |  32|   0|   32|          0|
+    |a_buff_5_load_2_reg_3316                                                |  32|   0|   32|          0|
+    |a_buff_5_load_3_reg_3356                                                |  32|   0|   32|          0|
+    |a_buff_5_load_4_reg_3476                                                |  32|   0|   32|          0|
+    |a_buff_5_load_5_reg_3516                                                |  32|   0|   32|          0|
+    |a_buff_5_load_6_reg_3828                                                |  32|   0|   32|          0|
+    |a_buff_5_load_7_reg_3868                                                |  32|   0|   32|          0|
+    |a_buff_5_load_reg_3156                                                  |  32|   0|   32|          0|
+    |a_buff_6_load_1_reg_3201                                                |  32|   0|   32|          0|
+    |a_buff_6_load_2_reg_3321                                                |  32|   0|   32|          0|
+    |a_buff_6_load_3_reg_3361                                                |  32|   0|   32|          0|
+    |a_buff_6_load_4_reg_3481                                                |  32|   0|   32|          0|
+    |a_buff_6_load_5_reg_3521                                                |  32|   0|   32|          0|
+    |a_buff_6_load_6_reg_3833                                                |  32|   0|   32|          0|
+    |a_buff_6_load_7_reg_3873                                                |  32|   0|   32|          0|
+    |a_buff_6_load_reg_3161                                                  |  32|   0|   32|          0|
+    |a_buff_7_load_1_reg_3206                                                |  32|   0|   32|          0|
+    |a_buff_7_load_2_reg_3326                                                |  32|   0|   32|          0|
+    |a_buff_7_load_3_reg_3366                                                |  32|   0|   32|          0|
+    |a_buff_7_load_4_reg_3486                                                |  32|   0|   32|          0|
+    |a_buff_7_load_5_reg_3526                                                |  32|   0|   32|          0|
+    |a_buff_7_load_6_reg_3838                                                |  32|   0|   32|          0|
+    |a_buff_7_load_7_reg_3878                                                |  32|   0|   32|          0|
+    |a_buff_7_load_reg_3166                                                  |  32|   0|   32|          0|
+    |a_buff_load_1_reg_3171                                                  |  32|   0|   32|          0|
+    |a_buff_load_2_reg_3291                                                  |  32|   0|   32|          0|
+    |a_buff_load_3_reg_3331                                                  |  32|   0|   32|          0|
+    |a_buff_load_4_reg_3451                                                  |  32|   0|   32|          0|
+    |a_buff_load_5_reg_3491                                                  |  32|   0|   32|          0|
+    |a_buff_load_6_reg_3803                                                  |  32|   0|   32|          0|
+    |a_buff_load_7_reg_3843                                                  |  32|   0|   32|          0|
+    |a_buff_load_reg_3131                                                    |  32|   0|   32|          0|
+    |ap_CS_fsm                                                               |  23|   0|   23|          0|
+    |grp_gemm_Pipeline_1_fu_1294_ap_start_reg                                |   1|   0|    1|          0|
+    |grp_gemm_Pipeline_2_fu_1309_ap_start_reg                                |   1|   0|    1|          0|
+    |grp_gemm_Pipeline_5_fu_1612_ap_start_reg                                |   1|   0|    1|          0|
+    |grp_gemm_Pipeline_VITIS_LOOP_45_1_VITIS_LOOP_46_2_fu_1324_ap_start_reg  |   1|   0|    1|          0|
+    |grp_gemm_Pipeline_VITIS_LOOP_51_3_fu_1392_ap_start_reg                  |   1|   0|    1|          0|
+    |trunc_ln1_reg_3029                                                      |  62|   0|   62|          0|
+    |trunc_ln3_reg_3035                                                      |  62|   0|   62|          0|
+    |trunc_ln_reg_3023                                                       |  62|   0|   62|          0|
+    +------------------------------------------------------------------------+----+----+-----+-----------+
+    |Total                                                                   |2262|   0| 2262|          0|
+    +------------------------------------------------------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++---------------------------+-----+-----+------------+--------------+--------------+
+|         RTL Ports         | Dir | Bits|  Protocol  | Source Object|    C Type    |
++---------------------------+-----+-----+------------+--------------+--------------+
+|s_axi_CONTROL_BUS_AWVALID  |   in|    1|       s_axi|   CONTROL_BUS|        scalar|
+|s_axi_CONTROL_BUS_AWREADY  |  out|    1|       s_axi|   CONTROL_BUS|        scalar|
+|s_axi_CONTROL_BUS_AWADDR   |   in|    6|       s_axi|   CONTROL_BUS|        scalar|
+|s_axi_CONTROL_BUS_WVALID   |   in|    1|       s_axi|   CONTROL_BUS|        scalar|
+|s_axi_CONTROL_BUS_WREADY   |  out|    1|       s_axi|   CONTROL_BUS|        scalar|
+|s_axi_CONTROL_BUS_WDATA    |   in|   32|       s_axi|   CONTROL_BUS|        scalar|
+|s_axi_CONTROL_BUS_WSTRB    |   in|    4|       s_axi|   CONTROL_BUS|        scalar|
+|s_axi_CONTROL_BUS_ARVALID  |   in|    1|       s_axi|   CONTROL_BUS|        scalar|
+|s_axi_CONTROL_BUS_ARREADY  |  out|    1|       s_axi|   CONTROL_BUS|        scalar|
+|s_axi_CONTROL_BUS_ARADDR   |   in|    6|       s_axi|   CONTROL_BUS|        scalar|
+|s_axi_CONTROL_BUS_RVALID   |  out|    1|       s_axi|   CONTROL_BUS|        scalar|
+|s_axi_CONTROL_BUS_RREADY   |   in|    1|       s_axi|   CONTROL_BUS|        scalar|
+|s_axi_CONTROL_BUS_RDATA    |  out|   32|       s_axi|   CONTROL_BUS|        scalar|
+|s_axi_CONTROL_BUS_RRESP    |  out|    2|       s_axi|   CONTROL_BUS|        scalar|
+|s_axi_CONTROL_BUS_BVALID   |  out|    1|       s_axi|   CONTROL_BUS|        scalar|
+|s_axi_CONTROL_BUS_BREADY   |   in|    1|       s_axi|   CONTROL_BUS|        scalar|
+|s_axi_CONTROL_BUS_BRESP    |  out|    2|       s_axi|   CONTROL_BUS|        scalar|
+|ap_clk                     |   in|    1|  ap_ctrl_hs|          gemm|  return value|
+|ap_rst_n                   |   in|    1|  ap_ctrl_hs|          gemm|  return value|
+|interrupt                  |  out|    1|  ap_ctrl_hs|          gemm|  return value|
+|m_axi_a_port_AWVALID       |  out|    1|       m_axi|        a_port|       pointer|
+|m_axi_a_port_AWREADY       |   in|    1|       m_axi|        a_port|       pointer|
+|m_axi_a_port_AWADDR        |  out|   64|       m_axi|        a_port|       pointer|
+|m_axi_a_port_AWID          |  out|    1|       m_axi|        a_port|       pointer|
+|m_axi_a_port_AWLEN         |  out|    8|       m_axi|        a_port|       pointer|
+|m_axi_a_port_AWSIZE        |  out|    3|       m_axi|        a_port|       pointer|
+|m_axi_a_port_AWBURST       |  out|    2|       m_axi|        a_port|       pointer|
+|m_axi_a_port_AWLOCK        |  out|    2|       m_axi|        a_port|       pointer|
+|m_axi_a_port_AWCACHE       |  out|    4|       m_axi|        a_port|       pointer|
+|m_axi_a_port_AWPROT        |  out|    3|       m_axi|        a_port|       pointer|
+|m_axi_a_port_AWQOS         |  out|    4|       m_axi|        a_port|       pointer|
+|m_axi_a_port_AWREGION      |  out|    4|       m_axi|        a_port|       pointer|
+|m_axi_a_port_AWUSER        |  out|    1|       m_axi|        a_port|       pointer|
+|m_axi_a_port_WVALID        |  out|    1|       m_axi|        a_port|       pointer|
+|m_axi_a_port_WREADY        |   in|    1|       m_axi|        a_port|       pointer|
+|m_axi_a_port_WDATA         |  out|   32|       m_axi|        a_port|       pointer|
+|m_axi_a_port_WSTRB         |  out|    4|       m_axi|        a_port|       pointer|
+|m_axi_a_port_WLAST         |  out|    1|       m_axi|        a_port|       pointer|
+|m_axi_a_port_WID           |  out|    1|       m_axi|        a_port|       pointer|
+|m_axi_a_port_WUSER         |  out|    1|       m_axi|        a_port|       pointer|
+|m_axi_a_port_ARVALID       |  out|    1|       m_axi|        a_port|       pointer|
+|m_axi_a_port_ARREADY       |   in|    1|       m_axi|        a_port|       pointer|
+|m_axi_a_port_ARADDR        |  out|   64|       m_axi|        a_port|       pointer|
+|m_axi_a_port_ARID          |  out|    1|       m_axi|        a_port|       pointer|
+|m_axi_a_port_ARLEN         |  out|    8|       m_axi|        a_port|       pointer|
+|m_axi_a_port_ARSIZE        |  out|    3|       m_axi|        a_port|       pointer|
+|m_axi_a_port_ARBURST       |  out|    2|       m_axi|        a_port|       pointer|
+|m_axi_a_port_ARLOCK        |  out|    2|       m_axi|        a_port|       pointer|
+|m_axi_a_port_ARCACHE       |  out|    4|       m_axi|        a_port|       pointer|
+|m_axi_a_port_ARPROT        |  out|    3|       m_axi|        a_port|       pointer|
+|m_axi_a_port_ARQOS         |  out|    4|       m_axi|        a_port|       pointer|
+|m_axi_a_port_ARREGION      |  out|    4|       m_axi|        a_port|       pointer|
+|m_axi_a_port_ARUSER        |  out|    1|       m_axi|        a_port|       pointer|
+|m_axi_a_port_RVALID        |   in|    1|       m_axi|        a_port|       pointer|
+|m_axi_a_port_RREADY        |  out|    1|       m_axi|        a_port|       pointer|
+|m_axi_a_port_RDATA         |   in|   32|       m_axi|        a_port|       pointer|
+|m_axi_a_port_RLAST         |   in|    1|       m_axi|        a_port|       pointer|
+|m_axi_a_port_RID           |   in|    1|       m_axi|        a_port|       pointer|
+|m_axi_a_port_RUSER         |   in|    1|       m_axi|        a_port|       pointer|
+|m_axi_a_port_RRESP         |   in|    2|       m_axi|        a_port|       pointer|
+|m_axi_a_port_BVALID        |   in|    1|       m_axi|        a_port|       pointer|
+|m_axi_a_port_BREADY        |  out|    1|       m_axi|        a_port|       pointer|
+|m_axi_a_port_BRESP         |   in|    2|       m_axi|        a_port|       pointer|
+|m_axi_a_port_BID           |   in|    1|       m_axi|        a_port|       pointer|
+|m_axi_a_port_BUSER         |   in|    1|       m_axi|        a_port|       pointer|
+|m_axi_b_port_AWVALID       |  out|    1|       m_axi|        b_port|       pointer|
+|m_axi_b_port_AWREADY       |   in|    1|       m_axi|        b_port|       pointer|
+|m_axi_b_port_AWADDR        |  out|   64|       m_axi|        b_port|       pointer|
+|m_axi_b_port_AWID          |  out|    1|       m_axi|        b_port|       pointer|
+|m_axi_b_port_AWLEN         |  out|    8|       m_axi|        b_port|       pointer|
+|m_axi_b_port_AWSIZE        |  out|    3|       m_axi|        b_port|       pointer|
+|m_axi_b_port_AWBURST       |  out|    2|       m_axi|        b_port|       pointer|
+|m_axi_b_port_AWLOCK        |  out|    2|       m_axi|        b_port|       pointer|
+|m_axi_b_port_AWCACHE       |  out|    4|       m_axi|        b_port|       pointer|
+|m_axi_b_port_AWPROT        |  out|    3|       m_axi|        b_port|       pointer|
+|m_axi_b_port_AWQOS         |  out|    4|       m_axi|        b_port|       pointer|
+|m_axi_b_port_AWREGION      |  out|    4|       m_axi|        b_port|       pointer|
+|m_axi_b_port_AWUSER        |  out|    1|       m_axi|        b_port|       pointer|
+|m_axi_b_port_WVALID        |  out|    1|       m_axi|        b_port|       pointer|
+|m_axi_b_port_WREADY        |   in|    1|       m_axi|        b_port|       pointer|
+|m_axi_b_port_WDATA         |  out|   32|       m_axi|        b_port|       pointer|
+|m_axi_b_port_WSTRB         |  out|    4|       m_axi|        b_port|       pointer|
+|m_axi_b_port_WLAST         |  out|    1|       m_axi|        b_port|       pointer|
+|m_axi_b_port_WID           |  out|    1|       m_axi|        b_port|       pointer|
+|m_axi_b_port_WUSER         |  out|    1|       m_axi|        b_port|       pointer|
+|m_axi_b_port_ARVALID       |  out|    1|       m_axi|        b_port|       pointer|
+|m_axi_b_port_ARREADY       |   in|    1|       m_axi|        b_port|       pointer|
+|m_axi_b_port_ARADDR        |  out|   64|       m_axi|        b_port|       pointer|
+|m_axi_b_port_ARID          |  out|    1|       m_axi|        b_port|       pointer|
+|m_axi_b_port_ARLEN         |  out|    8|       m_axi|        b_port|       pointer|
+|m_axi_b_port_ARSIZE        |  out|    3|       m_axi|        b_port|       pointer|
+|m_axi_b_port_ARBURST       |  out|    2|       m_axi|        b_port|       pointer|
+|m_axi_b_port_ARLOCK        |  out|    2|       m_axi|        b_port|       pointer|
+|m_axi_b_port_ARCACHE       |  out|    4|       m_axi|        b_port|       pointer|
+|m_axi_b_port_ARPROT        |  out|    3|       m_axi|        b_port|       pointer|
+|m_axi_b_port_ARQOS         |  out|    4|       m_axi|        b_port|       pointer|
+|m_axi_b_port_ARREGION      |  out|    4|       m_axi|        b_port|       pointer|
+|m_axi_b_port_ARUSER        |  out|    1|       m_axi|        b_port|       pointer|
+|m_axi_b_port_RVALID        |   in|    1|       m_axi|        b_port|       pointer|
+|m_axi_b_port_RREADY        |  out|    1|       m_axi|        b_port|       pointer|
+|m_axi_b_port_RDATA         |   in|   32|       m_axi|        b_port|       pointer|
+|m_axi_b_port_RLAST         |   in|    1|       m_axi|        b_port|       pointer|
+|m_axi_b_port_RID           |   in|    1|       m_axi|        b_port|       pointer|
+|m_axi_b_port_RUSER         |   in|    1|       m_axi|        b_port|       pointer|
+|m_axi_b_port_RRESP         |   in|    2|       m_axi|        b_port|       pointer|
+|m_axi_b_port_BVALID        |   in|    1|       m_axi|        b_port|       pointer|
+|m_axi_b_port_BREADY        |  out|    1|       m_axi|        b_port|       pointer|
+|m_axi_b_port_BRESP         |   in|    2|       m_axi|        b_port|       pointer|
+|m_axi_b_port_BID           |   in|    1|       m_axi|        b_port|       pointer|
+|m_axi_b_port_BUSER         |   in|    1|       m_axi|        b_port|       pointer|
+|m_axi_c_port_AWVALID       |  out|    1|       m_axi|        c_port|       pointer|
+|m_axi_c_port_AWREADY       |   in|    1|       m_axi|        c_port|       pointer|
+|m_axi_c_port_AWADDR        |  out|   64|       m_axi|        c_port|       pointer|
+|m_axi_c_port_AWID          |  out|    1|       m_axi|        c_port|       pointer|
+|m_axi_c_port_AWLEN         |  out|    8|       m_axi|        c_port|       pointer|
+|m_axi_c_port_AWSIZE        |  out|    3|       m_axi|        c_port|       pointer|
+|m_axi_c_port_AWBURST       |  out|    2|       m_axi|        c_port|       pointer|
+|m_axi_c_port_AWLOCK        |  out|    2|       m_axi|        c_port|       pointer|
+|m_axi_c_port_AWCACHE       |  out|    4|       m_axi|        c_port|       pointer|
+|m_axi_c_port_AWPROT        |  out|    3|       m_axi|        c_port|       pointer|
+|m_axi_c_port_AWQOS         |  out|    4|       m_axi|        c_port|       pointer|
+|m_axi_c_port_AWREGION      |  out|    4|       m_axi|        c_port|       pointer|
+|m_axi_c_port_AWUSER        |  out|    1|       m_axi|        c_port|       pointer|
+|m_axi_c_port_WVALID        |  out|    1|       m_axi|        c_port|       pointer|
+|m_axi_c_port_WREADY        |   in|    1|       m_axi|        c_port|       pointer|
+|m_axi_c_port_WDATA         |  out|   32|       m_axi|        c_port|       pointer|
+|m_axi_c_port_WSTRB         |  out|    4|       m_axi|        c_port|       pointer|
+|m_axi_c_port_WLAST         |  out|    1|       m_axi|        c_port|       pointer|
+|m_axi_c_port_WID           |  out|    1|       m_axi|        c_port|       pointer|
+|m_axi_c_port_WUSER         |  out|    1|       m_axi|        c_port|       pointer|
+|m_axi_c_port_ARVALID       |  out|    1|       m_axi|        c_port|       pointer|
+|m_axi_c_port_ARREADY       |   in|    1|       m_axi|        c_port|       pointer|
+|m_axi_c_port_ARADDR        |  out|   64|       m_axi|        c_port|       pointer|
+|m_axi_c_port_ARID          |  out|    1|       m_axi|        c_port|       pointer|
+|m_axi_c_port_ARLEN         |  out|    8|       m_axi|        c_port|       pointer|
+|m_axi_c_port_ARSIZE        |  out|    3|       m_axi|        c_port|       pointer|
+|m_axi_c_port_ARBURST       |  out|    2|       m_axi|        c_port|       pointer|
+|m_axi_c_port_ARLOCK        |  out|    2|       m_axi|        c_port|       pointer|
+|m_axi_c_port_ARCACHE       |  out|    4|       m_axi|        c_port|       pointer|
+|m_axi_c_port_ARPROT        |  out|    3|       m_axi|        c_port|       pointer|
+|m_axi_c_port_ARQOS         |  out|    4|       m_axi|        c_port|       pointer|
+|m_axi_c_port_ARREGION      |  out|    4|       m_axi|        c_port|       pointer|
+|m_axi_c_port_ARUSER        |  out|    1|       m_axi|        c_port|       pointer|
+|m_axi_c_port_RVALID        |   in|    1|       m_axi|        c_port|       pointer|
+|m_axi_c_port_RREADY        |  out|    1|       m_axi|        c_port|       pointer|
+|m_axi_c_port_RDATA         |   in|   32|       m_axi|        c_port|       pointer|
+|m_axi_c_port_RLAST         |   in|    1|       m_axi|        c_port|       pointer|
+|m_axi_c_port_RID           |   in|    1|       m_axi|        c_port|       pointer|
+|m_axi_c_port_RUSER         |   in|    1|       m_axi|        c_port|       pointer|
+|m_axi_c_port_RRESP         |   in|    2|       m_axi|        c_port|       pointer|
+|m_axi_c_port_BVALID        |   in|    1|       m_axi|        c_port|       pointer|
+|m_axi_c_port_BREADY        |  out|    1|       m_axi|        c_port|       pointer|
+|m_axi_c_port_BRESP         |   in|    2|       m_axi|        c_port|       pointer|
+|m_axi_c_port_BID           |   in|    1|       m_axi|        c_port|       pointer|
+|m_axi_c_port_BUSER         |   in|    1|       m_axi|        c_port|       pointer|
++---------------------------+-----+-----+------------+--------------+--------------+
+

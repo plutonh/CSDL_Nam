@@ -1,0 +1,763 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cdfg:DBCdfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdfg="http://www.autoesl.com/DBCdfg" timeStamp="1701325844904">
+  <ports id="1" name="A" type="PortType" originalName="A" coreName="RAM" coreId="1203249496" bitwidth="32" iftype="IfTypeRegister" arraysize="64">
+    <dataOutputObjs>getelementptr</dataOutputObjs>
+  </ports>
+  <ports id="2" name="B" type="PortType" originalName="B" coreName="RAM" coreId="1953394531" bitwidth="32" iftype="IfTypeRegister" arraysize="64">
+    <dataOutputObjs>getelementptr</dataOutputObjs>
+  </ports>
+  <ports id="3" name="AB" type="PortType" originalName="AB" coreName="RAM" coreId="1953394531" bitwidth="32" direction="DirOut" iftype="IfTypeRegister" arraysize="64">
+    <dataInputObjs>getelementptr</dataInputObjs>
+  </ports>
+  <edges id="74" source_obj="//@blocks.0/@node_objs.0" sink_obj="//@blocks.0/@node_objs.1"/>
+  <edges id="75" edge_type="CtrlEdge" source_obj="//@blocks.1" sink_obj="//@blocks.0/@node_objs.2"/>
+  <edges id="76" source_obj="//@blocks.0/@node_objs.0" sink_obj="//@blocks.1/@node_objs.0"/>
+  <edges id="77" source_obj="//@blocks.1/@node_objs.0" sink_obj="//@blocks.1/@node_objs.1"/>
+  <edges id="80" source_obj="//@blocks.1/@node_objs.1" sink_obj="//@blocks.1/@node_objs.2"/>
+  <edges id="83" source_obj="//@blocks.1/@node_objs.0" sink_obj="//@blocks.1/@node_objs.3"/>
+  <edges id="86" source_obj="//@blocks.1/@node_objs.0" sink_obj="//@blocks.1/@node_objs.4"/>
+  <edges id="89" source_obj="//@blocks.1/@node_objs.3" sink_obj="//@blocks.1/@node_objs.5"/>
+  <edges id="90" edge_type="CtrlEdge" source_obj="//@blocks.2" sink_obj="//@blocks.1/@node_objs.5"/>
+  <edges id="91" edge_type="CtrlEdge" source_obj="//@blocks.9" sink_obj="//@blocks.1/@node_objs.5"/>
+  <edges id="92" edge_type="CtrlEdge" source_obj="//@blocks.3" sink_obj="//@blocks.2/@node_objs.0"/>
+  <edges id="93" source_obj="//@blocks.3/@node_objs.6" sink_obj="//@blocks.3/@node_objs.0" is_back_edge="1"/>
+  <edges id="94" edge_type="CtrlEdge" source_obj="//@blocks.7" sink_obj="//@blocks.3/@node_objs.0" is_back_edge="1"/>
+  <edges id="96" edge_type="CtrlEdge" source_obj="//@blocks.2" sink_obj="//@blocks.3/@node_objs.0"/>
+  <edges id="97" source_obj="//@blocks.3/@node_objs.0" sink_obj="//@blocks.3/@node_objs.1"/>
+  <edges id="98" source_obj="//@blocks.1/@node_objs.2" sink_obj="//@blocks.3/@node_objs.2"/>
+  <edges id="99" source_obj="//@blocks.3/@node_objs.1" sink_obj="//@blocks.3/@node_objs.2"/>
+  <edges id="100" source_obj="//@blocks.3/@node_objs.2" sink_obj="//@blocks.3/@node_objs.3"/>
+  <edges id="101" source_obj="//@blocks.3/@node_objs.4" sink_obj="//@ports.2"/>
+  <edges id="104" source_obj="//@blocks.3/@node_objs.3" sink_obj="//@blocks.3/@node_objs.4"/>
+  <edges id="105" source_obj="//@blocks.3/@node_objs.0" sink_obj="//@blocks.3/@node_objs.5"/>
+  <edges id="107" source_obj="//@blocks.3/@node_objs.0" sink_obj="//@blocks.3/@node_objs.6"/>
+  <edges id="109" source_obj="//@blocks.3/@node_objs.5" sink_obj="//@blocks.3/@node_objs.7"/>
+  <edges id="110" edge_type="CtrlEdge" source_obj="//@blocks.4" sink_obj="//@blocks.3/@node_objs.7"/>
+  <edges id="111" edge_type="CtrlEdge" source_obj="//@blocks.8" sink_obj="//@blocks.3/@node_objs.7"/>
+  <edges id="112" edge_type="CtrlEdge" source_obj="//@blocks.5" sink_obj="//@blocks.4/@node_objs.0"/>
+  <edges id="113" source_obj="//@blocks.5/@node_objs.12" sink_obj="//@blocks.5/@node_objs.0" is_back_edge="1"/>
+  <edges id="114" edge_type="CtrlEdge" source_obj="//@blocks.6" sink_obj="//@blocks.5/@node_objs.0" is_back_edge="1"/>
+  <edges id="116" edge_type="CtrlEdge" source_obj="//@blocks.4" sink_obj="//@blocks.5/@node_objs.0"/>
+  <edges id="117" source_obj="//@blocks.6/@node_objs.3" sink_obj="//@blocks.5/@node_objs.1" is_back_edge="1"/>
+  <edges id="118" edge_type="CtrlEdge" source_obj="//@blocks.6" sink_obj="//@blocks.5/@node_objs.1" is_back_edge="1"/>
+  <edges id="121" edge_type="CtrlEdge" source_obj="//@blocks.4" sink_obj="//@blocks.5/@node_objs.1"/>
+  <edges id="122" source_obj="//@blocks.5/@node_objs.0" sink_obj="//@blocks.5/@node_objs.2"/>
+  <edges id="123" source_obj="//@blocks.5/@node_objs.0" sink_obj="//@blocks.5/@node_objs.3"/>
+  <edges id="124" source_obj="//@blocks.1/@node_objs.2" sink_obj="//@blocks.5/@node_objs.4"/>
+  <edges id="125" source_obj="//@blocks.5/@node_objs.3" sink_obj="//@blocks.5/@node_objs.4"/>
+  <edges id="126" source_obj="//@blocks.5/@node_objs.4" sink_obj="//@blocks.5/@node_objs.5"/>
+  <edges id="127" source_obj="//@ports.0" sink_obj="//@blocks.5/@node_objs.6"/>
+  <edges id="129" source_obj="//@blocks.5/@node_objs.5" sink_obj="//@blocks.5/@node_objs.6"/>
+  <edges id="131" source_obj="//@blocks.5/@node_objs.2" sink_obj="//@blocks.5/@node_objs.7"/>
+  <edges id="133" source_obj="//@blocks.5/@node_objs.7" sink_obj="//@blocks.5/@node_objs.8"/>
+  <edges id="134" source_obj="//@blocks.3/@node_objs.1" sink_obj="//@blocks.5/@node_objs.8"/>
+  <edges id="135" source_obj="//@blocks.5/@node_objs.8" sink_obj="//@blocks.5/@node_objs.9"/>
+  <edges id="136" source_obj="//@ports.1" sink_obj="//@blocks.5/@node_objs.10"/>
+  <edges id="138" source_obj="//@blocks.5/@node_objs.9" sink_obj="//@blocks.5/@node_objs.10"/>
+  <edges id="139" source_obj="//@blocks.5/@node_objs.0" sink_obj="//@blocks.5/@node_objs.11"/>
+  <edges id="141" source_obj="//@blocks.5/@node_objs.0" sink_obj="//@blocks.5/@node_objs.12"/>
+  <edges id="143" source_obj="//@blocks.5/@node_objs.11" sink_obj="//@blocks.5/@node_objs.13"/>
+  <edges id="144" edge_type="CtrlEdge" source_obj="//@blocks.6" sink_obj="//@blocks.5/@node_objs.13"/>
+  <edges id="145" edge_type="CtrlEdge" source_obj="//@blocks.7" sink_obj="//@blocks.5/@node_objs.13"/>
+  <edges id="146" source_obj="//@blocks.5/@node_objs.6" sink_obj="//@blocks.6/@node_objs.0"/>
+  <edges id="147" source_obj="//@blocks.5/@node_objs.10" sink_obj="//@blocks.6/@node_objs.1"/>
+  <edges id="148" source_obj="//@blocks.6/@node_objs.1" sink_obj="//@blocks.6/@node_objs.2"/>
+  <edges id="149" source_obj="//@blocks.6/@node_objs.0" sink_obj="//@blocks.6/@node_objs.2"/>
+  <edges id="150" source_obj="//@blocks.6/@node_objs.2" sink_obj="//@blocks.6/@node_objs.3"/>
+  <edges id="151" source_obj="//@blocks.5/@node_objs.1" sink_obj="//@blocks.6/@node_objs.3"/>
+  <edges id="152" edge_type="CtrlEdge" source_obj="//@blocks.5" sink_obj="//@blocks.6/@node_objs.4"/>
+  <edges id="153" source_obj="//@blocks.5/@node_objs.1" sink_obj="//@blocks.7/@node_objs.0"/>
+  <edges id="154" source_obj="//@blocks.3/@node_objs.4" sink_obj="//@blocks.7/@node_objs.0"/>
+  <edges id="155" edge_type="CtrlEdge" source_obj="//@blocks.3" sink_obj="//@blocks.7/@node_objs.1"/>
+  <edges id="156" source_obj="//@blocks.1/@node_objs.4" sink_obj="//@blocks.8/@node_objs.0"/>
+  <edges id="157" source_obj="//@blocks.0/@node_objs.0" sink_obj="//@blocks.8/@node_objs.0"/>
+  <edges id="158" edge_type="CtrlEdge" source_obj="//@blocks.1" sink_obj="//@blocks.8/@node_objs.1"/>
+  <edges id="255" edge_type="CtrlEdge" source_obj="//@blocks.0" sink_obj="//@blocks.1"/>
+  <edges id="256" edge_type="CtrlEdge" source_obj="//@blocks.1" sink_obj="//@blocks.9"/>
+  <edges id="257" edge_type="CtrlEdge" source_obj="//@blocks.1" sink_obj="//@blocks.2"/>
+  <edges id="258" edge_type="CtrlEdge" source_obj="//@blocks.2" sink_obj="//@blocks.3"/>
+  <edges id="259" edge_type="CtrlEdge" source_obj="//@blocks.3" sink_obj="//@blocks.8"/>
+  <edges id="260" edge_type="CtrlEdge" source_obj="//@blocks.3" sink_obj="//@blocks.4"/>
+  <edges id="261" edge_type="CtrlEdge" source_obj="//@blocks.4" sink_obj="//@blocks.5"/>
+  <edges id="262" edge_type="CtrlEdge" source_obj="//@blocks.5" sink_obj="//@blocks.7"/>
+  <edges id="263" edge_type="CtrlEdge" source_obj="//@blocks.5" sink_obj="//@blocks.6"/>
+  <edges id="264" edge_type="CtrlEdge" source_obj="//@blocks.6" sink_obj="//@blocks.5" is_back_edge="1"/>
+  <edges id="265" edge_type="CtrlEdge" source_obj="//@blocks.7" sink_obj="//@blocks.3" is_back_edge="1"/>
+  <edges id="266" edge_type="CtrlEdge" source_obj="//@blocks.8" sink_obj="//@blocks.1" is_back_edge="1"/>
+  <edges id="267" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.1" sink_obj="//@blocks.1/@node_objs.0"/>
+  <edges id="268" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.1" sink_obj="//@blocks.8/@node_objs.0"/>
+  <edges id="269" edge_type="VirtEdge" source_obj="//@blocks.1/@node_objs.0" sink_obj="//@blocks.8/@node_objs.0"/>
+  <blocks id="14" name="entry" type="BlockType">
+    <controlOutputObjs>col</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="4" name="i" originalName="i" coreId="121" bitwidth="4" opcode="alloca" m_display="0" m_topoIndex="1" m_clusterGroupNumber="-1">
+      <dataOutputObjs>store</dataOutputObjs>
+      <dataOutputObjs>load</dataOutputObjs>
+      <dataOutputObjs>store</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="12" name="i_write_ln14" lineNumber="14" fileName="gemm.cc" fileDirectory=".." coreId="0" contextFuncName="mm" opcode="store" m_display="0" m_delay="1.58" m_topoIndex="2" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="gemm.cc" linenumber="14" fileDirectory="C:\Users\CSDL_GUEST.DESKTOP-HHKUDFN\Desktop\06_LIG\23-02\HLS\1_GEMM" functionName="mm"/>
+      <dataInputObjs>alloca</dataInputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="13" name="br_ln14" lineNumber="14" fileName="gemm.cc" fileDirectory=".." coreId="100" contextFuncName="mm" opcode="br" m_display="0" m_topoIndex="3" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="gemm.cc" linenumber="14" fileDirectory="C:\Users\CSDL_GUEST.DESKTOP-HHKUDFN\Desktop\06_LIG\23-02\HLS\1_GEMM" functionName="mm"/>
+      <controlInputObjs>col</controlInputObjs>
+    </node_objs>
+    <fileValidLineNumbers fileName="gemm.cc">
+      <validLinenumbers>14</validLinenumbers>
+    </fileValidLineNumbers>
+  </blocks>
+  <blocks id="22" name="col" type="BlockType">
+    <controlInputObjs>entry</controlInputObjs>
+    <controlInputObjs>for.inc22</controlInputObjs>
+    <controlOutputObjs>br</controlOutputObjs>
+    <controlOutputObjs>br</controlOutputObjs>
+    <controlOutputObjs>for.end24</controlOutputObjs>
+    <controlOutputObjs>col.split</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="15" name="i_1" lineNumber="18" originalName="i" fileName="gemm.cc" fileDirectory=".." coreId="975183904" contextFuncName="mm" bitwidth="4" opcode="load" nodeLabel="1.0" m_display="0" m_topoIndex="4" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="gemm.cc" linenumber="18" fileDirectory="C:\Users\CSDL_GUEST.DESKTOP-HHKUDFN\Desktop\06_LIG\23-02\HLS\1_GEMM" functionName="mm"/>
+      <dataInputObjs>alloca</dataInputObjs>
+      <dataOutputObjs>trunc</dataOutputObjs>
+      <dataOutputObjs>icmp</dataOutputObjs>
+      <dataOutputObjs>add</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="16" name="trunc_ln18" lineNumber="18" fileName="gemm.cc" fileDirectory=".." rtlName="trunc_ln18_fu_133_p1" coreId="4294967295" contextFuncName="mm" bitwidth="3" opcode="trunc" nodeLabel="1.0" m_display="0" m_topoIndex="5" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="gemm.cc" linenumber="18" fileDirectory="C:\Users\CSDL_GUEST.DESKTOP-HHKUDFN\Desktop\06_LIG\23-02\HLS\1_GEMM" functionName="mm"/>
+      <dataInputObjs>load</dataInputObjs>
+      <dataOutputObjs>bitconcatenate</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="17" name="tmp" lineNumber="18" fileName="gemm.cc" fileDirectory=".." rtlName="tmp_fu_137_p3" coreId="100" contextFuncName="mm" bitwidth="6" opcode="bitconcatenate" nodeLabel="1.0" m_display="0" m_topoIndex="6" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="gemm.cc" linenumber="18" fileDirectory="C:\Users\CSDL_GUEST.DESKTOP-HHKUDFN\Desktop\06_LIG\23-02\HLS\1_GEMM" functionName="mm"/>
+      <dataInputObjs>trunc</dataInputObjs>
+      <dataOutputObjs>add</dataOutputObjs>
+      <dataOutputObjs>add</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="18" name="icmp_ln14" lineNumber="14" fileName="gemm.cc" fileDirectory=".." rtlName="icmp_ln14_fu_145_p2" coreName="Cmp" implIndex="auto" control="no" opType="icmp" coreId="9" contextFuncName="mm" bitwidth="1" opcode="icmp" nodeLabel="1.0" m_display="0" m_delay="1.3" m_topoIndex="7" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="gemm.cc" linenumber="14" fileDirectory="C:\Users\CSDL_GUEST.DESKTOP-HHKUDFN\Desktop\06_LIG\23-02\HLS\1_GEMM" functionName="mm"/>
+      <dataInputObjs>load</dataInputObjs>
+      <dataOutputObjs>br</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="20" name="add_ln14" lineNumber="14" fileName="gemm.cc" fileDirectory=".." rtlName="add_ln14_fu_151_p2" coreName="Adder" implIndex="fabric" control="no" opType="add" coreId="1" contextFuncName="mm" bitwidth="4" opcode="add" nodeLabel="1.0" m_display="0" m_delay="1.73" m_topoIndex="8" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="gemm.cc" linenumber="14" fileDirectory="C:\Users\CSDL_GUEST.DESKTOP-HHKUDFN\Desktop\06_LIG\23-02\HLS\1_GEMM" functionName="mm"/>
+      <dataInputObjs>load</dataInputObjs>
+      <dataOutputObjs>store</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="21" name="br_ln14" lineNumber="14" fileName="gemm.cc" fileDirectory=".." coreId="357" contextFuncName="mm" opcode="br" nodeLabel="1.0" m_display="0" m_topoIndex="9" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="gemm.cc" linenumber="14" fileDirectory="C:\Users\CSDL_GUEST.DESKTOP-HHKUDFN\Desktop\06_LIG\23-02\HLS\1_GEMM" functionName="mm"/>
+      <dataInputObjs>icmp</dataInputObjs>
+      <controlInputObjs>col.split</controlInputObjs>
+      <controlInputObjs>for.end24</controlInputObjs>
+    </node_objs>
+    <fileValidLineNumbers fileName="gemm.cc">
+      <validLinenumbers>18</validLinenumbers>
+      <validLinenumbers>14</validLinenumbers>
+    </fileValidLineNumbers>
+  </blocks>
+  <blocks id="25" name="col.split" type="BlockType">
+    <controlInputObjs>col</controlInputObjs>
+    <controlOutputObjs>br</controlOutputObjs>
+    <controlOutputObjs>phi</controlOutputObjs>
+    <controlOutputObjs>product</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="24" name="br_ln15" lineNumber="15" fileName="gemm.cc" fileDirectory=".." coreId="4228300630" contextFuncName="mm" opcode="br" nodeLabel="1.0" m_display="0" m_delay="1.58" m_topoIndex="10" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="gemm.cc" linenumber="15" fileDirectory="C:\Users\CSDL_GUEST.DESKTOP-HHKUDFN\Desktop\06_LIG\23-02\HLS\1_GEMM" functionName="mm"/>
+      <controlInputObjs>product</controlInputObjs>
+    </node_objs>
+    <fileValidLineNumbers fileName="gemm.cc">
+      <validLinenumbers>15</validLinenumbers>
+    </fileValidLineNumbers>
+  </blocks>
+  <blocks id="35" name="product" type="BlockType">
+    <controlInputObjs>col.split</controlInputObjs>
+    <controlInputObjs>for.inc19</controlInputObjs>
+    <controlOutputObjs>br</controlOutputObjs>
+    <controlOutputObjs>br</controlOutputObjs>
+    <controlOutputObjs>for.inc22</controlOutputObjs>
+    <controlOutputObjs>product.split</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="26" name="j" lineNumber="15" originalName="j" fileName="gemm.cc" fileDirectory=".." coreId="100" contextFuncName="mm" bitwidth="4" opcode="phi" nodeLabel="2.0" m_display="0" m_topoIndex="12" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="gemm.cc" linenumber="15" fileDirectory="C:\Users\CSDL_GUEST.DESKTOP-HHKUDFN\Desktop\06_LIG\23-02\HLS\1_GEMM" functionName="mm"/>
+      <dataInputObjs>add</dataInputObjs>
+      <dataOutputObjs>zext</dataOutputObjs>
+      <dataOutputObjs>icmp</dataOutputObjs>
+      <dataOutputObjs>add</dataOutputObjs>
+      <controlInputObjs>for.inc19</controlInputObjs>
+      <controlInputObjs>col.split</controlInputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="27" name="zext_ln20" lineNumber="20" fileName="gemm.cc" fileDirectory=".." rtlName="zext_ln20_fu_157_p1" coreId="3442210384" contextFuncName="mm" bitwidth="6" opcode="zext" nodeLabel="2.0" m_display="0" m_topoIndex="13" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="gemm.cc" linenumber="20" fileDirectory="C:\Users\CSDL_GUEST.DESKTOP-HHKUDFN\Desktop\06_LIG\23-02\HLS\1_GEMM" functionName="mm"/>
+      <dataInputObjs>phi</dataInputObjs>
+      <dataOutputObjs>add</dataOutputObjs>
+      <dataOutputObjs>add</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="28" name="add_ln20" lineNumber="20" fileName="gemm.cc" fileDirectory=".." rtlName="add_ln20_fu_161_p2" coreName="Adder" implIndex="fabric" control="no" opType="add" coreId="1" contextFuncName="mm" bitwidth="6" opcode="add" nodeLabel="2.0" m_display="0" m_delay="1.82" m_topoIndex="14" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="gemm.cc" linenumber="20" fileDirectory="C:\Users\CSDL_GUEST.DESKTOP-HHKUDFN\Desktop\06_LIG\23-02\HLS\1_GEMM" functionName="mm"/>
+      <dataInputObjs>bitconcatenate</dataInputObjs>
+      <dataInputObjs>zext</dataInputObjs>
+      <dataOutputObjs>zext</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="29" name="zext_ln20_1" lineNumber="20" fileName="gemm.cc" fileDirectory=".." rtlName="zext_ln20_1_fu_166_p1" coreId="979725673" contextFuncName="mm" bitwidth="64" opcode="zext" nodeLabel="2.0" m_display="0" m_topoIndex="15" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="gemm.cc" linenumber="20" fileDirectory="C:\Users\CSDL_GUEST.DESKTOP-HHKUDFN\Desktop\06_LIG\23-02\HLS\1_GEMM" functionName="mm"/>
+      <dataInputObjs>add</dataInputObjs>
+      <dataOutputObjs>getelementptr</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="30" name="AB_addr" lineNumber="20" fileName="gemm.cc" fileDirectory=".." coreId="106" contextFuncName="mm" bitwidth="6" opcode="getelementptr" nodeLabel="2.0" m_display="0" m_topoIndex="16" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="gemm.cc" linenumber="20" fileDirectory="C:\Users\CSDL_GUEST.DESKTOP-HHKUDFN\Desktop\06_LIG\23-02\HLS\1_GEMM" functionName="mm"/>
+      <dataInputObjs>zext</dataInputObjs>
+      <dataOutputObjs>AB</dataOutputObjs>
+      <dataOutputObjs>store</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="31" name="icmp_ln15" lineNumber="15" fileName="gemm.cc" fileDirectory=".." rtlName="icmp_ln15_fu_171_p2" coreName="Cmp" implIndex="auto" control="no" opType="icmp" coreId="9" contextFuncName="mm" bitwidth="1" opcode="icmp" nodeLabel="2.0" m_display="0" m_delay="1.3" m_topoIndex="17" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="gemm.cc" linenumber="15" fileDirectory="C:\Users\CSDL_GUEST.DESKTOP-HHKUDFN\Desktop\06_LIG\23-02\HLS\1_GEMM" functionName="mm"/>
+      <dataInputObjs>phi</dataInputObjs>
+      <dataOutputObjs>br</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="33" name="add_ln15" lineNumber="15" fileName="gemm.cc" fileDirectory=".." rtlName="add_ln15_fu_177_p2" coreName="Adder" implIndex="fabric" control="no" opType="add" coreId="1" contextFuncName="mm" bitwidth="4" opcode="add" nodeLabel="2.0" m_display="0" m_delay="1.73" m_topoIndex="18" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="gemm.cc" linenumber="15" fileDirectory="C:\Users\CSDL_GUEST.DESKTOP-HHKUDFN\Desktop\06_LIG\23-02\HLS\1_GEMM" functionName="mm"/>
+      <dataInputObjs>phi</dataInputObjs>
+      <dataOutputObjs>phi</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="34" name="br_ln15" lineNumber="15" fileName="gemm.cc" fileDirectory=".." coreId="0" contextFuncName="mm" opcode="br" nodeLabel="2.0" m_display="0" m_topoIndex="19" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="gemm.cc" linenumber="15" fileDirectory="C:\Users\CSDL_GUEST.DESKTOP-HHKUDFN\Desktop\06_LIG\23-02\HLS\1_GEMM" functionName="mm"/>
+      <dataInputObjs>icmp</dataInputObjs>
+      <controlInputObjs>product.split</controlInputObjs>
+      <controlInputObjs>for.inc22</controlInputObjs>
+    </node_objs>
+    <fileValidLineNumbers fileName="gemm.cc">
+      <validLinenumbers>15</validLinenumbers>
+      <validLinenumbers>20</validLinenumbers>
+    </fileValidLineNumbers>
+  </blocks>
+  <blocks id="38" name="product.split" type="BlockType">
+    <controlInputObjs>product</controlInputObjs>
+    <controlOutputObjs>br</controlOutputObjs>
+    <controlOutputObjs>phi</controlOutputObjs>
+    <controlOutputObjs>phi</controlOutputObjs>
+    <controlOutputObjs>for.inc</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="37" name="br_ln17" lineNumber="17" fileName="gemm.cc" fileDirectory=".." coreId="3422409720" contextFuncName="mm" opcode="br" nodeLabel="2.0" m_display="0" m_delay="1.58" m_topoIndex="20" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="gemm.cc" linenumber="17" fileDirectory="C:\Users\CSDL_GUEST.DESKTOP-HHKUDFN\Desktop\06_LIG\23-02\HLS\1_GEMM" functionName="mm"/>
+      <controlInputObjs>for.inc</controlInputObjs>
+    </node_objs>
+    <fileValidLineNumbers fileName="gemm.cc">
+      <validLinenumbers>17</validLinenumbers>
+    </fileValidLineNumbers>
+  </blocks>
+  <blocks id="54" name="for.inc" type="BlockType">
+    <controlInputObjs>product.split</controlInputObjs>
+    <controlInputObjs>for.inc.split</controlInputObjs>
+    <controlOutputObjs>br</controlOutputObjs>
+    <controlOutputObjs>br</controlOutputObjs>
+    <controlOutputObjs>for.inc19</controlOutputObjs>
+    <controlOutputObjs>for.inc.split</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="39" name="k" lineNumber="17" originalName="k" fileName="gemm.cc" fileDirectory=".." coreId="4294967294" contextFuncName="mm" bitwidth="4" opcode="phi" nodeLabel="3.0" m_display="0" m_topoIndex="23" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="gemm.cc" linenumber="17" fileDirectory="C:\Users\CSDL_GUEST.DESKTOP-HHKUDFN\Desktop\06_LIG\23-02\HLS\1_GEMM" functionName="mm"/>
+      <dataInputObjs>add</dataInputObjs>
+      <dataOutputObjs>trunc</dataOutputObjs>
+      <dataOutputObjs>zext</dataOutputObjs>
+      <dataOutputObjs>icmp</dataOutputObjs>
+      <dataOutputObjs>add</dataOutputObjs>
+      <controlInputObjs>for.inc.split</controlInputObjs>
+      <controlInputObjs>product.split</controlInputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="40" name="ABij" originalName="ABij" coreId="0" bitwidth="32" opcode="phi" nodeLabel="3.0" m_display="0" m_topoIndex="24" m_clusterGroupNumber="-1">
+      <dataInputObjs>add</dataInputObjs>
+      <dataOutputObjs>add</dataOutputObjs>
+      <dataOutputObjs>store</dataOutputObjs>
+      <controlInputObjs>for.inc.split</controlInputObjs>
+      <controlInputObjs>product.split</controlInputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="41" name="trunc_ln17" lineNumber="17" fileName="gemm.cc" fileDirectory=".." rtlName="trunc_ln17_fu_187_p1" coreId="0" contextFuncName="mm" bitwidth="3" opcode="trunc" nodeLabel="3.0" m_display="0" m_topoIndex="25" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="gemm.cc" linenumber="17" fileDirectory="C:\Users\CSDL_GUEST.DESKTOP-HHKUDFN\Desktop\06_LIG\23-02\HLS\1_GEMM" functionName="mm"/>
+      <dataInputObjs>phi</dataInputObjs>
+      <dataOutputObjs>bitconcatenate</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="42" name="zext_ln18" lineNumber="18" fileName="gemm.cc" fileDirectory=".." rtlName="zext_ln18_fu_191_p1" coreId="4294967295" contextFuncName="mm" bitwidth="6" opcode="zext" nodeLabel="3.0" m_display="0" m_topoIndex="26" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="gemm.cc" linenumber="18" fileDirectory="C:\Users\CSDL_GUEST.DESKTOP-HHKUDFN\Desktop\06_LIG\23-02\HLS\1_GEMM" functionName="mm"/>
+      <dataInputObjs>phi</dataInputObjs>
+      <dataOutputObjs>add</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="43" name="add_ln18" lineNumber="18" fileName="gemm.cc" fileDirectory=".." rtlName="add_ln18_fu_195_p2" coreName="Adder" implIndex="fabric" control="no" opType="add" coreId="1" contextFuncName="mm" bitwidth="6" opcode="add" nodeLabel="3.0" m_display="0" m_delay="1.82" m_topoIndex="27" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="gemm.cc" linenumber="18" fileDirectory="C:\Users\CSDL_GUEST.DESKTOP-HHKUDFN\Desktop\06_LIG\23-02\HLS\1_GEMM" functionName="mm"/>
+      <dataInputObjs>bitconcatenate</dataInputObjs>
+      <dataInputObjs>zext</dataInputObjs>
+      <dataOutputObjs>zext</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="44" name="zext_ln18_1" lineNumber="18" fileName="gemm.cc" fileDirectory=".." rtlName="zext_ln18_1_fu_200_p1" coreId="0" contextFuncName="mm" bitwidth="64" opcode="zext" nodeLabel="3.0" m_display="0" m_topoIndex="28" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="gemm.cc" linenumber="18" fileDirectory="C:\Users\CSDL_GUEST.DESKTOP-HHKUDFN\Desktop\06_LIG\23-02\HLS\1_GEMM" functionName="mm"/>
+      <dataInputObjs>add</dataInputObjs>
+      <dataOutputObjs>getelementptr</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="45" name="A_addr" lineNumber="18" fileName="gemm.cc" fileDirectory=".." coreId="3419214848" contextFuncName="mm" bitwidth="6" opcode="getelementptr" nodeLabel="3.0" m_display="0" m_topoIndex="29" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="gemm.cc" linenumber="18" fileDirectory="C:\Users\CSDL_GUEST.DESKTOP-HHKUDFN\Desktop\06_LIG\23-02\HLS\1_GEMM" functionName="mm"/>
+      <dataInputObjs>A</dataInputObjs>
+      <dataInputObjs>zext</dataInputObjs>
+      <dataOutputObjs>load</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="46" name="tmp_1" lineNumber="18" fileName="gemm.cc" fileDirectory=".." rtlName="tmp_1_fu_205_p3" coreId="0" contextFuncName="mm" bitwidth="6" opcode="bitconcatenate" nodeLabel="3.0" m_display="0" m_topoIndex="30" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="gemm.cc" linenumber="18" fileDirectory="C:\Users\CSDL_GUEST.DESKTOP-HHKUDFN\Desktop\06_LIG\23-02\HLS\1_GEMM" functionName="mm"/>
+      <dataInputObjs>trunc</dataInputObjs>
+      <dataOutputObjs>add</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="47" name="add_ln18_1" lineNumber="18" fileName="gemm.cc" fileDirectory=".." rtlName="add_ln18_1_fu_213_p2" coreName="Adder" implIndex="fabric" control="no" opType="add" coreId="1" contextFuncName="mm" bitwidth="6" opcode="add" nodeLabel="3.0" m_display="0" m_delay="1.82" m_topoIndex="31" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="gemm.cc" linenumber="18" fileDirectory="C:\Users\CSDL_GUEST.DESKTOP-HHKUDFN\Desktop\06_LIG\23-02\HLS\1_GEMM" functionName="mm"/>
+      <dataInputObjs>bitconcatenate</dataInputObjs>
+      <dataInputObjs>zext</dataInputObjs>
+      <dataOutputObjs>zext</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="48" name="zext_ln18_2" lineNumber="18" fileName="gemm.cc" fileDirectory=".." rtlName="zext_ln18_2_fu_218_p1" coreId="3422411408" contextFuncName="mm" bitwidth="64" opcode="zext" nodeLabel="3.0" m_display="0" m_topoIndex="32" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="gemm.cc" linenumber="18" fileDirectory="C:\Users\CSDL_GUEST.DESKTOP-HHKUDFN\Desktop\06_LIG\23-02\HLS\1_GEMM" functionName="mm"/>
+      <dataInputObjs>add</dataInputObjs>
+      <dataOutputObjs>getelementptr</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="49" name="B_addr" lineNumber="18" fileName="gemm.cc" fileDirectory=".." coreId="0" contextFuncName="mm" bitwidth="6" opcode="getelementptr" nodeLabel="3.0" m_display="0" m_topoIndex="33" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="gemm.cc" linenumber="18" fileDirectory="C:\Users\CSDL_GUEST.DESKTOP-HHKUDFN\Desktop\06_LIG\23-02\HLS\1_GEMM" functionName="mm"/>
+      <dataInputObjs>B</dataInputObjs>
+      <dataInputObjs>zext</dataInputObjs>
+      <dataOutputObjs>load</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="50" name="icmp_ln17" lineNumber="17" fileName="gemm.cc" fileDirectory=".." rtlName="icmp_ln17_fu_223_p2" coreName="Cmp" implIndex="auto" control="no" opType="icmp" coreId="9" contextFuncName="mm" bitwidth="1" opcode="icmp" nodeLabel="3.0" m_display="0" m_delay="1.3" m_topoIndex="34" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="gemm.cc" linenumber="17" fileDirectory="C:\Users\CSDL_GUEST.DESKTOP-HHKUDFN\Desktop\06_LIG\23-02\HLS\1_GEMM" functionName="mm"/>
+      <dataInputObjs>phi</dataInputObjs>
+      <dataOutputObjs>br</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="52" name="add_ln17" lineNumber="17" fileName="gemm.cc" fileDirectory=".." rtlName="add_ln17_fu_229_p2" coreName="Adder" implIndex="fabric" control="no" opType="add" coreId="1" contextFuncName="mm" bitwidth="4" opcode="add" nodeLabel="3.0" m_display="0" m_delay="1.73" m_topoIndex="35" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="gemm.cc" linenumber="17" fileDirectory="C:\Users\CSDL_GUEST.DESKTOP-HHKUDFN\Desktop\06_LIG\23-02\HLS\1_GEMM" functionName="mm"/>
+      <dataInputObjs>phi</dataInputObjs>
+      <dataOutputObjs>phi</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="53" name="br_ln17" lineNumber="17" fileName="gemm.cc" fileDirectory=".." coreId="4294967294" contextFuncName="mm" opcode="br" nodeLabel="3.0" m_display="0" m_topoIndex="36" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="gemm.cc" linenumber="17" fileDirectory="C:\Users\CSDL_GUEST.DESKTOP-HHKUDFN\Desktop\06_LIG\23-02\HLS\1_GEMM" functionName="mm"/>
+      <dataInputObjs>icmp</dataInputObjs>
+      <controlInputObjs>for.inc.split</controlInputObjs>
+      <controlInputObjs>for.inc19</controlInputObjs>
+    </node_objs>
+    <fileValidLineNumbers fileName="gemm.cc">
+      <validLinenumbers>17</validLinenumbers>
+      <validLinenumbers>18</validLinenumbers>
+    </fileValidLineNumbers>
+  </blocks>
+  <blocks id="61" name="for.inc.split" type="BlockType">
+    <controlInputObjs>for.inc</controlInputObjs>
+    <controlOutputObjs>phi</controlOutputObjs>
+    <controlOutputObjs>phi</controlOutputObjs>
+    <controlOutputObjs>br</controlOutputObjs>
+    <controlOutputObjs>for.inc</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="56" name="A_load" lineNumber="18" fileName="gemm.cc" fileDirectory=".." coreName="RAM" implIndex="auto" control="no" opType="ram" coreId="82" contextFuncName="mm" bitwidth="32" opcode="load" nodeLabel="3.0" nodeLatency="1" m_display="0" m_delay="3.25" m_topoIndex="37" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="gemm.cc" linenumber="18" fileDirectory="C:\Users\CSDL_GUEST.DESKTOP-HHKUDFN\Desktop\06_LIG\23-02\HLS\1_GEMM" functionName="mm"/>
+      <dataInputObjs>getelementptr</dataInputObjs>
+      <dataOutputObjs>mul</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="57" name="B_load" lineNumber="18" fileName="gemm.cc" fileDirectory=".." coreName="RAM" implIndex="auto" control="no" opType="ram" coreId="82" contextFuncName="mm" bitwidth="32" opcode="load" nodeLabel="3.0" nodeLatency="1" m_display="0" m_delay="3.25" m_topoIndex="38" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="gemm.cc" linenumber="18" fileDirectory="C:\Users\CSDL_GUEST.DESKTOP-HHKUDFN\Desktop\06_LIG\23-02\HLS\1_GEMM" functionName="mm"/>
+      <dataInputObjs>getelementptr</dataInputObjs>
+      <dataOutputObjs>mul</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="58" name="mul_ln18" lineNumber="18" fileName="gemm.cc" fileDirectory=".." rtlName="mul_32s_32s_32_2_1_U1" coreName="Multiplier" implIndex="auto" control="no" opType="mul" coreId="3" contextFuncName="mm" bitwidth="32" opcode="mul" nodeLabel="5.0" nodeLatency="1" m_display="0" m_delay="6.91" m_topoIndex="41" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="gemm.cc" linenumber="18" fileDirectory="C:\Users\CSDL_GUEST.DESKTOP-HHKUDFN\Desktop\06_LIG\23-02\HLS\1_GEMM" functionName="mm"/>
+      <dataInputObjs>load</dataInputObjs>
+      <dataInputObjs>load</dataInputObjs>
+      <dataOutputObjs>add</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="59" name="ABij_1" lineNumber="18" originalName="ABij" fileName="gemm.cc" fileDirectory=".." rtlName="ABij_1_fu_239_p2" coreName="Adder" implIndex="fabric" control="no" opType="add" coreId="1" contextFuncName="mm" bitwidth="32" opcode="add" nodeLabel="7.0" m_display="0" m_delay="2.55" m_topoIndex="42" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="gemm.cc" linenumber="18" fileDirectory="C:\Users\CSDL_GUEST.DESKTOP-HHKUDFN\Desktop\06_LIG\23-02\HLS\1_GEMM" functionName="mm"/>
+      <dataInputObjs>mul</dataInputObjs>
+      <dataInputObjs>phi</dataInputObjs>
+      <dataOutputObjs>phi</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="60" name="br_ln17" lineNumber="17" fileName="gemm.cc" fileDirectory=".." coreId="20" contextFuncName="mm" opcode="br" nodeLabel="7.0" m_display="0" m_topoIndex="43" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="gemm.cc" linenumber="17" fileDirectory="C:\Users\CSDL_GUEST.DESKTOP-HHKUDFN\Desktop\06_LIG\23-02\HLS\1_GEMM" functionName="mm"/>
+      <controlInputObjs>for.inc</controlInputObjs>
+    </node_objs>
+    <fileValidLineNumbers fileName="gemm.cc">
+      <validLinenumbers>18</validLinenumbers>
+      <validLinenumbers>17</validLinenumbers>
+    </fileValidLineNumbers>
+  </blocks>
+  <blocks id="64" name="for.inc19" type="BlockType">
+    <controlInputObjs>for.inc</controlInputObjs>
+    <controlOutputObjs>phi</controlOutputObjs>
+    <controlOutputObjs>br</controlOutputObjs>
+    <controlOutputObjs>product</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="62" name="AB_addr_write_ln20" lineNumber="20" fileName="gemm.cc" fileDirectory=".." coreName="RAM" implIndex="auto" control="no" opType="ram" coreId="82" contextFuncName="mm" opcode="store" nodeLabel="3.0" m_display="0" m_delay="3.25" m_topoIndex="39" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="gemm.cc" linenumber="20" fileDirectory="C:\Users\CSDL_GUEST.DESKTOP-HHKUDFN\Desktop\06_LIG\23-02\HLS\1_GEMM" functionName="mm"/>
+      <dataInputObjs>phi</dataInputObjs>
+      <dataInputObjs>getelementptr</dataInputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="63" name="br_ln15" lineNumber="15" fileName="gemm.cc" fileDirectory=".." coreId="0" contextFuncName="mm" opcode="br" nodeLabel="3.0" m_display="0" m_topoIndex="40" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="gemm.cc" linenumber="15" fileDirectory="C:\Users\CSDL_GUEST.DESKTOP-HHKUDFN\Desktop\06_LIG\23-02\HLS\1_GEMM" functionName="mm"/>
+      <controlInputObjs>product</controlInputObjs>
+    </node_objs>
+    <fileValidLineNumbers fileName="gemm.cc">
+      <validLinenumbers>20</validLinenumbers>
+      <validLinenumbers>15</validLinenumbers>
+    </fileValidLineNumbers>
+  </blocks>
+  <blocks id="67" name="for.inc22" type="BlockType">
+    <controlInputObjs>product</controlInputObjs>
+    <controlOutputObjs>br</controlOutputObjs>
+    <controlOutputObjs>col</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="65" name="i_write_ln14" lineNumber="14" fileName="gemm.cc" fileDirectory=".." coreId="3443269424" contextFuncName="mm" opcode="store" nodeLabel="2.0" m_display="0" m_delay="1.58" m_topoIndex="21" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="gemm.cc" linenumber="14" fileDirectory="C:\Users\CSDL_GUEST.DESKTOP-HHKUDFN\Desktop\06_LIG\23-02\HLS\1_GEMM" functionName="mm"/>
+      <dataInputObjs>add</dataInputObjs>
+      <dataInputObjs>alloca</dataInputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="66" name="br_ln14" lineNumber="14" fileName="gemm.cc" fileDirectory=".." coreId="4294967295" contextFuncName="mm" opcode="br" nodeLabel="2.0" m_display="0" m_topoIndex="22" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="gemm.cc" linenumber="14" fileDirectory="C:\Users\CSDL_GUEST.DESKTOP-HHKUDFN\Desktop\06_LIG\23-02\HLS\1_GEMM" functionName="mm"/>
+      <controlInputObjs>col</controlInputObjs>
+    </node_objs>
+    <fileValidLineNumbers fileName="gemm.cc">
+      <validLinenumbers>14</validLinenumbers>
+    </fileValidLineNumbers>
+  </blocks>
+  <blocks id="69" name="for.end24" type="BlockType">
+    <controlInputObjs>col</controlInputObjs>
+    <controlOutputObjs>br</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="68" name="_ln23" lineNumber="23" fileName="gemm.cc" fileDirectory=".." coreId="0" contextFuncName="mm" opcode="ret" nodeLabel="1.0" m_display="0" m_topoIndex="11" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="gemm.cc" linenumber="23" fileDirectory="C:\Users\CSDL_GUEST.DESKTOP-HHKUDFN\Desktop\06_LIG\23-02\HLS\1_GEMM" functionName="mm"/>
+    </node_objs>
+    <fileValidLineNumbers fileName="gemm.cc">
+      <validLinenumbers>23</validLinenumbers>
+    </fileValidLineNumbers>
+  </blocks>
+  <ScheduleInfo time="0"/>
+  <ScheduleInfo time="1"/>
+  <ScheduleInfo time="2"/>
+  <ScheduleInfo time="3"/>
+  <ScheduleInfo time="4"/>
+  <ScheduleInfo time="5"/>
+  <ScheduleInfo time="6"/>
+  <ScheduleInfo time="7"/>
+  <regnodes realName="j_reg_90">
+    <nodeIds>26</nodeIds>
+  </regnodes>
+  <regnodes realName="ABij_1_reg_316">
+    <nodeIds>59</nodeIds>
+  </regnodes>
+  <regnodes realName="tmp_reg_251">
+    <nodeIds>17</nodeIds>
+  </regnodes>
+  <regnodes realName="ABij_reg_112">
+    <nodeIds>40</nodeIds>
+  </regnodes>
+  <regnodes realName="AB_addr_reg_270">
+    <nodeIds>30</nodeIds>
+  </regnodes>
+  <regnodes realName="i_reg_244">
+    <nodeIds>4</nodeIds>
+  </regnodes>
+  <regnodes realName="add_ln14_reg_260">
+    <nodeIds>20</nodeIds>
+  </regnodes>
+  <regnodes realName="B_load_reg_306">
+    <nodeIds>57</nodeIds>
+  </regnodes>
+  <regnodes realName="A_load_reg_301">
+    <nodeIds>56</nodeIds>
+  </regnodes>
+  <regnodes realName="k_reg_101">
+    <nodeIds>39</nodeIds>
+  </regnodes>
+  <regnodes realName="B_addr_reg_288">
+    <nodeIds>49</nodeIds>
+  </regnodes>
+  <regnodes realName="A_addr_reg_283">
+    <nodeIds>45</nodeIds>
+  </regnodes>
+  <regnodes realName="add_ln17_reg_296">
+    <nodeIds>52</nodeIds>
+  </regnodes>
+  <regnodes realName="mul_ln18_reg_311">
+    <nodeIds>58</nodeIds>
+  </regnodes>
+  <regnodes realName="zext_ln20_reg_265">
+    <nodeIds>27</nodeIds>
+  </regnodes>
+  <regnodes realName="add_ln15_reg_278">
+    <nodeIds>33</nodeIds>
+  </regnodes>
+  <expressionNodes realName="i_fu_48">
+    <nodeIds>4</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="add_ln15_fu_177">
+    <nodeIds>33</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="zext_ln18_fu_191">
+    <nodeIds>42</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="icmp_ln17_fu_223">
+    <nodeIds>50</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="tmp_fu_137">
+    <nodeIds>17</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="add_ln14_fu_151">
+    <nodeIds>20</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="zext_ln18_2_fu_218">
+    <nodeIds>48</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="add_ln18_1_fu_213">
+    <nodeIds>47</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="icmp_ln14_fu_145">
+    <nodeIds>18</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="B_addr_gep_fu_66">
+    <nodeIds>49</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="j_phi_fu_94">
+    <nodeIds>26</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="AB_addr_gep_fu_52">
+    <nodeIds>30</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="trunc_ln17_fu_187">
+    <nodeIds>41</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="add_ln17_fu_229">
+    <nodeIds>52</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="zext_ln20_1_fu_166">
+    <nodeIds>29</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="add_ln20_fu_161">
+    <nodeIds>28</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="ABij_phi_fu_116">
+    <nodeIds>40</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="A_addr_gep_fu_59">
+    <nodeIds>45</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="tmp_1_fu_205">
+    <nodeIds>46</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="icmp_ln15_fu_171">
+    <nodeIds>31</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="k_phi_fu_105">
+    <nodeIds>39</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="ABij_1_fu_239">
+    <nodeIds>59</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="add_ln18_fu_195">
+    <nodeIds>43</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="zext_ln20_fu_157">
+    <nodeIds>27</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="trunc_ln18_fu_133">
+    <nodeIds>16</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="zext_ln18_1_fu_200">
+    <nodeIds>44</nodeIds>
+  </expressionNodes>
+  <moduleNodes realName="grp_fu_235">
+    <nodeIds>58</nodeIds>
+  </moduleNodes>
+  <ioNodes realName="store_ln14_store_fu_183">
+    <nodeIds>65</nodeIds>
+  </ioNodes>
+  <ioNodes realName="i_1_load_fu_130">
+    <nodeIds>15</nodeIds>
+  </ioNodes>
+  <ioNodes realName="store_ln14_store_fu_125">
+    <nodeIds>12</nodeIds>
+  </ioNodes>
+  <memoryPorts dataString="A">
+    <nodeIds>56</nodeIds>
+  </memoryPorts>
+  <memoryPorts dataString="AB">
+    <nodeIds>62</nodeIds>
+  </memoryPorts>
+  <memoryPorts dataString="B">
+    <nodeIds>57</nodeIds>
+  </memoryPorts>
+  <ioPorts name="A(p0)">
+    <contents name="load">
+      <nodeIds>56</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="AB(p0)">
+    <contents name="store">
+      <nodeIds>62</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="B(p0)">
+    <contents name="load">
+      <nodeIds>57</nodeIds>
+    </contents>
+  </ioPorts>
+  <fsm>
+    <states id="1">
+      <operations id="4" stage="1" latency="1"/>
+      <operations id="5" stage="1" latency="1"/>
+      <operations id="6" stage="1" latency="1"/>
+      <operations id="7" stage="1" latency="1"/>
+      <operations id="8" stage="1" latency="1"/>
+      <operations id="9" stage="1" latency="1"/>
+      <operations id="10" stage="1" latency="1"/>
+      <operations id="11" stage="1" latency="1"/>
+      <operations id="12" stage="1" latency="1"/>
+      <operations id="13" stage="1" latency="1"/>
+    </states>
+    <states id="2">
+      <operations id="15" stage="1" latency="1"/>
+      <operations id="16" stage="1" latency="1"/>
+      <operations id="17" stage="1" latency="1"/>
+      <operations id="18" stage="1" latency="1"/>
+      <operations id="19" stage="1" latency="1"/>
+      <operations id="20" stage="1" latency="1"/>
+      <operations id="21" stage="1" latency="1"/>
+      <operations id="23" stage="1" latency="1"/>
+      <operations id="24" stage="1" latency="1"/>
+      <operations id="68" stage="1" latency="1"/>
+    </states>
+    <states id="3">
+      <operations id="26" stage="1" latency="1"/>
+      <operations id="27" stage="1" latency="1"/>
+      <operations id="28" stage="1" latency="1"/>
+      <operations id="29" stage="1" latency="1"/>
+      <operations id="30" stage="1" latency="1"/>
+      <operations id="31" stage="1" latency="1"/>
+      <operations id="32" stage="1" latency="1"/>
+      <operations id="33" stage="1" latency="1"/>
+      <operations id="34" stage="1" latency="1"/>
+      <operations id="36" stage="1" latency="1"/>
+      <operations id="37" stage="1" latency="1"/>
+      <operations id="65" stage="1" latency="1"/>
+      <operations id="66" stage="1" latency="1"/>
+    </states>
+    <states id="4">
+      <operations id="39" stage="1" latency="1"/>
+      <operations id="40" stage="1" latency="1"/>
+      <operations id="41" stage="1" latency="1"/>
+      <operations id="42" stage="1" latency="1"/>
+      <operations id="43" stage="1" latency="1"/>
+      <operations id="44" stage="1" latency="1"/>
+      <operations id="45" stage="1" latency="1"/>
+      <operations id="46" stage="1" latency="1"/>
+      <operations id="47" stage="1" latency="1"/>
+      <operations id="48" stage="1" latency="1"/>
+      <operations id="49" stage="1" latency="1"/>
+      <operations id="50" stage="1" latency="1"/>
+      <operations id="51" stage="1" latency="1"/>
+      <operations id="52" stage="1" latency="1"/>
+      <operations id="53" stage="1" latency="1"/>
+      <operations id="56" stage="2" latency="2"/>
+      <operations id="57" stage="2" latency="2"/>
+      <operations id="62" stage="1" latency="1"/>
+      <operations id="63" stage="1" latency="1"/>
+    </states>
+    <states id="5">
+      <operations id="56" stage="1" latency="2"/>
+      <operations id="57" stage="1" latency="2"/>
+    </states>
+    <states id="6">
+      <operations id="58" stage="2" latency="2"/>
+    </states>
+    <states id="7">
+      <operations id="58" stage="1" latency="2"/>
+    </states>
+    <states id="8">
+      <operations id="55" stage="1" latency="1"/>
+      <operations id="59" stage="1" latency="1"/>
+      <operations id="60" stage="1" latency="1"/>
+    </states>
+    <transitions inState="1" outState="2">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="2" outState="3">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="3" outState="4">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="4" outState="5">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="5" outState="6">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="6" outState="7">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="7" outState="8">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="8" outState="4">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="4" outState="3">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="3" outState="2">
+      <condition id="-1"/>
+    </transitions>
+  </fsm>
+  <CFGRegionsRoot>
+    <cfgRegions mId="1" mTag="mm" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1" mMinLatency="2705" mMaxLatency="2705">
+      <subRegions>2</subRegions>
+      <subRegions>3</subRegions>
+      <subRegions>10</subRegions>
+      <mDfPipe/>
+    </cfgRegions>
+    <cfgRegions mId="2" mTag="Entry" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1">
+      <basicBlocks>14</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+    <cfgRegions mId="3" mTag="row" mII="-1" mDepth="-1" mMinTripCount="8" mMaxTripCount="8" mMinLatency="2704" mMaxLatency="2704" mType="1">
+      <subRegions>4</subRegions>
+      <subRegions>5</subRegions>
+      <subRegions>9</subRegions>
+      <mDfPipe/>
+    </cfgRegions>
+    <cfgRegions mId="4" mTag="Region 1" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1">
+      <basicBlocks>22</basicBlocks>
+      <basicBlocks>25</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+    <cfgRegions mId="5" mTag="col" mII="-1" mDepth="-1" mMinTripCount="8" mMaxTripCount="8" mMinLatency="336" mMaxLatency="336" mType="1">
+      <subRegions>6</subRegions>
+      <subRegions>7</subRegions>
+      <subRegions>8</subRegions>
+      <mDfPipe/>
+    </cfgRegions>
+    <cfgRegions mId="6" mTag="Region 2" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1">
+      <basicBlocks>35</basicBlocks>
+      <basicBlocks>38</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+    <cfgRegions mId="7" mTag="product" mII="-1" mDepth="-1" mMinTripCount="8" mMaxTripCount="8" mMinLatency="40" mMaxLatency="40" mType="1">
+      <basicBlocks>54</basicBlocks>
+      <basicBlocks>61</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+    <cfgRegions mId="8" mTag="Region 3" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1">
+      <basicBlocks>64</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+    <cfgRegions mId="9" mTag="Region 4" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1">
+      <basicBlocks>67</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+    <cfgRegions mId="10" mTag="Return" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1">
+      <basicBlocks>69</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+  </CFGRegionsRoot>
+</cdfg:DBCdfg>

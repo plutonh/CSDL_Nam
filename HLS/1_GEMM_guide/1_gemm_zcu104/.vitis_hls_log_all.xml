@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <synLog/>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <synLog>
+        <logs message="WARNING: [HLS 200-885] The II Violation in module 'mm' (loop 'row_col'): Unable to schedule 'load' operation ('A_load_5', gemm.cc:14) on array 'A' due to limited memory ports (II = 3). Please consider using a memory core with more ports or partitioning the array 'A'.&#xD;&#xA;Resolution: For help on HLS 200-885 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-885.html" projectName="1_gemm_zcu104" solutionName="solution1" date="2023-11-30T15:46:40.773+0900" type="Warning"/>
+        <logs message="WARNING: [HLS 200-885] The II Violation in module 'mm' (loop 'row_col'): Unable to schedule 'load' operation ('A_load_3', gemm.cc:14) on array 'A' due to limited memory ports (II = 2). Please consider using a memory core with more ports or partitioning the array 'A'.&#xD;&#xA;Resolution: For help on HLS 200-885 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-885.html" projectName="1_gemm_zcu104" solutionName="solution1" date="2023-11-30T15:46:40.672+0900" type="Warning"/>
+        <logs message="WARNING: [HLS 200-885] The II Violation in module 'mm' (loop 'row_col'): Unable to schedule 'load' operation ('A_load_1', gemm.cc:14) on array 'A' due to limited memory ports (II = 1). Please consider using a memory core with more ports or partitioning the array 'A'.&#xD;&#xA;Resolution: For help on HLS 200-885 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-885.html" projectName="1_gemm_zcu104" solutionName="solution1" date="2023-11-30T15:46:40.643+0900" type="Warning"/>
+        <logs message="WARNING: [HLS 207-910] 'O' macro redefined (gemm.cc:10:9)" projectName="1_gemm_zcu104" solutionName="solution1" date="2023-11-30T15:46:28.435+0900" type="Warning"/>
+        <logs message="WARNING: [HLS 207-910] 'N' macro redefined (gemm.cc:9:9)" projectName="1_gemm_zcu104" solutionName="solution1" date="2023-11-30T15:46:28.417+0900" type="Warning"/>
+        <logs message="WARNING: [HLS 207-910] 'M' macro redefined (gemm.cc:8:9)" projectName="1_gemm_zcu104" solutionName="solution1" date="2023-11-30T15:46:28.391+0900" type="Warning"/>
+      </synLog>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>

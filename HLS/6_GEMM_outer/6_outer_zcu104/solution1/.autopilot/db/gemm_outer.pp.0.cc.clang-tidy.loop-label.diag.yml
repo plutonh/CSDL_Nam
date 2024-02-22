@@ -1,0 +1,49 @@
+---
+MainSourceFile:  'C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm_outer.pp.0.cc'
+Diagnostics:     
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_45_1:  '
+    FileOffset:      45
+    FilePath:        gemm_outer.cc
+    Replacements:    
+      - FilePath:        'C:\Users\CSDL_GUEST.DESKTOP-HHKUDFN\Desktop\06_LIG\23-02\HLS\6_GEMM_outer\6_outer_zcu104\solution1\.autopilot\db\gemm_outer.pp.0.cc'
+        Offset:          97879
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_45_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_46_2:  '
+    FileOffset:      46
+    FilePath:        gemm_outer.cc
+    Replacements:    
+      - FilePath:        'C:\Users\CSDL_GUEST.DESKTOP-HHKUDFN\Desktop\06_LIG\23-02\HLS\6_GEMM_outer\6_outer_zcu104\solution1\.autopilot\db\gemm_outer.pp.0.cc'
+        Offset:          97915
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_46_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_51_3:  '
+    FileOffset:      51
+    FilePath:        gemm_outer.cc
+    Replacements:    
+      - FilePath:        'C:\Users\CSDL_GUEST.DESKTOP-HHKUDFN\Desktop\06_LIG\23-02\HLS\6_GEMM_outer\6_outer_zcu104\solution1\.autopilot\db\gemm_outer.pp.0.cc'
+        Offset:          97982
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_51_3: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_53_4:  '
+    FileOffset:      53
+    FilePath:        gemm_outer.cc
+    Replacements:    
+      - FilePath:        'C:\Users\CSDL_GUEST.DESKTOP-HHKUDFN\Desktop\06_LIG\23-02\HLS\6_GEMM_outer\6_outer_zcu104\solution1\.autopilot\db\gemm_outer.pp.0.cc'
+        Offset:          98040
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_53_4: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_55_5:  '
+    FileOffset:      55
+    FilePath:        gemm_outer.cc
+    Replacements:    
+      - FilePath:        'C:\Users\CSDL_GUEST.DESKTOP-HHKUDFN\Desktop\06_LIG\23-02\HLS\6_GEMM_outer\6_outer_zcu104\solution1\.autopilot\db\gemm_outer.pp.0.cc'
+        Offset:          98091
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_55_5: '
+...

@@ -1,0 +1,18 @@
+{"sourceFile": [{
+      "name": "",
+      "directive": [{
+          "functionName": "gemm",
+          "label": "",
+          "functionLabel": "",
+          "id": "1",
+          "sourceFile": "C:\/Users\/CSDL_GUEST.DESKTOP-HHKUDFN\/Desktop\/06_LIG\/23-02\/HLS\/6_GEMM_outer\/6_outer_zcu104\/solution1\/csynth.tcl",
+          "sourceLine": "15",
+          "pragma": {
+            "name": "TOP",
+            "option": [{
+                "name": "name",
+                "value": "gemm"
+              }]
+          }
+        }]
+    }]}

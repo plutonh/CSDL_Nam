@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <synLog/>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <synLog>
+        <logs message="WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low." projectName="5_gemm_zcu104" solutionName="solution1" date="2023-11-30T16:39:02.750+0900" type="Warning"/>
+        <logs message="WARNING: [HLS 200-880] The II Violation in module 'mm' (loop 'row_col'): Unable to enforce a carried dependence constraint (II = 7, distance = 1, offset = 1) between bus read operation ('B_port_addr_7_read', gemm.cc:30) on port 'B_port' (gemm.cc:30) and bus read operation ('B_port_addr_read', gemm.cc:30) on port 'B_port' (gemm.cc:30).&#xD;&#xA;Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-880.html" projectName="5_gemm_zcu104" solutionName="solution1" date="2023-11-30T16:39:02.057+0900" type="Warning"/>
+        <logs message="WARNING: [HLS 200-880] The II Violation in module 'mm' (loop 'row_col'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1) between bus read operation ('B_port_addr_7_read', gemm.cc:30) on port 'B_port' (gemm.cc:30) and bus read operation ('B_port_addr_read', gemm.cc:30) on port 'B_port' (gemm.cc:30).&#xD;&#xA;Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-880.html" projectName="5_gemm_zcu104" solutionName="solution1" date="2023-11-30T16:39:01.979+0900" type="Warning"/>
+        <logs message="WARNING: [HLS 200-880] The II Violation in module 'mm' (loop 'row_col'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between bus read operation ('B_port_addr_7_read', gemm.cc:30) on port 'B_port' (gemm.cc:30) and bus read operation ('B_port_addr_read', gemm.cc:30) on port 'B_port' (gemm.cc:30).&#xD;&#xA;Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-880.html" projectName="5_gemm_zcu104" solutionName="solution1" date="2023-11-30T16:39:01.912+0900" type="Warning"/>
+        <logs message="WARNING: [HLS 200-880] The II Violation in module 'mm' (loop 'row_col'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between bus read operation ('B_port_addr_7_read', gemm.cc:30) on port 'B_port' (gemm.cc:30) and bus read operation ('B_port_addr_read', gemm.cc:30) on port 'B_port' (gemm.cc:30).&#xD;&#xA;Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-880.html" projectName="5_gemm_zcu104" solutionName="solution1" date="2023-11-30T16:39:01.896+0900" type="Warning"/>
+        <logs message="WARNING: [HLS 200-880] The II Violation in module 'mm' (loop 'row_col'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between bus read operation ('B_port_addr_7_read', gemm.cc:30) on port 'B_port' (gemm.cc:30) and bus read operation ('B_port_addr_read', gemm.cc:30) on port 'B_port' (gemm.cc:30).&#xD;&#xA;Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-880.html" projectName="5_gemm_zcu104" solutionName="solution1" date="2023-11-30T16:39:01.860+0900" type="Warning"/>
+      </synLog>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>

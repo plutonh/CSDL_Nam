@@ -1,0 +1,14 @@
+<pragmas>
+<pragma file="gemm.cc" line="39" pragmaType="pipeline" parentfunction="mm" off="0" ii="2" rewind="0" style=""/>
+<pragma file="gemm.cc" line="41" pragmaType="unroll" parentfunction="mm" factor="-1" skip_exit_check="0"/>
+<pragma file="gemm.cc" line="16" pragmaType="interface" parentfunction="mm" mode="m_axi" port="A" bundle="A_port" offset="slave" name="" depth="64" num_read_outstanding="-1" num_write_outstanding="-1" max_burst_read_length="-1" max_burst_write_length="-1" latency="-1" max_widen_bitwidth="-1" channel=""/>
+<pragma file="gemm.cc" line="17" pragmaType="interface" parentfunction="mm" mode="m_axi" port="B" bundle="B_port" offset="slave" name="" depth="64" num_read_outstanding="-1" num_write_outstanding="-1" max_burst_read_length="-1" max_burst_write_length="-1" latency="-1" max_widen_bitwidth="-1" channel=""/>
+<pragma file="gemm.cc" line="18" pragmaType="interface" parentfunction="mm" mode="m_axi" port="AB" bundle="AB_port" offset="slave" name="" depth="64" num_read_outstanding="-1" num_write_outstanding="-1" max_burst_read_length="-1" max_burst_write_length="-1" latency="-1" max_widen_bitwidth="-1" channel=""/>
+<pragma file="gemm.cc" line="20" pragmaType="interface" parentfunction="mm" mode="s_axilite" port="A" bundle="CONTROL_BUS" offset="-1" name="" clock="" impl="" register="0"/>
+<pragma file="gemm.cc" line="21" pragmaType="interface" parentfunction="mm" mode="s_axilite" port="B" bundle="CONTROL_BUS" offset="-1" name="" clock="" impl="" register="0"/>
+<pragma file="gemm.cc" line="22" pragmaType="interface" parentfunction="mm" mode="s_axilite" port="AB" bundle="CONTROL_BUS" offset="-1" name="" clock="" impl="" register="0"/>
+<pragma file="gemm.cc" line="23" pragmaType="interface" parentfunction="mm" mode="s_axilite" port="" bundle="CONTROL_BUS" offset="-1" name="" clock="" impl="" register="0"/>
+<pragma file="gemm.cc" line="29" pragmaType="array_partition" parentfunction="mm" dim="2" factor="0" mode="complete" dynamic="0" variable="A_buff"/>
+<pragma file="gemm.cc" line="30" pragmaType="array_partition" parentfunction="mm" dim="0" factor="0" mode="complete" dynamic="0" variable="B_buff"/>
+<pragma file="gemm.cc" line="31" pragmaType="array_partition" parentfunction="mm" dim="2" factor="0" mode="complete" dynamic="0" variable="AB_buff"/>
+</pragmas>

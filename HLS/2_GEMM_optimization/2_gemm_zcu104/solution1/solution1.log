@@ -1,0 +1,144 @@
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.2 (64-bit)
+Tool Version Limit: 2019.12
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1611] Setting target device to 'xczu7ev-ffvc1156-2-e'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xczu7ev-ffvc1156-2-e 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 10.184 seconds; current allocated memory: 105.895 MB.
+INFO: [HLS 200-10] Analyzing design file 'gemm.cc' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 6.178 seconds; current allocated memory: 106.590 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 214-291] Loop 'col' is marked as complete unroll implied by the pipeline pragma (gemm.cc:18:7)
+INFO: [HLS 214-291] Loop 'product' is marked as complete unroll implied by the pipeline pragma (gemm.cc:20:13)
+INFO: [HLS 214-186] Unrolling loop 'col' (gemm.cc:18:7) in function 'mm' completely with a factor of 8 (gemm.cc:12:0)
+INFO: [HLS 214-186] Unrolling loop 'product' (gemm.cc:20:13) in function 'mm' completely with a factor of 8 (gemm.cc:12:0)
+INFO: [HLS 214-248] Applying array_partition to 'A': Complete partitioning on dimension 2. (gemm.cc:12:0)
+INFO: [HLS 214-248] Applying array_partition to 'B': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (gemm.cc:12:0)
+INFO: [HLS 214-248] Applying array_partition to 'AB': Complete partitioning on dimension 2. (gemm.cc:12:0)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 5.232 seconds; current allocated memory: 107.523 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.009 seconds; current allocated memory: 107.523 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.189 seconds; current allocated memory: 113.598 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.126 seconds; current allocated memory: 115.215 MB.
+INFO: [XFORM 203-11] Balancing expressions in function 'mm' (gemm.cc:12:7)...56 expression(s) balanced.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.279 seconds; current allocated memory: 137.363 MB.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.152 seconds; current allocated memory: 137.375 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'mm' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'mm' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'row'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 2, loop 'row'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.876 seconds; current allocated memory: 139.340 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.32 seconds; current allocated memory: 140.641 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'mm' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'mm/A_0' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mm/A_1' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mm/A_2' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mm/A_3' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mm/A_4' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mm/A_5' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mm/A_6' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mm/A_7' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mm/B_0_0' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mm/B_0_1' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mm/B_0_2' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mm/B_0_3' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mm/B_0_4' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mm/B_0_5' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mm/B_0_6' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mm/B_0_7' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mm/B_1_0' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mm/B_1_1' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mm/B_1_2' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mm/B_1_3' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mm/B_1_4' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mm/B_1_5' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mm/B_1_6' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mm/B_1_7' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mm/B_2_0' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mm/B_2_1' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mm/B_2_2' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mm/B_2_3' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mm/B_2_4' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mm/B_2_5' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mm/B_2_6' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mm/B_2_7' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mm/B_3_0' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mm/B_3_1' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mm/B_3_2' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mm/B_3_3' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mm/B_3_4' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mm/B_3_5' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mm/B_3_6' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mm/B_3_7' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mm/B_4_0' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mm/B_4_1' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mm/B_4_2' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mm/B_4_3' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mm/B_4_4' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mm/B_4_5' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mm/B_4_6' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mm/B_4_7' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mm/B_5_0' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mm/B_5_1' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mm/B_5_2' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mm/B_5_3' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mm/B_5_4' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mm/B_5_5' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mm/B_5_6' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mm/B_5_7' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mm/B_6_0' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mm/B_6_1' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mm/B_6_2' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mm/B_6_3' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mm/B_6_4' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mm/B_6_5' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mm/B_6_6' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mm/B_6_7' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mm/B_7_0' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mm/B_7_1' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mm/B_7_2' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mm/B_7_3' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mm/B_7_4' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mm/B_7_5' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mm/B_7_6' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mm/B_7_7' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mm/AB_0' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mm/AB_1' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mm/AB_2' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mm/AB_3' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mm/AB_4' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mm/AB_5' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mm/AB_6' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mm/AB_7' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'mm' to 'ap_ctrl_hs'.
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'mm' pipeline 'row' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_32s_32_1_1': 64 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'mm'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 1 seconds. Elapsed time: 1.835 seconds; current allocated memory: 145.324 MB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 2 seconds. CPU system time: 0 seconds. Elapsed time: 2.885 seconds; current allocated memory: 153.633 MB.
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 2 seconds. CPU system time: 1 seconds. Elapsed time: 2.192 seconds; current allocated memory: 161.598 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for mm.
+INFO: [VLOG 209-307] Generating Verilog RTL for mm.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 137.89 MHz
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 7 seconds. CPU system time: 2 seconds. Elapsed time: 20.429 seconds; current allocated memory: 55.797 MB.
+INFO: [HLS 200-112] Total CPU user time: 8 seconds. Total CPU system time: 4 seconds. Total elapsed time: 33.375 seconds; peak allocated memory: 161.676 MB.

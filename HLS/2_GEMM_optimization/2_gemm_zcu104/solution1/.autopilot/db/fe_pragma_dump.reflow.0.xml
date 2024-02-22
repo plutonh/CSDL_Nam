@@ -1,0 +1,6 @@
+<pragmas>
+<pragma file="gemm.cc" line="17" pragmaType="pipeline" parentfunction="mm" off="0" ii="1" rewind="0" style=""/>
+<pragma file="gemm.cc" line="13" pragmaType="array_partition" parentfunction="mm" dim="2" factor="0" mode="complete" dynamic="0" variable="A"/>
+<pragma file="gemm.cc" line="14" pragmaType="array_partition" parentfunction="mm" dim="0" factor="0" mode="complete" dynamic="0" variable="B"/>
+<pragma file="gemm.cc" line="15" pragmaType="array_partition" parentfunction="mm" dim="2" factor="0" mode="complete" dynamic="0" variable="AB"/>
+</pragmas>

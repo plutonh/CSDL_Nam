@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <synLog/>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <synLog>
+        <logs message="WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low." projectName="4_gemm_zcu104" solutionName="solution1" date="2023-11-30T16:23:58.239+0900" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'mm_Pipeline_4/m_axi_AB_port_BREADY' to 0." projectName="4_gemm_zcu104" solutionName="solution1" date="2023-11-30T16:23:57.848+0900" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'mm_Pipeline_4/m_axi_AB_port_AWUSER' to 0." projectName="4_gemm_zcu104" solutionName="solution1" date="2023-11-30T16:23:57.820+0900" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'mm_Pipeline_4/m_axi_AB_port_AWREGION' to 0." projectName="4_gemm_zcu104" solutionName="solution1" date="2023-11-30T16:23:57.797+0900" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'mm_Pipeline_4/m_axi_AB_port_AWQOS' to 0." projectName="4_gemm_zcu104" solutionName="solution1" date="2023-11-30T16:23:57.775+0900" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'mm_Pipeline_4/m_axi_AB_port_AWPROT' to 0." projectName="4_gemm_zcu104" solutionName="solution1" date="2023-11-30T16:23:57.754+0900" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'mm_Pipeline_4/m_axi_AB_port_AWCACHE' to 0." projectName="4_gemm_zcu104" solutionName="solution1" date="2023-11-30T16:23:57.737+0900" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'mm_Pipeline_4/m_axi_AB_port_AWLOCK' to 0." projectName="4_gemm_zcu104" solutionName="solution1" date="2023-11-30T16:23:57.713+0900" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'mm_Pipeline_4/m_axi_AB_port_AWBURST' to 0." projectName="4_gemm_zcu104" solutionName="solution1" date="2023-11-30T16:23:57.689+0900" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'mm_Pipeline_4/m_axi_AB_port_AWSIZE' to 0." projectName="4_gemm_zcu104" solutionName="solution1" date="2023-11-30T16:23:57.660+0900" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'mm_Pipeline_4/m_axi_AB_port_AWLEN' to 0." projectName="4_gemm_zcu104" solutionName="solution1" date="2023-11-30T16:23:57.642+0900" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'mm_Pipeline_4/m_axi_AB_port_AWID' to 0." projectName="4_gemm_zcu104" solutionName="solution1" date="2023-11-30T16:23:57.622+0900" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'mm_Pipeline_4/m_axi_AB_port_AWADDR' to 0." projectName="4_gemm_zcu104" solutionName="solution1" date="2023-11-30T16:23:57.586+0900" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'mm_Pipeline_4/m_axi_AB_port_AWVALID' to 0." projectName="4_gemm_zcu104" solutionName="solution1" date="2023-11-30T16:23:57.560+0900" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'mm_Pipeline_2/m_axi_B_port_ARUSER' to 0." projectName="4_gemm_zcu104" solutionName="solution1" date="2023-11-30T16:23:54.443+0900" type="Warning"/>
+      </synLog>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>

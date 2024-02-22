@@ -1,0 +1,48 @@
+<xilinx:hls_fe_msgs>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_int_ref.h:678:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="and_reduce" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_int_ref.h:692:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="or_reduce" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_int_ref.h:706:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="xor_reduce" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/2_GEMM/2_gemm_zcu104/solution1/csynth.tcl:15:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="mm" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=mm" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="gemm.cc:13:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mm" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=A complete dim=2" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="gemm.cc:14:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mm" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=B complete dim=0" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="gemm.cc:15:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mm" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=AB complete dim=2" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="gemm.cc:17:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mm" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="gemm.cc:18:7" msg_body="Loop 'col' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="col"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="gemm.cc:20:13" msg_body="Loop 'product' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="product"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="gemm.cc:12:0" msg_body="Unrolling loop 'col' (gemm.cc:18:7) in function 'mm' completely with a factor of 8">
+        <args Factor="8" LoopLoc="gemm.cc:18:7" LoopName="col"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="gemm.cc:12:0" msg_body="Unrolling loop 'product' (gemm.cc:20:13) in function 'mm' completely with a factor of 8">
+        <args Factor="8" LoopLoc="gemm.cc:20:13" LoopName="product"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="gemm.cc:12:0" msg_body="Applying array_partition to 'A': Complete partitioning on dimension 2.">
+        <args Dim="2" Mode="Complete" UOName="A"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="gemm.cc:12:0" msg_body="Applying array_partition to 'B': Complete partitioning on dimension 1. Complete partitioning on dimension 2.">
+        <args Dim="islist 1 2" Mode="islist Complete Complete" UOName="B"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="gemm.cc:12:0" msg_body="Applying array_partition to 'AB': Complete partitioning on dimension 2.">
+        <args Dim="2" Mode="Complete" UOName="AB"/>
+    </msg>
+</xilinx:hls_fe_msgs>
+

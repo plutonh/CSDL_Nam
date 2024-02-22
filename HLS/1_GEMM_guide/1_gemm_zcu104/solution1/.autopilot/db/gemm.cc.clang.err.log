@@ -1,0 +1,19 @@
+gemm.cc:8:9: warning: 'M' macro redefined [-Wmacro-redefined]
+#define M 8
+        ^
+././gemm.h:20:9: note: previous definition is here
+#define M 10
+        ^
+gemm.cc:9:9: warning: 'N' macro redefined [-Wmacro-redefined]
+#define N 8
+        ^
+././gemm.h:21:9: note: previous definition is here
+#define N 10
+        ^
+gemm.cc:10:9: warning: 'O' macro redefined [-Wmacro-redefined]
+#define O 8
+        ^
+././gemm.h:22:9: note: previous definition is here
+#define O 10
+        ^
+3 warnings generated.

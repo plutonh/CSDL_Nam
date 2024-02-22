@@ -1,0 +1,333 @@
+
+
+================================================================
+== Synthesis Summary Report of 'gemm'
+================================================================
++ General Information: 
+    * Date:           Thu Nov 30 17:26:35 2023
+    * Version:        2022.2 (Build 3670227 on Oct 13 2022)
+    * Project:        6_outer_zcu104
+    * Solution:       solution1 (Vivado IP Flow Target)
+    * Product family: zynquplus
+    * Target device:  xczu7ev-ffvc1156-2-e
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +--------------------------------------------------+------+------+---------+-----------+----------+---------+------+----------+------+----------+------------+------------+-----+
+    |                      Modules                     | Issue|      | Latency |  Latency  | Iteration|         | Trip |          |      |          |            |            |     |
+    |                      & Loops                     | Type | Slack| (cycles)|    (ns)   |  Latency | Interval| Count| Pipelined| BRAM |    DSP   |     FF     |     LUT    | URAM|
+    +--------------------------------------------------+------+------+---------+-----------+----------+---------+------+----------+------+----------+------------+------------+-----+
+    |+ gemm                                            |     -|  0.00|      188|  1.880e+03|         -|      189|     -|        no|     -|  108 (6%)|  18113 (3%)|  17553 (7%)|    -|
+    | + gemm_Pipeline_1                                |     -|  0.00|       67|    670.000|         -|       67|     -|        no|     -|         -|    57 (~0%)|    76 (~0%)|    -|
+    |  o Loop 1                                        |     -|  7.30|       65|    650.000|         3|        1|    64|       yes|     -|         -|           -|           -|    -|
+    | + gemm_Pipeline_2                                |     -|  0.00|       67|    670.000|         -|       67|     -|        no|     -|         -|    57 (~0%)|    76 (~0%)|    -|
+    |  o Loop 1                                        |     -|  7.30|       65|    650.000|         3|        1|    64|       yes|     -|         -|           -|           -|    -|
+    | + gemm_Pipeline_VITIS_LOOP_45_1_VITIS_LOOP_46_2  |     -|  4.96|       66|    660.000|         -|       66|     -|        no|     -|         -|    17 (~0%)|   129 (~0%)|    -|
+    |  o VITIS_LOOP_45_1_VITIS_LOOP_46_2               |     -|  7.30|       64|    640.000|         1|        1|    64|       yes|     -|         -|           -|           -|    -|
+    | + gemm_Pipeline_VITIS_LOOP_51_3                  |     -|  0.28|       33|    330.000|         -|       33|     -|        no|     -|  108 (6%)|  12534 (2%)|  11237 (4%)|    -|
+    |  o VITIS_LOOP_51_3                               |    II|  7.30|       31|    310.000|        11|        3|     8|       yes|     -|         -|           -|           -|    -|
+    | + gemm_Pipeline_5                                |     -|  0.00|       66|    660.000|         -|       66|     -|        no|     -|         -|    42 (~0%)|   461 (~0%)|    -|
+    |  o Loop 1                                        |     -|  7.30|       64|    640.000|         2|        1|    64|       yes|     -|         -|           -|           -|    -|
+    +--------------------------------------------------+------+------+---------+-----------+----------+---------+------+----------+------+----------+------------+------------+-----+
+
+
+================================================================
+== HW Interfaces
+================================================================
+* M_AXI
++--------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+
+| Interface    | Data Width | Address Width | Latency | Offset | Register | Max Widen | Max Read     | Max Write    | Num Read    | Num Write   |
+|              | (SW->HW)   |               |         |        |          | Bitwidth  | Burst Length | Burst Length | Outstanding | Outstanding |
++--------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+
+| m_axi_a_port | 32 -> 32   | 64            | 0       | slave  | 0        | 0         | 16           | 16           | 16          | 16          |
+| m_axi_b_port | 32 -> 32   | 64            | 0       | slave  | 0        | 0         | 16           | 16           | 16          | 16          |
+| m_axi_c_port | 32 -> 32   | 64            | 0       | slave  | 0        | 0         | 16           | 16           | 16          | 16          |
++--------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+
+
+* S_AXILITE Interfaces
++-------------------+------------+---------------+--------+----------+
+| Interface         | Data Width | Address Width | Offset | Register |
++-------------------+------------+---------------+--------+----------+
+| s_axi_CONTROL_BUS | 32         | 6             | 16     | 0        |
++-------------------+------------+---------------+--------+----------+
+
+* S_AXILITE Registers
++-------------------+----------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+| Interface         | Register | Offset | Width | Access | Description                      | Bit Fields                                                           |
++-------------------+----------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+| s_axi_CONTROL_BUS | CTRL     | 0x00   | 32    | RW     | Control signals                  | 0=AP_START 1=AP_DONE 2=AP_IDLE 3=AP_READY 7=AUTO_RESTART 9=INTERRUPT |
+| s_axi_CONTROL_BUS | GIER     | 0x04   | 32    | RW     | Global Interrupt Enable Register | 0=Enable                                                             |
+| s_axi_CONTROL_BUS | IP_IER   | 0x08   | 32    | RW     | IP Interrupt Enable Register     | 0=CHAN0_INT_EN 1=CHAN1_INT_EN                                        |
+| s_axi_CONTROL_BUS | IP_ISR   | 0x0c   | 32    | RW     | IP Interrupt Status Register     | 0=CHAN0_INT_ST 1=CHAN1_INT_ST                                        |
+| s_axi_CONTROL_BUS | a_1      | 0x10   | 32    | W      | Data signal of a                 |                                                                      |
+| s_axi_CONTROL_BUS | a_2      | 0x14   | 32    | W      | Data signal of a                 |                                                                      |
+| s_axi_CONTROL_BUS | b_1      | 0x1c   | 32    | W      | Data signal of b                 |                                                                      |
+| s_axi_CONTROL_BUS | b_2      | 0x20   | 32    | W      | Data signal of b                 |                                                                      |
+| s_axi_CONTROL_BUS | c_1      | 0x28   | 32    | W      | Data signal of c                 |                                                                      |
+| s_axi_CONTROL_BUS | c_2      | 0x2c   | 32    | W      | Data signal of c                 |                                                                      |
++-------------------+----------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+
+* TOP LEVEL CONTROL
++-----------+------------+-----------+
+| Interface | Type       | Ports     |
++-----------+------------+-----------+
+| ap_clk    | clock      | ap_clk    |
+| ap_rst_n  | reset      | ap_rst_n  |
+| interrupt | interrupt  | interrupt |
+| ap_ctrl   | ap_ctrl_hs |           |
++-----------+------------+-----------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++----------+-----------+----------+
+| Argument | Direction | Datatype |
++----------+-----------+----------+
+| a        | in        | pointer  |
+| b        | in        | pointer  |
+| c        | out       | pointer  |
++----------+-----------+----------+
+
+* SW-to-HW Mapping
++----------+-------------------+-----------+----------+-------------------------------+
+| Argument | HW Interface      | HW Type   | HW Usage | HW Info                       |
++----------+-------------------+-----------+----------+-------------------------------+
+| a        | m_axi_a_port      | interface |          |                               |
+| a        | s_axi_CONTROL_BUS | register  | offset   | name=a_1 offset=0x10 range=32 |
+| a        | s_axi_CONTROL_BUS | register  | offset   | name=a_2 offset=0x14 range=32 |
+| b        | m_axi_b_port      | interface |          |                               |
+| b        | s_axi_CONTROL_BUS | register  | offset   | name=b_1 offset=0x1c range=32 |
+| b        | s_axi_CONTROL_BUS | register  | offset   | name=b_2 offset=0x20 range=32 |
+| c        | m_axi_c_port      | interface |          |                               |
+| c        | s_axi_CONTROL_BUS | register  | offset   | name=c_1 offset=0x28 range=32 |
+| c        | s_axi_CONTROL_BUS | register  | offset   | name=c_2 offset=0x2c range=32 |
++----------+-------------------+-----------+----------+-------------------------------+
+
+
+================================================================
+== M_AXI Burst Information
+================================================================
+ Note: All burst requests might be further partitioned into multiple requests during RTL generation based on max_read_burst_length or max_write_burst_length settings.
+
+* Inferred Burst Summary
++--------------+-----------+-----------+--------+-------+--------------------+
+| HW Interface | Loop      | Direction | Length | Width | Location           |
++--------------+-----------+-----------+--------+-------+--------------------+
+| m_axi_a_port | anonymous | read      | 64     | 32    | gemm_outer.cc:40:2 |
+| m_axi_b_port | anonymous | read      | 64     | 32    | gemm_outer.cc:41:3 |
+| m_axi_c_port | anonymous | write     | 64     | 32    | gemm_outer.cc:62:3 |
++--------------+-----------+-----------+--------+-------+--------------------+
+
+* Inferred Bursts and Widening Missed
++--------------+----------+-----------+---------------------------------------------------------------------------------------------------------+------------+--------------------+
+| HW Interface | Variable | Loop      | Problem                                                                                                 | Resolution | Location           |
++--------------+----------+-----------+---------------------------------------------------------------------------------------------------------+------------+--------------------+
+| m_axi_c_port | c        | anonymous | Could not widen since type float size is greater than or equal to the max_widen_bitwidth threshold of 0 | 214-353    | gemm_outer.cc:62:3 |
+| m_axi_b_port | b        | anonymous | Could not widen since type float size is greater than or equal to the max_widen_bitwidth threshold of 0 | 214-353    | gemm_outer.cc:41:3 |
+| m_axi_a_port | a        | anonymous | Could not widen since type float size is greater than or equal to the max_widen_bitwidth threshold of 0 | 214-353    | gemm_outer.cc:40:2 |
++--------------+----------+-----------+---------------------------------------------------------------------------------------------------------+------------+--------------------+
+
+    * Resolution URL: www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=XXX-YYY.html (replace XXX-YYY with column value)
+
+================================================================
+== Bind Op Report
+================================================================
++--------------------------------------------------+-----+--------+------------+------+---------+---------+
+| Name                                             | DSP | Pragma | Variable   | Op   | Impl    | Latency |
++--------------------------------------------------+-----+--------+------------+------+---------+---------+
+| + gemm                                           | 108 |        |            |      |         |         |
+|  + gemm_Pipeline_1                               | 0   |        |            |      |         |         |
+|    empty_29_fu_219_p2                            | -   |        | empty_29   | add  | fabric  | 0       |
+|  + gemm_Pipeline_2                               | 0   |        |            |      |         |         |
+|    empty_26_fu_219_p2                            | -   |        | empty_26   | add  | fabric  | 0       |
+|  + gemm_Pipeline_VITIS_LOOP_45_1_VITIS_LOOP_46_2 | 0   |        |            |      |         |         |
+|    add_ln45_fu_918_p2                            | -   |        | add_ln45   | add  | fabric  | 0       |
+|    add_ln45_1_fu_944_p2                          | -   |        | add_ln45_1 | add  | fabric  | 0       |
+|    add_ln46_fu_1286_p2                           | -   |        | add_ln46   | add  | fabric  | 0       |
+|  + gemm_Pipeline_VITIS_LOOP_51_3                 | 108 |        |            |      |         |         |
+|    add_ln51_fu_2522_p2                           | -   |        | add_ln51   | add  | fabric  | 0       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U107            | 3   |        | mul        | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_no_dsp_1_U85              | -   |        | c_buff_s   | fadd | fabric  | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U108            | 3   |        | mul_s      | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U86            | 2   |        | c_buff_1   | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U109            | 3   |        | mul_8      | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U87            | 2   |        | c_buff_2   | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U110            | 3   |        | mul_9      | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U88            | 2   |        | c_buff_3   | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U111            | 3   |        | mul_10     | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U89            | 2   |        | c_buff_4   | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U112            | 3   |        | mul_11     | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U90            | 2   |        | c_buff_5   | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U113            | 3   |        | mul_12     | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U91            | 2   |        | c_buff_6   | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U114            | 3   |        | mul_13     | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U92            | 2   |        | c_buff_7   | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U115            | 3   |        | mul_1      | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U93            | 2   |        | c_buff_8   | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U116            | 3   |        | mul_1_1    | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U94            | 2   |        | c_buff_9   | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U117            | 3   |        | mul_1_2    | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U95            | 2   |        | c_buff_10  | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U118            | 3   |        | mul_1_3    | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U96            | 2   |        | c_buff_11  | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U119            | 3   |        | mul_1_4    | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U97            | 2   |        | c_buff_12  | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U120            | 3   |        | mul_1_5    | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U98            | 2   |        | c_buff_13  | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U121            | 3   |        | mul_1_6    | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U99            | 2   |        | c_buff_14  | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U122            | 3   |        | mul_1_7    | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U100           | 2   |        | c_buff_15  | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U123            | 3   |        | mul_2      | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U101           | 2   |        | c_buff_16  | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U124            | 3   |        | mul_2_1    | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U102           | 2   |        | c_buff_17  | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U125            | 3   |        | mul_2_2    | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U103           | 2   |        | c_buff_18  | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U126            | 3   |        | mul_2_3    | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U104           | 2   |        | c_buff_19  | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U127            | 3   |        | mul_2_4    | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U105           | 2   |        | c_buff_20  | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U128            | 3   |        | mul_2_5    | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U106           | 2   |        | c_buff_21  | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U107            | 3   |        | mul_2_6    | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U86            | 2   |        | c_buff_22  | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U108            | 3   |        | mul_2_7    | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U87            | 2   |        | c_buff_23  | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U109            | 3   |        | mul_3      | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U88            | 2   |        | c_buff_24  | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U110            | 3   |        | mul_3_1    | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U89            | 2   |        | c_buff_25  | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U111            | 3   |        | mul_3_2    | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U90            | 2   |        | c_buff_26  | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U112            | 3   |        | mul_3_3    | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U91            | 2   |        | c_buff_27  | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U113            | 3   |        | mul_3_4    | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U92            | 2   |        | c_buff_28  | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U114            | 3   |        | mul_3_5    | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U93            | 2   |        | c_buff_29  | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U115            | 3   |        | mul_3_6    | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U94            | 2   |        | c_buff_30  | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U116            | 3   |        | mul_3_7    | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U95            | 2   |        | c_buff_31  | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U117            | 3   |        | mul_4      | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U96            | 2   |        | c_buff_32  | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U118            | 3   |        | mul_4_1    | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U97            | 2   |        | c_buff_33  | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U119            | 3   |        | mul_4_2    | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U98            | 2   |        | c_buff_34  | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U120            | 3   |        | mul_4_3    | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U99            | 2   |        | c_buff_35  | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U121            | 3   |        | mul_4_4    | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U100           | 2   |        | c_buff_36  | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U122            | 3   |        | mul_4_5    | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U101           | 2   |        | c_buff_37  | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U123            | 3   |        | mul_4_6    | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U102           | 2   |        | c_buff_38  | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U124            | 3   |        | mul_4_7    | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U103           | 2   |        | c_buff_39  | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U125            | 3   |        | mul_5      | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U104           | 2   |        | c_buff_40  | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U126            | 3   |        | mul_5_1    | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U105           | 2   |        | c_buff_41  | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U127            | 3   |        | mul_5_2    | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U106           | 2   |        | c_buff_42  | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U128            | 3   |        | mul_5_3    | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U86            | 2   |        | c_buff_43  | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U107            | 3   |        | mul_5_4    | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U87            | 2   |        | c_buff_44  | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U108            | 3   |        | mul_5_5    | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U88            | 2   |        | c_buff_45  | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U109            | 3   |        | mul_5_6    | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U89            | 2   |        | c_buff_46  | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U110            | 3   |        | mul_5_7    | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U90            | 2   |        | c_buff_47  | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U111            | 3   |        | mul_6      | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U91            | 2   |        | c_buff_48  | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U112            | 3   |        | mul_6_1    | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U92            | 2   |        | c_buff_49  | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U113            | 3   |        | mul_6_2    | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U93            | 2   |        | c_buff_50  | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U114            | 3   |        | mul_6_3    | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U94            | 2   |        | c_buff_51  | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U115            | 3   |        | mul_6_4    | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U95            | 2   |        | c_buff_52  | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U116            | 3   |        | mul_6_5    | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U96            | 2   |        | c_buff_53  | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U117            | 3   |        | mul_6_6    | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U97            | 2   |        | c_buff_54  | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U118            | 3   |        | mul_6_7    | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U98            | 2   |        | c_buff_55  | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U119            | 3   |        | mul_7      | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U99            | 2   |        | c_buff_56  | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U120            | 3   |        | mul_7_1    | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U100           | 2   |        | c_buff_57  | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U121            | 3   |        | mul_7_2    | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U101           | 2   |        | c_buff_58  | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U122            | 3   |        | mul_7_3    | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U102           | 2   |        | c_buff_59  | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U123            | 3   |        | mul_7_4    | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U103           | 2   |        | c_buff_60  | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U124            | 3   |        | mul_7_5    | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U104           | 2   |        | c_buff_61  | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U125            | 3   |        | mul_7_6    | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U105           | 2   |        | c_buff_62  | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U126            | 3   |        | mul_7_7    | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U106           | 2   |        | c_buff_63  | fadd | fulldsp | 3       |
+|  + gemm_Pipeline_5                               | 0   |        |            |      |         |         |
+|    empty_23_fu_610_p2                            | -   |        | empty_23   | add  | fabric  | 0       |
++--------------------------------------------------+-----+--------+------------+------+---------+---------+
+
+
+================================================================
+== Bind Storage Report
+================================================================
++--------------+------+------+--------+----------+---------+------+---------+
+| Name         | BRAM | URAM | Pragma | Variable | Storage | Impl | Latency |
++--------------+------+------+--------+----------+---------+------+---------+
+| + gemm       | 0    | 0    |        |          |         |      |         |
+|   a_buff_U   | -    | -    |        | a_buff   | ram_s2p | auto | 1       |
+|   a_buff_1_U | -    | -    |        | a_buff_1 | ram_s2p | auto | 1       |
+|   a_buff_2_U | -    | -    |        | a_buff_2 | ram_s2p | auto | 1       |
+|   a_buff_3_U | -    | -    |        | a_buff_3 | ram_s2p | auto | 1       |
+|   a_buff_4_U | -    | -    |        | a_buff_4 | ram_s2p | auto | 1       |
+|   a_buff_5_U | -    | -    |        | a_buff_5 | ram_s2p | auto | 1       |
+|   a_buff_6_U | -    | -    |        | a_buff_6 | ram_s2p | auto | 1       |
+|   a_buff_7_U | -    | -    |        | a_buff_7 | ram_s2p | auto | 1       |
+|   b_buff_U   | -    | -    |        | b_buff   | ram_1p  | auto | 1       |
+|   b_buff_1_U | -    | -    |        | b_buff_1 | ram_1p  | auto | 1       |
+|   b_buff_2_U | -    | -    |        | b_buff_2 | ram_1p  | auto | 1       |
+|   b_buff_3_U | -    | -    |        | b_buff_3 | ram_1p  | auto | 1       |
+|   b_buff_4_U | -    | -    |        | b_buff_4 | ram_1p  | auto | 1       |
+|   b_buff_5_U | -    | -    |        | b_buff_5 | ram_1p  | auto | 1       |
+|   b_buff_6_U | -    | -    |        | b_buff_6 | ram_1p  | auto | 1       |
+|   b_buff_7_U | -    | -    |        | b_buff_7 | ram_1p  | auto | 1       |
++--------------+------+------+--------+----------+---------+------+---------+
+
+
+================================================================
+== Pragma Report
+================================================================
+* Valid Pragma Syntax
++-----------------+----------------------------------------------------------+----------------------------------+
+| Type            | Options                                                  | Location                         |
++-----------------+----------------------------------------------------------+----------------------------------+
+| interface       | m_axi port = a depth = 64 offset = slave bundle = a_port | gemm_outer.cc:19 in gemm         |
+| interface       | m_axi port = b depth = 64 offset = slave bundle = b_port | gemm_outer.cc:20 in gemm         |
+| interface       | m_axi port = c depth = 64 offset = slave bundle = c_port | gemm_outer.cc:21 in gemm         |
+| interface       | s_axilite port = a bundle = CONTROL_BUS                  | gemm_outer.cc:23 in gemm         |
+| interface       | s_axilite port = b bundle = CONTROL_BUS                  | gemm_outer.cc:24 in gemm         |
+| interface       | s_axilite port = c bundle = CONTROL_BUS                  | gemm_outer.cc:25 in gemm         |
+| interface       | s_axilite port = return bundle = CONTROL_BUS             | gemm_outer.cc:26 in gemm         |
+| array_partition | variable=a_buff dim=2 type=complete                      | gemm_outer.cc:34 in gemm, a_buff |
+| array_partition | variable=b_buff dim=1 type=complete                      | gemm_outer.cc:35 in gemm, b_buff |
+| array_partition | variable=c_buff dim=0 type=complete                      | gemm_outer.cc:36 in gemm, c_buff |
+| pipeline        | II =2                                                    | gemm_outer.cc:52 in gemm         |
+| unroll          |                                                          | gemm_outer.cc:54 in gemm         |
++-----------------+----------------------------------------------------------+----------------------------------+
+
+

@@ -1,0 +1,63 @@
+<xilinx:hls_fe_msgs>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/csynth.tcl:15:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="gemm" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=gemm" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="gemm_outer.cc:19:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="gemm" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi port = a depth = 64 offset = slave bundle = a_port" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="gemm_outer.cc:20:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="gemm" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi port = b depth = 64 offset = slave bundle = b_port" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="gemm_outer.cc:21:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="gemm" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi port = c depth = 64 offset = slave bundle = c_port" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="gemm_outer.cc:23:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="gemm" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port = a bundle = CONTROL_BUS" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="gemm_outer.cc:24:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="gemm" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port = b bundle = CONTROL_BUS" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="gemm_outer.cc:25:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="gemm" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port = c bundle = CONTROL_BUS" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="gemm_outer.cc:26:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="gemm" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port = return bundle = CONTROL_BUS" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="gemm_outer.cc:34:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="gemm" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=a_buff dim=2 type=complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="gemm_outer.cc:35:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="gemm" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=b_buff dim=1 type=complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="gemm_outer.cc:36:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="gemm" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=c_buff dim=0 type=complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="gemm_outer.cc:52:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="gemm" ARG_PragmaIsValid="1" ARG_PragmaOptions="II =2" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="gemm_outer.cc:54:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="gemm" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="gemm_outer.cc:53:19" msg_body="Loop 'VITIS_LOOP_53_4' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_53_4"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="gemm_outer.cc:55:19" msg_body="Loop 'VITIS_LOOP_55_5' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_55_5"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="gemm_outer.cc:18:0" msg_body="Unrolling loop 'VITIS_LOOP_53_4' (gemm_outer.cc:53:19) in function 'gemm' completely with a factor of 8">
+        <args Factor="8" LoopLoc="gemm_outer.cc:53:19" LoopName="VITIS_LOOP_53_4"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="gemm_outer.cc:18:0" msg_body="Unrolling loop 'VITIS_LOOP_55_5' (gemm_outer.cc:55:19) in function 'gemm' completely with a factor of 8">
+        <args Factor="8" LoopLoc="gemm_outer.cc:55:19" LoopName="VITIS_LOOP_55_5"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="gemm_outer.cc:28:8" msg_body="Applying array_partition to 'a_buff': Complete partitioning on dimension 2.">
+        <args Dim="2" Mode="Complete" UOName="a_buff"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="gemm_outer.cc:29:9" msg_body="Applying array_partition to 'b_buff': Complete partitioning on dimension 1.">
+        <args Dim="1" Mode="Complete" UOName="b_buff"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="gemm_outer.cc:30:9" msg_body="Applying array_partition to 'c_buff': Complete partitioning on dimension 1. Complete partitioning on dimension 2.">
+        <args Dim="islist 1 2" Mode="islist Complete Complete" UOName="c_buff"/>
+    </msg>
+</xilinx:hls_fe_msgs>
+

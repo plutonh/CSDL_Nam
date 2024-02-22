@@ -1,0 +1,224 @@
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: gemm.cc, Line: 18, Column: 7 }
+Function:        _Z2mmPA8_iS0_S0_
+Args:            
+  - String:          'Loop '''
+  - LoopName:        col
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: gemm.cc, Line: 20, Column: 13 }
+Function:        _Z2mmPA8_iS0_S0_
+Args:            
+  - String:          'Loop '''
+  - LoopName:        product
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: gemm.cc, Line: 12, Column: 0 }
+Function:        _Z2mmPA8_iS0_S0_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        col
+  - String:          ''' ('
+  - LoopLoc:         'gemm.cc:18:7'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mm
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: gemm.cc, Line: 12, Column: 0 }
+Function:        _Z2mmPA8_iS0_S0_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        product
+  - String:          ''' ('
+  - LoopLoc:         'gemm.cc:20:13'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mm
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: gemm.cc, Line: 12, Column: 0 }
+Function:        _Z2mmPA8_iS0_S0_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        product
+  - String:          ''' ('
+  - LoopLoc:         'gemm.cc:20:13'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mm
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: gemm.cc, Line: 12, Column: 0 }
+Function:        _Z2mmPA8_iS0_S0_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        product
+  - String:          ''' ('
+  - LoopLoc:         'gemm.cc:20:13'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mm
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: gemm.cc, Line: 12, Column: 0 }
+Function:        _Z2mmPA8_iS0_S0_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        product
+  - String:          ''' ('
+  - LoopLoc:         'gemm.cc:20:13'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mm
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: gemm.cc, Line: 12, Column: 0 }
+Function:        _Z2mmPA8_iS0_S0_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        product
+  - String:          ''' ('
+  - LoopLoc:         'gemm.cc:20:13'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mm
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: gemm.cc, Line: 12, Column: 0 }
+Function:        _Z2mmPA8_iS0_S0_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        product
+  - String:          ''' ('
+  - LoopLoc:         'gemm.cc:20:13'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mm
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: gemm.cc, Line: 12, Column: 0 }
+Function:        _Z2mmPA8_iS0_S0_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        product
+  - String:          ''' ('
+  - LoopLoc:         'gemm.cc:20:13'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mm
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: gemm.cc, Line: 12, Column: 0 }
+Function:        _Z2mmPA8_iS0_S0_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        product
+  - String:          ''' ('
+  - LoopLoc:         'gemm.cc:20:13'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mm
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: gemm.cc, Line: 12, Column: 0 }
+Function:        _Z2mmPA8_iS0_S0_
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          A
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '2'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: gemm.cc, Line: 12, Column: 0 }
+Function:        _Z2mmPA8_iS0_S0_
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          B
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '2'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: gemm.cc, Line: 12, Column: 0 }
+Function:        _Z2mmPA8_iS0_S0_
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          AB
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '2'
+  - String:          .
+...

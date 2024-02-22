@@ -1,0 +1,233 @@
+
+
+================================================================
+== Vitis HLS Report for 'mm'
+================================================================
+* Date:           Thu Nov 30 15:30:44 2023
+
+* Version:        2022.2 (Build 3670227 on Oct 13 2022)
+* Project:        1_gemm
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  6.912 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+-----------+-----------+------+------+---------+
+    |  Latency (cycles) |   Latency (absolute)  |   Interval  | Pipeline|
+    |   min   |   max   |    min    |    max    |  min |  max |   Type  |
+    +---------+---------+-----------+-----------+------+------+---------+
+    |     2705|     2705|  27.050 us|  27.050 us|  2706|  2706|       no|
+    +---------+---------+-----------+-----------+------+------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +--------------+---------+---------+----------+-----------+-----------+------+----------+
+        |              |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |   Loop Name  |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +--------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- row         |     2704|     2704|       338|          -|          -|     8|        no|
+        | + col        |      336|      336|        42|          -|          -|     8|        no|
+        |  ++ product  |       40|       40|         5|          -|          -|     8|        no|
+        +--------------+---------+---------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 8
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 2 
+4 --> 5 3 
+5 --> 6 
+6 --> 7 
+7 --> 8 
+8 --> 4 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.58>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%i = alloca i32 1"   --->   Operation 9 'alloca' 'i' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%spectopmodule_ln12 = spectopmodule void @_ssdm_op_SpecTopModule, void @empty_1" [gemm.cc:12]   --->   Operation 10 'spectopmodule' 'spectopmodule_ln12' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %A, void @empty, i32 0, i32 0, void @empty_0, i32 4294967295, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0"   --->   Operation 11 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %A"   --->   Operation 12 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %B, void @empty, i32 0, i32 0, void @empty_0, i32 4294967295, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0"   --->   Operation 13 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %B"   --->   Operation 14 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %AB, void @empty, i32 0, i32 0, void @empty_0, i32 4294967295, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0"   --->   Operation 15 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %AB"   --->   Operation 16 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 17 [1/1] (1.58ns)   --->   "%store_ln14 = store i4 0, i4 %i" [gemm.cc:14]   --->   Operation 17 'store' 'store_ln14' <Predicate = true> <Delay = 1.58>
+ST_1 : Operation 18 [1/1] (0.00ns)   --->   "%br_ln14 = br void %col" [gemm.cc:14]   --->   Operation 18 'br' 'br_ln14' <Predicate = true> <Delay = 0.00>
+
+State 2 <SV = 1> <Delay = 1.73>
+ST_2 : Operation 19 [1/1] (0.00ns)   --->   "%i_1 = load i4 %i" [gemm.cc:18]   --->   Operation 19 'load' 'i_1' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 20 [1/1] (0.00ns)   --->   "%trunc_ln18 = trunc i4 %i_1" [gemm.cc:18]   --->   Operation 20 'trunc' 'trunc_ln18' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 21 [1/1] (0.00ns)   --->   "%tmp = bitconcatenate i6 @_ssdm_op_BitConcatenate.i6.i3.i3, i3 %trunc_ln18, i3 0" [gemm.cc:18]   --->   Operation 21 'bitconcatenate' 'tmp' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 22 [1/1] (1.30ns)   --->   "%icmp_ln14 = icmp_eq  i4 %i_1, i4 8" [gemm.cc:14]   --->   Operation 22 'icmp' 'icmp_ln14' <Predicate = true> <Delay = 1.30> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.30> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 23 [1/1] (0.00ns)   --->   "%empty = speclooptripcount i32 @_ssdm_op_SpecLoopTripCount, i64 8, i64 8, i64 8"   --->   Operation 23 'speclooptripcount' 'empty' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 24 [1/1] (1.73ns)   --->   "%add_ln14 = add i4 %i_1, i4 1" [gemm.cc:14]   --->   Operation 24 'add' 'add_ln14' <Predicate = true> <Delay = 1.73> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.73> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 25 [1/1] (0.00ns)   --->   "%br_ln14 = br i1 %icmp_ln14, void %col.split, void %for.end24" [gemm.cc:14]   --->   Operation 25 'br' 'br_ln14' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 26 [1/1] (0.00ns)   --->   "%specloopname_ln14 = specloopname void @_ssdm_op_SpecLoopName, void @empty_4" [gemm.cc:14]   --->   Operation 26 'specloopname' 'specloopname_ln14' <Predicate = (!icmp_ln14)> <Delay = 0.00>
+ST_2 : Operation 27 [1/1] (1.58ns)   --->   "%br_ln15 = br void %product" [gemm.cc:15]   --->   Operation 27 'br' 'br_ln15' <Predicate = (!icmp_ln14)> <Delay = 1.58>
+ST_2 : Operation 28 [1/1] (0.00ns)   --->   "%ret_ln23 = ret" [gemm.cc:23]   --->   Operation 28 'ret' 'ret_ln23' <Predicate = (icmp_ln14)> <Delay = 0.00>
+
+State 3 <SV = 2> <Delay = 2.89>
+ST_3 : Operation 29 [1/1] (0.00ns)   --->   "%j = phi i4 %add_ln15, void %for.inc19, i4 0, void %col.split" [gemm.cc:15]   --->   Operation 29 'phi' 'j' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 30 [1/1] (0.00ns)   --->   "%zext_ln20 = zext i4 %j" [gemm.cc:20]   --->   Operation 30 'zext' 'zext_ln20' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 31 [1/1] (1.82ns)   --->   "%add_ln20 = add i6 %tmp, i6 %zext_ln20" [gemm.cc:20]   --->   Operation 31 'add' 'add_ln20' <Predicate = true> <Delay = 1.82> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.82> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 32 [1/1] (0.00ns)   --->   "%zext_ln20_1 = zext i6 %add_ln20" [gemm.cc:20]   --->   Operation 32 'zext' 'zext_ln20_1' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 33 [1/1] (0.00ns)   --->   "%AB_addr = getelementptr i32 %AB, i64 0, i64 %zext_ln20_1" [gemm.cc:20]   --->   Operation 33 'getelementptr' 'AB_addr' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 34 [1/1] (1.30ns)   --->   "%icmp_ln15 = icmp_eq  i4 %j, i4 8" [gemm.cc:15]   --->   Operation 34 'icmp' 'icmp_ln15' <Predicate = true> <Delay = 1.30> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.30> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 35 [1/1] (0.00ns)   --->   "%empty_8 = speclooptripcount i32 @_ssdm_op_SpecLoopTripCount, i64 8, i64 8, i64 8"   --->   Operation 35 'speclooptripcount' 'empty_8' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 36 [1/1] (1.73ns)   --->   "%add_ln15 = add i4 %j, i4 1" [gemm.cc:15]   --->   Operation 36 'add' 'add_ln15' <Predicate = true> <Delay = 1.73> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.73> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 37 [1/1] (0.00ns)   --->   "%br_ln15 = br i1 %icmp_ln15, void %product.split, void %for.inc22" [gemm.cc:15]   --->   Operation 37 'br' 'br_ln15' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 38 [1/1] (0.00ns)   --->   "%specloopname_ln16 = specloopname void @_ssdm_op_SpecLoopName, void @empty_3" [gemm.cc:16]   --->   Operation 38 'specloopname' 'specloopname_ln16' <Predicate = (!icmp_ln15)> <Delay = 0.00>
+ST_3 : Operation 39 [1/1] (1.58ns)   --->   "%br_ln17 = br void %for.inc" [gemm.cc:17]   --->   Operation 39 'br' 'br_ln17' <Predicate = (!icmp_ln15)> <Delay = 1.58>
+ST_3 : Operation 40 [1/1] (1.58ns)   --->   "%store_ln14 = store i4 %add_ln14, i4 %i" [gemm.cc:14]   --->   Operation 40 'store' 'store_ln14' <Predicate = (icmp_ln15)> <Delay = 1.58>
+ST_3 : Operation 41 [1/1] (0.00ns)   --->   "%br_ln14 = br void %col" [gemm.cc:14]   --->   Operation 41 'br' 'br_ln14' <Predicate = (icmp_ln15)> <Delay = 0.00>
+
+State 4 <SV = 3> <Delay = 5.07>
+ST_4 : Operation 42 [1/1] (0.00ns)   --->   "%k = phi i4 %add_ln17, void %for.inc.split, i4 0, void %product.split" [gemm.cc:17]   --->   Operation 42 'phi' 'k' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 43 [1/1] (0.00ns)   --->   "%ABij = phi i32 %ABij_1, void %for.inc.split, i32 0, void %product.split"   --->   Operation 43 'phi' 'ABij' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 44 [1/1] (0.00ns)   --->   "%trunc_ln17 = trunc i4 %k" [gemm.cc:17]   --->   Operation 44 'trunc' 'trunc_ln17' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 45 [1/1] (0.00ns)   --->   "%zext_ln18 = zext i4 %k" [gemm.cc:18]   --->   Operation 45 'zext' 'zext_ln18' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 46 [1/1] (1.82ns)   --->   "%add_ln18 = add i6 %tmp, i6 %zext_ln18" [gemm.cc:18]   --->   Operation 46 'add' 'add_ln18' <Predicate = true> <Delay = 1.82> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.82> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 47 [1/1] (0.00ns)   --->   "%zext_ln18_1 = zext i6 %add_ln18" [gemm.cc:18]   --->   Operation 47 'zext' 'zext_ln18_1' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 48 [1/1] (0.00ns)   --->   "%A_addr = getelementptr i32 %A, i64 0, i64 %zext_ln18_1" [gemm.cc:18]   --->   Operation 48 'getelementptr' 'A_addr' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 49 [1/1] (0.00ns)   --->   "%tmp_1 = bitconcatenate i6 @_ssdm_op_BitConcatenate.i6.i3.i3, i3 %trunc_ln17, i3 0" [gemm.cc:18]   --->   Operation 49 'bitconcatenate' 'tmp_1' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 50 [1/1] (1.82ns)   --->   "%add_ln18_1 = add i6 %tmp_1, i6 %zext_ln20" [gemm.cc:18]   --->   Operation 50 'add' 'add_ln18_1' <Predicate = true> <Delay = 1.82> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.82> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 51 [1/1] (0.00ns)   --->   "%zext_ln18_2 = zext i6 %add_ln18_1" [gemm.cc:18]   --->   Operation 51 'zext' 'zext_ln18_2' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 52 [1/1] (0.00ns)   --->   "%B_addr = getelementptr i32 %B, i64 0, i64 %zext_ln18_2" [gemm.cc:18]   --->   Operation 52 'getelementptr' 'B_addr' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 53 [1/1] (1.30ns)   --->   "%icmp_ln17 = icmp_eq  i4 %k, i4 8" [gemm.cc:17]   --->   Operation 53 'icmp' 'icmp_ln17' <Predicate = true> <Delay = 1.30> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.30> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 54 [1/1] (0.00ns)   --->   "%empty_9 = speclooptripcount i32 @_ssdm_op_SpecLoopTripCount, i64 8, i64 8, i64 8"   --->   Operation 54 'speclooptripcount' 'empty_9' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 55 [1/1] (1.73ns)   --->   "%add_ln17 = add i4 %k, i4 1" [gemm.cc:17]   --->   Operation 55 'add' 'add_ln17' <Predicate = true> <Delay = 1.73> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.73> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 56 [1/1] (0.00ns)   --->   "%br_ln17 = br i1 %icmp_ln17, void %for.inc.split, void %for.inc19" [gemm.cc:17]   --->   Operation 56 'br' 'br_ln17' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 57 [2/2] (3.25ns)   --->   "%A_load = load i6 %A_addr" [gemm.cc:18]   --->   Operation 57 'load' 'A_load' <Predicate = (!icmp_ln17)> <Delay = 3.25> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 64> <RAM>
+ST_4 : Operation 58 [2/2] (3.25ns)   --->   "%B_load = load i6 %B_addr" [gemm.cc:18]   --->   Operation 58 'load' 'B_load' <Predicate = (!icmp_ln17)> <Delay = 3.25> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 64> <RAM>
+ST_4 : Operation 59 [1/1] (3.25ns)   --->   "%store_ln20 = store i32 %ABij, i6 %AB_addr" [gemm.cc:20]   --->   Operation 59 'store' 'store_ln20' <Predicate = (icmp_ln17)> <Delay = 3.25> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 64> <RAM>
+ST_4 : Operation 60 [1/1] (0.00ns)   --->   "%br_ln15 = br void %product" [gemm.cc:15]   --->   Operation 60 'br' 'br_ln15' <Predicate = (icmp_ln17)> <Delay = 0.00>
+
+State 5 <SV = 4> <Delay = 3.25>
+ST_5 : Operation 61 [1/2] (3.25ns)   --->   "%A_load = load i6 %A_addr" [gemm.cc:18]   --->   Operation 61 'load' 'A_load' <Predicate = true> <Delay = 3.25> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 64> <RAM>
+ST_5 : Operation 62 [1/2] (3.25ns)   --->   "%B_load = load i6 %B_addr" [gemm.cc:18]   --->   Operation 62 'load' 'B_load' <Predicate = true> <Delay = 3.25> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 64> <RAM>
+
+State 6 <SV = 5> <Delay = 6.91>
+ST_6 : Operation 63 [2/2] (6.91ns)   --->   "%mul_ln18 = mul i32 %B_load, i32 %A_load" [gemm.cc:18]   --->   Operation 63 'mul' 'mul_ln18' <Predicate = true> <Delay = 6.91> <CoreInst = "Multiplier">   --->   Core 3 'Multiplier' <Latency = 1> <II = 1> <Delay = 6.91> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+
+State 7 <SV = 6> <Delay = 6.91>
+ST_7 : Operation 64 [1/2] (6.91ns)   --->   "%mul_ln18 = mul i32 %B_load, i32 %A_load" [gemm.cc:18]   --->   Operation 64 'mul' 'mul_ln18' <Predicate = true> <Delay = 6.91> <CoreInst = "Multiplier">   --->   Core 3 'Multiplier' <Latency = 1> <II = 1> <Delay = 6.91> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+
+State 8 <SV = 7> <Delay = 2.55>
+ST_8 : Operation 65 [1/1] (0.00ns)   --->   "%specloopname_ln16 = specloopname void @_ssdm_op_SpecLoopName, void @empty_2" [gemm.cc:16]   --->   Operation 65 'specloopname' 'specloopname_ln16' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 66 [1/1] (2.55ns)   --->   "%ABij_1 = add i32 %mul_ln18, i32 %ABij" [gemm.cc:18]   --->   Operation 66 'add' 'ABij_1' <Predicate = true> <Delay = 2.55> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 67 [1/1] (0.00ns)   --->   "%br_ln17 = br void %for.inc" [gemm.cc:17]   --->   Operation 67 'br' 'br_ln17' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 2.7ns.
+
+ <State 1>: 1.59ns
+The critical path consists of the following:
+	'alloca' operation ('i') [4]  (0 ns)
+	'store' operation ('store_ln14', gemm.cc:14) of constant 0 on local variable 'i' [12]  (1.59 ns)
+
+ <State 2>: 1.74ns
+The critical path consists of the following:
+	'load' operation ('i', gemm.cc:18) on local variable 'i' [15]  (0 ns)
+	'add' operation ('add_ln14', gemm.cc:14) [20]  (1.74 ns)
+
+ <State 3>: 2.89ns
+The critical path consists of the following:
+	'phi' operation ('j', gemm.cc:15) with incoming values : ('add_ln15', gemm.cc:15) [26]  (0 ns)
+	'add' operation ('add_ln20', gemm.cc:20) [28]  (1.83 ns)
+	blocking operation 1.06 ns on control path)
+
+ <State 4>: 5.08ns
+The critical path consists of the following:
+	'phi' operation ('k', gemm.cc:17) with incoming values : ('add_ln17', gemm.cc:17) [39]  (0 ns)
+	'add' operation ('add_ln18', gemm.cc:18) [43]  (1.83 ns)
+	'getelementptr' operation ('A_addr', gemm.cc:18) [45]  (0 ns)
+	'load' operation ('A_load', gemm.cc:18) on array 'A' [56]  (3.25 ns)
+
+ <State 5>: 3.25ns
+The critical path consists of the following:
+	'load' operation ('A_load', gemm.cc:18) on array 'A' [56]  (3.25 ns)
+
+ <State 6>: 6.91ns
+The critical path consists of the following:
+	'mul' operation ('mul_ln18', gemm.cc:18) [58]  (6.91 ns)
+
+ <State 7>: 6.91ns
+The critical path consists of the following:
+	'mul' operation ('mul_ln18', gemm.cc:18) [58]  (6.91 ns)
+
+ <State 8>: 2.55ns
+The critical path consists of the following:
+	'add' operation ('ABij', gemm.cc:18) [59]  (2.55 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

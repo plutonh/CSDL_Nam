@@ -1,0 +1,14 @@
+remark: gemm.cc:18:7: Loop 'col' is marked as complete unroll implied by the pipeline pragma
+remark: gemm.cc:20:13: Loop 'product' is marked as complete unroll implied by the pipeline pragma
+remark: gemm.cc:12:0: Unrolling loop 'col' (gemm.cc:18:7) in function 'mm' completely with a factor of 8
+remark: gemm.cc:12:0: Unrolling loop 'product' (gemm.cc:20:13) in function 'mm' completely with a factor of 8
+remark: gemm.cc:12:0: Unrolling loop 'product' (gemm.cc:20:13) in function 'mm' completely with a factor of 8
+remark: gemm.cc:12:0: Unrolling loop 'product' (gemm.cc:20:13) in function 'mm' completely with a factor of 8
+remark: gemm.cc:12:0: Unrolling loop 'product' (gemm.cc:20:13) in function 'mm' completely with a factor of 8
+remark: gemm.cc:12:0: Unrolling loop 'product' (gemm.cc:20:13) in function 'mm' completely with a factor of 8
+remark: gemm.cc:12:0: Unrolling loop 'product' (gemm.cc:20:13) in function 'mm' completely with a factor of 8
+remark: gemm.cc:12:0: Unrolling loop 'product' (gemm.cc:20:13) in function 'mm' completely with a factor of 8
+remark: gemm.cc:12:0: Unrolling loop 'product' (gemm.cc:20:13) in function 'mm' completely with a factor of 8
+remark: gemm.cc:12:0: Applying array_partition to 'A': Complete partitioning on dimension 2.
+remark: gemm.cc:12:0: Applying array_partition to 'B': Complete partitioning on dimension 1. Complete partitioning on dimension 2.
+remark: gemm.cc:12:0: Applying array_partition to 'AB': Complete partitioning on dimension 2.

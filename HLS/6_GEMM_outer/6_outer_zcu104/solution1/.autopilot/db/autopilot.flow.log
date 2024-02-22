@@ -1,0 +1,816 @@
+INFO-FLOW: Workspace C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1 opened at Thu Nov 30 17:26:01 +0900 2023
+Execute     ap_set_clock -name default -period 10 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+Execute     set_part xczu7ev-ffvc1156-2-e 
+Execute       create_platform xczu7ev-ffvc1156-2-e -board  
+DBG:HLSDevice: Trying to load device library: C:/Xilinx/Vitis_HLS/2022.2\lib\win64.o\xv_hlsvwrap.dll
+DBG:HLSDevice: first parts/arch.xml in RDI_DATADIR: C:/Xilinx/Vivado/2022.2/data/parts/arch.xml
+DBG:HLSDevice: init success
+INFO: [HLS 200-1611] Setting target device to 'xczu7ev-ffvc1156-2-e'
+Command       create_platform done; 1.242 sec.
+Execute       source C:/Xilinx/Vitis_HLS/2022.2/common/technology/xilinx/common/xilinx.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2022.2/common/technology/xilinx/interface/plb46.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2022.2/common/technology/xilinx/interface/axi4.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2022.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source C:/Xilinx/Vitis_HLS/2022.2/common/technology/xilinx/interface/saxilite.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2022.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2022.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2022.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2022.2/common/technology/xilinx/ip/util.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2022.2/common/technology/xilinx/ip/xfft.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2022.2/common/technology/xilinx/ip/xfir.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2022.2/common/technology/xilinx/DSP48/dsp48.gen 
+Command       ap_source done; 0.119 sec.
+Execute       ap_part_info -name xczu7ev-ffvc1156-2-e -data info 
+Execute       config_compile -quiet -complex-mul-dsp=0 
+Command     set_part done; 1.382 sec.
+Execute     send_msg_by_id INFO @200-1505@%s%s  vivado 
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Command   open_solution done; 1.566 sec.
+Execute   set_part xczu7ev-ffvc1156-2-e 
+INFO: [HLS 200-1510] Running: set_part xczu7ev-ffvc1156-2-e 
+Execute     create_platform xczu7ev-ffvc1156-2-e -board  
+Execute     source C:/Xilinx/Vitis_HLS/2022.2/common/technology/xilinx/common/xilinx.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2022.2/common/technology/xilinx/interface/plb46.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2022.2/common/technology/xilinx/interface/axi4.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2022.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2022.2/common/technology/xilinx/interface/saxilite.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2022.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2022.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2022.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2022.2/common/technology/xilinx/ip/util.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2022.2/common/technology/xilinx/ip/xfft.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2022.2/common/technology/xilinx/ip/xfir.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2022.2/common/technology/xilinx/DSP48/dsp48.gen 
+Command     ap_source done; 0.123 sec.
+Execute     ap_part_info -name xczu7ev-ffvc1156-2-e -data info 
+Execute     config_compile -quiet -complex-mul-dsp=0 
+Command   set_part done; 0.164 sec.
+Execute   create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+Execute   csynth_design 
+INFO: [HLS 200-1510] Running: csynth_design 
+Execute     elaborate -effort=medium -skip_syncheck=0 -keep_printf=0 -skip_cdt=0 -skip_transform=0 -ng=0 -g=0 -opt_fp=0 -from_csynth_design=1 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 1 seconds. CPU system time: 1 seconds. Elapsed time: 10.148 seconds; current allocated memory: 106.641 MB.
+INFO: [HLS 200-10] Analyzing design file 'gemm_outer.cc' ... 
+INFO-FLOW: Compiling one TU...
+INFO-FLOW: Handling gemm_outer.cc as C++
+Execute       ap_part_info -name xczu7ev-ffvc1156-2-e -data info 
+INFO-FLOW: Running: GCC PP 39
+INFO-FLOW: Source preprocessing
+Execute       ap_eval exec -ignorestderr C:/Xilinx/Vitis_HLS/2022.2/win64/tools/clang-3.9-csynth/bin/clang gemm_outer.cc -foptimization-record-file=C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm_outer.cc.clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fno-limit-debug-info --sysroot C:/Xilinx/Vitis_HLS/2022.2/tps/mingw/8.3.0/win64.o/nt -fhls -fno-exceptions -E -fno-math-errno -c -emit-llvm -mllvm -disable-llvm-optzns -Werror=implicit-function-declaration -Werror=implicit-hls-streams -Werror=return-type -Wpragmas -Wunused-parameter -Wdump-hls-pragmas -Wno-error=dump-hls-pragmas -fno-threadsafe-statics -fno-use-cxa-atexit -std=gnu++14 -target fpga64-xilinx-mingw32 -fno-threadsafe-statics -fno-use-cxa-atexit -D__VITIS_HLS__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I C:/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot -I C:/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E2__ -I /usr/include/x86_64-linux-gnu -o C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm_outer.pp.0.cc {-hls-platform-db-name=C:/Xilinx/Vitis_HLS/2022.2/common/technology\xilinx/common/platform.db} -hls-platform-name=zynquplus_medium -device-resource-info=BRAM_624.000000_DSP_1728.000000_FF_460800.000000_LUT_230400.000000_SLICE_28800.000000_URAM_96.000000 -device-name-info=xczu7ev-ffvc1156-2-e > C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm_outer.cc.clang.out.log 2> C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm_outer.cc.clang.err.log 
+Command       ap_eval done; 0.344 sec.
+INFO-FLOW: Done: GCC PP 39 time: 0.4 seconds per iteration
+Execute       set_directive_top gemm -name=gemm 
+Execute       source C:/Xilinx/Vitis_HLS/2022.2/tps/tcl/tcllib1.11.1/yaml/huddle.tcl 
+Execute       source C:/Xilinx/Vitis_HLS/2022.2/tps/tcl/tcllib1.11.1/yaml/json2huddle.tcl 
+INFO-FLOW: Source syntax check for synthesis
+Execute       ap_eval exec -ignorestderr C:/Xilinx/Vitis_HLS/2022.2/win64/tools/clang-3.9-csynth/bin/clang -foptimization-record-file=C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fsyntax-only -fhls -target fpga64-xilinx-linux-gnu C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm_outer.pp.0.cc {-hls-platform-db-name=C:/Xilinx/Vitis_HLS/2022.2/common/technology\xilinx/common/platform.db} -hls-platform-name=zynquplus_medium -device-resource-info=BRAM_624.000000_DSP_1728.000000_FF_460800.000000_LUT_230400.000000_SLICE_28800.000000_URAM_96.000000 -device-name-info=xczu7ev-ffvc1156-2-e > C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/clang.out.log 2> C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/clang.err.log 
+Command       ap_eval done; 0.34 sec.
+Execute       clang_tidy xilinx-systemc-detector -desc systemc-detector C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm_outer.pp.0.cc std=gnu++14 -target fpga  -directive=C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/.systemc_flag 
+INFO-FLOW: exec C:/Xilinx/Vitis_HLS/2022.2/win64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-systemc-detector -import-directive=C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/.systemc_flag -fix-errors C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm_outer.pp.0.cc -- -std=gnu++14 -target fpga -fhls -ferror-limit=0
+Command       clang_tidy done; 0.115 sec.
+INFO-FLOW: Running: clang-tidy CDT preprocess 39
+Execute       clang_tidy xilinx-directive2pragma -desc directive2pragma C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm_outer.pp.0.cc std=gnu++14 -target fpga  -directive=C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/all.directive.json 
+INFO-FLOW: exec C:/Xilinx/Vitis_HLS/2022.2/win64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-directive2pragma -import-directive=C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/all.directive.json -fix-errors C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm_outer.pp.0.cc -- -std=gnu++14 -target fpga -fhls -ferror-limit=0
+Command       clang_tidy done; 0.173 sec.
+Execute       clang_tidy xilinx-remove-assert -desc remove-assert C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm_outer.pp.0.cc std=gnu++14 -target fpga  
+INFO-FLOW: exec C:/Xilinx/Vitis_HLS/2022.2/win64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-remove-assert -fix-errors C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm_outer.pp.0.cc -- -std=gnu++14 -target fpga -fhls -ferror-limit=0
+Command       clang_tidy done; 0.123 sec.
+INFO-FLOW: Done: clang-tidy CDT preprocess 39 time: 0.3 seconds per iteration
+INFO-FLOW: Calling xilinx-label-all-loops ... 
+INFO-FLOW: Calling xilinx-aggregate-on-hls-vector ... 
+Execute       clang_tidy -errorcheck -desc loop-label xilinx-label-all-loops,xilinx-aggregate-on-hls-vector,,xilinx-warn-mayneed-no-ctor-attribute C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm_outer.pp.0.cc std=gnu++14 -target fpga  
+Execute         ap_eval exec -ignorestderr C:/Xilinx/Vitis_HLS/2022.2/win64/tools/clang-3.9-csynth/bin/clang-tidy -export-fixes=C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm_outer.pp.0.cc.clang-tidy.loop-label.diag.yml -header-filter=.* --checks=-*,xilinx-label-all-loops,xilinx-aggregate-on-hls-vector,,xilinx-warn-mayneed-no-ctor-attribute -fix-errors C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm_outer.pp.0.cc -- -std=gnu++14 -target fpga -fhls -ferror-limit=0 > C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm_outer.pp.0.cc.clang-tidy.loop-label.out.log 2> C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm_outer.pp.0.cc.clang-tidy.loop-label.err.log 
+Command         ap_eval done; 0.161 sec.
+Execute         source C:/Xilinx/Vitis_HLS/2022.2/tps/tcl/tcllib1.11.1/yaml/yaml.tcl 
+Command       clang_tidy done; 0.197 sec.
+Execute       ap_eval exec -ignorestderr C:/Xilinx/Vitis_HLS/2022.2/win64/tools/clang-3.9-csynth/bin/xilinx-dataflow-lawyer -export-fixes=C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm_outer.pp.0.cc.xilinx-dataflow-lawyer.diag.yml C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm_outer.pp.0.cc -- -std=gnu++14 -target fpga -fhls -ferror-limit=0 -fstrict-dataflow > C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm_outer.pp.0.cc.xilinx-dataflow-lawyer.out.log 2> C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm_outer.pp.0.cc.xilinx-dataflow-lawyer.err.log 
+Execute       ap_part_info -name xczu7ev-ffvc1156-2-e -data info 
+INFO-FLOW: compiling source code to llvm bc
+Execute       ap_eval exec -ignorestderr C:/Xilinx/Vitis_HLS/2022.2/win64/tools/clang-3.9-csynth/bin/clang -foptimization-record-file=C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm_outer.pp.0.cc.clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fno-limit-debug-info -fhls -flto -fno-exceptions -Wno-error=c++11-narrowing C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm_outer.pp.0.cc -fno-math-errno -c -emit-llvm -mllvm -disable-llvm-optzns -Werror=implicit-function-declaration -Werror=implicit-hls-streams -Werror=return-type -Wpragmas -Wunused-parameter -Wdump-hls-pragmas -Wno-error=dump-hls-pragmas -fno-threadsafe-statics -fno-use-cxa-atexit -std=gnu++14 -target fpga64-xilinx-linux-gnu -D__VITIS_HLS__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I C:/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot -I C:/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E2__ -g -o C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm_outer.bc {-hls-platform-db-name=C:/Xilinx/Vitis_HLS/2022.2/common/technology\xilinx/common/platform.db} -hls-platform-name=zynquplus_medium -device-resource-info=BRAM_624.000000_DSP_1728.000000_FF_460800.000000_LUT_230400.000000_SLICE_28800.000000_URAM_96.000000 -device-name-info=xczu7ev-ffvc1156-2-e > C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm_outer.pp.0.cc.clang.out.log 2> C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm_outer.pp.0.cc.clang.err.log 
+Command       ap_eval done; 0.396 sec.
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 1.945 seconds; current allocated memory: 107.469 MB.
+INFO-FLOW: Linking Debug ...
+INFO-FLOW: Linking dut bc code.
+Execute       run_link_or_opt -out C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/a.g.ld.0.bc -args  "C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm_outer.g.bc"  
+Execute         ap_eval exec -ignorestderr C:/Xilinx/Vitis_HLS/2022.2/win64/tools/clang-3.9-csynth/bin/llvm-link C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm_outer.g.bc -o C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/a.g.ld.0.bc > C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/a.g.ld.0.bc.llvm-link.out.log 2> C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/a.g.ld.0.bc.llvm-link.err.log 
+INFO-FLOW: 
+Execute       run_link_or_opt -opt -out C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/a.g.ld.1.lower.bc -args C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/a.g.ld.0.bc -reflow-lower-math-intrinsics 
+Execute         ap_eval exec -ignorestderr C:/Xilinx/Vitis_HLS/2022.2/win64/tools/clang-3.9-csynth/bin/opt -pass-remarks-missed=reflow|pasta|unroll -pass-remarks=reflow|pasta|unroll|inline -pass-remarks-output=C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/a.g.ld.1.lower.bc.opt.diag.yml C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/a.g.ld.0.bc -reflow-lower-math-intrinsics -o C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/a.g.ld.1.lower.bc > C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/a.g.ld.1.lower.bc.opt.out.log 2> C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/a.g.ld.1.lower.bc.opt.err.log 
+INFO-FLOW: 
+INFO-FLOW: Linking math bc lib
+Execute       run_link_or_opt -out C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/a.g.ld.2.m1.bc -args C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/a.g.ld.1.lower.bc -only-needed C:/Xilinx/Vitis_HLS/2022.2/win64/lib/libhlsm_39.bc C:/Xilinx/Vitis_HLS/2022.2/win64/lib/libhlsmc++_39.bc 
+Execute         ap_eval exec -ignorestderr C:/Xilinx/Vitis_HLS/2022.2/win64/tools/clang-3.9-csynth/bin/llvm-link C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/a.g.ld.1.lower.bc -only-needed C:/Xilinx/Vitis_HLS/2022.2/win64/lib/libhlsm_39.bc C:/Xilinx/Vitis_HLS/2022.2/win64/lib/libhlsmc++_39.bc -o C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/a.g.ld.2.m1.bc > C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/a.g.ld.2.m1.bc.llvm-link.out.log 2> C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/a.g.ld.2.m1.bc.llvm-link.err.log 
+Command         ap_eval done; 2.706 sec.
+INFO-FLOW: 
+Command       run_link_or_opt done; 2.708 sec.
+Execute       run_link_or_opt -opt -out C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/a.g.ld.3.fpc.bc -args C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/a.g.ld.2.m1.bc -reflow-globaldce -hls-top-function-name=gemm -reflow-float-conversion 
+Execute         ap_eval exec -ignorestderr C:/Xilinx/Vitis_HLS/2022.2/win64/tools/clang-3.9-csynth/bin/opt -pass-remarks-missed=reflow|pasta|unroll -pass-remarks=reflow|pasta|unroll|inline -pass-remarks-output=C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/a.g.ld.3.fpc.bc.opt.diag.yml C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/a.g.ld.2.m1.bc -reflow-globaldce -hls-top-function-name=gemm -reflow-float-conversion -o C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/a.g.ld.3.fpc.bc > C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/a.g.ld.3.fpc.bc.opt.out.log 2> C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/a.g.ld.3.fpc.bc.opt.err.log 
+Command         ap_eval done; 1.053 sec.
+INFO-FLOW: 
+Command       run_link_or_opt done; 1.059 sec.
+Execute       run_link_or_opt -out C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/a.g.ld.4.m2.bc -args C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/a.g.ld.3.fpc.bc -only-needed C:/Xilinx/Vitis_HLS/2022.2/win64/lib/libfloatconversion_39.bc 
+Execute         ap_eval exec -ignorestderr C:/Xilinx/Vitis_HLS/2022.2/win64/tools/clang-3.9-csynth/bin/llvm-link C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/a.g.ld.3.fpc.bc -only-needed C:/Xilinx/Vitis_HLS/2022.2/win64/lib/libfloatconversion_39.bc -o C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/a.g.ld.4.m2.bc > C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/a.g.ld.4.m2.bc.llvm-link.out.log 2> C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/a.g.ld.4.m2.bc.llvm-link.err.log 
+INFO-FLOW: 
+Execute       run_link_or_opt -opt -out C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/a.g.ld.5.gdce.bc -args C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/a.g.ld.4.m2.bc -reflow-globaldce -hls-top-function-name=gemm 
+Execute         ap_eval exec -ignorestderr C:/Xilinx/Vitis_HLS/2022.2/win64/tools/clang-3.9-csynth/bin/opt -pass-remarks-missed=reflow|pasta|unroll -pass-remarks=reflow|pasta|unroll|inline -pass-remarks-output=C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/a.g.ld.5.gdce.bc.opt.diag.yml C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/a.g.ld.4.m2.bc -reflow-globaldce -hls-top-function-name=gemm -o C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/a.g.ld.5.gdce.bc > C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/a.g.ld.5.gdce.bc.opt.out.log 2> C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/a.g.ld.5.gdce.bc.opt.err.log 
+INFO-FLOW: 
+Execute       send_msg_by_id INFO @200-777@%s Vivado 
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+Execute       is_m_axi_addr64 
+INFO-FLOW: Doing LTO.
+Execute       ap_eval exec -ignorestderr C:/Xilinx/Vitis_HLS/2022.2/win64/tools/clang-3.9-csynth/bin/clang -foptimization-record-file=C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/a.g.ld.0.bc.clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fhls -mllvm -hls-top-function-name=gemm -mllvm -hls-db-dir -mllvm C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db -emit-llvm -c -target fpga64-xilinx-none -mllvm -xcl-xmlinfo=C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/kernel.internal.xml -mllvm -top-io-mapping-info=C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/top-io-fe.xml -mllvm -hls-bitcode-version=3.1 -mllvm -reflow-enable-slave-interface-default-setting=true -mllvm -gen-kernel-xml=false -mllvm -default-maxi-offset=slave -mllvm -maxi-latency=0 -mllvm -hls-maxi-data-size-in-bits=8 -mllvm -hls-maxi-max-data-size-in-bits=1024 -mllvm -hls-max-widen-size-in-bits=0 -mllvm -xcl-kernel-max-mem-ports=0 -mllvm -maxi-read-trans=16 -mllvm -maxi-write-trans=16 -mllvm -maxi-read-burst-len=16 -mllvm -maxi-write-burst-len=16 -mllvm -reflow-enable-saxi-64bits=0 -mllvm -reflow-basic-block-instr-threshold=200000 -mllvm -reflow-auto-pipeline-threshold=64 -mllvm -reflow-enable-maxi-auto-id-channel=0 -mllvm -assume-maxi-align=1 -mllvm -reflow-pipeline-style-llvm-setting=2 -mllvm -reflow-enable-dataflow-strict-mode-checking=1 -mllvm -reflow-auto-array-partition-mode=default -mllvm -reflow-enable-auto-array-partition=true -mllvm -reflow-enable-auto-parallel-performance-driven=true -mllvm -reflow-enable-partition-for-automation=true -mllvm -reflow-aggregate-bitwidth-threshold=4096 -mllvm -reflow-assume-no-address-wrap=true -mllvm -hls -mllvm -disable-inlined-alloca-merging=true -mllvm -default-clock-period=10 -x ir C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/a.g.ld.5.gdce.bc -o C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/a.g.lto.bc {-hls-platform-db-name=C:/Xilinx/Vitis_HLS/2022.2/common/technology\xilinx/common/platform.db} -hls-platform-name=zynquplus_medium -device-resource-info=BRAM_624.000000_DSP_1728.000000_FF_460800.000000_LUT_230400.000000_SLICE_28800.000000_URAM_96.000000 -device-name-info=xczu7ev-ffvc1156-2-e > C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/a.g.ld.0.bc.clang.out.log 2> C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/a.g.ld.0.bc.clang.err.log 
+Command       ap_eval done; 0.664 sec.
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_53_4' is marked as complete unroll implied by the pipeline pragma (gemm_outer.cc:53:19)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_55_5' is marked as complete unroll implied by the pipeline pragma (gemm_outer.cc:55:19)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_53_4' (gemm_outer.cc:53:19) in function 'gemm' completely with a factor of 8 (gemm_outer.cc:18:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_55_5' (gemm_outer.cc:55:19) in function 'gemm' completely with a factor of 8 (gemm_outer.cc:18:0)
+INFO: [HLS 214-248] Applying array_partition to 'a_buff': Complete partitioning on dimension 2. (gemm_outer.cc:28:8)
+INFO: [HLS 214-248] Applying array_partition to 'b_buff': Complete partitioning on dimension 1. (gemm_outer.cc:29:9)
+INFO: [HLS 214-248] Applying array_partition to 'c_buff': Complete partitioning on dimension 1. Complete partitioning on dimension 2. (gemm_outer.cc:30:9)
+INFO: [HLS 214-115] Multiple burst reads of length 64 and bit width 32 in loop 'anonymous'(gemm_outer.cc:40:2) has been inferred on bundle 'a_port'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (gemm_outer.cc:40:2)
+INFO: [HLS 214-115] Multiple burst reads of length 64 and bit width 32 in loop 'anonymous'(gemm_outer.cc:41:3) has been inferred on bundle 'b_port'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (gemm_outer.cc:41:3)
+INFO: [HLS 214-115] Multiple burst writes of length 64 and bit width 32 in loop 'anonymous'(gemm_outer.cc:62:3) has been inferred on bundle 'c_port'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (gemm_outer.cc:62:3)
+INFO-FLOW: DBG:PUTS: copy_raw_kernel_xml ap_link_39: kernel.xml not generated: C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/kernel.internal.xml
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 5.134 seconds; current allocated memory: 108.699 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.012 seconds; current allocated memory: 108.699 MB.
+Execute       opt_and_import_c a -opt_level=2 -skip_syncheck=0 -ng=0 -keep_printf=0 
+Execute         cleanup_all_models 
+INFO: [HLS 200-10] Starting code transformations ...
+INFO-FLOW: Running Standard Transforms...
+Execute         transform -hls -share-std-xform -demangle-name -inline-byval-memcpy -always-inline -promote-dbg-pointer -interface-preproc -mem2reg -scalarrepl -mem2reg -keep-read-access -instcombine -dce -promote-dbg-pointer -bitop-raise -loop-simplify -indvarspre -indvars -loop-simplify -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -simplifycfg -mem2reg -globalopt -global-constprop -deadargelim -instcombine -simplifycfg -scalarrepl -instcombine -reassociate -licm -simplifycfg -loop-simplify -indvars -instcombine -simplifycfg -mem2reg -loop-simplify -indvars -instcombine -gvn -gvn -instcombine -adce -break-crit-edges -simplifycfg -loop-delete -global-array-opt -dce -dse -adce -find-syn-modules -top gemm -deadargelim -mem2reg -instcombine -dce -presyn-prepare -auto-rom-infer -interface-preproc -syn-check -check-rec-only -find-region -simplifycfg -func-extr -function-inline -globaldce -mem2reg -instcombine -dce -gvn -globaldce -adce -adse -constprop -instcombine -bit-constprop -instcombine -dce -simplifycfg -bitop-raise -simplifycfg -dce -loop-delete -reassociate -globalopt -global-privatize -mem2reg -dce -global-constprop -pointer-simplify -constprop -dce -auto-shift-reg-idiom -promote-dbg-pointer -norm-name C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/a.g.0.bc -o C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/a.g.1.bc -f -phase std-opt 
+Command         transform done; 0.124 sec.
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.173 seconds; current allocated memory: 116.980 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO-FLOW: Checking Synthesizability 1/2..
+Execute         transform -hls -syn-check -check-rec-only -scalarrepl -norm-name -dce -mem2reg -instcombine -directive-preproc -mem2reg -dse -dce -auto-rom-infer -dce -pag -array-normalize -instcombine -dce -array-seg-normalize -instcombine -dce -data-pack -instcombine -dce -inst-simplify -array-flatten -instcombine -dce -array-burst -dce -deadargelim -promote-global-argument -simplifycfg -mem2reg -globaldce -dce -deadargelim -dce -instcombine -function-inline -globaldce -dce -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -dse -adse -instcombine -ptrLegalization -simplifycfg -dce -instcombine -pointer-simplify -ptrArgReplace -dce -instcombine -resolve-double-ptr -scalarrepl -norm-name -dce -mem2reg -instcombine -ptrLegalization -simplifycfg -deadargelim -instcombine -dce -inst-simplify -directive-preproc -mem2reg -dse -dce -globaldce C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/a.g.1.bc -o C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/a.g.2.prechk.bc -f 
+INFO-FLOW: Checking Synthesizability 2/2..
+Execute         transform -syn-check C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/a.g.2.prechk.bc -o C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/a.g.2.bc -f -phase syn-check 
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.1 seconds; current allocated memory: 118.578 MB.
+INFO-FLOW: Compiler optimizing ...
+INFO-FLOW: Share syncheck's 1.bc for syn flow: copy C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/a.g.1.bc to C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/a.o.1.bc
+INFO-FLOW: Presyn 1...
+Execute         transform -hls -tmp C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db -interface-port-rename -directive-preproc -mem2reg -dse -dce -scalarrepl -norm-name -deadargelim -mem2reg -instcombine -dce -simplifycfg -auto-rom-infer -dce -resource-proc -clib-intrinsic-prepare -dce -func-buffer -dce -pag -array-normalize -func-legal -instcombine -gvn -constprop -dce -simplifycfg -mem2reg -globaldce -resolve-double-ptr -dce -deadargelim -dce -instcombine -ptrArgReplace -mem2reg -dce -array-seg-normalize -deadargelim -instcombine -dce -directive-preproc -mem2reg -dse -dce -pointer-simplify -dce -port-alignment -dce -interface-preproc -data-pack -instcombine -dce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -loop-simplify -indvars -instcombine -gvn -loop-simplify -mem2reg -dce -find-region -instcombine -auto-loop-pipeline -inst-simplify -interface-preproc -cfgopt -instcombine -indvars -auto-loop-unroll -loop-simplify -loop-bound -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -clean-region -attach-range -gvn -inst-simplify -constprop -simplifycfg -dce -pointer-simplify -dce -globalopt -constprop -dce -array-promote -scalar-auto-dep-elim -constprop -dce -ptrArgReplace -mem2reg -simplifycfg -dce -instcombine -dce -array-transform-check -array-reshape -instcombine -simplifycfg -dce -ptrArgReplace -deadargelim -mem2reg -instcombine -simplifycfg -dce -indvars -loop-simplify -loop-bound -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -duplicate-dataflow-processes -globaldce -instcombine -array-partition -prepare-dynamic-array-partition -instcombine -simplifycfg -dce -ptrArgReplace -global-constprop -deadargelim -mem2reg -func-legal -dce -global-constprop -deadargelim -mem2reg -simplifycfg -dce -merge-param -deadargelim -globalopt -constprop -dce -array-promote -scalar-auto-dep-elim -constprop -dce -ptrArgReplace -mem2reg -simplifycfg -dce -mem-intrinsic-preproc -dce -global-internalize -global-privatize -mem2reg -globaldce -promote-global-argument -ptrArgReplace -mem2reg -dce -globalopt -mergereturn -simplify-global-access -mem2reg -dce -pointer-simplify -dce -functionattrs -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -dce -norm-name -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -accesses-merge -function-inline -complex-op-raise -inst-simplify -globaldce -func-legal -dce -loop-bound -arraycheck -bitwidthmin2 -bitwidthmin2 -on-by-dataflow -loop-delete -instcombine -simplifycfg -globaldce -dce -gvn -deadargelim -dce -loop-simplify -clean-region -simplifycfg -propagate-stable-arguments -loop-stream -instcombine -simplifycfg -dce -globaldce -duplicate-dataflow-processes -stream-intrinsic-preproc -dce -check-ap-stream -loop-simplify -eliminate-keepreads -extract-dataflow-in-loop -loop-simplify -dce -gvn -deadargelim -dse -duplicate-dataflow-processes -check-dataflow-syntax -legalize-stream-variable -globaldce -legalize-global -extract-subproc -dce -dead-channel-elimination -canonicalize-gep -globaldce -dce -gvn -hls-dead-arg-elim -deadargelim -directive-preproc -canonicalize-dataflow -dce -globaldce -scalar-preprocessing -scalar-propagation2 -deadargelim -globaldce -mem2reg -check-dataflow-channels -function-stream -dce -globaldce -prop-fifo-spec -internal-stream-gen -canonicalize-gep -globaldce -dce -gvn -deadargelim -mergereturn -indvars -loop-simplify -instcombine -array-stream -array-seg-normalize -array-partition -func-legal -instcombine -simplifycfg -dce -bundle-memfifo-ops -deadargelim -directive-preproc -mem2reg -dse -dce -group-axi-access -licm -simplifycfg -dce -loop-delete -hls-display -norm-name C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/a.o.1.bc -o C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/a.o.1.tmp.bc -f 
+INFO: [XFORM 203-510] Pipelining loop 'Loop-2' in function 'gemm' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'Loop-3' in function 'gemm' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_46_2' (gemm_outer.cc:30) in function 'gemm' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'Loop-6' in function 'gemm' automatically.
+Command         transform done; 0.343 sec.
+INFO-FLOW: Presyn 2...
+Execute         transform -hls -keep-callgraph -scalarrepl -mem2reg -port-alignment -attach-range -dce -pipe-mux-gen -indvars -loop-bound -inst-simplify -instcombine -dce -merge-array-access -mem2reg -dce -clean-region -mergereturn -if-conv -instcombine -dce -constprop -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -scalarrepl -mem2reg -global-constprop -deadargelim -deadargelim -instcombine -dce -simplifycfg -ptrArgReplace -mem2reg -function-inline -globaldce -mem2reg -instcombine -dce -expr-balance -instcombine -dce -bitwidthmin2 -bitwidthmin2 -interface-preproc -directive-preproc -inst-rectify -instcombine -dce -functionattrs -constprop -instcombine -bit-constprop -simplify-global-access -globalopt -globaldce -inst-simplify -instcombine -elimdeaddata -dce -loop-delete -simplifycfg -loop-simplify -barrier -norm-name C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/a.o.1.tmp.bc -o C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/a.o.2.bc -f -phase presyn 
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.446 seconds; current allocated memory: 142.957 MB.
+INFO-FLOW: Building ssdm...
+Execute         transform -hls -auto-function-inline -globaldce -ptrArgReplace -mem2reg -dce -reset-lda -loop-simplify -indvars -aggr-aa -licm -loop-dep -loop-bound -licm -loop-simplify -loop-sink-hoist -flattenloopnest -array-flatten -gvn -instcombine -dce -array-map -dce -func-legal -gvn -adce -instcombine -cfgopt -simplifycfg -loop-simplify -array-burst -promote-global-argument -dce -array-seg-normalize -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -gvn -gvn -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -dse -adse -adce -licm -inst-simplify -dce -globaldce -instcombine -array-stream -eliminate-keepreads -instcombine -dce -deadargelim -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -mem2reg -norm-name -mem2reg -instcombine -dse -adse -adce -ptrLegalization -dce -auto-rom-infer -array-flatten -dce -instcombine -check-doubleptr -loop-rot -constprop -cfgopt -simplifycfg -loop-simplify -indvars -pointer-simplify -dce -loop-bound -loop-simplify -loop-preproc -constprop -global-constprop -gvn -mem2reg -instcombine -dce -loop-bound -loop-merge -dce -deadargelim -dce -canonicalize-dataflow -dce -deadargelim -globaldce -mem2reg -bram-byte-enable -load-elim -read-loop-dep -loop-simplify -loop-extract-inner -directive-preproc -bitwidthmin2 -bitwidthmin2 -read-loop-dep -interface-preproc -directive-preproc -interface-gen -bram-byte-enable-spec-prop -deadargelim -inst-simplify -dce -gvn -mem2reg -instcombine -dce -adse -loop-bound -instcombine -cfgopt -simplifycfg -loop-simplify -clean-region -io-protocol -find-region -mem2reg -bitop-raise -complex-op-raise -inst-simplify -inst-rectify -instcombine -adce -deadargelim -float-op-raise -loop-simplify -phi-opt -bitop-raise -cfgopt -simplifycfg -strip-dead-prototypes -interface-lower -bitop-lower -intrinsic-lower -auto-function-inline -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -inst-simplify -simplifycfg -loop-simplify -mergereturn -inst-simplify -inst-rectify -dce -load-elim -bitop-lower -float-op-raise -fma-raise -loop-rewind -pointer-simplify -dce -cfgopt -dce -loop-bound -loop-dep -read-loop-dep -dce -dyn-mem-reuse -dce -recurrence-min -dce -share-scalar-alloca -deadargelim -dce -check-stream -norm-name -legalize -validate-dataflow -inst-clarity -bitwidth -dump-loop-dep-to-ir -check-all-ssdm -cdfg-build C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/a.o.2.bc -o C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/a.o.3.bc -f -phase build-ssdm 
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_45_1' (gemm_outer.cc:30:9) in function 'gemm'.
+INFO: [HLS 200-472] Inferring partial write operation for 'a_buff' 
+INFO: [HLS 200-472] Inferring partial write operation for 'a_buff.1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'a_buff.2' 
+INFO: [HLS 200-472] Inferring partial write operation for 'a_buff.3' 
+INFO: [HLS 200-472] Inferring partial write operation for 'a_buff.4' 
+INFO: [HLS 200-472] Inferring partial write operation for 'a_buff.5' 
+INFO: [HLS 200-472] Inferring partial write operation for 'a_buff.6' 
+INFO: [HLS 200-472] Inferring partial write operation for 'a_buff.7' 
+INFO: [HLS 200-472] Inferring partial write operation for 'b_buff' 
+INFO: [HLS 200-472] Inferring partial write operation for 'b_buff.1' 
+INFO: [HLS 200-472] Inferring partial write operation for 'b_buff.2' 
+INFO: [HLS 200-472] Inferring partial write operation for 'b_buff.3' 
+INFO: [HLS 200-472] Inferring partial write operation for 'b_buff.4' 
+INFO: [HLS 200-472] Inferring partial write operation for 'b_buff.5' 
+INFO: [HLS 200-472] Inferring partial write operation for 'b_buff.6' 
+INFO: [HLS 200-472] Inferring partial write operation for 'b_buff.7' 
+Command         transform done; 0.49 sec.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.496 seconds; current allocated memory: 185.660 MB.
+INFO-FLOW: Finish building internal data model.
+Command       opt_and_import_c done; 1.222 sec.
+Command     elaborate done; 8.377 sec.
+Execute     ap_eval exec zip -j C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/dut.hcp $dbDir/a.o.3.bc $dbDir/${topname}.rtl_wrap.cfg.tcl $dbDir/apatb_${topname}.cpp $dbDir/apatb_${topname}_util.cpp $dbDir/apatb_${topname}_ir.ll $dbDir/mapper_${topname}.cpp $dbDir/top-io-fe.xml $dbDir/kernel.internal.xml $workdir/../hls.app 
+Command     ap_eval done; 0.104 sec.
+Execute     autosyn -from_csynth_design=1 
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO-FLOW: Synthesizing C/C++ design ...
+INFO: [HLS 200-10] Synthesizing 'gemm' ...
+Execute       ap_set_top_model gemm 
+Execute       get_model_list gemm -filter all-wo-channel -topdown 
+Execute       preproc_iomode -model gemm 
+Execute       preproc_iomode -model gemm_Pipeline_5 
+Execute       preproc_iomode -model gemm_Pipeline_VITIS_LOOP_51_3 
+Execute       preproc_iomode -model gemm_Pipeline_VITIS_LOOP_45_1_VITIS_LOOP_46_2 
+Execute       preproc_iomode -model gemm_Pipeline_2 
+Execute       preproc_iomode -model gemm_Pipeline_1 
+Execute       get_model_list gemm -filter all-wo-channel 
+INFO-FLOW: Model list for configure: gemm_Pipeline_1 gemm_Pipeline_2 gemm_Pipeline_VITIS_LOOP_45_1_VITIS_LOOP_46_2 gemm_Pipeline_VITIS_LOOP_51_3 gemm_Pipeline_5 gemm
+INFO-FLOW: Configuring Module : gemm_Pipeline_1 ...
+Execute       set_default_model gemm_Pipeline_1 
+Execute       apply_spec_resource_limit gemm_Pipeline_1 
+INFO-FLOW: Configuring Module : gemm_Pipeline_2 ...
+Execute       set_default_model gemm_Pipeline_2 
+Execute       apply_spec_resource_limit gemm_Pipeline_2 
+INFO-FLOW: Configuring Module : gemm_Pipeline_VITIS_LOOP_45_1_VITIS_LOOP_46_2 ...
+Execute       set_default_model gemm_Pipeline_VITIS_LOOP_45_1_VITIS_LOOP_46_2 
+Execute       apply_spec_resource_limit gemm_Pipeline_VITIS_LOOP_45_1_VITIS_LOOP_46_2 
+INFO-FLOW: Configuring Module : gemm_Pipeline_VITIS_LOOP_51_3 ...
+Execute       set_default_model gemm_Pipeline_VITIS_LOOP_51_3 
+Execute       apply_spec_resource_limit gemm_Pipeline_VITIS_LOOP_51_3 
+INFO-FLOW: Configuring Module : gemm_Pipeline_5 ...
+Execute       set_default_model gemm_Pipeline_5 
+Execute       apply_spec_resource_limit gemm_Pipeline_5 
+INFO-FLOW: Configuring Module : gemm ...
+Execute       set_default_model gemm 
+Execute       apply_spec_resource_limit gemm 
+INFO-FLOW: Model list for preprocess: gemm_Pipeline_1 gemm_Pipeline_2 gemm_Pipeline_VITIS_LOOP_45_1_VITIS_LOOP_46_2 gemm_Pipeline_VITIS_LOOP_51_3 gemm_Pipeline_5 gemm
+INFO-FLOW: Preprocessing Module: gemm_Pipeline_1 ...
+Execute       set_default_model gemm_Pipeline_1 
+Execute       cdfg_preprocess -model gemm_Pipeline_1 
+Execute       rtl_gen_preprocess gemm_Pipeline_1 
+INFO-FLOW: Preprocessing Module: gemm_Pipeline_2 ...
+Execute       set_default_model gemm_Pipeline_2 
+Execute       cdfg_preprocess -model gemm_Pipeline_2 
+Execute       rtl_gen_preprocess gemm_Pipeline_2 
+INFO-FLOW: Preprocessing Module: gemm_Pipeline_VITIS_LOOP_45_1_VITIS_LOOP_46_2 ...
+Execute       set_default_model gemm_Pipeline_VITIS_LOOP_45_1_VITIS_LOOP_46_2 
+Execute       cdfg_preprocess -model gemm_Pipeline_VITIS_LOOP_45_1_VITIS_LOOP_46_2 
+Execute       rtl_gen_preprocess gemm_Pipeline_VITIS_LOOP_45_1_VITIS_LOOP_46_2 
+INFO-FLOW: Preprocessing Module: gemm_Pipeline_VITIS_LOOP_51_3 ...
+Execute       set_default_model gemm_Pipeline_VITIS_LOOP_51_3 
+Execute       cdfg_preprocess -model gemm_Pipeline_VITIS_LOOP_51_3 
+Execute       rtl_gen_preprocess gemm_Pipeline_VITIS_LOOP_51_3 
+INFO-FLOW: Preprocessing Module: gemm_Pipeline_5 ...
+Execute       set_default_model gemm_Pipeline_5 
+Execute       cdfg_preprocess -model gemm_Pipeline_5 
+Execute       rtl_gen_preprocess gemm_Pipeline_5 
+INFO-FLOW: Preprocessing Module: gemm ...
+Execute       set_default_model gemm 
+Execute       cdfg_preprocess -model gemm 
+Execute       rtl_gen_preprocess gemm 
+INFO-FLOW: Model list for synthesis: gemm_Pipeline_1 gemm_Pipeline_2 gemm_Pipeline_VITIS_LOOP_45_1_VITIS_LOOP_46_2 gemm_Pipeline_VITIS_LOOP_51_3 gemm_Pipeline_5 gemm
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'gemm_Pipeline_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model gemm_Pipeline_1 
+Execute       schedule -model gemm_Pipeline_1 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 3, loop 'Loop 1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.366 seconds; current allocated memory: 190.289 MB.
+Execute       syn_report -verbosereport -o C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm_Pipeline_1.verbose.sched.rpt 
+Execute         AP::get_flow_target_display_name
+Execute       db_write -o C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm_Pipeline_1.sched.adb -f 
+INFO-FLOW: Finish scheduling gemm_Pipeline_1.
+Execute       set_default_model gemm_Pipeline_1 
+Execute       bind -model gemm_Pipeline_1 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.079 seconds; current allocated memory: 191.727 MB.
+Execute       syn_report -verbosereport -o C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm_Pipeline_1.verbose.bind.rpt 
+Execute         AP::get_flow_target_display_name
+Execute       db_write -o C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm_Pipeline_1.bind.adb -f 
+INFO-FLOW: Finish binding gemm_Pipeline_1.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'gemm_Pipeline_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model gemm_Pipeline_2 
+Execute       schedule -model gemm_Pipeline_2 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 3, loop 'Loop 1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.135 seconds; current allocated memory: 192.160 MB.
+Execute       syn_report -verbosereport -o C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm_Pipeline_2.verbose.sched.rpt 
+Execute         AP::get_flow_target_display_name
+Execute       db_write -o C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm_Pipeline_2.sched.adb -f 
+INFO-FLOW: Finish scheduling gemm_Pipeline_2.
+Execute       set_default_model gemm_Pipeline_2 
+Execute       bind -model gemm_Pipeline_2 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.085 seconds; current allocated memory: 192.223 MB.
+Execute       syn_report -verbosereport -o C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm_Pipeline_2.verbose.bind.rpt 
+Execute         AP::get_flow_target_display_name
+Execute       db_write -o C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm_Pipeline_2.bind.adb -f 
+INFO-FLOW: Finish binding gemm_Pipeline_2.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'gemm_Pipeline_VITIS_LOOP_45_1_VITIS_LOOP_46_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model gemm_Pipeline_VITIS_LOOP_45_1_VITIS_LOOP_46_2 
+Execute       schedule -model gemm_Pipeline_VITIS_LOOP_45_1_VITIS_LOOP_46_2 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_45_1_VITIS_LOOP_46_2'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 1, loop 'VITIS_LOOP_45_1_VITIS_LOOP_46_2'
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.174 sec.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.23 seconds; current allocated memory: 195.828 MB.
+Execute       syn_report -verbosereport -o C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm_Pipeline_VITIS_LOOP_45_1_VITIS_LOOP_46_2.verbose.sched.rpt 
+Execute         AP::get_flow_target_display_name
+Execute       db_write -o C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm_Pipeline_VITIS_LOOP_45_1_VITIS_LOOP_46_2.sched.adb -f 
+INFO-FLOW: Finish scheduling gemm_Pipeline_VITIS_LOOP_45_1_VITIS_LOOP_46_2.
+Execute       set_default_model gemm_Pipeline_VITIS_LOOP_45_1_VITIS_LOOP_46_2 
+Execute       bind -model gemm_Pipeline_VITIS_LOOP_45_1_VITIS_LOOP_46_2 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.139 seconds; current allocated memory: 195.852 MB.
+Execute       syn_report -verbosereport -o C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm_Pipeline_VITIS_LOOP_45_1_VITIS_LOOP_46_2.verbose.bind.rpt 
+Execute         AP::get_flow_target_display_name
+Execute       db_write -o C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm_Pipeline_VITIS_LOOP_45_1_VITIS_LOOP_46_2.bind.adb -f 
+INFO-FLOW: Finish binding gemm_Pipeline_VITIS_LOOP_45_1_VITIS_LOOP_46_2.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'gemm_Pipeline_VITIS_LOOP_51_3' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model gemm_Pipeline_VITIS_LOOP_51_3 
+Execute       schedule -model gemm_Pipeline_VITIS_LOOP_51_3 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_51_3'.
+WARNING: [HLS 200-880] The II Violation in module 'gemm_Pipeline_VITIS_LOOP_51_3' (loop 'VITIS_LOOP_51_3'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 0) between 'store' operation ('empty_write_ln51', gemm_outer.cc:51) of variable 'c_buff_s', gemm_outer.cc:56 on local variable 'empty' and 'load' operation ('p_load', gemm_outer.cc:56) on local variable 'empty'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 2, Final II = 3, Depth = 11, loop 'VITIS_LOOP_51_3'
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 1.266 sec.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.421 seconds; current allocated memory: 201.074 MB.
+Execute       syn_report -verbosereport -o C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm_Pipeline_VITIS_LOOP_51_3.verbose.sched.rpt 
+Execute         AP::get_flow_target_display_name
+Command       syn_report done; 0.592 sec.
+Execute       db_write -o C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm_Pipeline_VITIS_LOOP_51_3.sched.adb -f 
+Command       db_write done; 0.11 sec.
+INFO-FLOW: Finish scheduling gemm_Pipeline_VITIS_LOOP_51_3.
+Execute       set_default_model gemm_Pipeline_VITIS_LOOP_51_3 
+Execute       bind -model gemm_Pipeline_VITIS_LOOP_51_3 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind done; 0.179 sec.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.882 seconds; current allocated memory: 201.367 MB.
+Execute       syn_report -verbosereport -o C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm_Pipeline_VITIS_LOOP_51_3.verbose.bind.rpt 
+Execute         AP::get_flow_target_display_name
+Command       syn_report done; 0.977 sec.
+Execute       db_write -o C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm_Pipeline_VITIS_LOOP_51_3.bind.adb -f 
+Command       db_write done; 0.196 sec.
+INFO-FLOW: Finish binding gemm_Pipeline_VITIS_LOOP_51_3.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'gemm_Pipeline_5' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model gemm_Pipeline_5 
+Execute       schedule -model gemm_Pipeline_5 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 2, loop 'Loop 1'
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.129 sec.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.328 seconds; current allocated memory: 201.770 MB.
+Execute       syn_report -verbosereport -o C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm_Pipeline_5.verbose.sched.rpt 
+Execute         AP::get_flow_target_display_name
+Execute       db_write -o C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm_Pipeline_5.sched.adb -f 
+INFO-FLOW: Finish scheduling gemm_Pipeline_5.
+Execute       set_default_model gemm_Pipeline_5 
+Execute       bind -model gemm_Pipeline_5 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.082 seconds; current allocated memory: 202.176 MB.
+Execute       syn_report -verbosereport -o C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm_Pipeline_5.verbose.bind.rpt 
+Execute         AP::get_flow_target_display_name
+Execute       db_write -o C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm_Pipeline_5.bind.adb -f 
+INFO-FLOW: Finish binding gemm_Pipeline_5.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'gemm' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model gemm 
+Execute       schedule -model gemm 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.305 sec.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.382 seconds; current allocated memory: 204.289 MB.
+Execute       syn_report -verbosereport -o C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm.verbose.sched.rpt 
+Execute         AP::get_flow_target_display_name
+Execute       db_write -o C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm.sched.adb -f 
+INFO-FLOW: Finish scheduling gemm.
+Execute       set_default_model gemm 
+Execute       bind -model gemm 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind done; 0.241 sec.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.398 seconds; current allocated memory: 204.785 MB.
+Execute       syn_report -verbosereport -o C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm.verbose.bind.rpt 
+Execute         AP::get_flow_target_display_name
+Command       syn_report done; 0.39 sec.
+Execute       db_write -o C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm.bind.adb -f 
+INFO-FLOW: Finish binding gemm.
+Execute       get_model_list gemm -filter all-wo-channel 
+INFO-FLOW: Preprocessing for RTLGen ...
+Execute       rtl_gen_preprocess gemm_Pipeline_1 
+Execute       rtl_gen_preprocess gemm_Pipeline_2 
+Execute       rtl_gen_preprocess gemm_Pipeline_VITIS_LOOP_45_1_VITIS_LOOP_46_2 
+Execute       rtl_gen_preprocess gemm_Pipeline_VITIS_LOOP_51_3 
+Execute       rtl_gen_preprocess gemm_Pipeline_5 
+Execute       rtl_gen_preprocess gemm 
+INFO-FLOW: Model list for RTL generation: gemm_Pipeline_1 gemm_Pipeline_2 gemm_Pipeline_VITIS_LOOP_45_1_VITIS_LOOP_46_2 gemm_Pipeline_VITIS_LOOP_51_3 gemm_Pipeline_5 gemm
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'gemm_Pipeline_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       create_rtl_model gemm_Pipeline_1 -top_prefix gemm_ -sub_prefix gemm_ -mg_file C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm_Pipeline_1.compgen.tcl 
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'gemm_Pipeline_1' pipeline 'Loop 1' pipeline type 'loop pipeline'
+WARNING: [RTGEN 206-101] Setting dangling out port 'gemm_Pipeline_1/m_axi_a_port_ARVALID' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'gemm_Pipeline_1/m_axi_a_port_ARADDR' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'gemm_Pipeline_1/m_axi_a_port_ARID' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'gemm_Pipeline_1/m_axi_a_port_ARLEN' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'gemm_Pipeline_1/m_axi_a_port_ARSIZE' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'gemm_Pipeline_1/m_axi_a_port_ARBURST' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'gemm_Pipeline_1/m_axi_a_port_ARLOCK' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'gemm_Pipeline_1/m_axi_a_port_ARCACHE' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'gemm_Pipeline_1/m_axi_a_port_ARPROT' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'gemm_Pipeline_1/m_axi_a_port_ARQOS' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'gemm_Pipeline_1/m_axi_a_port_ARREGION' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'gemm_Pipeline_1/m_axi_a_port_ARUSER' to 0.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'gemm_Pipeline_1'.
+Command       create_rtl_model done; 0.244 sec.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.783 seconds; current allocated memory: 207.055 MB.
+Execute       source C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm.rtl_wrap.cfg.tcl 
+Execute       gen_rtl gemm_Pipeline_1 -style xilinx -f -lang vhdl -o C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/syn/vhdl/gemm_gemm_Pipeline_1 
+Execute       gen_rtl gemm_Pipeline_1 -style xilinx -f -lang vlog -o C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/syn/verilog/gemm_gemm_Pipeline_1 
+Execute       syn_report -csynth -model gemm_Pipeline_1 -o C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/syn/report/gemm_Pipeline_1_csynth.rpt 
+Execute         AP::get_flow_target_display_name
+Execute       syn_report -rtlxml -model gemm_Pipeline_1 -o C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/syn/report/gemm_Pipeline_1_csynth.xml 
+Execute       syn_report -verbosereport -model gemm_Pipeline_1 -o C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm_Pipeline_1.verbose.rpt 
+Execute         AP::get_flow_target_display_name
+Execute       db_write -model gemm_Pipeline_1 -f -o C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm_Pipeline_1.adb 
+Execute       db_write -model gemm_Pipeline_1 -bindview -o C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/design.bindinfo.xml 
+Execute       gen_tb_info gemm_Pipeline_1 -p C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db -o C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm_Pipeline_1 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'gemm_Pipeline_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       create_rtl_model gemm_Pipeline_2 -top_prefix gemm_ -sub_prefix gemm_ -mg_file C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm_Pipeline_2.compgen.tcl 
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'gemm_Pipeline_2' pipeline 'Loop 1' pipeline type 'loop pipeline'
+WARNING: [RTGEN 206-101] Setting dangling out port 'gemm_Pipeline_2/m_axi_b_port_ARVALID' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'gemm_Pipeline_2/m_axi_b_port_ARADDR' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'gemm_Pipeline_2/m_axi_b_port_ARID' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'gemm_Pipeline_2/m_axi_b_port_ARLEN' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'gemm_Pipeline_2/m_axi_b_port_ARSIZE' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'gemm_Pipeline_2/m_axi_b_port_ARBURST' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'gemm_Pipeline_2/m_axi_b_port_ARLOCK' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'gemm_Pipeline_2/m_axi_b_port_ARCACHE' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'gemm_Pipeline_2/m_axi_b_port_ARPROT' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'gemm_Pipeline_2/m_axi_b_port_ARQOS' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'gemm_Pipeline_2/m_axi_b_port_ARREGION' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'gemm_Pipeline_2/m_axi_b_port_ARUSER' to 0.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'gemm_Pipeline_2'.
+Command       create_rtl_model done; 0.281 sec.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 1 seconds. Elapsed time: 0.584 seconds; current allocated memory: 209.387 MB.
+Execute       source C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm.rtl_wrap.cfg.tcl 
+Execute       gen_rtl gemm_Pipeline_2 -style xilinx -f -lang vhdl -o C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/syn/vhdl/gemm_gemm_Pipeline_2 
+Execute       gen_rtl gemm_Pipeline_2 -style xilinx -f -lang vlog -o C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/syn/verilog/gemm_gemm_Pipeline_2 
+Execute       syn_report -csynth -model gemm_Pipeline_2 -o C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/syn/report/gemm_Pipeline_2_csynth.rpt 
+Execute         AP::get_flow_target_display_name
+Execute       syn_report -rtlxml -model gemm_Pipeline_2 -o C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/syn/report/gemm_Pipeline_2_csynth.xml 
+Execute       syn_report -verbosereport -model gemm_Pipeline_2 -o C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm_Pipeline_2.verbose.rpt 
+Execute         AP::get_flow_target_display_name
+Execute       db_write -model gemm_Pipeline_2 -f -o C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm_Pipeline_2.adb 
+Execute       db_write -model gemm_Pipeline_2 -bindview -o C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/design.bindinfo.xml 
+Execute       gen_tb_info gemm_Pipeline_2 -p C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db -o C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm_Pipeline_2 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'gemm_Pipeline_VITIS_LOOP_45_1_VITIS_LOOP_46_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       create_rtl_model gemm_Pipeline_VITIS_LOOP_45_1_VITIS_LOOP_46_2 -top_prefix gemm_ -sub_prefix gemm_ -mg_file C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm_Pipeline_VITIS_LOOP_45_1_VITIS_LOOP_46_2.compgen.tcl 
+INFO: [RTGEN 206-100] Finished creating RTL model for 'gemm_Pipeline_VITIS_LOOP_45_1_VITIS_LOOP_46_2'.
+Command       create_rtl_model done; 0.119 sec.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.44 seconds; current allocated memory: 211.410 MB.
+Execute       source C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm.rtl_wrap.cfg.tcl 
+Execute       gen_rtl gemm_Pipeline_VITIS_LOOP_45_1_VITIS_LOOP_46_2 -style xilinx -f -lang vhdl -o C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/syn/vhdl/gemm_gemm_Pipeline_VITIS_LOOP_45_1_VITIS_LOOP_46_2 
+Execute       gen_rtl gemm_Pipeline_VITIS_LOOP_45_1_VITIS_LOOP_46_2 -style xilinx -f -lang vlog -o C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/syn/verilog/gemm_gemm_Pipeline_VITIS_LOOP_45_1_VITIS_LOOP_46_2 
+Execute       syn_report -csynth -model gemm_Pipeline_VITIS_LOOP_45_1_VITIS_LOOP_46_2 -o C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/syn/report/gemm_Pipeline_VITIS_LOOP_45_1_VITIS_LOOP_46_2_csynth.rpt 
+Execute         AP::get_flow_target_display_name
+Execute       syn_report -rtlxml -model gemm_Pipeline_VITIS_LOOP_45_1_VITIS_LOOP_46_2 -o C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/syn/report/gemm_Pipeline_VITIS_LOOP_45_1_VITIS_LOOP_46_2_csynth.xml 
+Execute       syn_report -verbosereport -model gemm_Pipeline_VITIS_LOOP_45_1_VITIS_LOOP_46_2 -o C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm_Pipeline_VITIS_LOOP_45_1_VITIS_LOOP_46_2.verbose.rpt 
+Execute         AP::get_flow_target_display_name
+Execute       db_write -model gemm_Pipeline_VITIS_LOOP_45_1_VITIS_LOOP_46_2 -f -o C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm_Pipeline_VITIS_LOOP_45_1_VITIS_LOOP_46_2.adb 
+Command       db_write done; 0.157 sec.
+Execute       db_write -model gemm_Pipeline_VITIS_LOOP_45_1_VITIS_LOOP_46_2 -bindview -o C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/design.bindinfo.xml 
+Execute       gen_tb_info gemm_Pipeline_VITIS_LOOP_45_1_VITIS_LOOP_46_2 -p C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db -o C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm_Pipeline_VITIS_LOOP_45_1_VITIS_LOOP_46_2 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'gemm_Pipeline_VITIS_LOOP_51_3' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       create_rtl_model gemm_Pipeline_VITIS_LOOP_51_3 -top_prefix gemm_ -sub_prefix gemm_ -mg_file C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm_Pipeline_VITIS_LOOP_51_3.compgen.tcl 
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'gemm_Pipeline_VITIS_LOOP_51_3' pipeline 'VITIS_LOOP_51_3' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'fadd_32ns_32ns_32_4_full_dsp_1': 21 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fadd_32ns_32ns_32_4_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_3_max_dsp_1': 22 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mux_83_32_1_1': 8 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'gemm_Pipeline_VITIS_LOOP_51_3'.
+Command       create_rtl_model done; 0.37 sec.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 1 seconds. Elapsed time: 1.477 seconds; current allocated memory: 221.617 MB.
+Execute       source C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm.rtl_wrap.cfg.tcl 
+Execute       gen_rtl gemm_Pipeline_VITIS_LOOP_51_3 -style xilinx -f -lang vhdl -o C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/syn/vhdl/gemm_gemm_Pipeline_VITIS_LOOP_51_3 
+Execute       gen_rtl gemm_Pipeline_VITIS_LOOP_51_3 -style xilinx -f -lang vlog -o C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/syn/verilog/gemm_gemm_Pipeline_VITIS_LOOP_51_3 
+Execute       syn_report -csynth -model gemm_Pipeline_VITIS_LOOP_51_3 -o C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/syn/report/gemm_Pipeline_VITIS_LOOP_51_3_csynth.rpt 
+Execute         AP::get_flow_target_display_name
+Command       syn_report done; 0.25 sec.
+Execute       syn_report -rtlxml -model gemm_Pipeline_VITIS_LOOP_51_3 -o C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/syn/report/gemm_Pipeline_VITIS_LOOP_51_3_csynth.xml 
+Command       syn_report done; 0.102 sec.
+Execute       syn_report -verbosereport -model gemm_Pipeline_VITIS_LOOP_51_3 -o C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm_Pipeline_VITIS_LOOP_51_3.verbose.rpt 
+Execute         AP::get_flow_target_display_name
+Command       syn_report done; 0.928 sec.
+Execute       db_write -model gemm_Pipeline_VITIS_LOOP_51_3 -f -o C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm_Pipeline_VITIS_LOOP_51_3.adb 
+Command       db_write done; 0.241 sec.
+Execute       db_write -model gemm_Pipeline_VITIS_LOOP_51_3 -bindview -o C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/design.bindinfo.xml 
+Command       db_write done; 0.312 sec.
+Execute       gen_tb_info gemm_Pipeline_VITIS_LOOP_51_3 -p C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db -o C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm_Pipeline_VITIS_LOOP_51_3 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'gemm_Pipeline_5' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       create_rtl_model gemm_Pipeline_5 -top_prefix gemm_ -sub_prefix gemm_ -mg_file C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm_Pipeline_5.compgen.tcl 
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'gemm_Pipeline_5' pipeline 'Loop 1' pipeline type 'loop pipeline'
+WARNING: [RTGEN 206-101] Setting dangling out port 'gemm_Pipeline_5/m_axi_c_port_AWVALID' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'gemm_Pipeline_5/m_axi_c_port_AWADDR' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'gemm_Pipeline_5/m_axi_c_port_AWID' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'gemm_Pipeline_5/m_axi_c_port_AWLEN' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'gemm_Pipeline_5/m_axi_c_port_AWSIZE' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'gemm_Pipeline_5/m_axi_c_port_AWBURST' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'gemm_Pipeline_5/m_axi_c_port_AWLOCK' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'gemm_Pipeline_5/m_axi_c_port_AWCACHE' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'gemm_Pipeline_5/m_axi_c_port_AWPROT' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'gemm_Pipeline_5/m_axi_c_port_AWQOS' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'gemm_Pipeline_5/m_axi_c_port_AWREGION' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'gemm_Pipeline_5/m_axi_c_port_AWUSER' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'gemm_Pipeline_5/m_axi_c_port_BREADY' to 0.
+INFO: [RTGEN 206-100] Generating core module 'mux_83_32_1_1': 9 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'gemm_Pipeline_5'.
+Command       create_rtl_model done; 0.269 sec.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 2 seconds. CPU system time: 1 seconds. Elapsed time: 3.477 seconds; current allocated memory: 233.227 MB.
+Execute       source C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm.rtl_wrap.cfg.tcl 
+Execute       gen_rtl gemm_Pipeline_5 -style xilinx -f -lang vhdl -o C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/syn/vhdl/gemm_gemm_Pipeline_5 
+Execute       gen_rtl gemm_Pipeline_5 -style xilinx -f -lang vlog -o C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/syn/verilog/gemm_gemm_Pipeline_5 
+Execute       syn_report -csynth -model gemm_Pipeline_5 -o C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/syn/report/gemm_Pipeline_5_csynth.rpt 
+Execute         AP::get_flow_target_display_name
+Execute       syn_report -rtlxml -model gemm_Pipeline_5 -o C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/syn/report/gemm_Pipeline_5_csynth.xml 
+Execute       syn_report -verbosereport -model gemm_Pipeline_5 -o C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm_Pipeline_5.verbose.rpt 
+Execute         AP::get_flow_target_display_name
+Execute       db_write -model gemm_Pipeline_5 -f -o C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm_Pipeline_5.adb 
+Execute       db_write -model gemm_Pipeline_5 -bindview -o C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/design.bindinfo.xml 
+Execute       gen_tb_info gemm_Pipeline_5 -p C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db -o C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm_Pipeline_5 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'gemm' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       create_rtl_model gemm -top_prefix  -sub_prefix gemm_ -mg_file C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm.compgen.tcl 
+WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low.
+INFO: [RTGEN 206-500] Setting interface mode on port 'gemm/a_port' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'gemm/b_port' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'gemm/c_port' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'gemm/a' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'gemm/b' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'gemm/c' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'gemm' to 's_axilite & ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Bundling port 'a', 'b', 'c' and 'return' to AXI-Lite port CONTROL_BUS.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'gemm'.
+INFO: [RTMG 210-278] Implementing memory 'gemm_a_buff_RAM_AUTO_1R1W' using auto RAMs.
+INFO: [RTMG 210-278] Implementing memory 'gemm_b_buff_RAM_AUTO_1R1W' using auto RAMs.
+Command       create_rtl_model done; 0.265 sec.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.538 seconds; current allocated memory: 240.270 MB.
+Execute       source C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm.rtl_wrap.cfg.tcl 
+Execute       gen_rtl gemm -istop -style xilinx -f -lang vhdl -o C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/syn/vhdl/gemm 
+Execute       gen_rtl gemm -istop -style xilinx -f -lang vlog -o C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/syn/verilog/gemm 
+Execute       syn_report -csynth -model gemm -o C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/syn/report/gemm_csynth.rpt 
+Execute         AP::get_flow_target_display_name
+Execute       syn_report -rtlxml -model gemm -o C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/syn/report/gemm_csynth.xml 
+Execute       syn_report -verbosereport -model gemm -o C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm.verbose.rpt 
+Execute         AP::get_flow_target_display_name
+Command       syn_report done; 0.496 sec.
+Execute       db_write -model gemm -f -o C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm.adb 
+Command       db_write done; 0.129 sec.
+Execute       db_write -model gemm -bindview -o C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/design.bindinfo.xml 
+Execute       gen_tb_info gemm -p C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db -o C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm 
+Execute       export_constraint_db -f -tool general -o C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm.constraint.tcl 
+Execute       syn_report -designview -model gemm -o C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm.design.xml 
+Command       syn_report done; 0.364 sec.
+Execute       syn_report -csynthDesign -model gemm -o C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/syn/report/csynth.rpt 
+Execute         AP::get_flow_target_display_name
+Execute       syn_report -wcfg -model gemm -o C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm_dataflow_ana.wcfg 
+Execute       syn_report -protoinst -model gemm -o C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm.protoinst 
+Execute       sc_get_clocks gemm 
+Execute       sc_get_portdomain gemm 
+INFO-FLOW: Model list for RTL component generation: gemm_Pipeline_1 gemm_Pipeline_2 gemm_Pipeline_VITIS_LOOP_45_1_VITIS_LOOP_46_2 gemm_Pipeline_VITIS_LOOP_51_3 gemm_Pipeline_5 gemm
+INFO-FLOW: Handling components in module [gemm_Pipeline_1] ... 
+Execute       source C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm_Pipeline_1.compgen.tcl 
+INFO-FLOW: Found component gemm_flow_control_loop_pipe_sequential_init.
+INFO-FLOW: Append model gemm_flow_control_loop_pipe_sequential_init
+INFO-FLOW: Handling components in module [gemm_Pipeline_2] ... 
+Execute       source C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm_Pipeline_2.compgen.tcl 
+INFO-FLOW: Found component gemm_flow_control_loop_pipe_sequential_init.
+INFO-FLOW: Append model gemm_flow_control_loop_pipe_sequential_init
+INFO-FLOW: Handling components in module [gemm_Pipeline_VITIS_LOOP_45_1_VITIS_LOOP_46_2] ... 
+Execute       source C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm_Pipeline_VITIS_LOOP_45_1_VITIS_LOOP_46_2.compgen.tcl 
+INFO-FLOW: Found component gemm_flow_control_loop_pipe_sequential_init.
+INFO-FLOW: Append model gemm_flow_control_loop_pipe_sequential_init
+INFO-FLOW: Handling components in module [gemm_Pipeline_VITIS_LOOP_51_3] ... 
+Execute       source C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm_Pipeline_VITIS_LOOP_51_3.compgen.tcl 
+INFO-FLOW: Found component gemm_fadd_32ns_32ns_32_4_no_dsp_1.
+INFO-FLOW: Append model gemm_fadd_32ns_32ns_32_4_no_dsp_1
+INFO-FLOW: Found component gemm_fadd_32ns_32ns_32_4_full_dsp_1.
+INFO-FLOW: Append model gemm_fadd_32ns_32ns_32_4_full_dsp_1
+INFO-FLOW: Found component gemm_fmul_32ns_32ns_32_3_max_dsp_1.
+INFO-FLOW: Append model gemm_fmul_32ns_32ns_32_3_max_dsp_1
+INFO-FLOW: Found component gemm_mux_83_32_1_1.
+INFO-FLOW: Append model gemm_mux_83_32_1_1
+INFO-FLOW: Found component gemm_flow_control_loop_pipe_sequential_init.
+INFO-FLOW: Append model gemm_flow_control_loop_pipe_sequential_init
+INFO-FLOW: Handling components in module [gemm_Pipeline_5] ... 
+Execute       source C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm_Pipeline_5.compgen.tcl 
+INFO-FLOW: Found component gemm_flow_control_loop_pipe_sequential_init.
+INFO-FLOW: Append model gemm_flow_control_loop_pipe_sequential_init
+INFO-FLOW: Handling components in module [gemm] ... 
+Execute       source C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm.compgen.tcl 
+INFO-FLOW: Found component gemm_a_buff_RAM_AUTO_1R1W.
+INFO-FLOW: Append model gemm_a_buff_RAM_AUTO_1R1W
+INFO-FLOW: Found component gemm_b_buff_RAM_AUTO_1R1W.
+INFO-FLOW: Append model gemm_b_buff_RAM_AUTO_1R1W
+INFO-FLOW: Found component gemm_a_port_m_axi.
+INFO-FLOW: Append model gemm_a_port_m_axi
+INFO-FLOW: Found component gemm_b_port_m_axi.
+INFO-FLOW: Append model gemm_b_port_m_axi
+INFO-FLOW: Found component gemm_c_port_m_axi.
+INFO-FLOW: Append model gemm_c_port_m_axi
+INFO-FLOW: Found component gemm_CONTROL_BUS_s_axi.
+INFO-FLOW: Append model gemm_CONTROL_BUS_s_axi
+INFO-FLOW: Append model gemm_Pipeline_1
+INFO-FLOW: Append model gemm_Pipeline_2
+INFO-FLOW: Append model gemm_Pipeline_VITIS_LOOP_45_1_VITIS_LOOP_46_2
+INFO-FLOW: Append model gemm_Pipeline_VITIS_LOOP_51_3
+INFO-FLOW: Append model gemm_Pipeline_5
+INFO-FLOW: Append model gemm
+INFO-FLOW: Generating RTL model list ...
+INFO-FLOW: All models in this session: gemm_flow_control_loop_pipe_sequential_init gemm_flow_control_loop_pipe_sequential_init gemm_flow_control_loop_pipe_sequential_init gemm_fadd_32ns_32ns_32_4_no_dsp_1 gemm_fadd_32ns_32ns_32_4_full_dsp_1 gemm_fmul_32ns_32ns_32_3_max_dsp_1 gemm_mux_83_32_1_1 gemm_flow_control_loop_pipe_sequential_init gemm_flow_control_loop_pipe_sequential_init gemm_a_buff_RAM_AUTO_1R1W gemm_b_buff_RAM_AUTO_1R1W gemm_a_port_m_axi gemm_b_port_m_axi gemm_c_port_m_axi gemm_CONTROL_BUS_s_axi gemm_Pipeline_1 gemm_Pipeline_2 gemm_Pipeline_VITIS_LOOP_45_1_VITIS_LOOP_46_2 gemm_Pipeline_VITIS_LOOP_51_3 gemm_Pipeline_5 gemm
+INFO-FLOW: Generating C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/autopilot.rtl.models.txt file...
+INFO-FLOW: To file: write model gemm_flow_control_loop_pipe_sequential_init
+INFO-FLOW: To file: write model gemm_flow_control_loop_pipe_sequential_init
+INFO-FLOW: To file: write model gemm_flow_control_loop_pipe_sequential_init
+INFO-FLOW: To file: write model gemm_fadd_32ns_32ns_32_4_no_dsp_1
+INFO-FLOW: To file: write model gemm_fadd_32ns_32ns_32_4_full_dsp_1
+INFO-FLOW: To file: write model gemm_fmul_32ns_32ns_32_3_max_dsp_1
+INFO-FLOW: To file: write model gemm_mux_83_32_1_1
+INFO-FLOW: To file: write model gemm_flow_control_loop_pipe_sequential_init
+INFO-FLOW: To file: write model gemm_flow_control_loop_pipe_sequential_init
+INFO-FLOW: To file: write model gemm_a_buff_RAM_AUTO_1R1W
+INFO-FLOW: To file: write model gemm_b_buff_RAM_AUTO_1R1W
+INFO-FLOW: To file: write model gemm_a_port_m_axi
+INFO-FLOW: To file: write model gemm_b_port_m_axi
+INFO-FLOW: To file: write model gemm_c_port_m_axi
+INFO-FLOW: To file: write model gemm_CONTROL_BUS_s_axi
+INFO-FLOW: To file: write model gemm_Pipeline_1
+INFO-FLOW: To file: write model gemm_Pipeline_2
+INFO-FLOW: To file: write model gemm_Pipeline_VITIS_LOOP_45_1_VITIS_LOOP_46_2
+INFO-FLOW: To file: write model gemm_Pipeline_VITIS_LOOP_51_3
+INFO-FLOW: To file: write model gemm_Pipeline_5
+INFO-FLOW: To file: write model gemm
+INFO-FLOW: Generating C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/autopilot.rtl.models.tcl file...
+INFO-FLOW: Finished generating RTL model list.
+
+
+INFO-FLOW: RTL Generation done.
+INFO-FLOW: CAS Generation done.
+INFO-FLOW: CBC Generation done.
+INFO-FLOW: DBG:PROC: ::AESL_AUTOMG::auto_generate_csynth_design
+INFO-FLOW: DBG:PUTS: read_platform_lib C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/global.setting.tcl
+Execute       source C:/Xilinx/Vitis_HLS/2022.2/common/technology/generic/autopilot/common.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2022.2/common/technology/generic/autopilot/APCoreGen.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2022.2/common/technology/generic/autopilot/op.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2022.2/common/technology/generic/autopilot/op_simcore.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2022.2/common/technology/generic/autopilot/interface.gen 
+Execute       source C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/global.setting.tcl 
+Execute       source C:/Xilinx/Vitis_HLS/2022.2/common/technology/xilinx/common/xilinx.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2022.2/common/technology/xilinx/interface/plb46.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2022.2/common/technology/xilinx/interface/axi4.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2022.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source C:/Xilinx/Vitis_HLS/2022.2/common/technology/xilinx/interface/saxilite.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2022.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2022.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2022.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2022.2/common/technology/xilinx/ip/util.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2022.2/common/technology/xilinx/ip/xfft.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2022.2/common/technology/xilinx/ip/xfir.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2022.2/common/technology/xilinx/DSP48/dsp48.gen 
+Command       ap_source done; 0.121 sec.
+INFO-FLOW: DBG:PUTS:   using AESL_AUTOCG::g_clock_period=10.000 (was NA)
+INFO-FLOW: DBG:PROC: ::AESL_AUTOMG::generate_ip_cores gen_sim_model='1' gen_fp_models='0' gen_for_export='0' dstSCDir='' dstVhdlDir='C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/vhdl' dstVlogDir='C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/vlog' tclDir='C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db' modelList='gemm_flow_control_loop_pipe_sequential_init
+gemm_flow_control_loop_pipe_sequential_init
+gemm_flow_control_loop_pipe_sequential_init
+gemm_fadd_32ns_32ns_32_4_no_dsp_1
+gemm_fadd_32ns_32ns_32_4_full_dsp_1
+gemm_fmul_32ns_32ns_32_3_max_dsp_1
+gemm_mux_83_32_1_1
+gemm_flow_control_loop_pipe_sequential_init
+gemm_flow_control_loop_pipe_sequential_init
+gemm_a_buff_RAM_AUTO_1R1W
+gemm_b_buff_RAM_AUTO_1R1W
+gemm_a_port_m_axi
+gemm_b_port_m_axi
+gemm_c_port_m_axi
+gemm_CONTROL_BUS_s_axi
+gemm_Pipeline_1
+gemm_Pipeline_2
+gemm_Pipeline_VITIS_LOOP_45_1_VITIS_LOOP_46_2
+gemm_Pipeline_VITIS_LOOP_51_3
+gemm_Pipeline_5
+gemm
+' expOnly='0'
+Execute       source C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/global.setting.tcl 
+Execute       ap_part_info -name xczu7ev-ffvc1156-2-e -data names -quiet 
+Execute       ap_part_info -name xczu7ev-ffvc1156-2-e -data info -quiet 
+Execute       source C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/global.setting.tcl 
+Execute       source C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/global.setting.tcl 
+Execute       source C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm_Pipeline_1.compgen.tcl 
+Execute       source C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm_Pipeline_2.compgen.tcl 
+Execute       source C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm_Pipeline_VITIS_LOOP_45_1_VITIS_LOOP_46_2.compgen.tcl 
+Execute       source C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm_Pipeline_VITIS_LOOP_51_3.compgen.tcl 
+Execute         ap_part_info -name xczu7ev-ffvc1156-2-e -data names -quiet 
+Execute         ap_part_info -name xczu7ev-ffvc1156-2-e -data info -quiet 
+Execute       source C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm_Pipeline_5.compgen.tcl 
+Execute       source C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm.compgen.tcl 
+Execute         source ./CONTROL_BUS.slave.tcl 
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 1 seconds. CPU system time: 1 seconds. Elapsed time: 2.158 seconds; current allocated memory: 250.148 MB.
+INFO-FLOW: DBG:PROC: ::HLSREPORTS::create_csynth_xml bind_info_var='bind_info' RtlSubPrefix='gemm_' outfile=''
+INFO-FLOW: Running: create_csynth_xml read xml data
+INFO-FLOW: Done: create_csynth_xml read xml data time: 0 seconds per iteration
+INFO-FLOW: Running: create_csynth_xml bind info
+INFO-FLOW: Done: create_csynth_xml bind info time: 0 seconds per iteration
+INFO-FLOW: Running: create_csynth_xml config info
+INFO-FLOW: Done: create_csynth_xml config info time: 0.4 seconds per iteration
+INFO-FLOW: Running: create_csynth_xml write xml
+INFO-FLOW: Done: create_csynth_xml write xml time: 0 seconds per iteration
+INFO-FLOW: DBG:PUTS:      create_csynth_xml wrote csynth_xml=C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/syn/report/csynth.xml
+INFO-FLOW: DBG:PROC: ::AP::DESIGN_DATA::generate_json generate_bd_files='0' generate_xo_files='0' modelList='gemm_flow_control_loop_pipe_sequential_init
+gemm_flow_control_loop_pipe_sequential_init
+gemm_flow_control_loop_pipe_sequential_init
+gemm_fadd_32ns_32ns_32_4_no_dsp_1
+gemm_fadd_32ns_32ns_32_4_full_dsp_1
+gemm_fmul_32ns_32ns_32_3_max_dsp_1
+gemm_mux_83_32_1_1
+gemm_flow_control_loop_pipe_sequential_init
+gemm_flow_control_loop_pipe_sequential_init
+gemm_a_buff_RAM_AUTO_1R1W
+gemm_b_buff_RAM_AUTO_1R1W
+gemm_a_port_m_axi
+gemm_b_port_m_axi
+gemm_c_port_m_axi
+gemm_CONTROL_BUS_s_axi
+gemm_Pipeline_1
+gemm_Pipeline_2
+gemm_Pipeline_VITIS_LOOP_45_1_VITIS_LOOP_46_2
+gemm_Pipeline_VITIS_LOOP_51_3
+gemm_Pipeline_5
+gemm
+' rtl_lang='both' bootstrap_tcl='false' outdir='' outfilename=''
+Execute       source C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/global.setting.tcl 
+Execute       source C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/global.setting.tcl 
+Execute       source C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/top-io-be.tcl 
+Execute       source C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm.tbgen.tcl 
+Execute       source C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm.compgen.dataonly.tcl 
+Execute       source C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm.compgen.dataonly.tcl 
+Execute       source C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm.rtl_wrap.cfg.tcl 
+Execute       source C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm.compgen.dataonly.tcl 
+Execute       source C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm_Pipeline_1.tbgen.tcl 
+Execute       source C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm_Pipeline_2.tbgen.tcl 
+Execute       source C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm_Pipeline_VITIS_LOOP_45_1_VITIS_LOOP_46_2.tbgen.tcl 
+Execute       source C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm_Pipeline_VITIS_LOOP_51_3.tbgen.tcl 
+Execute       source C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm_Pipeline_5.tbgen.tcl 
+Execute       source C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm.tbgen.tcl 
+Execute       source C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/global.setting.tcl 
+Execute       ap_part_info -name xczu7ev-ffvc1156-2-e -data names -quiet 
+Execute       ap_part_info -name xczu7ev-ffvc1156-2-e -data info -quiet 
+Execute       source C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/gemm.constraint.tcl 
+Execute       sc_get_clocks gemm 
+Execute       source C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/.autopilot/db/global.setting.tcl 
+Execute       source C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/impl/misc/gemm_fadd_32ns_32ns_32_4_full_dsp_1_ip.tcl 
+Execute       source C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/impl/misc/gemm_fadd_32ns_32ns_32_4_no_dsp_1_ip.tcl 
+Execute       source C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/6_GEMM_outer/6_outer_zcu104/solution1/impl/misc/gemm_fmul_32ns_32ns_32_3_max_dsp_1_ip.tcl 
+INFO-FLOW: DBG:PROC: ::HLSREPORTS::add_csynth_report_sections bind_info_dict='adapter_nodes {{BINDTYPE adapter DISPLAY {bind_adapter axilite} ID {} IMPL {} LATENCY {} OPTYPE {} PRAGMA yes RTLNAME CONTROL_BUS_s_axi_U SOURCE {} VARIABLE {} MODULE gemm LOOP {} BUNDLEDNAME CONTROL_BUS DSP 0 BRAM 0 URAM 0} {BINDTYPE adapter DISPLAY {bind_adapter axi_master} ID {} IMPL {} LATENCY {} OPTYPE {} PRAGMA yes RTLNAME a_port_m_axi_U SOURCE {} VARIABLE {} MODULE gemm LOOP {} BUNDLEDNAME a_port DSP 0 BRAM 0 URAM 0} {BINDTYPE adapter DISPLAY {bind_adapter axi_master} ID {} IMPL {} LATENCY {} OPTYPE {} PRAGMA yes RTLNAME b_port_m_axi_U SOURCE {} VARIABLE {} MODULE gemm LOOP {} BUNDLEDNAME b_port DSP 0 BRAM 0 URAM 0} {BINDTYPE adapter DISPLAY {bind_adapter axi_master} ID {} IMPL {} LATENCY {} OPTYPE {} PRAGMA yes RTLNAME c_port_m_axi_U SOURCE {} VARIABLE {} MODULE gemm LOOP {} BUNDLEDNAME c_port DSP 0 BRAM 0 URAM 0}} report_dict {TOPINST gemm MODULE2INSTS {gemm gemm gemm_Pipeline_1 grp_gemm_Pipeline_1_fu_1294 gemm_Pipeline_2 grp_gemm_Pipeline_2_fu_1309 gemm_Pipeline_VITIS_LOOP_45_1_VITIS_LOOP_46_2 grp_gemm_Pipeline_VITIS_LOOP_45_1_VITIS_LOOP_46_2_fu_1324 gemm_Pipeline_VITIS_LOOP_51_3 grp_gemm_Pipeline_VITIS_LOOP_51_3_fu_1392 gemm_Pipeline_5 grp_gemm_Pipeline_5_fu_1612} INST2MODULE {gemm gemm grp_gemm_Pipeline_1_fu_1294 gemm_Pipeline_1 grp_gemm_Pipeline_2_fu_1309 gemm_Pipeline_2 grp_gemm_Pipeline_VITIS_LOOP_45_1_VITIS_LOOP_46_2_fu_1324 gemm_Pipeline_VITIS_LOOP_45_1_VITIS_LOOP_46_2 grp_gemm_Pipeline_VITIS_LOOP_51_3_fu_1392 gemm_Pipeline_VITIS_LOOP_51_3 grp_gemm_Pipeline_5_fu_1612 gemm_Pipeline_5} INSTDATA {gemm {DEPTH 1 CHILDREN {grp_gemm_Pipeline_1_fu_1294 grp_gemm_Pipeline_2_fu_1309 grp_gemm_Pipeline_VITIS_LOOP_45_1_VITIS_LOOP_46_2_fu_1324 grp_gemm_Pipeline_VITIS_LOOP_51_3_fu_1392 grp_gemm_Pipeline_5_fu_1612}} grp_gemm_Pipeline_1_fu_1294 {DEPTH 2 CHILDREN {}} grp_gemm_Pipeline_2_fu_1309 {DEPTH 2 CHILDREN {}} grp_gemm_Pipeline_VITIS_LOOP_45_1_VITIS_LOOP_46_2_fu_1324 {DEPTH 2 CHILDREN {}} grp_gemm_Pipeline_VITIS_LOOP_51_3_fu_1392 {DEPTH 2 CHILDREN {}} grp_gemm_Pipeline_5_fu_1612 {DEPTH 2 CHILDREN {}}} MODULEDATA {gemm_Pipeline_1 {BINDINFO {{BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME empty_29_fu_219_p2 SOURCE {} VARIABLE empty_29 LOOP {Loop 1} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}}} AREA {DSP 0 BRAM 0 URAM 0}} gemm_Pipeline_2 {BINDINFO {{BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME empty_26_fu_219_p2 SOURCE {} VARIABLE empty_26 LOOP {Loop 1} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}}} AREA {DSP 0 BRAM 0 URAM 0}} gemm_Pipeline_VITIS_LOOP_45_1_VITIS_LOOP_46_2 {BINDINFO {{BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln45_fu_918_p2 SOURCE gemm_outer.cc:45 VARIABLE add_ln45 LOOP VITIS_LOOP_45_1_VITIS_LOOP_46_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln45_1_fu_944_p2 SOURCE gemm_outer.cc:45 VARIABLE add_ln45_1 LOOP VITIS_LOOP_45_1_VITIS_LOOP_46_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln46_fu_1286_p2 SOURCE gemm_outer.cc:46 VARIABLE add_ln46 LOOP VITIS_LOOP_45_1_VITIS_LOOP_46_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}}} AREA {DSP 0 BRAM 0 URAM 0}} gemm_Pipeline_VITIS_LOOP_51_3 {BINDINFO {{BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln51_fu_2522_p2 SOURCE gemm_outer.cc:51 VARIABLE add_ln51 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U107 SOURCE gemm_outer.cc:56 VARIABLE mul LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fabric LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_no_dsp_1_U85 SOURCE gemm_outer.cc:56 VARIABLE c_buff_s LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U108 SOURCE gemm_outer.cc:56 VARIABLE mul_s LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U86 SOURCE gemm_outer.cc:56 VARIABLE c_buff_1 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U109 SOURCE gemm_outer.cc:56 VARIABLE mul_8 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U87 SOURCE gemm_outer.cc:56 VARIABLE c_buff_2 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U110 SOURCE gemm_outer.cc:56 VARIABLE mul_9 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U88 SOURCE gemm_outer.cc:56 VARIABLE c_buff_3 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U111 SOURCE gemm_outer.cc:56 VARIABLE mul_10 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U89 SOURCE gemm_outer.cc:56 VARIABLE c_buff_4 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U112 SOURCE gemm_outer.cc:56 VARIABLE mul_11 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U90 SOURCE gemm_outer.cc:56 VARIABLE c_buff_5 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U113 SOURCE gemm_outer.cc:56 VARIABLE mul_12 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U91 SOURCE gemm_outer.cc:56 VARIABLE c_buff_6 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U114 SOURCE gemm_outer.cc:56 VARIABLE mul_13 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U92 SOURCE gemm_outer.cc:56 VARIABLE c_buff_7 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U115 SOURCE gemm_outer.cc:56 VARIABLE mul_1 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U93 SOURCE gemm_outer.cc:56 VARIABLE c_buff_8 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U116 SOURCE gemm_outer.cc:56 VARIABLE mul_1_1 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U94 SOURCE gemm_outer.cc:56 VARIABLE c_buff_9 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U117 SOURCE gemm_outer.cc:56 VARIABLE mul_1_2 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U95 SOURCE gemm_outer.cc:56 VARIABLE c_buff_10 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U118 SOURCE gemm_outer.cc:56 VARIABLE mul_1_3 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U96 SOURCE gemm_outer.cc:56 VARIABLE c_buff_11 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U119 SOURCE gemm_outer.cc:56 VARIABLE mul_1_4 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U97 SOURCE gemm_outer.cc:56 VARIABLE c_buff_12 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U120 SOURCE gemm_outer.cc:56 VARIABLE mul_1_5 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U98 SOURCE gemm_outer.cc:56 VARIABLE c_buff_13 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U121 SOURCE gemm_outer.cc:56 VARIABLE mul_1_6 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U99 SOURCE gemm_outer.cc:56 VARIABLE c_buff_14 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U122 SOURCE gemm_outer.cc:56 VARIABLE mul_1_7 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U100 SOURCE gemm_outer.cc:56 VARIABLE c_buff_15 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U123 SOURCE gemm_outer.cc:56 VARIABLE mul_2 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U101 SOURCE gemm_outer.cc:56 VARIABLE c_buff_16 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U124 SOURCE gemm_outer.cc:56 VARIABLE mul_2_1 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U102 SOURCE gemm_outer.cc:56 VARIABLE c_buff_17 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U125 SOURCE gemm_outer.cc:56 VARIABLE mul_2_2 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U103 SOURCE gemm_outer.cc:56 VARIABLE c_buff_18 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U126 SOURCE gemm_outer.cc:56 VARIABLE mul_2_3 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U104 SOURCE gemm_outer.cc:56 VARIABLE c_buff_19 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U127 SOURCE gemm_outer.cc:56 VARIABLE mul_2_4 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U105 SOURCE gemm_outer.cc:56 VARIABLE c_buff_20 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U128 SOURCE gemm_outer.cc:56 VARIABLE mul_2_5 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U106 SOURCE gemm_outer.cc:56 VARIABLE c_buff_21 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U107 SOURCE gemm_outer.cc:56 VARIABLE mul_2_6 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U86 SOURCE gemm_outer.cc:56 VARIABLE c_buff_22 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U108 SOURCE gemm_outer.cc:56 VARIABLE mul_2_7 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U87 SOURCE gemm_outer.cc:56 VARIABLE c_buff_23 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U109 SOURCE gemm_outer.cc:56 VARIABLE mul_3 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U88 SOURCE gemm_outer.cc:56 VARIABLE c_buff_24 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U110 SOURCE gemm_outer.cc:56 VARIABLE mul_3_1 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U89 SOURCE gemm_outer.cc:56 VARIABLE c_buff_25 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U111 SOURCE gemm_outer.cc:56 VARIABLE mul_3_2 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U90 SOURCE gemm_outer.cc:56 VARIABLE c_buff_26 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U112 SOURCE gemm_outer.cc:56 VARIABLE mul_3_3 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U91 SOURCE gemm_outer.cc:56 VARIABLE c_buff_27 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U113 SOURCE gemm_outer.cc:56 VARIABLE mul_3_4 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U92 SOURCE gemm_outer.cc:56 VARIABLE c_buff_28 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U114 SOURCE gemm_outer.cc:56 VARIABLE mul_3_5 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U93 SOURCE gemm_outer.cc:56 VARIABLE c_buff_29 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U115 SOURCE gemm_outer.cc:56 VARIABLE mul_3_6 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U94 SOURCE gemm_outer.cc:56 VARIABLE c_buff_30 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U116 SOURCE gemm_outer.cc:56 VARIABLE mul_3_7 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U95 SOURCE gemm_outer.cc:56 VARIABLE c_buff_31 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U117 SOURCE gemm_outer.cc:56 VARIABLE mul_4 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U96 SOURCE gemm_outer.cc:56 VARIABLE c_buff_32 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U118 SOURCE gemm_outer.cc:56 VARIABLE mul_4_1 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U97 SOURCE gemm_outer.cc:56 VARIABLE c_buff_33 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U119 SOURCE gemm_outer.cc:56 VARIABLE mul_4_2 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U98 SOURCE gemm_outer.cc:56 VARIABLE c_buff_34 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U120 SOURCE gemm_outer.cc:56 VARIABLE mul_4_3 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U99 SOURCE gemm_outer.cc:56 VARIABLE c_buff_35 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U121 SOURCE gemm_outer.cc:56 VARIABLE mul_4_4 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U100 SOURCE gemm_outer.cc:56 VARIABLE c_buff_36 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U122 SOURCE gemm_outer.cc:56 VARIABLE mul_4_5 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U101 SOURCE gemm_outer.cc:56 VARIABLE c_buff_37 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U123 SOURCE gemm_outer.cc:56 VARIABLE mul_4_6 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U102 SOURCE gemm_outer.cc:56 VARIABLE c_buff_38 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U124 SOURCE gemm_outer.cc:56 VARIABLE mul_4_7 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U103 SOURCE gemm_outer.cc:56 VARIABLE c_buff_39 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U125 SOURCE gemm_outer.cc:56 VARIABLE mul_5 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U104 SOURCE gemm_outer.cc:56 VARIABLE c_buff_40 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U126 SOURCE gemm_outer.cc:56 VARIABLE mul_5_1 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U105 SOURCE gemm_outer.cc:56 VARIABLE c_buff_41 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U127 SOURCE gemm_outer.cc:56 VARIABLE mul_5_2 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U106 SOURCE gemm_outer.cc:56 VARIABLE c_buff_42 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U128 SOURCE gemm_outer.cc:56 VARIABLE mul_5_3 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U86 SOURCE gemm_outer.cc:56 VARIABLE c_buff_43 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U107 SOURCE gemm_outer.cc:56 VARIABLE mul_5_4 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U87 SOURCE gemm_outer.cc:56 VARIABLE c_buff_44 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U108 SOURCE gemm_outer.cc:56 VARIABLE mul_5_5 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U88 SOURCE gemm_outer.cc:56 VARIABLE c_buff_45 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U109 SOURCE gemm_outer.cc:56 VARIABLE mul_5_6 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U89 SOURCE gemm_outer.cc:56 VARIABLE c_buff_46 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U110 SOURCE gemm_outer.cc:56 VARIABLE mul_5_7 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U90 SOURCE gemm_outer.cc:56 VARIABLE c_buff_47 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U111 SOURCE gemm_outer.cc:56 VARIABLE mul_6 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U91 SOURCE gemm_outer.cc:56 VARIABLE c_buff_48 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U112 SOURCE gemm_outer.cc:56 VARIABLE mul_6_1 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U92 SOURCE gemm_outer.cc:56 VARIABLE c_buff_49 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U113 SOURCE gemm_outer.cc:56 VARIABLE mul_6_2 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U93 SOURCE gemm_outer.cc:56 VARIABLE c_buff_50 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U114 SOURCE gemm_outer.cc:56 VARIABLE mul_6_3 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U94 SOURCE gemm_outer.cc:56 VARIABLE c_buff_51 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U115 SOURCE gemm_outer.cc:56 VARIABLE mul_6_4 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U95 SOURCE gemm_outer.cc:56 VARIABLE c_buff_52 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U116 SOURCE gemm_outer.cc:56 VARIABLE mul_6_5 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U96 SOURCE gemm_outer.cc:56 VARIABLE c_buff_53 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U117 SOURCE gemm_outer.cc:56 VARIABLE mul_6_6 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U97 SOURCE gemm_outer.cc:56 VARIABLE c_buff_54 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U118 SOURCE gemm_outer.cc:56 VARIABLE mul_6_7 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U98 SOURCE gemm_outer.cc:56 VARIABLE c_buff_55 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U119 SOURCE gemm_outer.cc:56 VARIABLE mul_7 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U99 SOURCE gemm_outer.cc:56 VARIABLE c_buff_56 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U120 SOURCE gemm_outer.cc:56 VARIABLE mul_7_1 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U100 SOURCE gemm_outer.cc:56 VARIABLE c_buff_57 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U121 SOURCE gemm_outer.cc:56 VARIABLE mul_7_2 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U101 SOURCE gemm_outer.cc:56 VARIABLE c_buff_58 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U122 SOURCE gemm_outer.cc:56 VARIABLE mul_7_3 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U102 SOURCE gemm_outer.cc:56 VARIABLE c_buff_59 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U123 SOURCE gemm_outer.cc:56 VARIABLE mul_7_4 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U103 SOURCE gemm_outer.cc:56 VARIABLE c_buff_60 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U124 SOURCE gemm_outer.cc:56 VARIABLE mul_7_5 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U104 SOURCE gemm_outer.cc:56 VARIABLE c_buff_61 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U125 SOURCE gemm_outer.cc:56 VARIABLE mul_7_6 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U105 SOURCE gemm_outer.cc:56 VARIABLE c_buff_62 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U126 SOURCE gemm_outer.cc:56 VARIABLE mul_7_7 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U106 SOURCE gemm_outer.cc:56 VARIABLE c_buff_63 LOOP VITIS_LOOP_51_3 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 DISPNAME {bind_op fadd}}} AREA {DSP 108 BRAM 0 URAM 0}} gemm_Pipeline_5 {BINDINFO {{BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME empty_23_fu_610_p2 SOURCE {} VARIABLE empty_23 LOOP {Loop 1} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}}} AREA {DSP 0 BRAM 0 URAM 0}} gemm {BINDINFO {{BINDTYPE storage ID {} IMPL auto LATENCY 1 OPTYPE ram_s2p PRAGMA {} RTLNAME a_buff_U SOURCE gemm_outer.cc:28 VARIABLE a_buff LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_storage ram_s2p}} {BINDTYPE storage ID {} IMPL auto LATENCY 1 OPTYPE ram_s2p PRAGMA {} RTLNAME a_buff_1_U SOURCE gemm_outer.cc:28 VARIABLE a_buff_1 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_storage ram_s2p}} {BINDTYPE storage ID {} IMPL auto LATENCY 1 OPTYPE ram_s2p PRAGMA {} RTLNAME a_buff_2_U SOURCE gemm_outer.cc:28 VARIABLE a_buff_2 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_storage ram_s2p}} {BINDTYPE storage ID {} IMPL auto LATENCY 1 OPTYPE ram_s2p PRAGMA {} RTLNAME a_buff_3_U SOURCE gemm_outer.cc:28 VARIABLE a_buff_3 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_storage ram_s2p}} {BINDTYPE storage ID {} IMPL auto LATENCY 1 OPTYPE ram_s2p PRAGMA {} RTLNAME a_buff_4_U SOURCE gemm_outer.cc:28 VARIABLE a_buff_4 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_storage ram_s2p}} {BINDTYPE storage ID {} IMPL auto LATENCY 1 OPTYPE ram_s2p PRAGMA {} RTLNAME a_buff_5_U SOURCE gemm_outer.cc:28 VARIABLE a_buff_5 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_storage ram_s2p}} {BINDTYPE storage ID {} IMPL auto LATENCY 1 OPTYPE ram_s2p PRAGMA {} RTLNAME a_buff_6_U SOURCE gemm_outer.cc:28 VARIABLE a_buff_6 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_storage ram_s2p}} {BINDTYPE storage ID {} IMPL auto LATENCY 1 OPTYPE ram_s2p PRAGMA {} RTLNAME a_buff_7_U SOURCE gemm_outer.cc:28 VARIABLE a_buff_7 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_storage ram_s2p}} {BINDTYPE storage ID {} IMPL auto LATENCY 1 OPTYPE ram_1p PRAGMA {} RTLNAME b_buff_U SOURCE gemm_outer.cc:29 VARIABLE b_buff LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_storage ram_1p}} {BINDTYPE storage ID {} IMPL auto LATENCY 1 OPTYPE ram_1p PRAGMA {} RTLNAME b_buff_1_U SOURCE gemm_outer.cc:29 VARIABLE b_buff_1 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_storage ram_1p}} {BINDTYPE storage ID {} IMPL auto LATENCY 1 OPTYPE ram_1p PRAGMA {} RTLNAME b_buff_2_U SOURCE gemm_outer.cc:29 VARIABLE b_buff_2 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_storage ram_1p}} {BINDTYPE storage ID {} IMPL auto LATENCY 1 OPTYPE ram_1p PRAGMA {} RTLNAME b_buff_3_U SOURCE gemm_outer.cc:29 VARIABLE b_buff_3 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_storage ram_1p}} {BINDTYPE storage ID {} IMPL auto LATENCY 1 OPTYPE ram_1p PRAGMA {} RTLNAME b_buff_4_U SOURCE gemm_outer.cc:29 VARIABLE b_buff_4 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_storage ram_1p}} {BINDTYPE storage ID {} IMPL auto LATENCY 1 OPTYPE ram_1p PRAGMA {} RTLNAME b_buff_5_U SOURCE gemm_outer.cc:29 VARIABLE b_buff_5 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_storage ram_1p}} {BINDTYPE storage ID {} IMPL auto LATENCY 1 OPTYPE ram_1p PRAGMA {} RTLNAME b_buff_6_U SOURCE gemm_outer.cc:29 VARIABLE b_buff_6 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_storage ram_1p}} {BINDTYPE storage ID {} IMPL auto LATENCY 1 OPTYPE ram_1p PRAGMA {} RTLNAME b_buff_7_U SOURCE gemm_outer.cc:29 VARIABLE b_buff_7 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_storage ram_1p}}} AREA {DSP 108 BRAM 0 URAM 0}}}}'
+INFO-FLOW: DBG:PUTS:      update_csynth_reports json2rpt_hw_sw_interfaces
+Execute       send_msg_by_id INFO @200-1603@%s  and missed bursts 
+INFO: [HLS 200-1603] Design has inferred MAXI bursts and missed bursts, see Vitis HLS GUI synthesis summary report for detailed information.
+INFO-FLOW: Running: gen_csynth_sec_pragma
+INFO-FLOW: Done: gen_csynth_sec_pragma time: 0 seconds per iteration
+INFO-FLOW: DBG:PUTS:      update_csynth_reports wrote xml
+INFO-FLOW: DBG:PUTS:      update_csynth_reports appended to csynth rpt file
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 2 seconds. CPU system time: 0 seconds. Elapsed time: 2.304 seconds; current allocated memory: 260.996 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for gemm.
+INFO: [VLOG 209-307] Generating Verilog RTL for gemm.
+Execute       syn_report -model gemm -printsummary 
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were NOT satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 136.99 MHz
+Command     autosyn done; 17.441 sec.
+Command   csynth_design done; 25.947 sec.
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 13 seconds. CPU system time: 5 seconds. Elapsed time: 25.947 seconds; current allocated memory: 154.465 MB.
+Command ap_source done; 37.883 sec.
+Execute cleanup_all 

@@ -1,0 +1,3 @@
+remark: gemm.cc:32:15: Volatile or Atomic access cannot be transformed _XLX_SEP_ for.inc19.store.3 AB AB_port mm(int volatile*, int volatile*, int volatile*) 
+remark: gemm.cc:30:13: Volatile or Atomic access cannot be transformed _XLX_SEP_ for.inc.load.6 A A_port mm(int volatile*, int volatile*, int volatile*) 
+remark: gemm.cc:30:25: Volatile or Atomic access cannot be transformed _XLX_SEP_ for.inc.load.10 B B_port mm(int volatile*, int volatile*, int volatile*) 

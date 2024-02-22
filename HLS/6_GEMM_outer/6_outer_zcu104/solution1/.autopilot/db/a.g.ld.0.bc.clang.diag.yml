@@ -1,0 +1,539 @@
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: gemm_outer.cc, Line: 53, Column: 19 }
+Function:        _Z4gemmPVfS0_S0_
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_53_4
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: gemm_outer.cc, Line: 55, Column: 19 }
+Function:        _Z4gemmPVfS0_S0_
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_55_5
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: gemm_outer.cc, Line: 18, Column: 0 }
+Function:        _Z4gemmPVfS0_S0_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_53_4
+  - String:          ''' ('
+  - LoopLoc:         'gemm_outer.cc:53:19'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          gemm
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: gemm_outer.cc, Line: 18, Column: 0 }
+Function:        _Z4gemmPVfS0_S0_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_55_5
+  - String:          ''' ('
+  - LoopLoc:         'gemm_outer.cc:55:19'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          gemm
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: gemm_outer.cc, Line: 18, Column: 0 }
+Function:        _Z4gemmPVfS0_S0_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_55_5
+  - String:          ''' ('
+  - LoopLoc:         'gemm_outer.cc:55:19'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          gemm
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: gemm_outer.cc, Line: 18, Column: 0 }
+Function:        _Z4gemmPVfS0_S0_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_55_5
+  - String:          ''' ('
+  - LoopLoc:         'gemm_outer.cc:55:19'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          gemm
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: gemm_outer.cc, Line: 18, Column: 0 }
+Function:        _Z4gemmPVfS0_S0_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_55_5
+  - String:          ''' ('
+  - LoopLoc:         'gemm_outer.cc:55:19'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          gemm
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: gemm_outer.cc, Line: 18, Column: 0 }
+Function:        _Z4gemmPVfS0_S0_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_55_5
+  - String:          ''' ('
+  - LoopLoc:         'gemm_outer.cc:55:19'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          gemm
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: gemm_outer.cc, Line: 18, Column: 0 }
+Function:        _Z4gemmPVfS0_S0_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_55_5
+  - String:          ''' ('
+  - LoopLoc:         'gemm_outer.cc:55:19'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          gemm
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: gemm_outer.cc, Line: 18, Column: 0 }
+Function:        _Z4gemmPVfS0_S0_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_55_5
+  - String:          ''' ('
+  - LoopLoc:         'gemm_outer.cc:55:19'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          gemm
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: gemm_outer.cc, Line: 18, Column: 0 }
+Function:        _Z4gemmPVfS0_S0_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_55_5
+  - String:          ''' ('
+  - LoopLoc:         'gemm_outer.cc:55:19'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          gemm
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: gemm_outer.cc, Line: 28, Column: 8 }
+Function:        _Z4gemmPVfS0_S0_
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          a_buff
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '2'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: gemm_outer.cc, Line: 29, Column: 9 }
+Function:        _Z4gemmPVfS0_S0_
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          b_buff
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: gemm_outer.cc, Line: 30, Column: 9 }
+Function:        _Z4gemmPVfS0_S0_
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          c_buff
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '2'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-burst-inference
+Name:            BurstInferred
+DebugLoc:        { File: gemm_outer.cc, Line: 40, Column: 2 }
+Function:        _Z4gemmPVfS0_S0_
+Args:            
+  - String:          'Sequential '
+  - Direction:       read
+  - String:          ' of length '
+  - Length:          '64'
+  - String:          ' has been inferred'
+  - String:          ' _XLX_SEP_ OldID='
+  - String:          load-store-loop12.load.3
+  - String:          ', '
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        aseq
+  - String:          ' '
+  - ArrayName:       a
+  - String:          ' '
+  - BundleName:      a_port
+  - String:          ' '
+  - LoopName:        anonymous
+  - String:          ' '
+  - LoopLoc:         'gemm_outer.cc:40:2'
+  - String:          ' '
+  - Function:        'gemm(float volatile*, float volatile*, float volatile*)'
+    DebugLoc:        { File: gemm_outer.cc, Line: 18, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-inference
+Name:            BurstInferred
+DebugLoc:        { File: gemm_outer.cc, Line: 41, Column: 3 }
+Function:        _Z4gemmPVfS0_S0_
+Args:            
+  - String:          'Sequential '
+  - Direction:       read
+  - String:          ' of length '
+  - Length:          '64'
+  - String:          ' has been inferred'
+  - String:          ' _XLX_SEP_ OldID='
+  - String:          load-store-loop9.load.3
+  - String:          ', '
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        bseq
+  - String:          ' '
+  - ArrayName:       b
+  - String:          ' '
+  - BundleName:      b_port
+  - String:          ' '
+  - LoopName:        anonymous
+  - String:          ' '
+  - LoopLoc:         'gemm_outer.cc:41:3'
+  - String:          ' '
+  - Function:        'gemm(float volatile*, float volatile*, float volatile*)'
+    DebugLoc:        { File: gemm_outer.cc, Line: 18, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-inference
+Name:            BurstInferred
+DebugLoc:        { File: gemm_outer.cc, Line: 62, Column: 3 }
+Function:        _Z4gemmPVfS0_S0_
+Args:            
+  - String:          'Sequential '
+  - Direction:       write
+  - String:          ' of length '
+  - Length:          '64'
+  - String:          ' has been inferred'
+  - String:          ' _XLX_SEP_ OldID='
+  - String:          load-store-loop.store.16
+  - String:          ', '
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        cseq
+  - String:          ' '
+  - ArrayName:       c
+  - String:          ' '
+  - BundleName:      c_port
+  - String:          ' '
+  - LoopName:        anonymous
+  - String:          ' '
+  - LoopLoc:         'gemm_outer.cc:62:3'
+  - String:          ' '
+  - Function:        'gemm(float volatile*, float volatile*, float volatile*)'
+    DebugLoc:        { File: gemm_outer.cc, Line: 18, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-widen
+Name:            GreaterOrEqualThreshold
+DebugLoc:        { File: gemm_outer.cc, Line: 62, Column: 3 }
+Function:        _Z4gemmPVfS0_S0_
+Args:            
+  - String:          'Could not widen since type '
+  - Type:            float
+  - String:          ' size is greater than or equal to the max_widen_bitwidth threshold of '
+  - Threshold:       '0'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        cseq
+  - String:          ' '
+  - ArrayName:       c
+  - String:          ' '
+  - BundleName:      c_port
+  - String:          ' '
+  - LoopName:        anonymous
+  - String:          ' '
+  - LoopLoc:         'gemm_outer.cc:62:3'
+  - String:          ' '
+  - Function:        'gemm(float volatile*, float volatile*, float volatile*)'
+    DebugLoc:        { File: gemm_outer.cc, Line: 18, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-widen
+Name:            GreaterOrEqualThreshold
+DebugLoc:        { File: gemm_outer.cc, Line: 41, Column: 3 }
+Function:        _Z4gemmPVfS0_S0_
+Args:            
+  - String:          'Could not widen since type '
+  - Type:            float
+  - String:          ' size is greater than or equal to the max_widen_bitwidth threshold of '
+  - Threshold:       '0'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        bseq
+  - String:          ' '
+  - ArrayName:       b
+  - String:          ' '
+  - BundleName:      b_port
+  - String:          ' '
+  - LoopName:        anonymous
+  - String:          ' '
+  - LoopLoc:         'gemm_outer.cc:41:3'
+  - String:          ' '
+  - Function:        'gemm(float volatile*, float volatile*, float volatile*)'
+    DebugLoc:        { File: gemm_outer.cc, Line: 18, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-widen
+Name:            GreaterOrEqualThreshold
+DebugLoc:        { File: gemm_outer.cc, Line: 40, Column: 2 }
+Function:        _Z4gemmPVfS0_S0_
+Args:            
+  - String:          'Could not widen since type '
+  - Type:            float
+  - String:          ' size is greater than or equal to the max_widen_bitwidth threshold of '
+  - Threshold:       '0'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        aseq
+  - String:          ' '
+  - ArrayName:       a
+  - String:          ' '
+  - BundleName:      a_port
+  - String:          ' '
+  - LoopName:        anonymous
+  - String:          ' '
+  - LoopLoc:         'gemm_outer.cc:40:2'
+  - String:          ' '
+  - Function:        'gemm(float volatile*, float volatile*, float volatile*)'
+    DebugLoc:        { File: gemm_outer.cc, Line: 18, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredVerboseSummary
+DebugLoc:        { File: gemm_outer.cc, Line: 40, Column: 2 }
+Function:        _Z4gemmPVfS0_S0_
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       reads
+  - String:          ' of length '
+  - Length:          '64'
+  - String:          ' and bit width '
+  - Width:           '32'
+  - String:          ' has been inferred.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        seq
+  - String:          ' '
+  - ArrayName:       ''
+  - String:          ' '
+  - BundleName:      a_port
+  - String:          ' '
+  - LoopName:        anonymous
+  - String:          ' '
+  - LoopLoc:         'gemm_outer.cc:40:2'
+  - String:          ' '
+  - Function:        'gemm(float volatile*, float volatile*, float volatile*)'
+    DebugLoc:        { File: gemm_outer.cc, Line: 18, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredSummary
+DebugLoc:        { File: gemm_outer.cc, Line: 40, Column: 2 }
+Function:        _Z4gemmPVfS0_S0_
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       reads
+  - String:          ' of length '
+  - Length:          '64'
+  - String:          ' and bit width '
+  - Width:           '32'
+  - String:          ' in loop '''
+  - LoopName:        anonymous
+  - String:          '''('
+  - LoopLoc:         'gemm_outer.cc:40:2'
+  - String:          ')'
+  - String:          ' has been inferred on bundle '''
+  - BundleName:      a_port
+  - String:          '''.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredVerboseSummary
+DebugLoc:        { File: gemm_outer.cc, Line: 41, Column: 3 }
+Function:        _Z4gemmPVfS0_S0_
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       reads
+  - String:          ' of length '
+  - Length:          '64'
+  - String:          ' and bit width '
+  - Width:           '32'
+  - String:          ' has been inferred.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        seq1
+  - String:          ' '
+  - ArrayName:       ''
+  - String:          ' '
+  - BundleName:      b_port
+  - String:          ' '
+  - LoopName:        anonymous
+  - String:          ' '
+  - LoopLoc:         'gemm_outer.cc:41:3'
+  - String:          ' '
+  - Function:        'gemm(float volatile*, float volatile*, float volatile*)'
+    DebugLoc:        { File: gemm_outer.cc, Line: 18, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredSummary
+DebugLoc:        { File: gemm_outer.cc, Line: 41, Column: 3 }
+Function:        _Z4gemmPVfS0_S0_
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       reads
+  - String:          ' of length '
+  - Length:          '64'
+  - String:          ' and bit width '
+  - Width:           '32'
+  - String:          ' in loop '''
+  - LoopName:        anonymous
+  - String:          '''('
+  - LoopLoc:         'gemm_outer.cc:41:3'
+  - String:          ')'
+  - String:          ' has been inferred on bundle '''
+  - BundleName:      b_port
+  - String:          '''.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredVerboseSummary
+DebugLoc:        { File: gemm_outer.cc, Line: 62, Column: 3 }
+Function:        _Z4gemmPVfS0_S0_
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       writes
+  - String:          ' of length '
+  - Length:          '64'
+  - String:          ' and bit width '
+  - Width:           '32'
+  - String:          ' has been inferred.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        seq2
+  - String:          ' '
+  - ArrayName:       ''
+  - String:          ' '
+  - BundleName:      c_port
+  - String:          ' '
+  - LoopName:        anonymous
+  - String:          ' '
+  - LoopLoc:         'gemm_outer.cc:62:3'
+  - String:          ' '
+  - Function:        'gemm(float volatile*, float volatile*, float volatile*)'
+    DebugLoc:        { File: gemm_outer.cc, Line: 18, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredSummary
+DebugLoc:        { File: gemm_outer.cc, Line: 62, Column: 3 }
+Function:        _Z4gemmPVfS0_S0_
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       writes
+  - String:          ' of length '
+  - Length:          '64'
+  - String:          ' and bit width '
+  - Width:           '32'
+  - String:          ' in loop '''
+  - LoopName:        anonymous
+  - String:          '''('
+  - LoopLoc:         'gemm_outer.cc:62:3'
+  - String:          ')'
+  - String:          ' has been inferred on bundle '''
+  - BundleName:      c_port
+  - String:          '''.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+...

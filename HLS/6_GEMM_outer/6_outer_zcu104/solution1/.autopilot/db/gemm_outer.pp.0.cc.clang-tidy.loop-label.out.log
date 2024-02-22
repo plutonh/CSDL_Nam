@@ -1,0 +1,25 @@
+C:\Users\CSDL_GUEST.DESKTOP-HHKUDFN\Desktop\06_LIG\23-02\HLS\6_GEMM_outer\6_outer_zcu104\solution1\.autopilot\db\gemm_outer.pp.0.cc:1973:3: warning: Added loop label VITIS_LOOP_45_1:   [xilinx-label-all-loops]
+  for (int m = 0; m < 8; m ++) {
+  ^~~
+  VITIS_LOOP_45_1: 
+C:\Users\CSDL_GUEST.DESKTOP-HHKUDFN\Desktop\06_LIG\23-02\HLS\6_GEMM_outer\6_outer_zcu104\solution1\.autopilot\db\gemm_outer.pp.0.cc:1973:3: note: FIX-IT applied suggested code changes
+C:\Users\CSDL_GUEST.DESKTOP-HHKUDFN\Desktop\06_LIG\23-02\HLS\6_GEMM_outer\6_outer_zcu104\solution1\.autopilot\db\gemm_outer.pp.0.cc:1974:6: warning: Added loop label VITIS_LOOP_46_2:   [xilinx-label-all-loops]
+     for (int o = 0; o < 8; o++) {
+     ^~~
+     VITIS_LOOP_46_2: 
+C:\Users\CSDL_GUEST.DESKTOP-HHKUDFN\Desktop\06_LIG\23-02\HLS\6_GEMM_outer\6_outer_zcu104\solution1\.autopilot\db\gemm_outer.pp.0.cc:1974:6: note: FIX-IT applied suggested code changes
+C:\Users\CSDL_GUEST.DESKTOP-HHKUDFN\Desktop\06_LIG\23-02\HLS\6_GEMM_outer\6_outer_zcu104\solution1\.autopilot\db\gemm_outer.pp.0.cc:1979:3: warning: Added loop label VITIS_LOOP_51_3:   [xilinx-label-all-loops]
+  for (int n = 0; n < 8; n++) {
+  ^~~
+  VITIS_LOOP_51_3: 
+C:\Users\CSDL_GUEST.DESKTOP-HHKUDFN\Desktop\06_LIG\23-02\HLS\6_GEMM_outer\6_outer_zcu104\solution1\.autopilot\db\gemm_outer.pp.0.cc:1979:3: note: FIX-IT applied suggested code changes
+C:\Users\CSDL_GUEST.DESKTOP-HHKUDFN\Desktop\06_LIG\23-02\HLS\6_GEMM_outer\6_outer_zcu104\solution1\.autopilot\db\gemm_outer.pp.0.cc:1981:2: warning: Added loop label VITIS_LOOP_53_4:   [xilinx-label-all-loops]
+ for (int m = 0; m < 8; m ++) {
+ ^~~
+ VITIS_LOOP_53_4: 
+C:\Users\CSDL_GUEST.DESKTOP-HHKUDFN\Desktop\06_LIG\23-02\HLS\6_GEMM_outer\6_outer_zcu104\solution1\.autopilot\db\gemm_outer.pp.0.cc:1981:2: note: FIX-IT applied suggested code changes
+C:\Users\CSDL_GUEST.DESKTOP-HHKUDFN\Desktop\06_LIG\23-02\HLS\6_GEMM_outer\6_outer_zcu104\solution1\.autopilot\db\gemm_outer.pp.0.cc:1983:2: warning: Added loop label VITIS_LOOP_55_5:   [xilinx-label-all-loops]
+ for (int o = 0; o < 8; o++) {
+ ^~~
+ VITIS_LOOP_55_5: 
+C:\Users\CSDL_GUEST.DESKTOP-HHKUDFN\Desktop\06_LIG\23-02\HLS\6_GEMM_outer\6_outer_zcu104\solution1\.autopilot\db\gemm_outer.pp.0.cc:1983:2: note: FIX-IT applied suggested code changes

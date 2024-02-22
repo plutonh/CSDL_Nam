@@ -1,0 +1,54 @@
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            NonSimpleMemoryAccess
+DebugLoc:        { File: gemm.cc, Line: 32, Column: 15 }
+Function:        _Z2mmPViS0_S0_
+Args:            
+  - String:          Volatile or Atomic access cannot be transformed
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        for.inc19.store.3
+  - String:          ' '
+  - ArrayName:       AB
+  - String:          ' '
+  - BundleName:      AB_port
+  - String:          ' '
+  - Function:        'mm(int volatile*, int volatile*, int volatile*)'
+    DebugLoc:        { File: gemm.cc, Line: 15, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            NonSimpleMemoryAccess
+DebugLoc:        { File: gemm.cc, Line: 30, Column: 13 }
+Function:        _Z2mmPViS0_S0_
+Args:            
+  - String:          Volatile or Atomic access cannot be transformed
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        for.inc.load.6
+  - String:          ' '
+  - ArrayName:       A
+  - String:          ' '
+  - BundleName:      A_port
+  - String:          ' '
+  - Function:        'mm(int volatile*, int volatile*, int volatile*)'
+    DebugLoc:        { File: gemm.cc, Line: 15, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            NonSimpleMemoryAccess
+DebugLoc:        { File: gemm.cc, Line: 30, Column: 25 }
+Function:        _Z2mmPViS0_S0_
+Args:            
+  - String:          Volatile or Atomic access cannot be transformed
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        for.inc.load.10
+  - String:          ' '
+  - ArrayName:       B
+  - String:          ' '
+  - BundleName:      B_port
+  - String:          ' '
+  - Function:        'mm(int volatile*, int volatile*, int volatile*)'
+    DebugLoc:        { File: gemm.cc, Line: 15, Column: 0 }
+  - String:          ' '
+...

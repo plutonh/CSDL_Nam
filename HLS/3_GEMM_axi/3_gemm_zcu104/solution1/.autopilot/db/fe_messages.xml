@@ -1,0 +1,72 @@
+<xilinx:hls_fe_msgs>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_int_ref.h:678:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="and_reduce" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_int_ref.h:692:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="or_reduce" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_int_ref.h:706:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="xor_reduce" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/Users/CSDL_GUEST.DESKTOP-HHKUDFN/Desktop/06_LIG/23-02/HLS/3_GEMM/3_gemm_zcu104/solution1/csynth.tcl:15:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="mm" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=mm" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="gemm.cc:16:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mm" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi port = A depth = 8*8 offset = slave bundle = A_port" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="gemm.cc:17:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mm" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi port = B depth = 8*8 offset = slave bundle = B_port" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="gemm.cc:18:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mm" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi port = AB depth = 8*8 offset = slave bundle = AB_port" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="gemm.cc:20:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mm" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port = A bundle = CONTROL_BUS" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="gemm.cc:21:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mm" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port = B bundle = CONTROL_BUS" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="gemm.cc:22:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mm" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port = AB bundle = CONTROL_BUS" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="gemm.cc:23:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mm" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port = return bundle = CONTROL_BUS" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="gemm.cc:29:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mm" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=A_buff dim=2 type=complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="gemm.cc:30:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mm" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=B_buff dim=0 type=complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="gemm.cc:31:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mm" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=AB_buff dim=2 type=complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="gemm.cc:39:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mm" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=2" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="gemm.cc:41:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mm" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="gemm.cc:40:7" msg_body="Loop 'col' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="col"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="gemm.cc:43:13" msg_body="Loop 'product' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="product"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="gemm.cc:15:0" msg_body="Unrolling loop 'col' (gemm.cc:40:7) in function 'mm' completely with a factor of 8">
+        <args Factor="8" LoopLoc="gemm.cc:40:7" LoopName="col"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="gemm.cc:15:0" msg_body="Unrolling loop 'product' (gemm.cc:43:13) in function 'mm' completely with a factor of 8">
+        <args Factor="8" LoopLoc="gemm.cc:43:13" LoopName="product"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="gemm.cc:25:8" msg_body="Applying array_partition to 'A_buff': Complete partitioning on dimension 2.">
+        <args Dim="2" Mode="Complete" UOName="A_buff"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="gemm.cc:26:8" msg_body="Applying array_partition to 'B_buff': Complete partitioning on dimension 1. Complete partitioning on dimension 2.">
+        <args Dim="islist 1 2" Mode="islist Complete Complete" UOName="B_buff"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="gemm.cc:27:8" msg_body="Applying array_partition to 'AB_buff': Complete partitioning on dimension 2.">
+        <args Dim="2" Mode="Complete" UOName="AB_buff"/>
+    </msg>
+</xilinx:hls_fe_msgs>
+

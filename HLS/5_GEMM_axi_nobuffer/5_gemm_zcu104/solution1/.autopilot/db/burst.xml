@@ -1,0 +1,6 @@
+<VitisHLS:BurstInfo>
+    <burst group="BURST_VERBOSE_MISSED" fe_name="NonSimpleMemoryAccessMissed" src_info="gemm.cc:32:15" msg_id="214-227" msg_severity="INFO" msg_body="Volatile or Atomic access cannot be transformed" resolution="214-227" ID="for.inc19.store.3" BundleName="AB_port" VarName="AB" ParentFunc="mm(int volatile*, int volatile*, int volatile*)"/>
+    <burst group="BURST_VERBOSE_MISSED" fe_name="NonSimpleMemoryAccessMissed" src_info="gemm.cc:30:13" msg_id="214-227" msg_severity="INFO" msg_body="Volatile or Atomic access cannot be transformed" resolution="214-227" ID="for.inc.load.6" BundleName="A_port" VarName="A" ParentFunc="mm(int volatile*, int volatile*, int volatile*)"/>
+    <burst group="BURST_VERBOSE_MISSED" fe_name="NonSimpleMemoryAccessMissed" src_info="gemm.cc:30:25" msg_id="214-227" msg_severity="INFO" msg_body="Volatile or Atomic access cannot be transformed" resolution="214-227" ID="for.inc.load.10" BundleName="B_port" VarName="B" ParentFunc="mm(int volatile*, int volatile*, int volatile*)"/>
+</VitisHLS:BurstInfo>
+
