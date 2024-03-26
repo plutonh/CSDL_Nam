@@ -55,23 +55,5 @@
   "C_Cpp_Runner.useLeakSanitizer": false,
   "C_Cpp_Runner.showCompilationTime": false,
   "C_Cpp_Runner.useLinkTimeOptimization": false,
-  "C_Cpp_Runner.msvcSecureNoWarnings": false,
-  "files.associations": {
-    "istream": "cpp",
-    "random": "c",
-    "__locale": "c",
-    "complex": "c",
-    "valarray": "c",
-    "cmath": "c",
-    "compare": "cpp",
-    "cstdint": "cpp",
-    "format": "cpp",
-    "array": "cpp",
-    "span": "cpp",
-    "string": "cpp",
-    "string_view": "cpp",
-    "vector": "cpp",
-    "chrono": "c",
-    "instruction.h": "c"
-  }
+  "C_Cpp_Runner.msvcSecureNoWarnings": false
 }

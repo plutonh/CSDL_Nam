@@ -1,0 +1,86 @@
+
+
+c_example.elf:     file format elf64-littleriscv
+
+
+Disassembly of section .text:
+
+0000000000000000 <_start>:
+   0:	00001137          	lui	x2,0x01
+   4:	c0010113          	addi	x2,x2,-1024
+   8:	004000ef          	jal	x1,c <main>
+
+000000000000000c <main>:
+   c:	fe010113          	addi	x2,x2,-32 # fffffe0 <find_g+0xfffff70>
+  10:	00113c23          	sd	x1,24(x2)
+  14:	00813823          	sd	x8,16(x2)
+  18:	02010413          	addi	x8,x2,32
+  1c:	02100793          	li	x15,33
+  20:	fef42623          	sw	x15,-20(x8)
+  24:	00c00793          	li	x15,12
+  28:	fef42423          	sw	x15,-24(x8)
+  2c:	01b00793          	li	x15,27
+  30:	fef42223          	sw	x15,-28(x8)
+  34:	fe442683          	lw	x13,-28(x8)
+  38:	fe842703          	lw	x14,-24(x8)
+  3c:	fec42783          	lw	x15,-20(x8)
+  40:	00068613          	mv	x12,x13
+  44:	00070593          	mv	x11,x14
+  48:	00078513          	mv	x10,x15
+  4c:	028000ef          	jal	x1,74 <find_g>
+  50:	00050793          	mv	x15,x10
+  54:	fef42023          	sw	x15,-32(x8)
+  58:	00000793          	li	x15,0
+  5c:	00078513          	mv	x10,x15
+  60:	01813083          	ld	x1,24(x2)
+  64:	01013403          	ld	x8,16(x2)
+  68:	02010113          	addi	x2,x2,32
+  6c:   00F00093                addi    x1, x0, 15
+  70:	00008067          	ret
+
+0000000000000074 <find_g>:
+  74:	fd010113          	addi	x2,x2,-48
+  78:	02813423          	sd	x8,40(x2)
+  7c:	03010413          	addi	x8,x2,48
+  80:	00050793          	mv	x15,x10
+  84:	00058693          	mv	x13,x11
+  88:	00060713          	mv	x14,x12
+  8c:	fcf42e23          	sw	x15,-36(x8)
+  90:	00068793          	mv	x15,x13
+  94:	fcf42c23          	sw	x15,-40(x8)
+  98:	00070793          	mv	x15,x14
+  9c:	fcf42a23          	sw	x15,-44(x8)
+  a0:	fdc42703          	lw	x14,-36(x8)
+  a4:	fd842783          	lw	x15,-40(x8)
+  a8:	0007071b          	sext.w	x14,x14
+  ac:	0007879b          	sext.w	x15,x15
+  b0:	02e7d263          	bge	x15,x14,d4 <find_g+0x60>
+  b4:	fdc42703          	lw	x14,-36(x8)
+  b8:	fd442783          	lw	x15,-44(x8)
+  bc:	0007071b          	sext.w	x14,x14
+  c0:	0007879b          	sext.w	x15,x15
+  c4:	00e7d863          	bge	x15,x14,d4 <find_g+0x60>
+  c8:	fdc42783          	lw	x15,-36(x8)
+  cc:	fef42623          	sw	x15,-20(x8)
+  d0:	0400006f          	j	110 <find_g+0x9c>
+  d4:	fdc42703          	lw	x14,-36(x8)
+  d8:	fd842783          	lw	x15,-40(x8)
+  dc:	0007071b          	sext.w	x14,x14
+  e0:	0007879b          	sext.w	x15,x15
+  e4:	02f75263          	bge	x14,x15,108 <find_g+0x94>
+  e8:	fd842703          	lw	x14,-40(x8)
+  ec:	fd442783          	lw	x15,-44(x8)
+  f0:	0007071b          	sext.w	x14,x14
+  f4:	0007879b          	sext.w	x15,x15
+  f8:	00e7d863          	bge	x15,x14,108 <find_g+0x94>
+  fc:	fd842783          	lw	x15,-40(x8)
+ 100:	fef42623          	sw	x15,-20(x8)
+ 104:	00c0006f          	j	110 <find_g+0x9c>
+ 108:	fd442783          	lw	x15,-44(x8)
+ 10c:	fef42623          	sw	x15,-20(x8)
+ 110:	fec42783          	lw	x15,-20(x8)
+ 114:	00078513          	mv	x10,x15
+ 118:	02813403          	ld	x8,40(x2)
+ 11c:	03010113          	addi	x2,x2,48
+ 120:	00008067          	ret
+

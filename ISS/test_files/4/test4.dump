@@ -1,0 +1,45 @@
+
+c_example.elf:     file format elf64-littleriscv
+
+
+Disassembly of section .text:
+
+0000000000000000 <_start>:
+   0:	00001137          	lui	x2,0x01
+   4:	c0010113          	addi	x2,x2,-1024
+   8:	004000ef          	jal	x1,c <main>
+
+000000000000000c <main>:
+   c:	fe010113          	addi	x2,x2,-32 # fffffe0 <main+0xfffffd4>
+  10:	00813c23          	sd	x8,24(x2)
+  14:	02010413          	addi	x8,x2,32
+  18:	02400793          	li	x15,36
+  1c:	fef42623          	sw	x15,-20(x8)
+  20:	00300793          	li	x15,3
+  24:	fef42223          	sw	x15,-28(x8)
+  28:	fec42783          	lw	x15,-20(x8)
+  2c:	fdc7879b          	addiw	x15,x15,-36
+  30:	0007879b          	sext.w	x15,x15
+  34:	00078713          	mv	x14,x15
+  38:	00500793          	li	x15,5
+  3c:	02e7ec63          	bltu	x15,x14,74 <main+0x68>
+  40:	fe042423          	sw	x0,-24(x8)
+  44:	0200006f          	j	64 <main+0x58>
+  48:	fec42703          	lw	x14,-20(x8)
+  4c:	fe442783          	lw	x15,-28(x8)
+  50:	40f707bb          	subw	x15,x14,x15
+  54:	fef42623          	sw	x15,-20(x8)
+  58:	fe842783          	lw	x15,-24(x8)
+  5c:	0017879b          	addiw	x15,x15,1
+  60:	fef42423          	sw	x15,-24(x8)
+  64:	fe842783          	lw	x15,-24(x8)
+  68:	0007871b          	sext.w	x14,x15
+  6c:	00200793          	li	x15,2
+  70:	fce7dce3          	bge	x15,x14,48 <main+0x3c>
+  74:	00000793          	li	x15,0
+  78:	00078513          	mv	x10,x15
+  7c:	01813403          	ld	x8,24(x2)
+  80:	02010113          	addi	x2,x2,32i
+  84:   00f00093          	addi x1, x0, 15
+  88:	00008067          	ret
+

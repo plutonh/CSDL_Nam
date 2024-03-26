@@ -1,0 +1,27 @@
+lui		x2, 0x1
+addi	x2, x2,-256
+addi	x4, x0, 200
+sltiu	x5, x4, -1
+blt		x5, x4, lable1
+lable3: lui 	x6, 0xabcde
+j 		lable2
+lable1:	lui x7, 0xedcba
+auipc	x8, 0xF
+addi	x9, x0, 2
+addi	x10, x0, -1
+bltu	x9, x10, lable3
+lable2: addi x6, x6, 0x123
+sw		x6, -4(x2)
+lbu		x11, -3(x2)
+lhu		x12, -4(x2)
+addw	x8, x0, x5
+addi	x5, x8, 20
+sll		x5, x5, x8
+srai	x5, x5, 3
+andi	x5, x5, 2032
+lui		x8, 1048575
+ori		x8, x8, 2047
+slti	x9, x8, 0
+slliw	x8, x8, 10
+addi	x1, x0, 0xf
+ret

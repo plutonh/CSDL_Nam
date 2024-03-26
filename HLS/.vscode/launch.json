@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "/Users/pluto/Desktop/CSDL_Nam/HLS/18_CNN_training",
+      "program": "/Users/pluto/Desktop/CSDL_Nam/HLS/18_CNN_training/build/Debug/outDebug"
+    }
+  ]
+}

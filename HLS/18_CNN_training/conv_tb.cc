@@ -4,7 +4,7 @@
 // https://medium.com/@ngocson2vn/a-gentle-explanation-of-backpropagation-in-convolutional-neural-network-cnn-1a70abff508b
 
 // Relationship between Convolution and Transposed Convolution in CNN
-// https://nbviewer.org/github/metamath1/ml-simple-works/blob/master/NN/transconv_fullconv.ipynb
+// https://nbviewer.org/github/metamath1/ml-simple-works/blob/master/CNN/transconv_fullconv.ipynb
 
 // Backpropataion in a Convolutional Layer
 // https://towardsdatascience.com/backpropagation-in-a-convolutional-layer-24c8d64d8509
@@ -168,7 +168,7 @@ void printtensor6d(
 		int IW,
 		int OC,
 		int OH,
-		int OW
+		int Ot
 		){
 	printf("=================  %s : [ic][ih][iw][oc][oh][ow] = (%d x %d x %d x %d x %d x %d)  =================\n", name, IC, IH, IW, OC, OH, OW);
 	for(int ic=0; ic<IC; ic++){
