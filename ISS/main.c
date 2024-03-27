@@ -107,7 +107,7 @@ int main(int argc, char **argv) {
                 printf("--------------------------------------------------------------------\n");
                 printf("Break point\n");
                 for(j = 0; j < bp_num; j++)
-                    printf("[%016llx]\n", bp_check[j]);
+                    printf("[0x%016llx]\n", bp_check[j]);
                 printf("Total %d\n", bp_num);
             }
         }
