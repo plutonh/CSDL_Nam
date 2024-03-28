@@ -5,7 +5,7 @@
 
 int64_t sign_ext(int64_t data, int bit) { // index aligned
     int64_t sbit = bit + 1; // Set bit bit to MSB to extension sign
-    int64_t sign_mask = (int64_t)1 << (sbit - 1); // Mask of the bit to set the extension code
+    int64_t sign_mask = (int64_t)1 << (sbit - 1); // Mask of the bit to set the extension code -> Cheking sign whether 0 or 1
     int64_t sign_extend_mask = ~(((int64_t)1 << sbit) - 1); // Mask with all bits set beyond the bits to which the extension is applied
 
     if (data & sign_mask) { // If the given data has an MSB of 1, apply the extension sign
@@ -120,7 +120,7 @@ void process () {
             switch(RISC_V.I.funct3) {
                 case 0b000: // LB
                     opcode = "LB";
-                    gpr[RISC_V.I.rd] = sign_ext(memory[gpr[RISC_V.I.rs1] + sign_ext(RISC_V.I.imm_11_0, 11)], 7); // memory 한 칸이 1 byte라서 7
+                    gpr[RISC_V.I.rd] = sign_ext(memory[gpr[RISC_V.I.rs1] + sign_ext(RISC_V.I.imm_11_0, 11)], 7);
                     pc += 4;
                     break;
                 
@@ -128,7 +128,7 @@ void process () {
                     opcode = "LH";
                     gpr[RISC_V.I.rd] = sign_ext((memory[gpr[RISC_V.I.rs1] + sign_ext(RISC_V.I.imm_11_0, 11)]) |
                                                 (memory[gpr[RISC_V.I.rs1] + sign_ext(RISC_V.I.imm_11_0, 11) + 1]) << 8 , 15);
-                                                // memory address를 1 증가시켜 다음 주소의 데이터 파싱하고 합치기
+                                                // Increase the memory address by 1, parse the data of next address and merge them
                     pc += 4;
                     break;
 
@@ -143,7 +143,7 @@ void process () {
 
                 case 0b100: // LBU
                     opcode = "LBU";
-                    gpr[RISC_V.I.rd] = memory[gpr[RISC_V.I.rs1] + sign_ext(RISC_V.I.imm_11_0, 11)]; // sign extension 필요없음
+                    gpr[RISC_V.I.rd] = memory[gpr[RISC_V.I.rs1] + sign_ext(RISC_V.I.imm_11_0, 11)]; // No sign extension
                     pc += 4;
                     break;
 
@@ -163,7 +163,8 @@ void process () {
                                        (uint64_t)(memory[gpr[RISC_V.I.rs1] + sign_ext(RISC_V.I.imm_11_0, 11) + 4]) << 32 |
                                        (uint64_t)(memory[gpr[RISC_V.I.rs1] + sign_ext(RISC_V.I.imm_11_0, 11) + 5]) << 40 |
                                        (uint64_t)(memory[gpr[RISC_V.I.rs1] + sign_ext(RISC_V.I.imm_11_0, 11) + 6]) << 48 |
-                                       (uint64_t)(memory[gpr[RISC_V.I.rs1] + sign_ext(RISC_V.I.imm_11_0, 11) + 7]) << 56;                    pc += 4;
+                                       (uint64_t)(memory[gpr[RISC_V.I.rs1] + sign_ext(RISC_V.I.imm_11_0, 11) + 7]) << 56;
+                    pc += 4;
                     break;
             }
             break;
@@ -358,7 +359,7 @@ void process () {
                 case 0b101:
                     if((RISC_V.I.imm_11_0 >> 10) == 0) { // SRLIW
                         opcode = "SRLIW"; // unsigned
-                        gpr[RISC_V.I.rd] = sign_ext(gpr[RISC_V.I.rs1] >> slice(RISC_V.I.imm_11_0, 5), 31 - slice(RISC_V.I.imm_11_0, 5)); // shamt만큼 slice
+                        gpr[RISC_V.I.rd] = sign_ext(gpr[RISC_V.I.rs1] >> slice(RISC_V.I.imm_11_0, 5), 31 - slice(RISC_V.I.imm_11_0, 5)); // slice by shamt
                         pc += 4;
                     }
                     else { // SRAIW
